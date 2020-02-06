@@ -8,6 +8,39 @@ use App\Http\Controllers\Controller;
 
 class LoginController extends Controller
 {
+    /**
+     * Get a JWT token via given credentials.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+
+    /**
+     * @SWG\Post(
+     *   path="/iam/login",
+     *   tags={"IAM"},
+     *   summary="Login",
+     *   operationId="login",
+     *   @SWG\Parameter(
+     *     name="email",
+     *     in="query",
+     *     description="Email",
+     *     required=true,
+     *     type="string"
+     *   ),
+     *   @SWG\Parameter(
+     *     name="password",
+     *     in="query",
+     *     description="Password",
+     *     required=true,
+     *     type="string"
+     *   ),
+     *   @SWG\Response(response=200, description="successful operation"),
+     *   @SWG\Response(response=500, description="internal server error")
+     * )
+     *
+     */
     public function login(Request $request)
     {
         if (!isset($request->email) || !isset($request->password)) {
