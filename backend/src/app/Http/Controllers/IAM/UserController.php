@@ -15,6 +15,7 @@ class UserController extends Controller
     
     public function me(Request $request)
     {
+        $request->user()->authorizeRoles(['admin']);
         return response()->json(Auth::guard()->user());
     }
 }
