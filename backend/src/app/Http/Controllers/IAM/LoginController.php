@@ -5,9 +5,12 @@ namespace App\Http\Controllers\IAM;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
+use App\Traits\RestExceptionHandlerTrait;
 
 class LoginController extends Controller
 {
+    use RestExceptionHandlerTrait;
+
     /**
      * Get a JWT token via given credentials.
      *
@@ -44,7 +47,7 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         if (!isset($request->email) || !isset($request->password)) {
-            return response()->json(['error' => 'Bad request'], 400);
+            return $this->jsonResponse(400, 'Bad request');
         }
 
         $credentials = $request->only('email', 'password');
