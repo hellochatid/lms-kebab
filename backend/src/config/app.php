@@ -178,7 +178,11 @@ return [
         /*
          * JWT Service Providers...
          */
-        Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
+        Tymon\JWTAuth\Providers\LaravelServiceProvider::class,/*
+        
+        * Swagger Service Providers...
+        */
+       L5Swagger\L5SwaggerServiceProvider::class,
 
     ],
 
