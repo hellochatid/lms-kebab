@@ -1,0 +1,30 @@
+version: "3"
+
+services:
+  # The Application
+  app:
+    container_name: ${APP_NAME}-app
+    build:
+      context: ./
+      dockerfile: sourcefiles/app.dockerfile
+    volumes:
+      - ./src:/var/www
+      - ./src/storage:/var/www/storage
+
+  # The Web Server
+  web:
+    container_name: ${APP_NAME}-webserver
+    build:
+      context: ./
+      dockerfile: sourcefiles/web.dockerfile
+    volumes:
+      - ./src/storage/logs/:/var/log/nginx
+
+  # The Database
+  database:
+    container_name: ${APP_NAME}-database
+    image: postgres:9.6
+    volumes:
+      - /tmp/postgresql:/data
+    ports:
+      - "5431:5432"

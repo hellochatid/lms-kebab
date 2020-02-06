@@ -1,0 +1,26 @@
+version: "3"
+
+services:
+  # The Application
+  app:
+    environment:
+      - "PRODUCTION=true"
+      - "APP_NAME=${APP_NAME}"
+      - "APP_DEBUG=false"
+      - "DB_CONNECTION=${DB_CONNECTION_PROD}"
+      - "DB_HOST=${DB_HOST_PROD}"
+      - "DB_PORT=${DB_PORT_PROD}"
+      - "DB_DATABASE=${DB_DATABASE_PROD}"
+      - "DB_USERNAME=${DB_USERNAME_PROD}"
+      - "DB_PASSWORD=${DB_PASSWORD_PROD}"
+
+  # The Web Server
+  web:
+    ports:
+      - ${WEBSERVER_PORT_PROD}
+
+  # The Database
+  database:
+    environment:
+      - "POSTGRES_USER=${DB_USERNAME_PROD}"
+      - "POSTGRES_PASSWORD=${DB_PASSWORD_PROD}"
