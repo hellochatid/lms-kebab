@@ -16,6 +16,8 @@ Route::group([
 
 ], function () {
     Route::post('iam/login', 'IAM\LoginController@login');
+    Route::post('iam/register', 'IAM\UserController@register');
+    Route::get('iam/verify/{token}', 'IAM\UserController@verifyUser');
     Route::group([
         'middleware' => 'api',
         'prefix' => 'iam'

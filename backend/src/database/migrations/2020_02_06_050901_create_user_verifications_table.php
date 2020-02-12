@@ -17,6 +17,7 @@ class CreateUserVerificationsTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->string('token');
+            $table->dateTime('expired_date');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
         Schema::table('users', function (Blueprint $table) {
