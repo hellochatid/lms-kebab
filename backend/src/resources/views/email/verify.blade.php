@@ -1,0 +1,1 @@
+ <a href="{{ $confirmation_url }}/{{ $verification_code }}">Activate</a>

@@ -40,7 +40,7 @@ trait RestExceptionHandlerTrait
         }
     }
 
-    protected function jsonResponse(int $code, string $message)
+    protected function jsonResponse(int $code, $message)
     {
         $response = [
             'error' => [

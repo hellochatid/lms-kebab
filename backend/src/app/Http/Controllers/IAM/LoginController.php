@@ -12,7 +12,7 @@ class LoginController extends Controller
     use RestExceptionHandlerTrait;
 
     /**
-     * Get a JWT token via given credentials.
+     * Login user.
      *
      * @param  \Illuminate\Http\Request  $request
      *

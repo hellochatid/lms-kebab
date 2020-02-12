@@ -10,6 +10,9 @@ services:
     volumes:
       - ./src:/var/www
       - ./src/storage:/var/www/storage
+    environment:
+      - "MAIL_FROM_NAME=${MAIL_FROM_NAME}"
+      - "MAIL_FROM_ADDRESS=${MAIL_FROM_ADDRESS}"
 
   # The Web Server
   web:
