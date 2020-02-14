@@ -1,8 +1,7 @@
 <template>
-  <div>
-    <h1>Admin</h1>
-    <h2>{{ userAdmin.name }}</h2>
-  </div>
+    <div>
+        ccs
+    </div>
 </template>
 
 <script>
@@ -11,7 +10,7 @@ import { mapMutations, mapGetters } from "vuex";
 export default {
   middleware: "admin",
   head: {
-    title: "Admin - Dashboard"
+    title: "Admin - Pages"
   },
   layout: "admin",
   computed: mapGetters({
