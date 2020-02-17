@@ -38,7 +38,68 @@
                     }
                 }
             }
+        },
+        "/iam/register": {
+            "post": {
+                "tags": [
+                    "IAM"
+                ],
+                "summary": "Register",
+                "operationId": "register",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "Name",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "description": "Email",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "password",
+                        "in": "query",
+                        "description": "Password",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "confirm_password",
+                        "in": "query",
+                        "description": "Confirm Password",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "confirmation_url",
+                        "in": "query",
+                        "description": "confirmation URL",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            }
         }
     },
-    "definitions": {}
+    "definitions": {},
+    "securityDefinitions": {
+        "default": {
+            "type": "apiKey",
+            "name": "Authorization",
+            "in": "header"
+        }
+    }
 }

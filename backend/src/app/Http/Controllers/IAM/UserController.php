@@ -25,6 +25,53 @@ class UserController extends Controller
      * @param Request $request
      * @return \Illuminate\Http\JsonResponse
      */
+
+    /**
+     * @SWG\Post(
+     *   path="/iam/register",
+     *   tags={"IAM"},
+     *   summary="Register",
+     *   operationId="register",
+     *   @SWG\Parameter(
+     *     name="name",
+     *     in="query",
+     *     description="Name",
+     *     required=true,
+     *     type="string"
+     *   ),
+     *   @SWG\Parameter(
+     *     name="email",
+     *     in="query",
+     *     description="Email",
+     *     required=true,
+     *     type="string"
+     *   ),
+     *   @SWG\Parameter(
+     *     name="password",
+     *     in="query",
+     *     description="Password",
+     *     required=true,
+     *     type="string"
+     *   ),
+     *   @SWG\Parameter(
+     *     name="confirm_password",
+     *     in="query",
+     *     description="Confirm Password",
+     *     required=true,
+     *     type="string"
+     *   ),
+     *   @SWG\Parameter(
+     *     name="confirmation_url",
+     *     in="query",
+     *     description="confirmation URL",
+     *     required=true,
+     *     type="string"
+     *   ),
+     *   @SWG\Response(response=200, description="successful operation"),
+     *   @SWG\Response(response=500, description="internal server error")
+     * )
+     *
+     */
     public function register(Request $request)
     {
         // Validate form
