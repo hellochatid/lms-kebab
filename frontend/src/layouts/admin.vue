@@ -33,7 +33,7 @@
                 <span class="nav-profile-text">Hasan Sas</span>
               </template>
               <b-dropdown-item href="#">Profile</b-dropdown-item>
-              <b-dropdown-item href="#">Sign Out</b-dropdown-item>
+              <b-dropdown-item @click="logout">Sign Out</b-dropdown-item>
             </b-nav-item-dropdown>
           </b-navbar-nav>
         </b-collapse>
@@ -88,6 +88,26 @@
     </div>
   </div>
 </template>
+
+<script>
+const Cookie = process.client ? require("js-cookie") : undefined;
+
+export default {
+  methods: {
+    logout() {
+      const authAdmin = {
+        name: "",
+        authenticated: false
+      };
+      Cookie.remove("authAdmin");
+      this.$store.commit("users/setUserAdmin", authAdmin);
+      this.$router.push({
+        path: "/admin/login"
+      });
+    }
+  }
+};
+</script>
 
 <style>
 /* general */

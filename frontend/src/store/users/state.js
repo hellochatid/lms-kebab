@@ -1,9 +1,9 @@
-export default () => ({
-    userAdmin: user,
-})
-
 const user = {
-    name: 's',
+    name: '',
     displayPicture: '',
     authenticated: false
 }
+
+export default () => ({
+    userAdmin: user,
+})

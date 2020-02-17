@@ -40,7 +40,9 @@ module.exports = {
   modules: [
     // Doc: https://bootstrap-vue.js.org
     'bootstrap-vue/nuxt',
-    'nuxt-material-design-icons'
+    '@nuxtjs/axios',
+    'nuxt-material-design-icons',
+    '@tui-nuxt/editor'
   ],
   /*
   ** Build configuration
@@ -50,6 +52,24 @@ module.exports = {
     ** You can extend webpack config here
     */
     extend (config, ctx) {
+    }
+  },
+  /*
+  ** TUI Editor
+  */
+  tui: {
+    editor: {}
+  },
+  /*
+  ** axios
+  */
+  axios: {
+    /* set API_URL environment variable to configure access to the API
+    */
+    baseURL: process.env.API_URL || 'http://localhost:8081/api/v1',
+    redirectError: {
+      401: '/login',
+      404: '/notfound'
     }
   }
 }
