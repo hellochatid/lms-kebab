@@ -6,7 +6,6 @@ export default {
         })
     },
     setUserAdmin(state, { name, authenticated }) {
-        console.log('text', name)
         state.userAdmin.name = name
         state.userAdmin.authenticated = authenticated
     }
