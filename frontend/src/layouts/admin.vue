@@ -9,7 +9,7 @@
         class="default-layout-navbar"
       >
         <b-navbar class="navbar-brand-wrapper">
-          <b-navbar-brand href="#">Kebab</b-navbar-brand>
+          <b-navbar-brand href="#">Helocourse</b-navbar-brand>
         </b-navbar>
 
         <b-collapse id="nav-collapse" is-nav class="navbar-menu-wrapper">
@@ -27,7 +27,7 @@
               <!-- Using 'button-content' slot -->
               <template v-slot:button-content>
                 <div class="nav-profile-img">
-                  <img src="http://keenthemes.com/preview/metronic/theme/assets/pages/media/profile/profile_user.jpg" alt="image">
+                  <img src="../assets/images/faces/face1.jpg" alt="image">
                   <span class="availability-status online"></span>
                 </div>
                 <span class="nav-profile-text">Hasan Sas</span>
@@ -112,16 +112,13 @@ export default {
 <style>
 /* general */
 a {
-  color: #FE8196;
+  color: #24AE3B;
   text-decoration: none;
   background-color: transparent;
 }
 a:hover {
   color: #18932C;
   text-decoration: underline;
-}
-.page-header{
-  margin: 0 0 1.5rem 0;
 }
 .page-title {
   color: #343a40;
@@ -135,127 +132,16 @@ a:hover {
   border-radius: 4px;
   text-align: center;
   -webkit-box-shadow: 0px 3px 8.3px 0.7px rgba(163, 93, 255, 0.35);
-  box-shadow: 0px 3px 8.3px 0.7px rgba(254, 134, 150, 0.3);
+  box-shadow: 0px 3px 8.3px 0.7px rgba(36, 174, 59,0.3);
 }
-.grid-margin, .purchase-popup {
-  margin-bottom: 2.5rem;
-}
-
-/* cards */
-.card {
-  border: 0;
-  background: #fff;
-}
-.card {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  min-width: 0;
-  word-wrap: break-word;
-  background-color: #fff;
-  background-clip: border-box;
-  border: 1px solid rgba(0, 0, 0, 0.125);
-  border-radius: 0.3125rem;
-}
-.card .card-body {
-  padding: 2.5rem 2.5rem;
-}
-.card.card-img-holder .card-img-absolute {
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 100%;
-}
-.card .card-title {
-  color: #343a40;
-  margin-bottom: 0.75rem;
-  text-transform: capitalize;
-  font-family: "ubuntu-medium", sans-serif;
-  font-size: 1.125rem;
-  font-weight: bold;
-}
-.table-responsive {
-  display: block;
-  width: 100%;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-}
-
-/* table */
-.table-responsive {
-  display: block;
-  width: 100%;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-}
-.table {
-  margin-bottom: 0;
-  width: 100%;
-  color: #212529;
-  border-collapse: collapse;
-}
-.table thead th {
-  border-top: 0;
-  border-bottom-width: 1px;
-  font-family: "ubuntu-medium", sans-serif;
-  font-weight: initial;
-  font-weight: bold;
-  color: #fe8196;
-}
-table thead th {
-    vertical-align: bottom;
-    border-bottom: 2px solid #ebedf2;
-}
-table th, .table td {
-  vertical-align: middle;
-  font-size: 0.875rem;
-  line-height: 1;
-  white-space: nowrap;
-}
-.table th, .table td {
-  padding: 0.9375rem;
-  vertical-align: top;
-  border-top: 1px solid #ebedf2;
-}
-th {
-  text-align: inherit;
-}
-.table th img, .table td img {
-  width: 36px;
-  height: 36px;
-  border-radius: 100%;
-}
-
-/* colors */
 .bg-gradient-primary {
-  background: -webkit-gradient(linear, left top, right top, from(#FE8196), to(#FFBE96)) !important;
-  background: linear-gradient(to right, #FE8196, #FFBE96) !important;
-  border: none;
-}
-.bg-gradient-danger {
-  background: -webkit-gradient(linear, left top, right top, from(#ffbf96), to(#fe7096)) !important;
-  background: linear-gradient(to right, #ffbf96, #fe7096) !important;
-  border: none;
-}
-.bg-gradient-info {
-  background: -webkit-gradient(linear, left top, right top, from(#90caf9), color-stop(99%, #047edf)) !important;
-  background: linear-gradient(to right, #90caf9, #047edf 99%) !important;
-  border: none;
-}
-.bg-gradient-success {
-  background: -webkit-gradient(linear, left top, right top, from(#84d9d2), to(#07cdae)) !important;
-  background: linear-gradient(to right, #84d9d2, #07cdae) !important;
-  border: none;
+  background: -webkit-gradient(linear, left top, right top, from(#24AE3B), to(#4CAF50)) !important;
+  background: linear-gradient(to right, #24AE3B, #4CAF50) !important;
 }
 
 /* navbar */
 .navbar-light .navbar-brand {
-  color: #FE8196;
+  color: #24AE3B;
   font-weight: bold;
   font-size: 1.5rem;
 }
@@ -264,7 +150,6 @@ th {
 }
 .default-layout-navbar {
   padding: 0;
-  background: #fff;
 }
 .navbar .navbar-brand-wrapper {
   transition: width 0.25s ease, background 0.25s ease;
@@ -368,7 +253,7 @@ th {
   color: #3e4b5b;
 }
 .nav .nav-item.active a{
-  color: #FE8196;
+  color: #24AE3B;
 }
 .nav .nav-item.active a:hover{
   color: #18932C;

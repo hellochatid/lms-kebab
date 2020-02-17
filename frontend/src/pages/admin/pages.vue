@@ -1,14 +1,11 @@
 <template>
+  <div id="top">
+    <!-- Text Editor -->
+    <TuiEditor mode="markdown" preview-style="vertical" height="300px" />
 
-<div class="page-header">
-  <h3 class="page-title">
-    <span class="page-title-icon bg-gradient-primary text-white mr-2">
-      <i class="material-icons icon">insert_drive_file</i>
-    </span> 
-    Pages 
-  </h3>
-</div>
-
+    <!-- Markdown Viewer -->
+    <TuiEditorViewer :value="content" />
+  </div>
 </template>
 
 <script>
