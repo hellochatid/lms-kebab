@@ -61,7 +61,7 @@
                   <tr>
                     <td>1</td>
                     <td>
-                      <img src="http://keenthemes.com/preview/metronic/theme/assets/pages/media/profile/profile_user.jpg" class="mr-2" alt="image"> David Grey </td>
+                      <img src="http://keenthemes.com/preview/metronic/theme/assets/layouts/layout5/img/avatar1.jpg" class="mr-2" alt="image"> David Grey </td>
                     <td>Rp 850.000</td>
                     <td class="font-weight-bold">Rp 80.000</td>
                     <td class="text-secondary">Rp 50.000</td>
@@ -70,7 +70,7 @@
                   <tr>
                     <td>2</td>
                     <td>
-                      <img src="http://keenthemes.com/preview/metronic/theme/assets/pages/media/profile/profile_user.jpg" class="mr-2" alt="image"> Stella Johnson </td>
+                      <img src="http://keenthemes.com/preview/metronic/theme/assets/layouts/layout5/img/avatar1.jpg" class="mr-2" alt="image"> Stella Johnson </td>
                     <td>Rp 750.000</td>
                     <td class="font-weight-bold">Rp 75.000</td>
                     <td class="text-secondary">Rp 50.000</td>
@@ -79,7 +79,7 @@
                   <tr>
                     <td>3</td>
                     <td>
-                      <img src="http://keenthemes.com/preview/metronic/theme/assets/pages/media/profile/profile_user.jpg" class="mr-2" alt="image"> Marina Michel </td>
+                      <img src="http://keenthemes.com/preview/metronic/theme/assets/layouts/layout5/img/avatar1.jpg" class="mr-2" alt="image"> Marina Michel </td>
                     <td>Rp 650.000</td>
                     <td class="font-weight-bold">Rp 40.000</td>
                     <td class="text-secondary">Rp 66.000</td>
@@ -88,7 +88,7 @@
                   <tr>
                     <td>4</td>
                     <td>
-                      <img src="http://keenthemes.com/preview/metronic/theme/assets/pages/media/profile/profile_user.jpg" class="mr-2" alt="image"> John Doe </td>
+                      <img src="http://keenthemes.com/preview/metronic/theme/assets/layouts/layout5/img/avatar1.jpg" class="mr-2" alt="image"> John Doe </td>
                     <td>Rp 550.000</td>
                     <td class="font-weight-bold">Rp 45.000</td>
                     <td class="text-secondary">Rp 45.000</td>
@@ -97,7 +97,7 @@
                   <tr>
                     <td>5</td>
                     <td>
-                      <img src="http://keenthemes.com/preview/metronic/theme/assets/pages/media/profile/profile_user.jpg" class="mr-2" alt="image"> Stephany Wilson </td>
+                      <img src="http://keenthemes.com/preview/metronic/theme/assets/layouts/layout5/img/avatar1.jpg" class="mr-2" alt="image"> Stephany Wilson </td>
                     <td>Rp 450.000</td>
                     <td class="font-weight-bold">Rp 45.000</td>
                     <td class="text-secondary">Rp 45.000</td>

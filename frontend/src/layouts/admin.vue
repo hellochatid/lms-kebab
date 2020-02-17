@@ -27,7 +27,7 @@
               <!-- Using 'button-content' slot -->
               <template v-slot:button-content>
                 <div class="nav-profile-img">
-                  <img src="http://keenthemes.com/preview/metronic/theme/assets/pages/media/profile/profile_user.jpg" alt="image">
+                  <img src="http://keenthemes.com/preview/metronic/theme/assets/layouts/layout5/img/avatar1.jpg" alt="image">
                   <span class="availability-status online"></span>
                 </div>
                 <span class="nav-profile-text">Hasan Sas</span>
