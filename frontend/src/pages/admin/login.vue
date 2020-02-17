@@ -1,14 +1,35 @@
 <template>
-  <div class="container">
-    <h1>Sign in</h1>
+  <div class="container-stroller">
     <div>
-      <label for="email">
-        <input id="email" type="email" v-model="input.email" />
-      </label>
-      <label for="password">
-        <input id="password" type="password" v-model="input.password" />
-      </label>
-      <button @click="postLogin">login</button>
+      <div class="container-fluid page-body-wrapper full-page-wrapper">
+        <div class="content-wrapper d-flex align-items-center auth">
+          <div class="row flex-grow">
+            <div class="col-lg-4 mx-auto">
+              <div class="auth-form-light text-left p-5">
+                <div class="brand-logo">
+                  Kebab
+                </div>
+                <h4>Hello! let's get started</h4>
+                <h6 class="font-weight-light">Sign in to continue.</h6>
+                <form class="pt-3">
+                  <div class="form-group">
+                    <label for="email"></label>
+                    <input id="email" type="email" v-model="input.email" placeholder="Email"/>
+                  </div>
+                  <div class="form-group">
+                    <label for="password"></label>
+                    <input id="password" type="password" v-model="input.password" placeholder="Password"/>
+                  </div>
+                  <div class="mb-2 mt-24">
+                    <button type="button" class="btn btn-block btn-primary" @click="postLogin">
+                      <i class="mdi mdi-facebook mr-2"></i>Login</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
