@@ -1,8 +1,16 @@
 <template>
-  <div>
+  <div class="page-header">
+    <h3 class="page-title">
+      <span class="page-title-icon bg-gradient-primary text-white mr-2">
+        <i class="material-icons icon">home</i>
+      </span> 
+      Dashboard 
+    </h3>
+  </div>
+  <!--<div>
     <h1>Admin</h1>
     <h2>{{ userAdmin.name }}</h2>
-  </div>
+  </div>-->
 </template>
 
 <script>

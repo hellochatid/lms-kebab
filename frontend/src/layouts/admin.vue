@@ -9,7 +9,7 @@
         class="default-layout-navbar"
       >
         <b-navbar class="navbar-brand-wrapper">
-          <b-navbar-brand href="#">AbcdeFgh</b-navbar-brand>
+          <b-navbar-brand href="#">Helocourse</b-navbar-brand>
         </b-navbar>
 
         <b-collapse id="nav-collapse" is-nav class="navbar-menu-wrapper">
@@ -26,7 +26,11 @@
             <b-nav-item-dropdown right>
               <!-- Using 'button-content' slot -->
               <template v-slot:button-content>
-                <em>User</em>
+                <div class="nav-profile-img">
+                  <img src="../assets/images/faces/face1.jpg" alt="image">
+                  <span class="availability-status online"></span>
+                </div>
+                <span class="nav-profile-text">Hasan Sas</span>
               </template>
               <b-dropdown-item href="#">Profile</b-dropdown-item>
               <b-dropdown-item href="#">Sign Out</b-dropdown-item>
@@ -39,29 +43,29 @@
     <div class="container-fluid page-body-wrapper">
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <b-nav vertical>
-          <li class="nav-item">
+          <li class="nav-item active">
             <NuxtLink to="/admin" class="nav-link">
               <i class="material-icons icon">dashboard</i> Dashboard
             </NuxtLink>
           </li>
           <li class="nav-item">
             <NuxtLink to="/admin" class="nav-link">
-              <i class="material-icons icon">spa</i> Courses
+              <i class="material-icons icon">assignment</i> Courses
             </NuxtLink>
           </li>
           <li class="nav-item">
             <NuxtLink to="/admin" class="nav-link">
-              <i class="material-icons icon">card_membership</i> Affiliate
+              <i class="material-icons icon">supervisor_account</i> Affiliate
             </NuxtLink>
           </li>
           <li class="nav-item">
             <NuxtLink to="/admin" class="nav-link">
-              <i class="material-icons icon">people</i> Students
+              <i class="material-icons icon">local_library</i> Students
             </NuxtLink>
           </li>
           <li class="nav-item">
             <NuxtLink to="/admin/pages" class="nav-link">
-              <i class="material-icons icon">pages</i> Pages
+              <i class="material-icons icon">insert_drive_file</i> Pages
             </NuxtLink>
           </li>
           <li class="nav-item">
@@ -71,7 +75,7 @@
           </li>
           <li class="nav-item">
             <NuxtLink to="/admin" class="nav-link">
-              <i class="material-icons icon">build</i> Settings
+              <i class="material-icons icon">settings</i> Settings
             </NuxtLink>
           </li>
         </b-nav>
@@ -86,7 +90,44 @@
 </template>
 
 <style>
+/* general */
+a {
+  color: #24AE3B;
+  text-decoration: none;
+  background-color: transparent;
+}
+a:hover {
+  color: #18932C;
+  text-decoration: underline;
+}
+.page-title {
+  color: #343a40;
+  font-size: 1.75rem;
+  margin-bottom: 0;
+}
+.page-title .page-title-icon {
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  border-radius: 4px;
+  text-align: center;
+  -webkit-box-shadow: 0px 3px 8.3px 0.7px rgba(163, 93, 255, 0.35);
+  box-shadow: 0px 3px 8.3px 0.7px rgba(36, 174, 59,0.3);
+}
+.bg-gradient-primary {
+  background: -webkit-gradient(linear, left top, right top, from(#24AE3B), to(#4CAF50)) !important;
+  background: linear-gradient(to right, #24AE3B, #4CAF50) !important;
+}
+
 /* navbar */
+.navbar-light .navbar-brand {
+  color: #24AE3B;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.navbar-light .navbar-brand:hover {
+  color: #18932C;
+}
 .default-layout-navbar {
   padding: 0;
 }
@@ -98,6 +139,7 @@
   background: #fff;
   width: 260px;
   height: 70px;
+  padding: 1rem 2rem;
 }
 .navbar .navbar-menu-wrapper {
   transition: width 0.25s ease;
@@ -113,6 +155,30 @@
 .navbar .mdi-menu i {
   margin-top: 8px;
   cursor: pointer;
+}
+.default-layout-navbar {
+  padding: 0;
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.1);
+}
+.dropdown-menu{
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.1);
+  border:none;
+}
+.nav-link.dropdown-toggle .nav-profile-img {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  display: inline;
+}
+.nav-link.dropdown-toggle .nav-profile-img img {
+  width: 32px;
+  height: 32px;
+  border-radius: 100%;
+  margin-right: 6px;
+}
+.nav-profile-text {
+  margin-right: 6px;
+  color: #3e4b5b;
 }
 
 /* body wrapper */
@@ -134,7 +200,7 @@
 .sidebar {
   min-height: calc(100vh - 70px);
   background: #ffffff;
-  font-family: "ubuntu-regular", sans-serif;
+  font-family: "ubuntu-regular", sans-serif !important;
   padding: 0;
   width: 260px;
   z-index: 11;
@@ -155,6 +221,22 @@
 .sidebar .nav-link .icon {
   float: left;
   margin-right: 10px;
+}
+.nav-link{
+  display: block;
+  padding: 1rem 2rem;
+}
+.nav-link:hover{
+  background:#fcfcfc;
+}
+.nav .nav-item a {
+  color: #3e4b5b;
+}
+.nav .nav-item.active a{
+  color: #24AE3B;
+}
+.nav .nav-item.active a:hover{
+  color: #18932C;
 }
 
 /* main panel */
