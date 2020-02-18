@@ -7,6 +7,42 @@
     "basePath": "/api/v1",
     "paths": {
         "/admin/pages": {
+            "get": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Pages",
+                "operationId": "pages_get",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Bearer",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "ID",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "publish",
+                        "in": "query",
+                        "description": "publish",
+                        "type": "boolean"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            },
             "post": {
                 "tags": [
                     "Admin"
