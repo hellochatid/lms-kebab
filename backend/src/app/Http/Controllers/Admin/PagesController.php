@@ -7,6 +7,7 @@ use App\Traits\RestExceptionHandlerTrait;
 use Illuminate\Http\Request;
 use JWTAuth;
 use Validator, DB;
+use Storage;
 
 class PagesController extends Controller
 {
@@ -109,13 +110,13 @@ class PagesController extends Controller
         }
 
         // Add Page
-        $pageTitle =  $request->title ? $request->title: '';
-        $pageSubtitle =  $request->subtitle ? $request->subtitle: '';
-        $pageText =  $request->text ? $request->text: '';
-        $pageDescription =  $request->description ? $request->description: '';
-        $pageTag =  $request->tag ? $request->tag: '';
-        $pageImage =  $request->image ? $request->image: '';
-        $publish =  $request->publish ? $request->publish: false;
+        $pageTitle =  $request->title ? $request->title : '';
+        $pageSubtitle =  $request->subtitle ? $request->subtitle : '';
+        $pageText =  $request->text ? $request->text : '';
+        $pageDescription =  $request->description ? $request->description : '';
+        $pageTag =  $request->tag ? $request->tag : '';
+        $pageImage =  $request->image ? $request->image : '';
+        $publish =  $request->publish ? $request->publish : false;
 
         DB::table('pages')->insert([
             'page_title' => $pageTitle,
@@ -132,6 +133,82 @@ class PagesController extends Controller
         return response()->json([
             'success' => true,
             'message' => 'Page successfully added',
+        ]);
+    }
+
+    /**
+     * Get the pages
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    /**
+     * @SWG\Get(
+     *   path="/admin/pages",
+     *   tags={"Admin"},
+     *   summary="Pages",
+     *   operationId="pages_get",
+     *   @SWG\Parameter(
+     *     type="string",                                                                                                                                                                              
+     *     name="Authorization",
+     *     in="header",
+     *     description="Bearer",
+     *     required=true
+     *   ),
+     *   @SWG\Parameter( 
+     *     name="id", 
+     *     in="query", 
+     *     type="integer", 
+     *     description="ID"
+     *   ),
+     *   @SWG\Parameter( 
+     *     name="publish", 
+     *     in="query", 
+     *     type="boolean", 
+     *     description="publish"
+     *   ),
+     *   @SWG\Response(response=200, description="successful operation"),
+     *   @SWG\Response(response=500, description="internal server error")
+     * )
+     *
+     */
+    public function getPages(Request $request)
+    {
+        $request->user()->authorizeRoles(['admin']);
+
+        $query = DB::table('pages');
+        $query->whereNull('deleted_at');
+
+        // if query ID exist
+        if ($request->query->get('id') !== null) {
+            $query->where('id', '=', $request->query->get('id'));
+        }
+
+        // if query publish exist
+        if ($request->query->get('publish') !== null) {
+            $query->where('publish', '=', $request->query->get('publish'));
+        }
+
+        // Get response data
+        $data = $query->get();
+        $response = [];
+
+        foreach ($data as $page) {
+            $response[] = [
+                'title' => $page->page_title,
+                'subtitle' => $page->page_subtitle,
+                'text' => $page->page_text,
+                'description' => $page->page_description,
+                'tag' => $page->page_tag,
+                'image' => [
+                    'name' => $page->page_image !== '' ? $page->page_image : '',
+                    'url' => $page->page_image !== '' ? url('') . Storage::url($page->page_image) : ''
+                ]
+            ];
+        }
+
+        return response()->json([
+            'success' => true,
+            'data' => $response,
         ]);
     }
 }

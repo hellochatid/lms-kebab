@@ -29,6 +29,8 @@ Route::group([
         'prefix' => 'admin'
     ], function () {
         Route::post('pages', 'Admin\PagesController@addPages');
+        Route::get('pages', 'Admin\PagesController@getPages');
+        // Route::get('pages/{id}', 'Admin\PagesController@getPages');
     });
     Route::post('upload', 'uploadController@upload');
 });
