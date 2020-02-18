@@ -30,7 +30,7 @@ class PagesController extends Controller
      * @SWG\Post(
      *   path="/admin/pages",
      *   tags={"Admin"},
-     *   summary="Pages",
+     *   summary="Add Pages",
      *   operationId="pages",
      *   @SWG\Parameter(
      *     type="string",                                                                                                                                                                              
@@ -145,7 +145,7 @@ class PagesController extends Controller
      * @SWG\Get(
      *   path="/admin/pages",
      *   tags={"Admin"},
-     *   summary="Pages",
+     *   summary="Get Pages",
      *   operationId="pages_get",
      *   @SWG\Parameter(
      *     type="string",                                                                                                                                                                              
@@ -210,5 +210,134 @@ class PagesController extends Controller
             'success' => true,
             'data' => $response,
         ]);
+    }
+
+    /**
+     * Edit content page.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+
+    /**
+     * @SWG\Patch(
+     *   path="/admin/pages",
+     *   tags={"Admin"},
+     *   summary="Edit Pages",
+     *   operationId="pages_edit",
+     *   @SWG\Parameter(
+     *     type="string",                                                                                                                                                                              
+     *     name="Authorization",
+     *     in="header",
+     *     description="Bearer",
+     *     required=true
+     *   ),
+     *   @SWG\Parameter(
+     *     name="title",
+     *     in="query",
+     *     description="Title",
+     *     required=true,
+     *     type="string"
+     *   ),
+     *   @SWG\Parameter(
+     *     name="subtitle",
+     *     in="query",
+     *     description="Subtitle",
+     *     required=false,
+     *     type="string"
+     *   ),
+     *   @SWG\Parameter(
+     *     name="text",
+     *     in="query",
+     *     description="Content",
+     *     required=false,
+     *     type="string"
+     *   ),
+     *   @SWG\Parameter(
+     *     name="description",
+     *     in="query",
+     *     description="Description",
+     *     required=false,
+     *     type="string"
+     *   ),
+     *   @SWG\Parameter(
+     *     name="tag",
+     *     in="query",
+     *     description="Tag",
+     *     required=false,
+     *     type="string"
+     *   ),
+     *   @SWG\Parameter(
+     *     name="image",
+     *     in="query",
+     *     description="Featured Image",
+     *     required=false,
+     *     type="string"
+     *   ),
+     *   @SWG\Parameter(
+     *     name="publish",
+     *     in="query",
+     *     description="Publish",
+     *     required=false,
+     *     type="boolean"
+     *   ),
+     *   @SWG\Response(response=200, description="successful operation"),
+     *   @SWG\Response(response=500, description="internal server error")
+     * )
+     *
+     */
+    public function editPages(Request $request, $id = 0)
+    {
+        $request->user()->authorizeRoles(['admin']);
+
+        $updatedValue = [];
+        if($request->title) $updatedValue['page_title'] = $request->title;
+        if($request->subtitle) $updatedValue['page_subtitle'] = $request->subtitle;
+        if($request->text) $updatedValue['page_text'] = $request->text;
+        if($request->description) $updatedValue['page_description'] = $request->description;
+        if($request->tag) $updatedValue['page_tag'] = $request->tag;
+        if($request->image) $updatedValue['page_image'] = $request->image;
+        if($request->publish) $updatedValue['publish'] = $request->publish;
+
+        DB::table('pages')
+            ->where('id', $id)
+            ->update($updatedValue);
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Page successfully updated',
+            'updatedValue' => $updatedValue,
+        ]);
+    }
+    public function deletePages($id = 0)
+    {
+        $request->user()->authorizeRoles(['admin']);
+        // $roleAccess = array(1);
+        // $users = DB::table('users as usr')
+        // ->join('role_user as rl', 'usr.id', '=', 'rl.user_id')
+        // ->select('rl.role_id')
+        // ->whereNull('deleted_at')
+        // ->where('usr.id', '=', JWTAuth::user()->id)->first();
+
+        // if(!in_array($users->role_id, $roleAccess)){
+        //     return response()->json([
+        //         'success'=> false,
+        //         'message'=> 'You don\'t have permission to continue this request' ,
+        //     ]);
+        // }
+
+        // $updateValues = array(
+        //     'deleted_at' => now(),
+        //     'deleted_by' => JWTAuth::user()->id
+        // );
+
+        // DB::table('kegiatan')
+        // ->where('id', $id)
+        // ->update($updateValues);
+
+        // return response()->json([
+        //     'success'=> true
+        // ]);
     }
 }

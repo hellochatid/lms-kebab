@@ -11,7 +11,7 @@
                 "tags": [
                     "Admin"
                 ],
-                "summary": "Pages",
+                "summary": "Get Pages",
                 "operationId": "pages_get",
                 "parameters": [
                     {
@@ -47,8 +47,81 @@
                 "tags": [
                     "Admin"
                 ],
-                "summary": "Pages",
+                "summary": "Add Pages",
                 "operationId": "pages",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Bearer",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "title",
+                        "in": "query",
+                        "description": "Title",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "subtitle",
+                        "in": "query",
+                        "description": "Subtitle",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "text",
+                        "in": "query",
+                        "description": "Content",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "description",
+                        "in": "query",
+                        "description": "Description",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "tag",
+                        "in": "query",
+                        "description": "Tag",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "image",
+                        "in": "query",
+                        "description": "Featured Image",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "publish",
+                        "in": "query",
+                        "description": "Publish",
+                        "required": false,
+                        "type": "boolean"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Edit Pages",
+                "operationId": "pages_edit",
                 "parameters": [
                     {
                         "name": "Authorization",
