@@ -6,8 +6,7 @@
         type="light"
         variant="faded"
         fixed="top"
-        class="default-layout-navbar"
-      >
+        class="default-layout-navbar">
         <b-navbar class="navbar-brand-wrapper">
           <b-navbar-brand href="#">Kebab</b-navbar-brand>
         </b-navbar>
@@ -117,7 +116,7 @@ a {
   background-color: transparent;
 }
 a:hover {
-  color: #18932C;
+  color: #DB6075;
   text-decoration: underline;
 }
 .page-header{
@@ -260,7 +259,6 @@ font-weight-light {
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
-  border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.3125rem;
 }
 .card .card-body {
@@ -361,7 +359,7 @@ th {
   font-size: 1.5rem;
 }
 .navbar-light .navbar-brand:hover {
-  color: #18932C;
+  color: #DB6075;
 }
 .default-layout-navbar {
   padding: 0;
@@ -472,7 +470,7 @@ th {
   color: #FE8196;
 }
 .nav .nav-item.active a:hover{
-  color: #18932C;
+  color: #DB6075;
 }
 
 /* main panel */
