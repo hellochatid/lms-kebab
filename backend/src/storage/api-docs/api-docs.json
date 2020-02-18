@@ -6,6 +6,81 @@
     },
     "basePath": "/api/v1",
     "paths": {
+        "/admin/pages": {
+            "post": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Pages",
+                "operationId": "pages",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Bearer",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "title",
+                        "in": "query",
+                        "description": "Title",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "subtitle",
+                        "in": "query",
+                        "description": "Subtitle",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "text",
+                        "in": "query",
+                        "description": "Content",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "description",
+                        "in": "query",
+                        "description": "Description",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "tag",
+                        "in": "query",
+                        "description": "Tag",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "image",
+                        "in": "query",
+                        "description": "Featured Image",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "publish",
+                        "in": "query",
+                        "description": "Publish",
+                        "required": false,
+                        "type": "boolean"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            }
+        },
         "/iam/login": {
             "post": {
                 "tags": [
@@ -81,6 +156,39 @@
                         "description": "confirmation URL",
                         "required": true,
                         "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            }
+        },
+        "/upload": {
+            "post": {
+                "tags": [
+                    "Upload"
+                ],
+                "summary": "Upload",
+                "operationId": "upload",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Bearer",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "file",
+                        "in": "formData",
+                        "description": "File",
+                        "required": true,
+                        "type": "file"
                     }
                 ],
                 "responses": {

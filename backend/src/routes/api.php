@@ -24,4 +24,11 @@ Route::group([
     ], function () {
         Route::get('me', 'IAM\UserController@me');
     });
+    Route::group([
+        'middleware' => 'api',
+        'prefix' => 'admin'
+    ], function () {
+        Route::post('pages', 'Admin\PagesController@addPages');
+    });
+    Route::post('upload', 'uploadController@upload');
 });
