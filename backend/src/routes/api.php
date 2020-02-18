@@ -30,7 +30,7 @@ Route::group([
     ], function () {
         Route::post('pages', 'Admin\PagesController@addPages');
         Route::get('pages', 'Admin\PagesController@getPages');
-        // Route::get('pages/{id}', 'Admin\PagesController@getPages');
+        Route::patch('pages/{id}', 'Admin\PagesController@editPages');
     });
     Route::post('upload', 'uploadController@upload');
 });
