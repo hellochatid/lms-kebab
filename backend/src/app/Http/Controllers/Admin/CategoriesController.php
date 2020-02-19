@@ -7,8 +7,9 @@ use App\Traits\RestExceptionHandlerTrait;
 use Illuminate\Http\Request;
 use JWTAuth;
 use Validator, DB;
+use Storage;
 
-class MenusController extends Controller
+class CategoriesController extends Controller
 {
     use RestExceptionHandlerTrait;
 
@@ -18,7 +19,7 @@ class MenusController extends Controller
     }
 
     /**
-     * Add content page.
+     * Add category.
      *
      * @param  \Illuminate\Http\Request  $request
      *
@@ -27,10 +28,10 @@ class MenusController extends Controller
 
     /**
      * @SWG\Post(
-     *   path="/admin/menus",
+     *   path="/admin/categories",
      *   tags={"Admin"},
-     *   summary="Add Menu",
-     *   operationId="menus_add",
+     *   summary="Add category",
+     *   operationId="category_add",
      *   @SWG\Parameter(
      *     type="string",                                                                                                                                                                              
      *     name="Authorization",
@@ -39,16 +40,28 @@ class MenusController extends Controller
      *     required=true
      *   ),
      *   @SWG\Parameter(
-     *     name="page_id",
+     *     name="title",
      *     in="query",
      *     description="Title",
+     *     required=true,
      *     type="string"
      *   ),
      *   @SWG\Parameter(
-     *     name="position",
+     *     name="subtitle",
      *     in="query",
-     *     description="position",
-     *     required=true,
+     *     description="Subtitle",
+     *     type="string"
+     *   ),
+     *   @SWG\Parameter(
+     *     name="description",
+     *     in="query",
+     *     description="Description",
+     *     type="string"
+     *   ),
+     *   @SWG\Parameter(
+     *     name="image",
+     *     in="query",
+     *     description="Image",
      *     type="string"
      *   ),
      *   @SWG\Response(response=200, description="successful operation"),
@@ -57,14 +70,14 @@ class MenusController extends Controller
      *
      */
 
-    public function addMenus(Request $request)
+    public function addCategory(Request $request)
     {
         $request->user()->authorizeRoles(['admin']);
 
         // Validate form
         $credentials = $request->all();
         $rules = [
-            'position' => 'required',
+            'title' => 'required',
         ];
 
         $validator = Validator::make($credentials, $rules);
@@ -72,34 +85,38 @@ class MenusController extends Controller
             return $this->jsonResponse(400, $validator->messages());
         }
 
-        // Add Menu
-        $pageID=  $request->page_id ? $request->page_id : 0;
-        $position =  $request->position ? $request->position : '';
+        // Add Category
+        $title =  $request->title ? $request->title : '';
+        $subtitle =  $request->subtitle ? $request->subtitle : '';
+        $description =  $request->description ? $request->description : '';
+        $image =  $request->image ? $request->image : '';
 
-        DB::table('menus')->insert([
-            'page_id' => $pageID,
-            'position' => $position,
+        DB::table('categories')->insert([
+            'title' => $title,
+            'subtitle' => $subtitle,
+            'description' => $description,
+            'image' => $image,
             'created_at' => now(),
             'created_by' => JWTAuth::user()->id,
         ]);
 
         return response()->json([
             'success' => true,
-            'message' => 'Menu successfully added',
+            'message' => 'Category successfully added',
         ]);
     }
 
     /**
-     * Get the manus
+     * Get the categories
      *
      * @return \Illuminate\Http\JsonResponse
      */
     /**
      * @SWG\Get(
-     *   path="/admin/menus",
+     *   path="/admin/categories",
      *   tags={"Admin"},
-     *   summary="Get Menus",
-     *   operationId="menus_get",
+     *   summary="Get Categories",
+     *   operationId="categories_get",
      *   @SWG\Parameter(
      *     type="string",                                                                                                                                                                              
      *     name="Authorization",
@@ -112,45 +129,43 @@ class MenusController extends Controller
      * )
      *
      */
-    public function getMenus(Request $request)
+    public function getCategory(Request $request)
     {
         $request->user()->authorizeRoles(['admin']);
 
-        $query = DB::table('menus');
+        $query = DB::table('categories');
         $query->whereNull('deleted_at');
 
-        // if query position exist
-        if ($request->query->get('position') !== null) {
-            $query->where('position', '=', $request->query->get('position'));
+        // if query parent ID exist
+        if ($request->query->get('parent_id') !== null) {
+            $query->where('parent_id', '=', $request->query->get('parent_id'));
         }
 
         // Get response data
         $data = $query->get();
         $response = [];
 
-        // foreach ($data as $page) {
-        //     $response[] = [
-        //         'id' => $page->id,
-        //         'title' => $page->page_title,
-        //         'subtitle' => $page->page_subtitle,
-        //         'text' => $page->page_text,
-        //         'description' => $page->page_description,
-        //         'tag' => $page->page_tag,
-        //         'image' => [
-        //             'name' => $page->page_image !== '' ? $page->page_image : '',
-        //             'url' => $page->page_image !== '' ? url('') . Storage::url($page->page_image) : ''
-        //         ]
-        //     ];
-        // }
+        foreach ($data as $category) {
+            $response[] = [
+                'id' => $category->id,
+                'title' => $category->title,
+                'subtitle' => $category->subtitle,
+                'description' => $category->description,
+                'image' => [
+                    'name' => $category->image !== '' && $category->image !== null ? $category->image : '',
+                    'url' => $category->image !== '' && $category->image !== null ? url('') . Storage::url($category->image) : ''
+                ]
+            ];
+        }
 
         return response()->json([
             'success' => true,
-            'data' => $data,
+            'data' => $response,
         ]);
     }
 
     /**
-     * Edit menu.
+     * Edit category.
      *
      * @param  \Illuminate\Http\Request  $request
      *
@@ -159,10 +174,10 @@ class MenusController extends Controller
 
     /**
      * @SWG\Patch(
-     *   path="/admin/menus/{id}",
+     *   path="/admin/categories/{id}",
      *   tags={"Admin"},
-     *   summary="Edit Menus",
-     *   operationId="menus_edit",
+     *   summary="Edit Categories",
+     *   operationId="categories_edit",
      *   @SWG\Parameter(
      *     type="string",                                                                                                                                                                              
      *     name="Authorization",
@@ -170,50 +185,58 @@ class MenusController extends Controller
      *     description="Bearer",
      *     required=true
      *   ),
-     *   @SWG\Parameter( 
-     *     name="id", 
-     *     in="path", 
-     *     type="integer", 
-     *     description="ID",
-     *     required=true
+     *   @SWG\Parameter(
+     *     name="title",
+     *     in="query",
+     *     description="Title",
+     *     required=true,
+     *     type="string"
      *   ),
      *   @SWG\Parameter(
-     *     name="parent_id",
+     *     name="subtitle",
      *     in="query",
-     *     description="Parent ID",
-     *     type="integer"
+     *     description="Subtitle",
+     *     type="string"
      *   ),
      *   @SWG\Parameter(
-     *     name="menu_order",
+     *     name="description",
      *     in="query",
-     *     description="Menu order",
-     *     type="integer"
+     *     description="Description",
+     *     type="string"
+     *   ),
+     *   @SWG\Parameter(
+     *     name="image",
+     *     in="query",
+     *     description="Image",
+     *     type="string"
      *   ),
      *   @SWG\Response(response=200, description="successful operation"),
      *   @SWG\Response(response=500, description="internal server error")
      * )
      *
      */
-    public function editMenus(Request $request, $id = 0)
+    public function editCategory(Request $request, $id = 0)
     {
         $request->user()->authorizeRoles(['admin']);
 
         $updatedValue = [];
-        if($request->parent_id) $updatedValue['parent_id'] = $request->parent_id;
-        if($request->menu_order) $updatedValue['menu_order'] = $request->menu_order;
+        if ($request->title) $updatedValue['title'] = $request->title;
+        if ($request->subtitle) $updatedValue['subtitle'] = $request->subtitle;
+        if ($request->description) $updatedValue['description'] = $request->description;
+        if ($request->image) $updatedValue['image'] = $request->image;
 
-        DB::table('menus')
+        DB::table('categories')
             ->where('id', $id)
             ->update($updatedValue);
 
         return response()->json([
             'success' => true,
-            'message' => 'Menu successfully updated'
+            'message' => 'Category successfully updated'
         ]);
     }
 
     /**
-     * Delete menu
+     * Delete category
      *
      * @param  \Illuminate\Http\Request  $request
      *
@@ -222,10 +245,10 @@ class MenusController extends Controller
 
     /**
      * @SWG\Delete(
-     *   path="/admin/menus/{id}",
+     *   path="/admin/categories/{id}",
      *   tags={"Admin"},
-     *   summary="Delete Menus",
-     *   operationId="menus_delete",
+     *   summary="Delete Categories",
+     *   operationId="categories_delete",
      *   @SWG\Parameter(
      *     type="string",                                                                                                                                                                              
      *     name="Authorization",
@@ -245,7 +268,7 @@ class MenusController extends Controller
      * )
      *
      */
-    public function deleteMenus(Request $request, $id = 0)
+    public function deleteCategory(Request $request, $id = 0)
     {
         $request->user()->authorizeRoles(['admin']);
 
@@ -254,13 +277,13 @@ class MenusController extends Controller
             'deleted_by' => JWTAuth::user()->id
         );
 
-        DB::table('menus')
-        ->where('id', $id)
-        ->update($updatedValue);
+        DB::table('categories')
+            ->where('id', $id)
+            ->update($updatedValue);
 
         return response()->json([
-            'success'=> true,
-            'message' => 'Menu successfully deleted'
+            'success' => true,
+            'message' => 'Category successfully deleted'
         ]);
     }
 }
