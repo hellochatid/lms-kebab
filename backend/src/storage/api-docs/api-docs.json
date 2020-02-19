@@ -6,6 +6,163 @@
     },
     "basePath": "/api/v1",
     "paths": {
+        "/admin/categories": {
+            "get": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Get Categories",
+                "operationId": "categories_get",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Bearer",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Add category",
+                "operationId": "category_add",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Bearer",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "title",
+                        "in": "query",
+                        "description": "Title",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "subtitle",
+                        "in": "query",
+                        "description": "Subtitle",
+                        "type": "string"
+                    },
+                    {
+                        "name": "description",
+                        "in": "query",
+                        "description": "Description",
+                        "type": "string"
+                    },
+                    {
+                        "name": "image",
+                        "in": "query",
+                        "description": "Image",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            }
+        },
+        "/admin/categories/{id}": {
+            "delete": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Delete Categories",
+                "operationId": "categories_delete",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Bearer",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Edit Categories",
+                "operationId": "categories_edit",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Bearer",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "title",
+                        "in": "query",
+                        "description": "Title",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "subtitle",
+                        "in": "query",
+                        "description": "Subtitle",
+                        "type": "string"
+                    },
+                    {
+                        "name": "description",
+                        "in": "query",
+                        "description": "Description",
+                        "type": "string"
+                    },
+                    {
+                        "name": "image",
+                        "in": "query",
+                        "description": "Image",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            }
+        },
         "/admin/menus": {
             "get": {
                 "tags": [

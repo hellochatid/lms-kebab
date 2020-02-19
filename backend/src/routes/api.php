@@ -28,14 +28,23 @@ Route::group([
         'middleware' => 'api',
         'prefix' => 'admin'
     ], function () {
+        // Pages
         Route::post('pages', 'Admin\PagesController@addPages');
         Route::get('pages', 'Admin\PagesController@getPages');
         Route::patch('pages/{id}', 'Admin\PagesController@editPages');
         Route::delete('pages/{id}', 'Admin\PagesController@deletePages');
+
+        // Menus
         Route::post('menus', 'Admin\MenusController@addMenus');
         Route::get('menus', 'Admin\MenusController@getMenus');
         Route::patch('menus/{id}', 'Admin\MenusController@editMenus');
         Route::delete('menus/{id}', 'Admin\MenusController@deleteMenus');
+
+        // Categories
+        Route::post('categories', 'Admin\CategoriesController@addCategory');
+        Route::get('categories', 'Admin\CategoriesController@getCategory');
+        Route::patch('categories/{id}', 'Admin\CategoriesController@editCategory');
+        Route::delete('categories/{id}', 'Admin\CategoriesController@deleteCategory');
     });
     Route::post('upload', 'uploadController@upload');
 });
