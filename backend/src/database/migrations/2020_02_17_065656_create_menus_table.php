@@ -16,7 +16,7 @@ class CreateMenusTable extends Migration
         Schema::create('menus', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('parent_id')->default(0);
-            $table->bigInteger('page_id')->references('id')->on('pages')->onDelete('cascade');
+            $table->bigInteger('page_id')->references('id')->on('pages')->onDelete('cascade')->nullable();
             $table->boolean('admin_menu')->default(false);
             $table->string('position');
             $table->string('custom_links')->nullable();
