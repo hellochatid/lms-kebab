@@ -31,6 +31,11 @@ Route::group([
         Route::post('pages', 'Admin\PagesController@addPages');
         Route::get('pages', 'Admin\PagesController@getPages');
         Route::patch('pages/{id}', 'Admin\PagesController@editPages');
+        Route::delete('pages/{id}', 'Admin\PagesController@deletePages');
+        Route::post('menus', 'Admin\MenusController@addMenus');
+        Route::get('menus', 'Admin\MenusController@getMenus');
+        Route::patch('menus/{id}', 'Admin\MenusController@editMenus');
+        Route::delete('menus/{id}', 'Admin\MenusController@deleteMenus');
     });
     Route::post('upload', 'uploadController@upload');
 });
