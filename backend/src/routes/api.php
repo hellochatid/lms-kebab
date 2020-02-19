@@ -45,6 +45,12 @@ Route::group([
         Route::get('categories', 'Admin\CategoriesController@getCategory');
         Route::patch('categories/{id}', 'Admin\CategoriesController@editCategory');
         Route::delete('categories/{id}', 'Admin\CategoriesController@deleteCategory');
+
+        // Courses
+        Route::post('courses', 'Admin\CoursesController@addCourses');
+        Route::get('courses', 'Admin\CoursesController@getCourses');
+        Route::patch('courses/{id}', 'Admin\CoursesController@editCourses');
+        Route::delete('courses/{id}', 'Admin\CoursesController@deleteCourses');
     });
     Route::post('upload', 'uploadController@upload');
 });
