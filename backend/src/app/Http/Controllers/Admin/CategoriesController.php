@@ -136,9 +136,14 @@ class CategoriesController extends Controller
         $query = DB::table('categories');
         $query->whereNull('deleted_at');
 
+        // if query ID exist
+        if ($request->query->get('id') !== null) {
+            $query->where('id', '=', $request->query->get('id'));
+        }
+
         // if query parent ID exist
-        if ($request->query->get('parent_id') !== null) {
-            $query->where('parent_id', '=', $request->query->get('parent_id'));
+        if ($request->query->get('parent') !== null) {
+            $query->where('parent_id', '=', $request->query->get('parent'));
         }
 
         // Get response data

@@ -9,7 +9,7 @@ use JWTAuth;
 use Validator, DB;
 use Storage;
 
-class CoursesController extends Controller
+class LessonsController extends Controller
 {
     use RestExceptionHandlerTrait;
 
@@ -19,7 +19,7 @@ class CoursesController extends Controller
     }
 
     /**
-     * Add courses.
+     * Add lessons.
      *
      * @param  \Illuminate\Http\Request  $request
      *
@@ -28,16 +28,23 @@ class CoursesController extends Controller
 
     /**
      * @SWG\Post(
-     *   path="/admin/courses",
+     *   path="/admin/lessons",
      *   tags={"Admin"},
-     *   summary="Add courses",
-     *   operationId="courses_add",
+     *   summary="Add lessons",
+     *   operationId="lessons_add",
      *   @SWG\Parameter(
      *     type="string",                                                                                                                                                                              
      *     name="Authorization",
      *     in="header",
      *     description="Bearer",
      *     required=true
+     *   ),
+     *   @SWG\Parameter(
+     *     name="course_id",
+     *     in="query",
+     *     description="Course ID",
+     *     required=true,
+     *     type="string"
      *   ),
      *   @SWG\Parameter(
      *     name="title",
@@ -76,13 +83,14 @@ class CoursesController extends Controller
      *
      */
 
-    public function addCourses(Request $request)
+    public function addLessons(Request $request)
     {
         $request->user()->authorizeRoles(['admin']);
 
         // Validate form
         $credentials = $request->all();
         $rules = [
+            'course_id' => 'required',
             'title' => 'required',
         ];
 
@@ -91,14 +99,16 @@ class CoursesController extends Controller
             return $this->jsonResponse(400, $validator->messages());
         }
 
-        // Add courses
+        // Add lessons
+        $course_id =  $request->course_id ? $request->course_id : 0;
         $title =  $request->title ? $request->title : '';
         $subtitle =  $request->subtitle ? $request->subtitle : '';
         $description =  $request->description ? $request->description : '';
         $tag =  $request->tag ? $request->tag : '';
         $image =  $request->image ? $request->image : '';
 
-        DB::table('courses')->insert([
+        DB::table('lessons')->insert([
+            'course_id' => $course_id,
             'title' => $title,
             'subtitle' => $subtitle,
             'description' => $description,
@@ -110,21 +120,21 @@ class CoursesController extends Controller
 
         return response()->json([
             'success' => true,
-            'message' => 'courses successfully added',
+            'message' => 'lessons successfully added',
         ]);
     }
 
     /**
-     * Get the courses
+     * Get the lessons
      *
      * @return \Illuminate\Http\JsonResponse
      */
     /**
      * @SWG\Get(
-     *   path="/admin/courses",
+     *   path="/admin/lessons",
      *   tags={"Admin"},
-     *   summary="Get courses",
-     *   operationId="courses_get",
+     *   summary="Get lessons",
+     *   operationId="lessons_get",
      *   @SWG\Parameter(
      *     type="string",                                                                                                                                                                              
      *     name="Authorization",
@@ -137,52 +147,52 @@ class CoursesController extends Controller
      * )
      *
      */
-    public function getCourses(Request $request)
+    public function getLessons(Request $request)
     {
         $request->user()->authorizeRoles(['admin']);
 
-        $query = DB::table('courses as cr')
-        ->join('categories as ca', 'ca.id', '=', 'cr.category_id')
+        $query = DB::table('lessons as ls')
+        ->join('courses as cr', 'cr.id', '=', 'ls.course_id')
         ->select(
-            'ca.title as category_title',
-            'cr.id',
-            'cr.category_id',
-            'cr.title',
-            'cr.subtitle',
-            'cr.description',
-            'cr.tag',
-            'cr.image'
+            'cr.title as course_title',
+            'ls.id',
+            'ls.course_id',
+            'ls.title',
+            'ls.subtitle',
+            'ls.description',
+            'ls.tag',
+            'ls.image'
         )
-        ->whereNull('cr.deleted_at');
+        ->whereNull('ls.deleted_at');
 
         // if query ID exist
         if ($request->query->get('id') !== null) {
-            $query->where('id', '=', $request->query->get('id'));
+            $query->where('ls.id', '=', $request->query->get('id'));
         }
 
-        // if query category ID exist
-        if ($request->query->get('category') !== null) {
-            $query->where('category_id', '=', $request->query->get('category'));
+        // if query Course ID exist
+        if ($request->query->get('course') !== null) {
+            $query->where('ls.course_id', '=', $request->query->get('course'));
         }
 
         // Get response data
         $data = $query->get();
         $response = [];
 
-        foreach ($data as $courses) {
+        foreach ($data as $lessons) {
             $response[] = [
-                'id' => $courses->id,
-                'category' => [
-                    'id' => $courses->category_id,
-                    'name' => $courses->category_title
+                'id' => $lessons->id,
+                'course' => [
+                    'id' => $lessons->course_id,
+                    'name' => $lessons->course_title
                 ],
-                'title' => $courses->title,
-                'subtitle' => $courses->subtitle,
-                'description' => $courses->description,
-                'tag' => $courses->tag,
+                'title' => $lessons->title,
+                'subtitle' => $lessons->subtitle,
+                'description' => $lessons->description,
+                'tag' => $lessons->tag,
                 'image' => [
-                    'name' => $courses->image !== '' && $courses->image !== null ? $courses->image : '',
-                    'url' => $courses->image !== '' && $courses->image !== null ? url('') . Storage::url($courses->image) : ''
+                    'name' => $lessons->image !== '' && $lessons->image !== null ? $lessons->image : '',
+                    'url' => $lessons->image !== '' && $lessons->image !== null ? url('') . Storage::url($lessons->image) : ''
                 ]
             ];
         }
@@ -194,7 +204,7 @@ class CoursesController extends Controller
     }
 
     /**
-     * Edit courses.
+     * Edit lessons.
      *
      * @param  \Illuminate\Http\Request  $request
      *
@@ -203,16 +213,23 @@ class CoursesController extends Controller
 
     /**
      * @SWG\Patch(
-     *   path="/admin/courses/{id}",
+     *   path="/admin/lessons/{id}",
      *   tags={"Admin"},
-     *   summary="Edit courses",
-     *   operationId="courses_edit",
+     *   summary="Edit lessons",
+     *   operationId="lessons_edit",
      *   @SWG\Parameter(
      *     type="string",                                                                                                                                                                              
      *     name="Authorization",
      *     in="header",
      *     description="Bearer",
      *     required=true
+     *   ),
+     *   @SWG\Parameter(
+     *     name="course_id",
+     *     in="query",
+     *     description="Course ID",
+     *     required=true,
+     *     type="string"
      *   ),
      *   @SWG\Parameter(
      *     name="title",
@@ -244,28 +261,30 @@ class CoursesController extends Controller
      * )
      *
      */
-    public function editCourses(Request $request, $id = 0)
+    public function editLessons(Request $request, $id = 0)
     {
         $request->user()->authorizeRoles(['admin']);
 
         $updatedValue = [];
+        if ($request->course_id) $updatedValue['course_id'] = $request->course_id;
         if ($request->title) $updatedValue['title'] = $request->title;
         if ($request->subtitle) $updatedValue['subtitle'] = $request->subtitle;
         if ($request->description) $updatedValue['description'] = $request->description;
+        if ($request->tag) $updatedValue['tag'] = $request->tag;
         if ($request->image) $updatedValue['image'] = $request->image;
 
-        DB::table('courses')
+        DB::table('lessons')
             ->where('id', $id)
             ->update($updatedValue);
 
         return response()->json([
             'success' => true,
-            'message' => 'courses successfully updated'
+            'message' => 'lessons successfully updated'
         ]);
     }
 
     /**
-     * Delete courses
+     * Delete lessons
      *
      * @param  \Illuminate\Http\Request  $request
      *
@@ -274,10 +293,10 @@ class CoursesController extends Controller
 
     /**
      * @SWG\Delete(
-     *   path="/admin/courses/{id}",
+     *   path="/admin/lessons/{id}",
      *   tags={"Admin"},
-     *   summary="Delete courses",
-     *   operationId="courses_delete",
+     *   summary="Delete lessons",
+     *   operationId="lessons_delete",
      *   @SWG\Parameter(
      *     type="string",                                                                                                                                                                              
      *     name="Authorization",
@@ -297,7 +316,7 @@ class CoursesController extends Controller
      * )
      *
      */
-    public function deleteCourses(Request $request, $id = 0)
+    public function deleteLessons(Request $request, $id = 0)
     {
         $request->user()->authorizeRoles(['admin']);
 
@@ -306,13 +325,13 @@ class CoursesController extends Controller
             'deleted_by' => JWTAuth::user()->id
         );
 
-        DB::table('courses')
+        DB::table('lessons')
             ->where('id', $id)
             ->update($updatedValue);
 
         return response()->json([
             'success' => true,
-            'message' => 'courses successfully deleted'
+            'message' => 'lessons successfully deleted'
         ]);
     }
 }
