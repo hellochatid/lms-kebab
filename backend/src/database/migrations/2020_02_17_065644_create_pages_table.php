@@ -21,6 +21,7 @@ class CreatePagesTable extends Migration
             $table->text('page_description');
             $table->string('page_tag');
             $table->string('page_image');
+            $table->string('page_url');
             $table->boolean('publish')->default(false);
             $table->dateTime('created_at')->nullable();
             $table->bigInteger('created_by')->nullable();

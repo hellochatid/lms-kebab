@@ -15,18 +15,19 @@ class CreateMenusTable extends Migration
     {
         Schema::create('menus', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('parent_id');
+            $table->bigInteger('parent_id')->default(0);
             $table->bigInteger('page_id')->references('id')->on('pages')->onDelete('cascade');
             $table->boolean('admin_menu')->default(false);
             $table->string('position');
-            $table->string('custom_links');
-            $table->string('custom_title');
-            $table->string('custom_url');
-            $table->string('target');
-            $table->integer('menu_order');
-            $table->string('icon');
+            $table->string('custom_links')->nullable();
+            $table->string('custom_title')->nullable();
+            $table->string('custom_url')->nullable();
+            $table->string('target')->nullable();
+            $table->integer('menu_order')->nullable();
+            $table->string('icon')->nullable();
             $table->boolean('publish')->default(false);
-            $table->timestamps();
+            $table->dateTime('created_at')->nullable();
+            $table->bigInteger('created_by')->nullable();
             $table->dateTime('deleted_at')->nullable();
             $table->bigInteger('deleted_by')->nullable();
         });

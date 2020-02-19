@@ -6,6 +6,145 @@
     },
     "basePath": "/api/v1",
     "paths": {
+        "/admin/menus": {
+            "get": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Get Menus",
+                "operationId": "menus_get",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Bearer",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Add Menu",
+                "operationId": "menus_add",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Bearer",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "page_id",
+                        "in": "query",
+                        "description": "Title",
+                        "type": "string"
+                    },
+                    {
+                        "name": "position",
+                        "in": "query",
+                        "description": "position",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            }
+        },
+        "/admin/menus/{id}": {
+            "delete": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Delete Menus",
+                "operationId": "menus_delete",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Bearer",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Edit Menus",
+                "operationId": "menus_edit",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Bearer",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "parent_id",
+                        "in": "query",
+                        "description": "Parent ID",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "menu_order",
+                        "in": "query",
+                        "description": "Menu order",
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            }
+        },
         "/admin/pages": {
             "get": {
                 "tags": [
@@ -48,7 +187,7 @@
                     "Admin"
                 ],
                 "summary": "Add Pages",
-                "operationId": "pages",
+                "operationId": "pages_add",
                 "parameters": [
                     {
                         "name": "Authorization",
@@ -115,6 +254,39 @@
                         "description": "internal server error"
                     }
                 }
+            }
+        },
+        "/admin/pages/{id}": {
+            "delete": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Delete Pages",
+                "operationId": "pages_delete",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Bearer",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
             },
             "patch": {
                 "tags": [
@@ -129,6 +301,13 @@
                         "description": "Bearer",
                         "required": true,
                         "type": "string"
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID",
+                        "required": true,
+                        "type": "integer"
                     },
                     {
                         "name": "title",
