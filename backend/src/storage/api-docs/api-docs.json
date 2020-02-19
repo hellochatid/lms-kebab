@@ -503,6 +503,201 @@
                 }
             }
         },
+        "/admin/materials": {
+            "get": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Get materials",
+                "operationId": "materials_get",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Bearer",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Add materials",
+                "operationId": "materials_add",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Bearer",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "lesson_id",
+                        "in": "query",
+                        "description": "Lesson ID",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "title",
+                        "in": "query",
+                        "description": "Title",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "subtitle",
+                        "in": "query",
+                        "description": "Subtitle",
+                        "type": "string"
+                    },
+                    {
+                        "name": "description",
+                        "in": "query",
+                        "description": "Description",
+                        "type": "string"
+                    },
+                    {
+                        "name": "tag",
+                        "in": "query",
+                        "description": "Tag",
+                        "type": "string"
+                    },
+                    {
+                        "name": "image",
+                        "in": "query",
+                        "description": "Image",
+                        "type": "string"
+                    },
+                    {
+                        "name": "pdf",
+                        "in": "query",
+                        "description": "PDF",
+                        "type": "string"
+                    },
+                    {
+                        "name": "audio",
+                        "in": "query",
+                        "description": "Audio",
+                        "type": "string"
+                    },
+                    {
+                        "name": "video",
+                        "in": "query",
+                        "description": "Video",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            }
+        },
+        "/admin/materials/{id}": {
+            "delete": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Delete materials",
+                "operationId": "materials_delete",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Bearer",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Edit materials",
+                "operationId": "materials_edit",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Bearer",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "course_id",
+                        "in": "query",
+                        "description": "Course ID",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "title",
+                        "in": "query",
+                        "description": "Title",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "subtitle",
+                        "in": "query",
+                        "description": "Subtitle",
+                        "type": "string"
+                    },
+                    {
+                        "name": "description",
+                        "in": "query",
+                        "description": "Description",
+                        "type": "string"
+                    },
+                    {
+                        "name": "image",
+                        "in": "query",
+                        "description": "Image",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            }
+        },
         "/admin/menus": {
             "get": {
                 "tags": [

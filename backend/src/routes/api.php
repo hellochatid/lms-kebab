@@ -57,6 +57,12 @@ Route::group([
         Route::get('lessons', 'Admin\LessonsController@getLessons');
         Route::patch('lessons/{id}', 'Admin\LessonsController@editLessons');
         Route::delete('lessons/{id}', 'Admin\LessonsController@deleteLessons');
+
+        // Materials
+        Route::post('materials', 'Admin\MaterialsController@addMaterials');
+        Route::get('materials', 'Admin\MaterialsController@getMaterials');
+        Route::patch('materials/{id}', 'Admin\MaterialsController@editMaterials');
+        Route::delete('materials/{id}', 'Admin\MaterialsController@deleteMaterials');
     });
     Route::post('upload', 'uploadController@upload');
 });
