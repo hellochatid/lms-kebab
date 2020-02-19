@@ -9,7 +9,7 @@ use JWTAuth;
 use Validator, DB;
 use Storage;
 
-class CoursesController extends Controller
+class MaterialsController extends Controller
 {
     use RestExceptionHandlerTrait;
 
@@ -19,7 +19,7 @@ class CoursesController extends Controller
     }
 
     /**
-     * Add courses.
+     * Add materials.
      *
      * @param  \Illuminate\Http\Request  $request
      *
@@ -28,16 +28,23 @@ class CoursesController extends Controller
 
     /**
      * @SWG\Post(
-     *   path="/admin/courses",
+     *   path="/admin/materials",
      *   tags={"Admin"},
-     *   summary="Add courses",
-     *   operationId="courses_add",
+     *   summary="Add materials",
+     *   operationId="materials_add",
      *   @SWG\Parameter(
      *     type="string",                                                                                                                                                                              
      *     name="Authorization",
      *     in="header",
      *     description="Bearer",
      *     required=true
+     *   ),
+     *   @SWG\Parameter(
+     *     name="lesson_id",
+     *     in="query",
+     *     description="Lesson ID",
+     *     required=true,
+     *     type="string"
      *   ),
      *   @SWG\Parameter(
      *     name="title",
@@ -56,6 +63,12 @@ class CoursesController extends Controller
      *     name="description",
      *     in="query",
      *     description="Description",
+     *     type="string"
+     *   ),
+     *   @SWG\Parameter(
+     *     name="content",
+     *     in="query",
+     *     description="Content",
      *     type="string"
      *   ),
      *   @SWG\Parameter(
@@ -70,20 +83,40 @@ class CoursesController extends Controller
      *     description="Image",
      *     type="string"
      *   ),
+     *   @SWG\Parameter(
+     *     name="pdf",
+     *     in="query",
+     *     description="PDF",
+     *     type="string"
+     *   ),
+     *   @SWG\Parameter(
+     *     name="audio",
+     *     in="query",
+     *     description="Audio",
+     *     type="string"
+     *   ),
+     *   @SWG\Parameter(
+     *     name="video",
+     *     in="query",
+     *     description="Video",
+     *     type="string"
+     *   ),
      *   @SWG\Response(response=200, description="successful operation"),
      *   @SWG\Response(response=500, description="internal server error")
      * )
      *
      */
 
-    public function addCourses(Request $request)
+    public function addMaterials(Request $request)
     {
         $request->user()->authorizeRoles(['admin']);
 
         // Validate form
         $credentials = $request->all();
         $rules = [
+            'lesson_id' => 'required',
             'title' => 'required',
+            'content' => 'required',
         ];
 
         $validator = Validator::make($credentials, $rules);
@@ -91,40 +124,50 @@ class CoursesController extends Controller
             return $this->jsonResponse(400, $validator->messages());
         }
 
-        // Add courses
+        // Add materials
+        $lesson_id =  $request->lesson_id ? $request->lesson_id : 0;
         $title =  $request->title ? $request->title : '';
         $subtitle =  $request->subtitle ? $request->subtitle : '';
         $description =  $request->description ? $request->description : '';
+        $content =  $request->content ? $request->content : '';
         $tag =  $request->tag ? $request->tag : '';
         $image =  $request->image ? $request->image : '';
+        $pdf =  $request->pdf ? $request->pdf : '';
+        $audio =  $request->audio ? $request->audio : '';
+        $video =  $request->video ? $request->video : '';
 
-        DB::table('courses')->insert([
+        DB::table('materials')->insert([
+            'lesson_id' => $lesson_id,
             'title' => $title,
             'subtitle' => $subtitle,
             'description' => $description,
+            'content' => $content,
             'tag' => $tag,
             'image' => $image,
+            'pdf' => $pdf,
+            'audio' => $audio,
+            'video' => $video,
             'created_at' => now(),
             'created_by' => JWTAuth::user()->id,
         ]);
 
         return response()->json([
             'success' => true,
-            'message' => 'courses successfully added',
+            'message' => 'materials successfully added',
         ]);
     }
 
     /**
-     * Get the courses
+     * Get the materials
      *
      * @return \Illuminate\Http\JsonResponse
      */
     /**
      * @SWG\Get(
-     *   path="/admin/courses",
+     *   path="/admin/materials",
      *   tags={"Admin"},
-     *   summary="Get courses",
-     *   operationId="courses_get",
+     *   summary="Get materials",
+     *   operationId="materials_get",
      *   @SWG\Parameter(
      *     type="string",                                                                                                                                                                              
      *     name="Authorization",
@@ -137,51 +180,63 @@ class CoursesController extends Controller
      * )
      *
      */
-    public function getCourses(Request $request)
+    public function getMaterials(Request $request)
     {
         $request->user()->authorizeRoles(['admin']);
 
-        $query = DB::table('courses')
-        ->select(
-            DB::raw('(select title from categories where id=category_id and deleted_at is null) as category_title'),
-            'id',
-            'category_id',
-            'title',
-            'subtitle',
-            'description',
-            'tag',
-            'image'
-        )
-        ->whereNull('deleted_at');
+        $query = DB::table('materials')
+            ->select(
+                'id',
+                'lesson_id',
+                'title',
+                'subtitle',
+                'description',
+                'content',
+                'tag',
+                'image',
+                'pdf',
+                'audio',
+                'video'
+            )
+            ->whereNull('deleted_at');
 
         // if query ID exist
         if ($request->query->get('id') !== null) {
             $query->where('id', '=', $request->query->get('id'));
         }
 
-        // if query category ID exist
-        if ($request->query->get('category') !== null) {
-            $query->where('category_id', '=', $request->query->get('category'));
+        // if query lesson ID exist
+        if ($request->query->get('lesson') !== null) {
+            $query->where('lesson_id', '=', $request->query->get('lesson'));
         }
 
         // Get response data
         $data = $query->get();
         $response = [];
 
-        foreach ($data as $courses) {
+        foreach ($data as $materials) {
             $response[] = [
-                'id' => $courses->id,
-                'category' => [
-                    'id' => $courses->category_id,
-                    'name' => $courses->category_title
-                ],
-                'title' => $courses->title,
-                'subtitle' => $courses->subtitle,
-                'description' => $courses->description,
-                'tag' => $courses->tag,
+                'id' => $materials->id,
+                'title' => $materials->title,
+                'subtitle' => $materials->subtitle,
+                'description' => $materials->description,
+                'content' => $materials->content,
+                'tag' => $materials->tag,
                 'image' => [
-                    'name' => $courses->image !== '' && $courses->image !== null ? $courses->image : '',
-                    'url' => $courses->image !== '' && $courses->image !== null ? url('') . Storage::url($courses->image) : ''
+                    'name' => $materials->image !== '' && $materials->image !== null ? $materials->image : '',
+                    'url' => $materials->image !== '' && $materials->image !== null ? url('') . Storage::url($materials->image) : ''
+                ],
+                'pdf' => [
+                    'name' => $materials->pdf !== '' && $materials->pdf !== null ? $materials->pdf : '',
+                    'url' => $materials->pdf !== '' && $materials->pdf !== null ? url('') . Storage::url($materials->pdf) : ''
+                ],
+                'audio' => [
+                    'name' => $materials->audio !== '' && $materials->audio !== null ? $materials->audio : '',
+                    'url' => $materials->audio !== '' && $materials->audio !== null ? url('') . Storage::url($materials->audio) : ''
+                ],
+                'video' => [
+                    'name' => $materials->video !== '' && $materials->video !== null ? $materials->video : '',
+                    'url' => $materials->video !== '' && $materials->video !== null ? url('') . Storage::url($materials->video) : ''
                 ]
             ];
         }
@@ -193,7 +248,7 @@ class CoursesController extends Controller
     }
 
     /**
-     * Edit courses.
+     * Edit materials.
      *
      * @param  \Illuminate\Http\Request  $request
      *
@@ -202,16 +257,23 @@ class CoursesController extends Controller
 
     /**
      * @SWG\Patch(
-     *   path="/admin/courses/{id}",
+     *   path="/admin/materials/{id}",
      *   tags={"Admin"},
-     *   summary="Edit courses",
-     *   operationId="courses_edit",
+     *   summary="Edit materials",
+     *   operationId="materials_edit",
      *   @SWG\Parameter(
      *     type="string",                                                                                                                                                                              
      *     name="Authorization",
      *     in="header",
      *     description="Bearer",
      *     required=true
+     *   ),
+     *   @SWG\Parameter(
+     *     name="lesson_id",
+     *     in="query",
+     *     description="lesson ID",
+     *     required=true,
+     *     type="string"
      *   ),
      *   @SWG\Parameter(
      *     name="title",
@@ -233,9 +295,33 @@ class CoursesController extends Controller
      *     type="string"
      *   ),
      *   @SWG\Parameter(
+     *     name="content",
+     *     in="query",
+     *     description="Content",
+     *     type="string"
+     *   ),
+     *   @SWG\Parameter(
      *     name="image",
      *     in="query",
      *     description="Image",
+     *     type="string"
+     *   ),
+     *   @SWG\Parameter(
+     *     name="pdf",
+     *     in="query",
+     *     description="PDF",
+     *     type="string"
+     *   ),
+     *   @SWG\Parameter(
+     *     name="audio",
+     *     in="query",
+     *     description="Audio",
+     *     type="string"
+     *   ),
+     *   @SWG\Parameter(
+     *     name="video",
+     *     in="query",
+     *     description="Video",
      *     type="string"
      *   ),
      *   @SWG\Response(response=200, description="successful operation"),
@@ -243,29 +329,35 @@ class CoursesController extends Controller
      * )
      *
      */
-    public function editCourses(Request $request, $id = 0)
+    public function editMaterials(Request $request, $id = 0)
     {
         $request->user()->authorizeRoles(['admin']);
 
         $updatedValue = [];
+        if ($request->lesson_id) $updatedValue['lesson_id'] = $request->lesson_id;
         if ($request->title) $updatedValue['title'] = $request->title;
         if ($request->subtitle) $updatedValue['subtitle'] = $request->subtitle;
         if ($request->description) $updatedValue['description'] = $request->description;
+        if ($request->content) $updatedValue['content'] = $request->content;
+        if ($request->tag) $updatedValue['tag'] = $request->tag;
         if ($request->image) $updatedValue['image'] = $request->image;
+        if ($request->pdf) $updatedValue['pdf'] = $request->pdf;
+        if ($request->audio) $updatedValue['audio'] = $request->audio;
+        if ($request->video) $updatedValue['video'] = $request->video;
         if ($request->order) $updatedValue['order'] = $request->order;
 
-        DB::table('courses')
+        DB::table('materials')
             ->where('id', $id)
             ->update($updatedValue);
 
         return response()->json([
             'success' => true,
-            'message' => 'courses successfully updated'
+            'message' => 'materials successfully updated'
         ]);
     }
 
     /**
-     * Delete courses
+     * Delete materials
      *
      * @param  \Illuminate\Http\Request  $request
      *
@@ -274,10 +366,10 @@ class CoursesController extends Controller
 
     /**
      * @SWG\Delete(
-     *   path="/admin/courses/{id}",
+     *   path="/admin/materials/{id}",
      *   tags={"Admin"},
-     *   summary="Delete courses",
-     *   operationId="courses_delete",
+     *   summary="Delete materials",
+     *   operationId="materials_delete",
      *   @SWG\Parameter(
      *     type="string",                                                                                                                                                                              
      *     name="Authorization",
@@ -297,7 +389,7 @@ class CoursesController extends Controller
      * )
      *
      */
-    public function deleteCourses(Request $request, $id = 0)
+    public function deleteMaterials(Request $request, $id = 0)
     {
         $request->user()->authorizeRoles(['admin']);
 
@@ -306,13 +398,13 @@ class CoursesController extends Controller
             'deleted_by' => JWTAuth::user()->id
         );
 
-        DB::table('courses')
+        DB::table('materials')
             ->where('id', $id)
             ->update($updatedValue);
 
         return response()->json([
             'success' => true,
-            'message' => 'courses successfully deleted'
+            'message' => 'materials successfully deleted'
         ]);
     }
 }

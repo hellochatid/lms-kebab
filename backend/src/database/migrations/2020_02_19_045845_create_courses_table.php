@@ -21,6 +21,7 @@ class CreateCoursesTable extends Migration
             $table->text('description')->nullable();
             $table->string('tag')->nullable();
             $table->string('image')->nullable();
+            $table->integer('order')->default(0);
             $table->dateTime('created_at')->nullable();
             $table->bigInteger('created_by')->nullable();
             $table->dateTime('deleted_at')->nullable();
