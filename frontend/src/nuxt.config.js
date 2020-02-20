@@ -23,11 +23,15 @@ module.exports = {
   ** Global CSS
   */
   css: [
+    'quill/dist/quill.snow.css',
+    'quill/dist/quill.bubble.css',
+    'quill/dist/quill.core.css'
   ],
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
+    { src: '~plugins/nuxt-quill-plugin.js', ssr: false }
   ],
   /*
   ** Nuxt.js dev-modules
@@ -42,7 +46,6 @@ module.exports = {
     'bootstrap-vue/nuxt',
     '@nuxtjs/axios',
     'nuxt-material-design-icons',
-    '@tui-nuxt/editor'
   ],
   /*
   ** Build configuration
@@ -51,7 +54,7 @@ module.exports = {
     /*
     ** You can extend webpack config here
     */
-    extend (config, ctx) {
+    extend(config, ctx) {
     }
   },
   /*

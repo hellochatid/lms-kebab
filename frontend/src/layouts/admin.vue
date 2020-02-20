@@ -6,7 +6,8 @@
         type="light"
         variant="faded"
         fixed="top"
-        class="default-layout-navbar">
+        class="default-layout-navbar"
+      >
         <b-navbar class="navbar-brand-wrapper">
           <b-navbar-brand href="#">Kebab</b-navbar-brand>
         </b-navbar>
@@ -26,7 +27,10 @@
               <!-- Using 'button-content' slot -->
               <template v-slot:button-content>
                 <div class="nav-profile-img">
-                  <img src="http://keenthemes.com/preview/metronic/theme/assets/layouts/layout5/img/avatar1.jpg" alt="image">
+                  <img
+                    src="http://keenthemes.com/preview/metronic/theme/assets/layouts/layout5/img/avatar1.jpg"
+                    alt="image"
+                  />
                   <span class="availability-status online"></span>
                 </div>
                 <span class="nav-profile-text">Hasan Sas</span>
@@ -43,39 +47,48 @@
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <b-nav vertical>
           <li class="nav-item active">
-            <NuxtLink to="/admin" class="nav-link">
+            <NuxtLink to="/admin" class="nav-link nav-dashboard">
               <i class="material-icons icon">dashboard</i> Dashboard
             </NuxtLink>
           </li>
           <li class="nav-item">
-            <NuxtLink to="/admin" class="nav-link">
+            <NuxtLink to="/admin/courses" class="nav-link">
               <i class="material-icons icon">assignment</i> Courses
             </NuxtLink>
           </li>
           <li class="nav-item">
-            <NuxtLink to="/admin" class="nav-link">
+            <NuxtLink to="/admin/affiliate" class="nav-link">
               <i class="material-icons icon">supervisor_account</i> Affiliate
             </NuxtLink>
           </li>
           <li class="nav-item">
-            <NuxtLink to="/admin" class="nav-link">
+            <NuxtLink to="/admin/affiliate" class="nav-link">
               <i class="material-icons icon">local_library</i> Students
             </NuxtLink>
           </li>
           <li class="nav-item">
             <NuxtLink to="/admin/pages" class="nav-link">
-              <i class="material-icons icon">insert_drive_file</i> Pages
+              <i class="material-icons icon">subject</i> Pages
             </NuxtLink>
           </li>
           <li class="nav-item">
-            <NuxtLink to="/admin" class="nav-link">
+            <NuxtLink to="/admin/affiliate" class="nav-link">
               <i class="material-icons icon">web</i> Menus
             </NuxtLink>
           </li>
-          <li class="nav-item">
-            <NuxtLink to="/admin" class="nav-link">
+          <li>
+            <span v-b-toggle="'settings'" class="nav-link">
               <i class="material-icons icon">settings</i> Settings
-            </NuxtLink>
+            </span>
+            <!-- Element to collapse -->
+            <b-collapse id="settings">
+              <NuxtLink to="/admin/ddd" class="nav-link">
+                General
+              </NuxtLink>
+              <NuxtLink to="/admin/ggg" class="nav-link">
+                Pricing Plan
+              </NuxtLink>
+            </b-collapse>
           </li>
         </b-nav>
       </nav>
@@ -92,6 +105,23 @@
 const Cookie = process.client ? require("js-cookie") : undefined;
 
 export default {
+  head() {
+    return {
+      script: [
+        {
+          src:
+            "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"
+        }
+      ],
+      link: [
+        {
+          rel: "stylesheet",
+          href:
+            '<link href="https://fonts.googleapis.com/css?family=Ubuntu:300i,400,500,700&display=swap" rel="stylesheet">'
+        }
+      ]
+    };
+  },
   methods: {
     logout() {
       const authAdmin = {
@@ -110,39 +140,55 @@ export default {
 
 <style>
 /* general */
+body {
+  font-family: "Ubuntu", sans-serif;
+  color: #3e4b5b;
+}
 a {
-  color: #FE8196;
+  color: #fe8196;
   text-decoration: none;
   background-color: transparent;
 }
 a:hover {
-  color: #DB6075;
+  color: #db6075;
   text-decoration: underline;
 }
-.page-header{
+.page-header {
   margin: 0 0 1.5rem 0;
 }
-.page-title {
+.page-header:after {
+  content: "";
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+.page-header .page-title {
+  float: left;
   color: #343a40;
   font-size: 1.75rem;
   margin-bottom: 0;
 }
-.page-title .page-title-icon {
+.page-header .page-title .page-title-icon {
   display: inline-block;
   width: 36px;
   height: 36px;
   border-radius: 4px;
   text-align: center;
+  line-height: 36px;
   -webkit-box-shadow: 0px 3px 8.3px 0.7px rgba(163, 93, 255, 0.35);
   box-shadow: 0px 3px 8.3px 0.7px rgba(254, 134, 150, 0.3);
 }
-.grid-margin, .purchase-popup {
+.grid-margin,
+.purchase-popup {
   margin-bottom: 2.5rem;
 }
 .btn-primary {
   color: #fff;
-  background-color: #FE8196 !important;
-  border-color: #FE8196 !important;
+  background-color: #fe8196 !important;
+  border-color: #fe8196 !important;
 }
 
 /* login */
@@ -197,10 +243,11 @@ a:hover {
   color: #fe8196;
 }
 font-weight-light {
-  font-family: "ubuntu-light", sans-serif;
   font-weight: 300 !important;
 }
-.pt-3, .py-3, .card-revenue-table .revenue-item {
+.pt-3,
+.py-3,
+.card-revenue-table .revenue-item {
   padding-top: 1rem !important;
 }
 .auth form .form-group {
@@ -209,17 +256,17 @@ font-weight-light {
 .auth form .form-group .form-control {
   background: transparent;
   border-radius: 0;
-  font-size: .9375rem;
+  font-size: 0.9375rem;
 }
 .form-control {
   border: 1px solid #ebedf2;
-  font-family: "ubuntu-regular", sans-serif;
   font-size: 0.8125rem;
   display: block;
   width: 100%;
   font-weight: 400;
   color: #495057;
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out,
+    -webkit-box-shadow 0.15s ease-in-out;
 }
 .form-control-lg {
   height: 3.175rem;
@@ -229,16 +276,16 @@ font-weight-light {
   border-radius: 0.3rem;
 }
 .form-group input {
-    width: 100%;
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
-    border: 1px #e1e1e1 solid;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: 1px #e1e1e1 solid;
 }
 .auth form .form-group {
-    margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 }
-.mt-24{
-  margin-top:24px;
+.mt-24 {
+  margin-top: 24px;
 }
 
 /* cards */
@@ -274,9 +321,8 @@ font-weight-light {
   color: #343a40;
   margin-bottom: 0.75rem;
   text-transform: capitalize;
-  font-family: "ubuntu-medium", sans-serif;
   font-size: 1.125rem;
-  font-weight: bold;
+  font-weight: 500;
 }
 .table-responsive {
   display: block;
@@ -301,22 +347,23 @@ font-weight-light {
 .table thead th {
   border-top: 0;
   border-bottom-width: 1px;
-  font-family: "ubuntu-medium", sans-serif;
   font-weight: initial;
-  font-weight: bold;
+  font-weight: 500;
   color: #fe8196;
 }
 table thead th {
-    vertical-align: bottom;
-    border-bottom: 2px solid #ebedf2;
+  vertical-align: bottom;
+  border-bottom: 2px solid #ebedf2;
 }
-table th, .table td {
+table th,
+.table td {
   vertical-align: middle;
   font-size: 0.875rem;
   line-height: 1;
   white-space: nowrap;
 }
-.table th, .table td {
+.table th,
+.table td {
   padding: 0.9375rem;
   vertical-align: top;
   border-top: 1px solid #ebedf2;
@@ -324,7 +371,8 @@ table th, .table td {
 th {
   text-align: inherit;
 }
-.table th img, .table td img {
+.table th img,
+.table td img {
   width: 36px;
   height: 36px;
   border-radius: 100%;
@@ -332,34 +380,58 @@ th {
 
 /* colors */
 .bg-gradient-primary {
-  background: -webkit-gradient(linear, left top, right top, from(#FE8196), to(#FFBE96)) !important;
-  background: linear-gradient(to right, #FE8196, #FFBE96) !important;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#fe8196),
+    to(#ffbe96)
+  ) !important;
+  background: linear-gradient(to right, #fe8196, #ffbe96) !important;
   border: none;
 }
 .bg-gradient-danger {
-  background: -webkit-gradient(linear, left top, right top, from(#ffbf96), to(#fe7096)) !important;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#ffbf96),
+    to(#fe7096)
+  ) !important;
   background: linear-gradient(to right, #ffbf96, #fe7096) !important;
   border: none;
 }
 .bg-gradient-info {
-  background: -webkit-gradient(linear, left top, right top, from(#90caf9), color-stop(99%, #047edf)) !important;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#90caf9),
+    color-stop(99%, #047edf)
+  ) !important;
   background: linear-gradient(to right, #90caf9, #047edf 99%) !important;
   border: none;
 }
 .bg-gradient-success {
-  background: -webkit-gradient(linear, left top, right top, from(#84d9d2), to(#07cdae)) !important;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#84d9d2),
+    to(#07cdae)
+  ) !important;
   background: linear-gradient(to right, #84d9d2, #07cdae) !important;
   border: none;
 }
 
 /* navbar */
 .navbar-light .navbar-brand {
-  color: #FE8196;
+  color: #fe8196;
   font-weight: bold;
   font-size: 1.5rem;
 }
 .navbar-light .navbar-brand:hover {
-  color: #DB6075;
+  color: #db6075;
 }
 .default-layout-navbar {
   padding: 0;
@@ -392,11 +464,11 @@ th {
 }
 .default-layout-navbar {
   padding: 0;
-  box-shadow: 0px 3px 6px rgba(0,0,0,0.1);
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
 }
-.dropdown-menu{
-  box-shadow: 0px 3px 6px rgba(0,0,0,0.1);
-  border:none;
+.dropdown-menu {
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+  border: none;
 }
 .nav-link.dropdown-toggle .nav-profile-img {
   position: relative;
@@ -434,7 +506,6 @@ th {
 .sidebar {
   min-height: calc(100vh - 70px);
   background: #ffffff;
-  font-family: "ubuntu-regular", sans-serif !important;
   padding: 0;
   width: 260px;
   z-index: 11;
@@ -455,22 +526,36 @@ th {
 .sidebar .nav-link .icon {
   float: left;
   margin-right: 10px;
+  font-size: 20px;
+  margin-top: 2px;
 }
-.nav-link{
+.nav-link {
   display: block;
   padding: 1rem 2rem;
 }
-.nav-link:hover{
-  background:#fcfcfc;
+.nav-link:hover {
+  background: #fcfcfc;
 }
 .nav .nav-item a {
   color: #3e4b5b;
+  outline: 0;
 }
-.nav .nav-item.active a{
-  color: #FE8196;
+.nav .nav-item a:hover,
+.nav .nav-item .nav-dashboard.nuxt-link-active:hover {
+  color: #29323d;
 }
-.nav .nav-item.active a:hover{
-  color: #DB6075;
+.nav .nav-item .nav-dashboard.nuxt-link-active {
+  color: #3e4b5b;
+}
+.nav .nav-item .nuxt-link-active,
+.nav .nav-item .nuxt-link-exact-active,
+.nav .nav-item .nav-dashboard.nuxt-link-exact-active {
+  color: #fe8196;
+}
+.nav .nav-item .nuxt-link-active:hover,
+.nav .nav-item .nuxt-link-exact-active:hover,
+.nav .nav-item .nav-dashboard.nuxt-link-exact-active:hover {
+  color: #db6075;
 }
 
 /* main panel */
@@ -494,5 +579,66 @@ th {
   -webkit-box-flex: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
+}
+
+/* rewrite bootstrap */
+.breadcrumb{
+  float: right;
+  background: rgba(255, 255, 255, 0);
+  margin: 0;
+  padding: 6px 0;
+}
+.card-table .card-header,
+.card-table .card-footer {
+  background: #fff;
+  border: 0;
+}
+.card-table .card-header:after,
+.card-table .card-footer:after {
+  content: "";
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+.card-table .card-actions {
+  float: right;
+}
+.card-table .card-actions .btn-action .icon {
+  float: left;
+  margin-right: 6px;
+}
+.card-table .card-body {
+  padding: 0 1.25rem;
+}
+.card-table .table {
+  border-width: 1px 0 1px 0;
+  border-color: #dee2e6;
+  border-style: solid;
+  color: #3e4b5b;
+}
+.card-table .table .btn-actions {
+  width: 100px;
+}
+.card-table .table .btn-actions .btn {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  line-height: 38px;
+}
+.card-table .table .btn-actions .btn .icon {
+  font-size: 18px;
+}
+.pagination {
+  margin: 0;
+  float: right;
+}
+.card-form{
+  margin-bottom: 20px;
+}
+.card-form .card-header{
+  background: #fff;
 }
 </style>
