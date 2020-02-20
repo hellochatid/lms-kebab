@@ -63,6 +63,24 @@ Route::group([
         Route::get('materials', 'Admin\MaterialsController@getMaterials');
         Route::patch('materials/{id}', 'Admin\MaterialsController@editMaterials');
         Route::delete('materials/{id}', 'Admin\MaterialsController@deleteMaterials');
+
+        // Quiz
+        Route::post('quiz', 'Admin\QuizController@addQuiz');
+        Route::get('quiz', 'Admin\QuizController@getQuiz');
+        Route::patch('quiz/{id}', 'Admin\QuizController@editQuiz');
+        Route::delete('quiz/{id}', 'Admin\QuizController@deleteQuiz');
+
+        // Questions
+        Route::post('questions', 'Admin\QuestionsController@addQuestion');
+        Route::get('questions', 'Admin\QuestionsController@getQuestion');
+        Route::patch('questions/{id}', 'Admin\QuestionsController@editQuestion');
+        Route::delete('questions/{id}', 'Admin\QuestionsController@deleteQuestion');
+
+        // Answers
+        Route::post('answers', 'Admin\AnswersController@addAnswer');
+        Route::get('answers', 'Admin\AnswersController@getAnswer');
+        Route::patch('answers/{id}', 'Admin\AnswersController@editAnswer');
+        Route::delete('answers/{id}', 'Admin\AnswersController@deleteAnswer');
     });
     Route::post('upload', 'uploadController@upload');
 });
