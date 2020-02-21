@@ -9,13 +9,16 @@
         class="default-layout-navbar"
       >
         <b-navbar class="navbar-brand-wrapper">
-          <b-navbar-brand href="#">Kebab</b-navbar-brand>
+          <b-navbar-brand href="#">
+            <i class="material-icons icon">layers</i>
+            <span>Kebab</span>
+          </b-navbar-brand>
         </b-navbar>
 
         <b-collapse id="nav-collapse" is-nav class="navbar-menu-wrapper">
           <b-navbar-nav>
             <b-nav-text>
-              <span class="mdi-menu">
+              <span class="mdi-menu" @click="toggleSidebar">
                 <i class="material-icons">menu</i>
               </span>
             </b-nav-text>
@@ -82,12 +85,8 @@
             </span>
             <!-- Element to collapse -->
             <b-collapse id="settings">
-              <NuxtLink to="/admin/ddd" class="nav-link">
-                General
-              </NuxtLink>
-              <NuxtLink to="/admin/ggg" class="nav-link">
-                Pricing Plan
-              </NuxtLink>
+              <NuxtLink to="/admin/ddd" class="nav-link">General</NuxtLink>
+              <NuxtLink to="/admin/ggg" class="nav-link">Pricing Plan</NuxtLink>
             </b-collapse>
           </li>
         </b-nav>
@@ -123,6 +122,15 @@ export default {
     };
   },
   methods: {
+    toggleSidebar() {
+      var body = document.body;
+      var bodyClassName = "sidebar-icon-only";
+      if (body.classList.contains(bodyClassName)) {
+        body.classList.remove(bodyClassName);
+      } else {
+        body.classList.add(bodyClassName);
+      }
+    },
     logout() {
       const authAdmin = {
         name: "",
@@ -425,17 +433,12 @@ th {
 }
 
 /* navbar */
-.navbar-light .navbar-brand {
-  color: #fe8196;
-  font-weight: bold;
-  font-size: 1.5rem;
-}
-.navbar-light .navbar-brand:hover {
-  color: #db6075;
-}
 .default-layout-navbar {
   padding: 0;
   background: #fff;
+}
+.sidebar-icon-only .navbar .navbar-brand-wrapper {
+  width: 70px;
 }
 .navbar .navbar-brand-wrapper {
   transition: width 0.25s ease, background 0.25s ease;
@@ -446,6 +449,24 @@ th {
   width: 260px;
   height: 70px;
   padding: 1rem 2rem;
+}
+.navbar-brand .icon {
+  float: left;
+  margin: 6px 6px 0 0;
+}
+.navbar-light .navbar-brand {
+  color: #fe8196;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.navbar-light .navbar-brand:hover {
+  color: #db6075;
+}
+.sidebar-icon-only .navbar-brand span {
+  display: none;
+}
+.sidebar-icon-only .navbar .navbar-menu-wrapper {
+  width: calc(100% - 70px);
 }
 .navbar .navbar-menu-wrapper {
   transition: width 0.25s ease;
@@ -503,6 +524,9 @@ th {
 }
 
 /* sidebar */
+.sidebar-icon-only .sidebar {
+  width: 70px;
+}
 .sidebar {
   min-height: calc(100vh - 70px);
   background: #ffffff;
@@ -559,6 +583,9 @@ th {
 }
 
 /* main panel */
+.sidebar-icon-only .main-panel {
+  width: calc(100% - 70px);
+}
 .main-panel {
   -webkit-transition: width 0.25s ease, margin 0.25s ease;
   transition: width 0.25s ease, margin 0.25s ease;
@@ -582,7 +609,7 @@ th {
 }
 
 /* rewrite bootstrap */
-.breadcrumb{
+.breadcrumb {
   float: right;
   background: rgba(255, 255, 255, 0);
   margin: 0;
@@ -635,10 +662,10 @@ th {
   margin: 0;
   float: right;
 }
-.card-form{
+.card-form {
   margin-bottom: 20px;
 }
-.card-form .card-header{
+.card-form .card-header {
   background: #fff;
 }
 </style>
