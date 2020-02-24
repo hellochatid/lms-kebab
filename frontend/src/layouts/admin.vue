@@ -106,17 +106,11 @@ const Cookie = process.client ? require("js-cookie") : undefined;
 export default {
   head() {
     return {
-      script: [
-        {
-          src:
-            "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"
-        }
-      ],
       link: [
         {
           rel: "stylesheet",
           href:
-            '<link href="https://fonts.googleapis.com/css?family=Ubuntu:300i,400,500,700&display=swap" rel="stylesheet">'
+            "https://fonts.googleapis.com/css?family=Ubuntu:300i,400,500,700&display=swap"
         }
       ]
     };
@@ -678,6 +672,209 @@ th {
 }
 .card-form .card-header {
   background: #fff;
+}
+
+/* Lessons */
+
+.card-collapse {
+  margin-bottom: 10px;
+}
+.card-collapse .card-header {
+  background: #fff;
+  border: 0;
+  position: relative;
+  padding: 0;
+}
+.card-collapse .card-header span {
+  display: block;
+  padding: 12px 20px;
+  cursor: pointer;
+}
+.card-collapse .card-body {
+  padding: 0;
+}
+.card-header .btn-delete,
+.card-header .btn-edit {
+  position: absolute;
+  top: 15px;
+  z-index: 10;
+}
+.card-header .btn-delete {
+  right: 80px;
+}
+.card-header .btn-edit {
+  right: 120px;
+}
+.card-header .btn-collapse {
+  position: absolute;
+  right: 10px;
+  top: 9px;
+  z-index: 10;
+}
+.btn-collapse {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  line-height: 42px;
+  position: relative;
+}
+.btn-collapse:before {
+  content: "";
+  height: 100%;
+  width: 1px;
+  background: #ccc;
+  position: absolute;
+  left: -10px;
+  top: 0;
+}
+.btn-collapse:after {
+  content: "expand_less";
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "liga";
+}
+.btn-collapse.collapsed:after {
+  content: "expand_more";
+}
+.btn-visibility {
+  position: relative;
+  height: 38px;
+  width: 38px;
+}
+.btn-visibility:after {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  content: "visibility_off";
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "liga";
+}
+.btn-visibility.collapsed:after {
+  content: "visibility";
+}
+.card-body-wrapper {
+  padding: 20px;
+  border-top: 1px solid#ccc;
+}
+.subhead {
+  padding: 4px 0;
+}
+.subhead:after {
+  content: "";
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+.subhead .icon {
+  float: left;
+  margin-right: 10px;
+}
+.subhead small {
+  margin-left: 6px;
+}
+.form-icon {
+  position: relative;
+}
+.form-icon input {
+  font-size: 16px;
+  border-radius: 0;
+}
+.form-icon .icon {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: #aaa;
+  font-size: 20px;
+}
+.material-items {
+  margin-bottom: 30px;
+  max-height: 414px;
+  overflow: auto;
+
+  scrollbar-color: rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0.1); /* firefox */
+  scrollbar-width: thin; /* firefox */
+}
+.material-items::-webkit-scrollbar {
+  width: 16px !important;
+  background-color: rgba(0, 0, 0, 0.1) !important;
+  border-left: 10px transparent solid;
+  background-clip: padding-box;
+}
+.material-items::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3) !important;
+  border-left: 10px transparent solid;
+  background-clip: padding-box;
+}
+.item {
+  margin-bottom: 10px;
+  padding: 8px 15px;
+}
+.item:after {
+  content: "";
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+.item.bordered {
+  border: 1px solid #ccc;
+  background: #fafafa;
+}
+.item .btn-delete,
+.item .btn-edit {
+  margin-top: 2px;
+  margin-left: 10px;
+}
+.btn-icon {
+  padding: 0;
+  line-height: 0;
+  background: none;
+  color: #aaa;
+  border: 0;
+}
+.btn-icon:active,
+.btn-icon:focus,
+.btn-icon:hover {
+  background: none !important;
+  color: #666 !important;
+  box-shadow: 0 0 0 rgba(255, 255, 255, 0) !important;
+}
+
+.btn-icon.inline {
+  display: inline-block;
+}
+.btn-icon .icon {
+  font-size: 20px;
 }
 
 /* btn */
