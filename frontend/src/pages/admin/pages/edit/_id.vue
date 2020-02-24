@@ -92,7 +92,6 @@ const toolbarOptions = [
 ];
 
 export default {
-  middleware: "admin",
   head: {
     title: "Admin - Edit Pages"
   },

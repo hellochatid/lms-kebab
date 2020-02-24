@@ -90,7 +90,6 @@
 import { mapMutations, mapGetters } from "vuex";
 
 export default {
-  middleware: "admin",
   head: {
     title: "Admin - Pages"
   },
