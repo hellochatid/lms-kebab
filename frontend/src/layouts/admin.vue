@@ -189,6 +189,10 @@ a:hover {
   -webkit-box-shadow: 0px 3px 8.3px 0.7px rgba(163, 93, 255, 0.35);
   box-shadow: 0px 3px 8.3px 0.7px rgba(254, 134, 150, 0.3);
 }
+.page-header .page-title small {
+  color: #757575;
+  font-weight: 300;
+}
 .grid-margin,
 .purchase-popup {
   margin-bottom: 2.5rem;
@@ -633,10 +637,6 @@ th {
 .card-table .card-actions {
   float: right;
 }
-.card-table .card-actions .btn-action .icon {
-  float: left;
-  margin-right: 6px;
-}
 .card-table .card-body {
   padding: 0 1.25rem;
 }
@@ -658,6 +658,17 @@ th {
 .card-table .table .btn-actions .btn .icon {
   font-size: 18px;
 }
+
+.card-table .table .btn-default .btn {
+  padding: 0 8px !important;
+  height: 32px;
+  line-height: 30px;
+}
+.card-table .table .btn-default .btn .icon {
+  font-size: 16px;
+  float: left;
+  margin: 6px 6px 0 0;
+}
 .pagination {
   margin: 0;
   float: right;
@@ -667,5 +678,23 @@ th {
 }
 .card-form .card-header {
   background: #fff;
+}
+
+/* btn */
+
+.btn-action .icon {
+  float: left;
+  margin-right: 6px;
+}
+
+/* Misc */
+.width-30 {
+  width: 30px;
+}
+.width-100 {
+  width: 100px;
+}
+.width-200 {
+  width: 200px;
 }
 </style>
