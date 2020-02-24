@@ -1,96 +1,8 @@
 <template>
   <div>
-    <div>
-      <b-navbar
-        toggleable="lg"
-        type="light"
-        variant="faded"
-        fixed="top"
-        class="default-layout-navbar"
-      >
-        <b-navbar class="navbar-brand-wrapper">
-          <b-navbar-brand href="#">
-            <i class="material-icons icon">layers</i>
-            <span>Kebab</span>
-          </b-navbar-brand>
-        </b-navbar>
-
-        <b-collapse id="nav-collapse" is-nav class="navbar-menu-wrapper">
-          <b-navbar-nav>
-            <b-nav-text>
-              <span class="mdi-menu" @click="toggleSidebar">
-                <i class="material-icons">menu</i>
-              </span>
-            </b-nav-text>
-          </b-navbar-nav>
-
-          <!-- Right aligned nav items -->
-          <b-navbar-nav class="ml-auto">
-            <b-nav-item-dropdown right>
-              <!-- Using 'button-content' slot -->
-              <template v-slot:button-content>
-                <div class="nav-profile-img">
-                  <img
-                    src="http://keenthemes.com/preview/metronic/theme/assets/layouts/layout5/img/avatar1.jpg"
-                    alt="image"
-                  />
-                  <span class="availability-status online"></span>
-                </div>
-                <span class="nav-profile-text">Hasan Sas</span>
-              </template>
-              <b-dropdown-item href="#">Profile</b-dropdown-item>
-              <b-dropdown-item @click="logout">Sign Out</b-dropdown-item>
-            </b-nav-item-dropdown>
-          </b-navbar-nav>
-        </b-collapse>
-      </b-navbar>
-    </div>
-
+    <Navbar />
     <div class="container-fluid page-body-wrapper">
-      <nav class="sidebar sidebar-offcanvas" id="sidebar">
-        <b-nav vertical>
-          <li class="nav-item active">
-            <NuxtLink to="/admin" class="nav-link nav-dashboard">
-              <i class="material-icons icon">dashboard</i> Dashboard
-            </NuxtLink>
-          </li>
-          <li class="nav-item">
-            <NuxtLink to="/admin/courses" class="nav-link">
-              <i class="material-icons icon">assignment</i> Courses
-            </NuxtLink>
-          </li>
-          <li class="nav-item">
-            <NuxtLink to="/admin/affiliate" class="nav-link">
-              <i class="material-icons icon">supervisor_account</i> Affiliate
-            </NuxtLink>
-          </li>
-          <li class="nav-item">
-            <NuxtLink to="/admin/affiliate" class="nav-link">
-              <i class="material-icons icon">local_library</i> Students
-            </NuxtLink>
-          </li>
-          <li class="nav-item">
-            <NuxtLink to="/admin/pages" class="nav-link">
-              <i class="material-icons icon">subject</i> Pages
-            </NuxtLink>
-          </li>
-          <li class="nav-item">
-            <NuxtLink to="/admin/affiliate" class="nav-link">
-              <i class="material-icons icon">web</i> Menus
-            </NuxtLink>
-          </li>
-          <li>
-            <span v-b-toggle="'settings'" class="nav-link">
-              <i class="material-icons icon">settings</i> Settings
-            </span>
-            <!-- Element to collapse -->
-            <b-collapse id="settings">
-              <NuxtLink to="/admin/ddd" class="nav-link">General</NuxtLink>
-              <NuxtLink to="/admin/ggg" class="nav-link">Pricing Plan</NuxtLink>
-            </b-collapse>
-          </li>
-        </b-nav>
-      </nav>
+      <Sidebar />
       <div class="main-panel">
         <div class="content-wrapper">
           <nuxt />
@@ -101,9 +13,14 @@
 </template>
 
 <script>
-const Cookie = process.client ? require("js-cookie") : undefined;
+import { Navbar, Sidebar } from "../components/admin/";
 
 export default {
+  middleware: "admin",
+  components: {
+    Navbar,
+    Sidebar
+  },
   head() {
     return {
       link: [
@@ -114,28 +31,6 @@ export default {
         }
       ]
     };
-  },
-  methods: {
-    toggleSidebar() {
-      var body = document.body;
-      var bodyClassName = "sidebar-icon-only";
-      if (body.classList.contains(bodyClassName)) {
-        body.classList.remove(bodyClassName);
-      } else {
-        body.classList.add(bodyClassName);
-      }
-    },
-    logout() {
-      const authAdmin = {
-        name: "",
-        authenticated: false
-      };
-      Cookie.remove("authAdmin");
-      this.$store.commit("users/setUserAdmin", authAdmin);
-      this.$router.push({
-        path: "/admin/login"
-      });
-    }
   }
 };
 </script>
@@ -155,6 +50,13 @@ a:hover {
   color: #db6075;
   text-decoration: underline;
 }
+
+/* Nuxt */
+.nuxt-progress {
+  background: #ef5350;
+}
+
+/* admin page */
 .page-header {
   margin: 0 0 1.5rem 0;
 }
