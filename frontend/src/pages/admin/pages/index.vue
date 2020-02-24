@@ -8,7 +8,9 @@
         Pages
       </h3>
       <b-breadcrumb>
-        <li class="breadcrumb-item"><NuxtLink to="/admin">Dashboard</NuxtLink></li>
+        <li class="breadcrumb-item">
+          <NuxtLink to="/admin">Dashboard</NuxtLink>
+        </li>
         <b-breadcrumb-item active>Pages</b-breadcrumb-item>
       </b-breadcrumb>
     </div>
@@ -46,7 +48,7 @@
           <b-button
             variant="outline-danger"
             size="sm"
-            @click.stop="info(data.item, data.index, $event.target)"
+            @click.stop="confirmDelete(data.item.id, data.item.first_name, 'page', data.index, $event.target, '')"
           >
             <i class="material-icons icon">delete</i>
           </b-button>
@@ -67,33 +69,23 @@
       </div>
     </b-card>
 
-    <!-- Info modal -->
-    <b-modal
-      id="modalInfo"
-      centered
-      size="md"
-      @hide="resetModal"
-      title="You are about to dalete"
-      header-bg-variant="dark"
-      header-text-variant="light"
-      :no-close-on-backdrop="true"
-      button-size="md"
-      cancel-variant="secondary"
-      ok-variant="primary"
-      ok-title="Continue"
-      @ok="deleteData"
-    ></b-modal>
+    <ConfirmDelete :data="confirmDeleteData" :onDelete="deleteData"/>
   </div>
 </template>
 
 <script>
 import { mapMutations, mapGetters } from "vuex";
+import {ConfirmDelete, Navbar} from "../../../components/admin";
 
 export default {
   head: {
     title: "Admin - Pages"
   },
   layout: "admin",
+  components: {
+    ConfirmDelete,
+    Navbar
+  },
   data() {
     return {
       items: [
@@ -115,7 +107,14 @@ export default {
       ],
       currentPage: 1,
       perPage: 3,
-      totalRows: 4
+      totalRows: 4,
+
+      confirmDeleteData: {
+        id: "",
+        title: "",
+        item_deleted: "",
+        model: ""
+      }
     };
   },
   computed: mapGetters({
@@ -126,17 +125,21 @@ export default {
       this.totalRows = filteredItems.length;
       this.currentPage = 1;
     },
-    info(item, index, button) {
-      this.$root.$emit("bv::show::modal", "modalInfo", button);
-      console.log("infoooooo");
+    confirmDelete(id, item_deleted, model, index, button, title) {
+      this.confirmDeleteData.id = id;
+      this.confirmDeleteData.title = title !== "" ? title : "You are about to dalete";
+      this.confirmDeleteData.item_deleted = item_deleted;
+      this.confirmDeleteData.model = model;
+      this.$root.$emit("bv::show::modal", "ModalconfirmDelete", button);
     },
     deleteData(evt) {
-      console.log(evt);
+      console.log('deleted id', this.confirmDeleteData.id);
     },
-    resetModal() {
-      this.modalInfo.title = "";
-      this.modalInfo.content = "";
-    }
+    // resetModal() {
+    //   this.confirmDeleteData.title = "";
+    //   this.confirmDeleteData.item_deleted = "";
+    //   this.confirmDeleteData.model = "";
+    // }
   }
 };
 </script>
