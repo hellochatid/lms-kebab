@@ -3,7 +3,6 @@ const cookieparser = process.server ? require('cookieparser') : undefined
 export const actions = {
     nuxtServerInit({ commit }, { req }) {
         let authAdmin = {
-            name: '',
             authenticated: false
         };
         if (req.headers.cookie) {

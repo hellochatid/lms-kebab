@@ -69,13 +69,13 @@
       </div>
     </b-card>
 
-    <ConfirmDelete :data="confirmDeleteData" :onDelete="deleteData"/>
+    <ConfirmDelete :data="confirmDeleteData" :onDelete="deleteData" />
   </div>
 </template>
 
 <script>
 import { mapMutations, mapGetters } from "vuex";
-import {ConfirmDelete, Navbar} from "../../../components/admin";
+import { ConfirmDelete } from "../../../components/admin";
 
 export default {
   head: {
@@ -83,8 +83,7 @@ export default {
   },
   layout: "admin",
   components: {
-    ConfirmDelete,
-    Navbar
+    ConfirmDelete
   },
   data() {
     return {
@@ -108,7 +107,6 @@ export default {
       currentPage: 1,
       perPage: 3,
       totalRows: 4,
-
       confirmDeleteData: {
         id: "",
         title: "",
@@ -127,19 +125,15 @@ export default {
     },
     confirmDelete(id, item_deleted, model, index, button, title) {
       this.confirmDeleteData.id = id;
-      this.confirmDeleteData.title = title !== "" ? title : "You are about to dalete";
+      this.confirmDeleteData.title =
+        title !== "" ? title : "You are about to dalete";
       this.confirmDeleteData.item_deleted = item_deleted;
       this.confirmDeleteData.model = model;
       this.$root.$emit("bv::show::modal", "ModalconfirmDelete", button);
     },
     deleteData(evt) {
-      console.log('deleted id', this.confirmDeleteData.id);
-    },
-    // resetModal() {
-    //   this.confirmDeleteData.title = "";
-    //   this.confirmDeleteData.item_deleted = "";
-    //   this.confirmDeleteData.model = "";
-    // }
+      console.log("deleted id", this.confirmDeleteData.id);
+    }
   }
 };
 </script>

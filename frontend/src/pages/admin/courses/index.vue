@@ -18,7 +18,7 @@
     <b-card header-tag="header" footer-tag="footer" class="card-table">
       <div slot="header">
         <div class="card-actions">
-          <NuxtLink to="/admin/pages/add" class="btn btn-primary btn-action">
+          <NuxtLink to="/admin/courses/add" class="btn btn-primary btn-action">
             <i class="material-icons icon">playlist_add</i>
             <span>Add Course</span>
           </NuxtLink>
@@ -42,13 +42,13 @@
             :to="'/admin/courses/' + data.item.id + '/lessons'"
             class="btn btn-outline-success btn-sm"
           >
-            <i class="material-icons icon">settings</i>
+            <i class="material-icons icon">build</i>
             Manage lessons
           </NuxtLink>
         </template>
         <template v-slot:cell(actions)="data">
           <NuxtLink
-            :to="'/admin/pages/edit/' + data.item.id"
+            :to="'/admin/courses/edit/' + data.item.id"
             class="btn btn-outline-primary btn-sm"
           >
             <i class="material-icons icon">edit</i>
@@ -57,7 +57,7 @@
           <b-button
             variant="outline-danger"
             size="sm"
-            @click.stop="info(data.item, data.index, $event.target)"
+            @click.stop="confirmDelete(data.item.id, data.item.first_name, 'course', data.index, $event.target, '')"
           >
             <i class="material-icons icon">delete</i>
           </b-button>
@@ -78,50 +78,41 @@
       </div>
     </b-card>
 
-    <!-- Info modal -->
-    <b-modal
-      id="modalInfo"
-      centered
-      size="md"
-      @hide="resetModal"
-      title="You are about to dalete"
-      header-bg-variant="dark"
-      header-text-variant="light"
-      :no-close-on-backdrop="true"
-      button-size="md"
-      cancel-variant="secondary"
-      ok-variant="primary"
-      ok-title="Continue"
-      @ok="deleteData"
-    ></b-modal>
+    <ConfirmDelete :data="confirmDeleteData" :onDelete="deleteData" />
   </div>
 </template>
 
 <script>
 import { mapMutations, mapGetters } from "vuex";
+import { ConfirmDelete } from "~/components/admin";
+import courses from "~/services/courses";
 
 export default {
   head: {
     title: "Admin - Pages"
   },
   layout: "admin",
+  components: {
+    ConfirmDelete
+  },
   data() {
     return {
-      items: [
-        { id: 5, age: 40, first_name: "Dickerson", last_name: "Macdonald" },
-        { id: 6, age: 21, first_name: "Larsen", last_name: "Shaw" },
-        { id: 7, age: 89, first_name: "Geneva", last_name: "Wilson" },
-        { id: 8, age: 38, first_name: "Jami", last_name: "Carney" }
-      ],
+      items: [],
       fields: [
         { key: "index", label: "#", class: "width-30" },
-        { key: "first_name", label: "Course" },
+        { key: "title", label: "Course" },
         { key: "lessons", label: "Lessons", class: "btn-default width-200" },
         { key: "actions", label: "Actions", class: "text-center btn-actions" }
       ],
       currentPage: 1,
-      perPage: 3,
-      totalRows: 4
+      perPage: 10,
+      totalRows: 4,
+      confirmDeleteData: {
+        id: "",
+        title: "",
+        item_deleted: "",
+        model: ""
+      }
     };
   },
   computed: mapGetters({
@@ -136,13 +127,27 @@ export default {
       this.$root.$emit("bv::show::modal", "modalInfo", button);
       console.log("infoooooo");
     },
-    deleteData(evt) {
-      console.log(evt);
+    confirmDelete(id, item_deleted, model, index, button, title) {
+      this.confirmDeleteData.id = id;
+      this.confirmDeleteData.title =
+        title !== "" ? title : "You are about to dalete";
+      this.confirmDeleteData.item_deleted = item_deleted;
+      this.confirmDeleteData.model = model;
+      this.$root.$emit("bv::show::modal", "ModalconfirmDelete", button);
     },
-    resetModal() {
-      this.modalInfo.title = "";
-      this.modalInfo.content = "";
+    deleteData(evt) {
+      console.log("deleted id", this.confirmDeleteData.id);
     }
+  },
+  mounted() {
+    courses
+      .get(this.$axios)
+      .then(response => {
+        this.items = response.data
+      })
+      .catch(error => {
+        console.log(error);
+      });
   }
 };
 </script>

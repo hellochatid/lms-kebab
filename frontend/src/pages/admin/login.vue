@@ -69,7 +69,8 @@ export default {
               console.log(res.data.message);
             } else if (res.data.access_token) {
               var authAdmin = {
-                name: "John Doe",
+                name: "John Doe x",
+                displayPicture: "http://keenthemes.com/preview/metronic/theme/assets/layouts/layout5/img/avatar1.jpg",
                 token: res.data.access_token,
                 authenticated: true
               };

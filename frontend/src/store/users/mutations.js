@@ -5,8 +5,10 @@ export default {
             done: false
         })
     },
-    setUserAdmin(state, { name, authenticated }) {
+    setUserAdmin(state, { name, displayPicture, token, authenticated }) {
         state.userAdmin.name = name
+        state.userAdmin.displayPicture = displayPicture
+        state.userAdmin.token = token
         state.userAdmin.authenticated = authenticated
     }
 }
