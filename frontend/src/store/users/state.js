@@ -1,6 +1,7 @@
 const user = {
     name: '',
     displayPicture: '',
+    token: '',
     authenticated: false
 }
 

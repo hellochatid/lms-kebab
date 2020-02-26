@@ -23,30 +23,30 @@
       <b-col sm="8">
         <draggable
           v-bind="dragLessonsOptions"
-          :list="courses"
+          :list="lessons"
           handle=".handle"
-          @end="dragEnd(courses)"
+          @end="dragEnd(lessons)"
         >
-          <div v-for="course in courses" :key="'course'+course.id">
+          <div v-for="lesson in lessons" :key="'lesson'+lesson.id">
             <b-card header-tag="header" class="card-collapse">
               <div slot="header">
-                <span class="handle">{{ course.name }}</span>
+                <span class="handle">{{ lesson.name }}</span>
                 <b-button class="btn-icon btn-delete">
                   <i class="material-icons icon">delete</i>
                 </b-button>
                 <b-button class="btn-icon btn-edit">
                   <i class="material-icons icon">edit</i>
                 </b-button>
-                <b-button v-b-toggle="'lesson-' + course.id" class="btn-collapse btn-icon"></b-button>
+                <b-button v-b-toggle="'lesson-' + lesson.id" class="btn-collapse btn-icon"></b-button>
               </div>
-              <b-collapse :id="'lesson-' + course.id">
+              <b-collapse :id="'lesson-' + lesson.id">
                 <div class="card-body-wrapper">
                   <b-row>
                     <b-col sm="4">
                       <h5 class="subhead">
                         <i class="material-icons icon">book</i>
                         Materials
-                        <small>({{ courses.length }})</small>
+                        <small>({{ lessons.length }})</small>
                       </h5>
                     </b-col>
                     <b-col sm="8" class="text-right">
@@ -56,14 +56,14 @@
                           <span>Add Material</span>
                         </b-button>
                         <b-button
-                          v-b-toggle="'material-' + course.id"
+                          v-b-toggle="'material-' + lesson.id"
                           variant="primary"
                           class="btn btn-action btn-visibility"
                         ></b-button>
                       </b-form-group>
                     </b-col>
                   </b-row>
-                  <b-collapse :id="'material-' + course.id" visible>
+                  <b-collapse :id="'material-' + lesson.id" visible>
                     <b-form-group class="form-icon search">
                       <i class="material-icons icon">search</i>
                       <b-form-input id="search" type="text" placeholder="Search"></b-form-input>
@@ -71,11 +71,11 @@
                     <div class="material-items">
                       <draggable
                         v-bind="dragMaterialsOptions"
-                        :list="course.materials"
+                        :list="lesson.materials"
                         handle=".handle"
-                        @end="dragEnd(course.materials)"
+                        @end="dragEnd(lesson.materials)"
                       >
-                        <div v-for="material in course.materials" :key="'material'+material.id">
+                        <div v-for="material in lesson.materials" :key="'material'+material.id">
                           <b-card class="item bordered handle">
                             <span>{{ material.title }}</span>
                             <b-button class="btn-icon btn-delete float-right">
@@ -94,7 +94,7 @@
                       <h5 class="subhead">
                         <i class="material-icons icon">extension</i>
                         Quiz
-                        <small>({{ courses.length }})</small>
+                        <small>({{ lessons.length }})</small>
                       </h5>
                     </b-col>
                     <b-col sm="6" class="text-right">
@@ -104,14 +104,14 @@
                           <span>Add Quiz</span>
                         </b-button>
                         <b-button
-                          v-b-toggle="'quiz-' + course.id"
+                          v-b-toggle="'quiz-' + lesson.id"
                           variant="primary"
                           class="btn btn-action btn-visibility"
                         ></b-button>
                       </b-form-group>
                     </b-col>
                   </b-row>
-                  <b-collapse :id="'quiz-' + course.id">
+                  <b-collapse :id="'quiz-' + lesson.id">
                     <b-form-group class="form-icon search">
                       <i class="material-icons icon">search</i>
                       <b-form-input id="search" type="text" placeholder="Search"></b-form-input>
@@ -119,11 +119,11 @@
                     <div class="material-items">
                       <draggable
                         v-bind="dragMaterialsOptions"
-                        :list="course.materials"
+                        :list="lesson.materials"
                         handle=".handle"
-                        @end="dragEnd(course.materials)"
+                        @end="dragEnd(lesson.materials)"
                       >
-                        <div v-for="material in course.materials" :key="'material'+material.id">
+                        <div v-for="material in lesson.materials" :key="'material'+material.id">
                           <b-card class="item bordered handle">
                             <span>{{ material.title }}</span>
                             <b-button class="btn-icon btn-delete float-right">
@@ -180,6 +180,8 @@
 
 <script>
 import { mapMutations, mapGetters } from "vuex";
+import { ConfirmDelete, Navbar } from "~/components/admin";
+import lessons from "~/services/lessons";
 
 export default {
   head: {
@@ -188,89 +190,7 @@ export default {
   layout: "admin",
   data() {
     return {
-      courses: [
-        {
-          id: 10,
-          name: "Nulla leo erat lobortis ut sapien non",
-          materials: [
-            {
-              id: 1,
-              title: "aaaaaaa"
-            },
-            {
-              id: 2,
-              title: "bbb"
-            },
-            {
-              id: 3,
-              title: "ccc"
-            },
-            {
-              id: 4,
-              title: "ccc"
-            },
-            {
-              id: 5,
-              title: "ccc"
-            },
-            {
-              id: 6,
-              title: "ccc"
-            },
-            {
-              id: 7,
-              title: "ccc"
-            },
-            {
-              id: 8,
-              title: "ccc"
-            },
-            {
-              id: 9,
-              title: "ccc"
-            },
-            {
-              id: 10,
-              title: "ccc"
-            },
-            {
-              id: 11,
-              title: "ccc"
-            },
-            {
-              id: 12,
-              title: "ccc"
-            },
-            {
-              id: 13,
-              title: "ccc"
-            }
-          ]
-        },
-        {
-          id: 20,
-          name: "Sed placerat lacus non elit gravida accumsan",
-          materials: [
-            {
-              id: 14,
-              title: "ggg"
-            },
-            {
-              id: 15,
-              title: "jjjj"
-            },
-            {
-              id: 16,
-              title: "yyyy"
-            }
-          ]
-        },
-        {
-          id: 30,
-          name: "Quisque sed mollis ex",
-          materials: []
-        }
-      ]
+      lessons: []
     };
   },
   methods: {
@@ -299,6 +219,9 @@ export default {
         ghostClass: "ghost"
       };
     }
+  },
+  async mounted() {
+    this.lessons = await lessons.get();
   }
 };
 </script>

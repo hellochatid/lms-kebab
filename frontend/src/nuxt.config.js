@@ -32,6 +32,7 @@ module.exports = {
   */
   plugins: [
     { src: '~plugins/nuxt-quill-plugin.js', ssr: false },
+    { src: '~/plugins/vue-tags-input', ssr: false },
     '~/plugins/vuedraggable'
   ],
   /*
@@ -56,7 +57,8 @@ module.exports = {
     ** You can extend webpack config here
     */
     extend(config, ctx) {
-    }
+    },
+    vendor: ['@johmun/vue-tags-input']
   },
   /*
   ** TUI Editor
