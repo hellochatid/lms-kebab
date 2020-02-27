@@ -98,7 +98,7 @@ class CoursesController extends Controller
         $tag =  $request->tag ? $request->tag : '';
         $image =  $request->image ? $request->image : '';
 
-        DB::table('courses')->insert([
+        $insertId = DB::table('courses')->insertGetId([
             'title' => $title,
             'subtitle' => $subtitle,
             'description' => $description,
@@ -110,7 +110,9 @@ class CoursesController extends Controller
 
         return response()->json([
             'success' => true,
-            'message' => 'courses successfully added',
+            'data' => [
+                'id' => $insertId
+            ]
         ]);
     }
 
