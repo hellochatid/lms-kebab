@@ -180,7 +180,7 @@ class CoursesController extends Controller
                 'title' => $courses->title,
                 'subtitle' => $courses->subtitle,
                 'description' => $courses->description,
-                'tag' => $courses->tag,
+                'tag' => array_filter(explode(',', $courses->tag)),
                 'image' => [
                     'name' => $courses->image !== '' && $courses->image !== null ? $courses->image : '',
                     'url' => $courses->image !== '' && $courses->image !== null ? url('') . Storage::url($courses->image) : ''
@@ -253,6 +253,7 @@ class CoursesController extends Controller
         if ($request->title) $updatedValue['title'] = $request->title;
         if ($request->subtitle) $updatedValue['subtitle'] = $request->subtitle;
         if ($request->description) $updatedValue['description'] = $request->description;
+        if ($request->tag) $updatedValue['tag'] = $request->tag;
         if ($request->image) $updatedValue['image'] = $request->image;
         if ($request->order) $updatedValue['order'] = $request->order;
 
