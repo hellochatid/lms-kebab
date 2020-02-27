@@ -340,6 +340,17 @@ th {
 .sidebar-icon-only .navbar .navbar-brand-wrapper {
   width: 70px;
 }
+.sidebar-icon-only .nav-link{
+	font-size: 10px;
+	left: -24px;
+	position: relative;
+	text-align: center;
+}
+.sidebar-icon-only .sidebar .nav-link .icon {
+    float: none;
+    margin-right: 0px;
+    font-size: 24px;
+}
 .navbar .navbar-brand-wrapper {
   transition: width 0.25s ease, background 0.25s ease;
   -webkit-transition: width 0.25s ease, background 0.25s ease;
@@ -378,6 +389,9 @@ th {
   padding-right: 24px;
   width: calc(100% - 260px);
   height: 70px;
+}
+.nav-profile-text {
+	font-size: 1rem;
 }
 .navbar .mdi-menu i {
   margin-top: 8px;
