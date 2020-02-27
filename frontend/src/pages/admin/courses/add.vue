@@ -18,7 +18,12 @@
       </b-breadcrumb>
     </div>
     <b-form @submit.stop.prevent="addCourse" ref="form">
-      <b-alert :show="alert.dismissCountDown" dismissible :variant="alert.variant" @dismissed="0">
+      <b-alert
+        :show="alert.dismissCountDown"
+        dismissible
+        :variant="alert.variant"
+        @dismissed="resetAlert"
+      >
         <div slot="dismiss">
           <i class="material-icons icon">close</i>
         </div>
@@ -67,7 +72,10 @@
               </client-only>
             </b-form-group>
           </b-card>
-          <b-button type="submit" variant="primary">Submit</b-button>
+          <b-button type="submit" variant="primary">
+            Submit
+            <b-spinner ref="spinner" small class="float-right d-none" label="Floated Right"></b-spinner>
+          </b-button>
           <NuxtLink to="/admin/courses" class="btn btn-danger btn-back">Back</NuxtLink>
         </b-col>
         <b-col sm="4">
@@ -85,7 +93,7 @@
 </template>
 
 <script>
-import { mapMutations, mapGetters } from "vuex";
+import { mapGetters } from "vuex";
 import courses from "~/services/courses";
 import form from "~/libs/form";
 
@@ -97,11 +105,16 @@ export default {
   methods: {
     addCourse() {
       const self = this;
+      const spinner = this.$refs.spinner;
+
+      // reset alert
+      this.resetAlert();
 
       // validate form
       if (!form.validation({ title: "required" })) return;
 
-      // disable form
+      // disable form & show spinner
+      spinner.classList.remove("d-none");
       this.disabledForm = true;
 
       // Get tags
@@ -113,7 +126,6 @@ export default {
 
       // Post course
       const file = this.$refs.file.files[0];
-
       if (typeof file !== "undefined") {
         const formData = new FormData();
         formData.append("file", file);
@@ -131,22 +143,27 @@ export default {
     },
     postCourse() {
       const self = this;
+      const spinner = this.$refs.spinner;
       var alertText = "";
       courses
         .add(this.$axios, this.input)
         .then(response => {
-          console.log("response", response);
           alertText = "Course successfully added";
-          form.alert(this.$store, alertText, 5, "success");
+          spinner.classList.add("d-none");
           self.disabledForm = false;
           self.resetForm();
+          form.alert(this.$store, alertText, 5, "success");
         })
         .catch(error => {
           console.log("error");
           alertText = "Oops something went wrong";
-          form.alert(this.$store, alertText, 5, "danger");
+          spinner.classList.add("d-none");
           self.disabledForm = false;
+          form.alert(this.$store, alertText, 5, "danger");
         });
+    },
+    resetAlert() {
+      form.alert(this.$store, "", 0, "default");
     },
     resetForm() {
       this.input.title = "";
@@ -178,6 +195,9 @@ export default {
       tags: [],
       disabledForm: false
     };
+  },
+  mounted() {
+    this.resetAlert();
   }
 };
 </script>
@@ -235,5 +255,10 @@ export default {
 .form-error {
   border: 1px solid #ef9a9a !important;
   background: #ffebee;
+}
+.btn .spinner-border-sm {
+  width: 22px;
+  height: 22px;
+  margin-left: 12px;
 }
 </style>
