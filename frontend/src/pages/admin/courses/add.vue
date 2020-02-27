@@ -82,8 +82,10 @@
           <b-card header-tag="header" class="card-form">
             <div slot="header">Featured Image</div>
             <label>
-              File
-              <input type="file" id="file" ref="file" />
+              <div class="upload-media">
+                <span class="material-icons icon">insert_photo</span>
+                <input type="file" id="file" ref="file" />
+              </div>
             </label>
           </b-card>
         </b-col>

@@ -16,7 +16,7 @@
 import { Navbar, Sidebar } from "../components/admin/";
 
 export default {
-  middleware: "admin",
+  // middleware: "admin",
   components: {
     Navbar,
     Sidebar
@@ -98,6 +98,24 @@ a:hover {
   background-color: #fe8196 !important;
   border-color: #fe8196 !important;
 }
+.upload-media{
+  width: 82%;
+  background: #e8e8e8;
+  text-align: center;
+  padding: 32px 0px;
+  position: relative;
+  border-radius: 6px;
+  margin-top: -16px;
+  color: #fff;
+}
+.upload-media input {
+  visibility: hidden;
+}
+.upload-media .material-icons {
+  font-size: 42px;
+  margin-top: 24px;
+}
+
 
 /* login */
 .container-scroller {
