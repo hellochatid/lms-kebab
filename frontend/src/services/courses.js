@@ -19,11 +19,39 @@ const courses = {
 		})
 
 	},
+	getById: async function (axios, id) {
+		const self = this
+		return new Promise(function (resolve, reject) {
+			axios.defaults.headers.common['Authorization'] = 'Bearer ' + self.accessToken()
+			axios.get('/admin/courses?id=' + id, axios.defaults.headers.common)
+				.then(function (response) {
+					var course = response.data.data.length > 0 ? response.data.data[0] : null;
+					resolve(course);
+				})
+				.catch(function (error) {
+					reject(error);
+				})
+		})
+
+	},
 	add: function (axios, input) {
 		const self = this
 		return new Promise(function (resolve, reject) {
 			axios.defaults.headers.common['Authorization'] = 'Bearer ' + self.accessToken()
 			axios.post('/admin/courses', input, axios.defaults.headers.common)
+				.then(function (response) {
+					resolve(response.data);
+				})
+				.catch(function (error) {
+					reject(error);
+				})
+		})
+	},
+	edit: function (axios, input, id) {
+		const self = this
+		return new Promise(function (resolve, reject) {
+			axios.defaults.headers.common['Authorization'] = 'Bearer ' + self.accessToken()
+			axios.patch('/admin/courses/' + id, input, axios.defaults.headers.common)
 				.then(function (response) {
 					resolve(response.data);
 				})

@@ -95,26 +95,6 @@ export default {
   components: {
     ConfirmDelete
   },
-  data() {
-    return {
-      items: [],
-      fields: [
-        { key: "index", label: "#", class: "width-30" },
-        { key: "title", label: "Course" },
-        { key: "lessons", label: "Lessons", class: "btn-default width-200" },
-        { key: "actions", label: "Actions", class: "text-center btn-actions" }
-      ],
-      currentPage: 1,
-      perPage: 10,
-      totalRows: 4,
-      confirmDeleteData: {
-        id: "",
-        title: "",
-        item_deleted: "",
-        model: ""
-      }
-    };
-  },
   computed: mapGetters({
     userAdmin: "users/userAdmin"
   }),
@@ -138,6 +118,26 @@ export default {
     deleteData(evt) {
       console.log("deleted id", this.confirmDeleteData.id);
     }
+  },
+  data() {
+    return {
+      items: [],
+      fields: [
+        { key: "index", label: "#", class: "width-30" },
+        { key: "title", label: "Course" },
+        { key: "lessons", label: "Lessons", class: "btn-default width-200" },
+        { key: "actions", label: "Actions", class: "text-center btn-actions" }
+      ],
+      currentPage: 1,
+      perPage: 10,
+      totalRows: 4,
+      confirmDeleteData: {
+        id: "",
+        title: "",
+        item_deleted: "",
+        model: ""
+      }
+    };
   },
   mounted() {
     courses

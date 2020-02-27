@@ -3,9 +3,9 @@
     <div class="page-header">
       <h3 class="page-title">
         <span class="page-title-icon bg-gradient-primary text-white mr-2">
-          <i class="material-icons icon">playlist_add</i>
+          <i class="material-icons icon">edit</i>
         </span>
-        Add Course
+        Edit Course
       </h3>
       <b-breadcrumb>
         <li class="breadcrumb-item">
@@ -14,7 +14,7 @@
         <li class="breadcrumb-item">
           <NuxtLink to="/admin/courses">Courses</NuxtLink>
         </li>
-        <b-breadcrumb-item active>Add Course</b-breadcrumb-item>
+        <b-breadcrumb-item active>Edit Course</b-breadcrumb-item>
       </b-breadcrumb>
     </div>
     <b-form @submit.stop.prevent="addCourse" ref="form">
@@ -135,26 +135,25 @@ export default {
         courses
           .uploadFile(this.$axios, formData)
           .then(response => {
-            this.postCourse();
+            this.patchCourse();
           })
           .catch(error => {
             console.log("error", error);
           });
       } else {
-        this.postCourse();
+        this.patchCourse();
       }
     },
-    postCourse() {
+    patchCourse() {
       const self = this;
       const spinner = this.$refs.spinner;
       var alertText = "";
       courses
-        .add(this.$axios, this.input)
+        .edit(this.$axios, this.input, this.$route.params.id)
         .then(response => {
-          alertText = "Course successfully added";
+          alertText = "Course successfully updated";
           spinner.classList.add("d-none");
           self.disabledForm = false;
-          self.resetForm();
           form.alert(this.$store, alertText, 5, "success");
         })
         .catch(error => {
@@ -167,17 +166,6 @@ export default {
     },
     resetAlert() {
       form.alert(this.$store, "", 0, "default");
-    },
-    resetForm() {
-      this.input.title = "";
-      this.input.subtitle = "";
-      this.input.description = "";
-      this.input.image = "";
-      this.input.tag = [];
-      this.tag = "";
-      this.tags = [];
-      this.vueTags = [];
-      this.$refs.form.reset();
     }
   },
   computed: mapGetters({
@@ -186,6 +174,7 @@ export default {
   }),
   data() {
     return {
+      courseID: 0,
       input: {
         title: "",
         subtitle: "",
@@ -199,7 +188,21 @@ export default {
     };
   },
   mounted() {
-    this.resetAlert();
+    const self = this;
+    self.resetAlert();
+    self.disabledForm = true;
+
+    courses.getById(this.$axios, this.$route.params.id).then(data => {
+      this.input.title = data.title;
+      this.input.subtitle = data.subtitle;
+      this.input.description = data.description;
+      this.vueTags = data.tag.map(item => ({
+        text: item,
+        tiClasses: ["ti-valid"]
+      }));
+      console.log(data);
+      self.disabledForm = false;
+    });
   }
 };
 </script>
