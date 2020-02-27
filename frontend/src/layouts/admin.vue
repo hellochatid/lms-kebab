@@ -16,7 +16,7 @@
 import { Navbar, Sidebar } from "../components/admin/";
 
 export default {
-  middleware: "admin",
+  // middleware: "admin",
   components: {
     Navbar,
     Sidebar
@@ -98,6 +98,24 @@ a:hover {
   background-color: #fe8196 !important;
   border-color: #fe8196 !important;
 }
+.upload-media{
+  width: 82%;
+  background: #e8e8e8;
+  text-align: center;
+  padding: 32px 0px;
+  position: relative;
+  border-radius: 6px;
+  margin-top: -16px;
+  color: #fff;
+}
+.upload-media input {
+  visibility: hidden;
+}
+.upload-media .material-icons {
+  font-size: 42px;
+  margin-top: 24px;
+}
+
 
 /* login */
 .container-scroller {
@@ -340,6 +358,17 @@ th {
 .sidebar-icon-only .navbar .navbar-brand-wrapper {
   width: 70px;
 }
+.sidebar-icon-only .nav-link{
+	font-size: 10px;
+	left: -24px;
+	position: relative;
+	text-align: center;
+}
+.sidebar-icon-only .sidebar .nav-link .icon {
+    float: none;
+    margin-right: 0px;
+    font-size: 24px;
+}
 .navbar .navbar-brand-wrapper {
   transition: width 0.25s ease, background 0.25s ease;
   -webkit-transition: width 0.25s ease, background 0.25s ease;
@@ -378,6 +407,9 @@ th {
   padding-right: 24px;
   width: calc(100% - 260px);
   height: 70px;
+}
+.nav-profile-text {
+	font-size: 1rem;
 }
 .navbar .mdi-menu i {
   margin-top: 8px;
