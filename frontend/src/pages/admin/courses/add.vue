@@ -72,11 +72,14 @@
               </client-only>
             </b-form-group>
           </b-card>
-          <b-button type="submit" variant="primary">
+          <b-button type="submit" variant="primary" :disabled="disabledForm">
             Submit
             <b-spinner ref="spinner" small class="float-right d-none" label="Floated Right"></b-spinner>
           </b-button>
-          <NuxtLink to="/admin/courses" class="btn btn-danger btn-back">
+          <NuxtLink
+            to="/admin/courses"
+            :class="disabledForm ? 'btn btn-danger btn-back disabled' : 'btn btn-danger btn-back'"
+          >
             <i class="material-icons icon float-left">keyboard_backspace</i>
             Back
           </NuxtLink>
@@ -84,12 +87,7 @@
         <b-col sm="4">
           <b-card header-tag="header" class="card-form">
             <div slot="header">Featured Image</div>
-            <label>
-              <div class="upload-media">
-                <span class="material-icons icon">insert_photo</span>
-                <input type="file" id="file" ref="file" />
-              </div>
-            </label>
+            <ImageUploader @changed="fileChanged" :reset="resetImage" />
           </b-card>
         </b-col>
       </b-row>
@@ -101,12 +99,14 @@
 import { mapGetters } from "vuex";
 import courses from "~/services/courses";
 import form from "~/libs/form";
+import { ImageUploader } from "~/components/admin/";
 
 export default {
   head: {
     title: "Admin - Add Course"
   },
   layout: "admin",
+  components: { ImageUploader },
   methods: {
     addCourse() {
       const self = this;
@@ -130,13 +130,14 @@ export default {
       this.input.tag = tags.toString();
 
       // Post course
-      const file = this.$refs.file.files[0];
-      if (typeof file !== "undefined") {
+      const file = this.fileImage;
+      if (file !== null) {
         const formData = new FormData();
         formData.append("file", file);
         courses
           .uploadFile(this.$axios, formData)
           .then(response => {
+            self.input.image = response.data.file_name;
             this.postCourse();
           })
           .catch(error => {
@@ -167,6 +168,10 @@ export default {
           form.alert(this.$store, alertText, 5, "danger");
         });
     },
+    fileChanged(image) {
+      this.resetImage = false;
+      this.fileImage = image.file;
+    },
     resetAlert() {
       form.alert(this.$store, "", 0, "default");
     },
@@ -179,6 +184,7 @@ export default {
       this.tag = "";
       this.tags = [];
       this.vueTags = [];
+      this.resetImage = true;
       this.$refs.form.reset();
     }
   },
@@ -197,6 +203,9 @@ export default {
       },
       tag: "",
       vueTags: [],
+      fileImage: null,
+      imageUrl: "",
+      resetImage: false,
       disabledForm: false
     };
   },
@@ -205,69 +214,3 @@ export default {
   }
 };
 </script>
-
-<style>
-.ti-disabled .ti-tag {
-  background: #bdbdbd;
-}
-.alert {
-  position: relative;
-}
-.alert:before {
-  position: absolute;
-  top: 18px;
-  left: 20px;
-  content: "info";
-  font-family: "Material Icons";
-  font-weight: normal;
-  font-style: normal;
-  font-size: 24px;
-  display: inline-block;
-  line-height: 1;
-  text-transform: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-  white-space: nowrap;
-  direction: ltr;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  -moz-osx-font-smoothing: grayscale;
-  font-feature-settings: "liga";
-}
-.alert.alert-success:before {
-  content: "done";
-}
-.alert.alert-danger:before {
-  content: "error_outline";
-}
-.alert.alert-warning:before {
-  content: "warning";
-}
-.alert.alert-info:before {
-  content: "info";
-}
-.alert.alert-dismissible .close {
-  top: 6px;
-}
-.alert.alert-dismissible .close .icon {
-  font-size: 18px;
-}
-.alert p {
-  margin: 0;
-  padding: 6px 32px;
-}
-.form-error {
-  border: 1px solid #ef9a9a !important;
-  background: #ffebee;
-}
-.btn .spinner-border-sm {
-  width: 22px;
-  height: 22px;
-  margin-left: 12px;
-}
-.btn .icon.float-left {
-  margin-right: 6px;
-  font-size: 20px;
-  margin-top: 2px;
-}
-</style>
