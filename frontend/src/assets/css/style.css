@@ -1,0 +1,21 @@
+/*------------------------------------------*/
+/*	   	General
+/*------------------------------------------*/
+body {
+    font-family: "Ubuntu", sans-serif;
+    color: #3e4b5b;
+}
+
+/*------------------------------------------*/
+/*	   	Bootstrap rewrite
+/*------------------------------------------*/
+.navbar .container, .navbar .container-fluid, .navbar .container-sm, .navbar .container-md, .navbar .container-lg, .navbar .container-xl {
+    min-height: auto;
+}
+
+/*------------------------------------------*/
+/*	   	Main Page
+/*------------------------------------------*/
+.main-page {
+    margin-top: 70px;
+}

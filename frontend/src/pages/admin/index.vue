@@ -110,13 +110,12 @@
         </div>
       </div>
     </div>
-
   </div>
-
 </template>
 
 <script>
 import { mapMutations, mapGetters } from "vuex";
+import "~/assets/css/admin.css";
 
 export default {
   head: {

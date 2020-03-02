@@ -1,16 +1,6 @@
 <template>
-  <div class="container">
-    <h1>About</h1>
-    <p>
-      <NuxtLink to="/about">
-        About page
-      </NuxtLink>
-    </p>
-    <p>
-      <NuxtLink to="/users">
-        Lists of users
-      </NuxtLink>
-    </p>
+  <div>
+    <h1>About Page</h1>
   </div>
 </template>
 
@@ -19,8 +9,13 @@ export default {
   head: {
     title: "About",
     meta: [
-      { hid: 'description', name: 'description', content: 'about page description' }
-    ],
-  }
+      {
+        hid: "description",
+        name: "description",
+        content: "about page description"
+      }
+    ]
+  },
+  layout: "main"
 };
 </script>

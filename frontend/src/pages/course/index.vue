@@ -115,28 +115,8 @@ import { mapMutations, mapGetters } from "vuex";
 
 export default {
   head: {
-    title: "Student - Course"
+    title: "Course"
   },
-  layout: "admin",
-  computed: mapGetters({
-    userAdmin: "users/userAdmin"
-  }),
+  layout: "course"
 };
 </script>
-
-<style>
-.board-wrapper .board-portlet {
-  background: #eae2ec;
-  margin: 0px 15px;
-  padding: 22px 20px;
-  min-width: 345px;
-  width: 345px;
-  border-radius: 4px;
-}
-.full-width{
-  width: 100% !important;
-}
-.b-40{
-  marin:-40px;
-}
-</style>
