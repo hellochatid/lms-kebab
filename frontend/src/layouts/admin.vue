@@ -13,10 +13,10 @@
 </template>
 
 <script>
-import { Navbar, Sidebar } from "../components/admin/";
+import { Navbar, Sidebar } from "~/components/admin/";
 
 export default {
-  // middleware: "admin",
+  middleware: "admin",
   components: {
     Navbar,
     Sidebar
@@ -609,7 +609,6 @@ th {
 }
 
 /* Lessons */
-
 .card-collapse {
   margin-bottom: 10px;
 }
@@ -818,7 +817,271 @@ th {
   margin-right: 6px;
 }
 
-/* Misc */
+/*------------------------------------------*/
+/*	   	Form
+/*------------------------------------------*/
+.ti-disabled .ti-tag {
+  background: #bdbdbd;
+}
+.alert {
+  position: relative;
+}
+.alert:before {
+  position: absolute;
+  top: 18px;
+  left: 20px;
+  content: "info";
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "liga";
+}
+.alert.alert-success:before {
+  content: "done";
+}
+.alert.alert-danger:before {
+  content: "error_outline";
+}
+.alert.alert-warning:before {
+  content: "warning";
+}
+.alert.alert-info:before {
+  content: "info";
+}
+.alert.alert-dismissible .close {
+  top: 6px;
+}
+.alert.alert-dismissible .close .icon {
+  font-size: 18px;
+}
+.alert p {
+  margin: 0;
+  padding: 6px 32px;
+}
+.form-error {
+  border: 1px solid #ef9a9a !important;
+  background: #ffebee;
+}
+.btn .spinner-border-sm {
+  width: 22px;
+  height: 22px;
+  margin-left: 12px;
+}
+.btn .icon.float-left {
+  margin-right: 6px;
+  font-size: 20px;
+  margin-top: 2px;
+}
+
+/*------------------------------------------*/
+/*	    Upload image
+/*------------------------------------------*/
+.upload-image {
+  background: #eeeeee;
+  border-radius: 4px;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.upload-image:hover .btn-upload {
+  right: 10px;
+}
+.upload-image .btn-upload {
+  position: absolute;
+  z-index: 100;
+  right: -50px;
+  width: 40px;
+  height: 40px;
+}
+.upload-image .btn-upload.default {
+  bottom: 10px;
+  transition: all 0.2s ease-in-out;
+}
+.upload-image .btn-upload.remove {
+  bottom: 58px;
+  transition: all 0.4s ease-in-out;
+}
+.upload-image .btn-upload.restore {
+  bottom: 58px;
+  transition: all 0.4s ease-in-out;
+}
+.upload-image label {
+  outline: 0;
+  width: inherit;
+  height: inherit;
+  margin-bottom: 0;
+  border-radius: 20px;
+  cursor: pointer;
+  overflow: hidden;
+}
+.upload-image label:after {
+  position: absolute;
+  height: inherit;
+  width: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  content: "";
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "liga";
+}
+.upload-image .btn-upload.default label:after {
+  content: "add_a_photo";
+}
+.upload-image .btn-upload.remove label:after {
+  content: "delete";
+}
+.upload-image .btn-upload.restore label:after {
+  content: "replay";
+}
+.upload-image label input,
+.upload-image label button {
+  display: none;
+  z-index: -99999;
+  opacity: 0;
+  position: absolute;
+}
+.upload-image .upload-preview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.upload-image .upload-preview .icon {
+  font-size: 72px;
+  color: #bdbdbd;
+}
+.upload-image .upload-preview .upload-preview-wrapper {
+  width: 100%;
+  height: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  transition: all 0.3s ease-in-out;
+}
+.upload-image:hover .upload-preview .upload-preview-wrapper {
+  background: rgba(255, 255, 255, 0.5);
+}
+.upload-image .upload-preview .upload-preview-wrapper.has-image {
+  background: #fff;
+}
+.upload-image .upload-preview .upload-preview-wrapper img {
+  transition: all 0.3s ease-in-out;
+}
+.upload-image:hover .upload-preview .upload-preview-wrapper img {
+  opacity: 0.5;
+}
+.btn-warning,
+.btn-warning:focus,
+.btn-warning:active,
+.btn-warning:hover {
+  color: #fff !important;
+}
+
+/*------------------------------------------*/
+/*	   	Image ratio
+/*------------------------------------------*/
+.square {
+  position: relative;
+}
+.square:before {
+  content: "";
+  display: block;
+  padding-top: 100%; /* initial ratio of 1:1*/
+}
+
+.square .square-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.img-wrap {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.img-wrap img {
+  min-width: 100%;
+  min-height: 100%;
+
+  position: absolute;
+  top: -10000px;
+  bottom: -10000px;
+  left: -10000px;
+  right: -10000px;
+  margin: auto;
+  z-index: 2;
+}
+
+/* Other ratios - just apply the desired class to the "box" element */
+.ratio2_1:before {
+  padding-top: 50%;
+}
+.ratio1_2:before {
+  padding-top: 200%;
+}
+.ratio4_3:before {
+  padding-top: 75%;
+}
+.ratio16_9:before {
+  padding-top: 56.25%;
+}
+.ratio2_1 .landscape,
+.ratio16_9 .landscape {
+  max-width: 100% !important;
+  max-height: inherit !important;
+}
+.ratio2_1 .potrait,
+.ratio16_9 .potrait {
+  max-width: inherit !important;
+}
+
+/* image proportion */
+.squared {
+  max-width: 100%;
+  max-height: 100%;
+}
+.landscape {
+  max-height: 100%;
+  max-width: inherit;
+}
+.potrait {
+  max-width: 100%;
+  max-height: inherit;
+}
+
+/*------------------------------------------*/
+/*	   	Misc
+/*------------------------------------------*/
 .width-30 {
   width: 30px;
 }
