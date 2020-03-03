@@ -1,38 +1,45 @@
 <template>
-  <div class="container-stroller">
-    <div>
-      <div class="container-fluid page-body-wrapper full-page-wrapper">
-        <div class="content-wrapper d-flex align-items-center auth">
-          <div class="row flex-grow">
-            <div class="col-lg-4 mx-auto">
-              <div class="auth-form-light text-left p-5">
-                <div class="brand-logo">Kebab</div>
-                <h4>Hello! let's get started</h4>
-                <h6 class="font-weight-light">Sign in to continue.</h6>
-                <form class="pt-3">
-                  <div class="form-group">
-                    <label for="email"></label>
-                    <input id="email" type="email" v-model="input.email" placeholder="Email" />
-                  </div>
-                  <div class="form-group">
-                    <label for="password"></label>
-                    <input
-                      id="password"
-                      type="password"
-                      v-model="input.password"
-                      placeholder="Password"
-                    />
-                  </div>
-                  <div class="mb-2 mt-24">
-                    <button type="button" class="btn btn-block btn-primary" @click="postLogin">
-                      <i class="mdi mdi-facebook mr-2"></i>Login
-                    </button>
-                  </div>
-                </form>
-              </div>
+  <div class="limiter">
+    <div class="container-login" style>
+      <div class="wrap-login">
+        <form class="login-form validate-form">
+          <span class="login-form-title">Login</span>
+
+          <div class="wrap-input validate-input" data-validate="Username is reauired">
+            <span class="label-input">Email</span>
+            <input
+              id="email"
+              class="input"
+              type="email"
+              v-model="input.email"
+              placeholder="Type your email"
+            />
+            <span class="focus-input input-email"></span>
+          </div>
+
+          <div class="wrap-input validate-input" data-validate="Password is required">
+            <span class="label-input">Password</span>
+            <input
+              id="password"
+              class="input"
+              type="password"
+              v-model="input.password"
+              placeholder="Type your password"
+            />
+            <span class="focus-input input-password"></span>
+          </div>
+
+          <div class="text-right forgot-password">
+            <a href="#">Forgot password?</a>
+          </div>
+
+          <div class="container-login-form-btn">
+            <div class="wrap-login-form-btn">
+              <div class="login-form-bgbtn"></div>
+              <button type="button" class="login-form-btn" @click="postLogin">Login</button>
             </div>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   </div>
@@ -40,7 +47,8 @@
 
 <script>
 import { mapMutations, mapGetters } from "vuex";
-import "~/assets/css/admin.css";
+import form from "~/libs/form";
+
 const Cookie = process.client ? require("js-cookie") : undefined;
 
 export default {
@@ -63,6 +71,8 @@ export default {
   },
   methods: {
     postLogin(e) {
+      if (!form.validation({ email: "required", password: "required" })) return;
+
       this.$axios
         .post("/iam/login", {
           password: this.input.password,
@@ -94,99 +104,276 @@ export default {
 </script>
 
 <style>
-.container-scroller {
-  overflow: hidden;
+/*------------------------------------------*/
+/*	   	General
+/*------------------------------------------*/
+body {
+  font-family: "Ubuntu", sans-serif;
+  color: #3e4b5b;
 }
-.page-body-wrapper.full-page-wrapper {
+
+/*------------------------------------------*/
+/*	   	Nuxt
+/*------------------------------------------*/
+.nuxt-progress {
+  background: #ef5350;
+}
+
+/*------------------------------------------*/
+/*	   	Login
+/*------------------------------------------*/
+.limiter {
+  background: #9956f3;
+  background: -webkit-linear-gradient(-135deg, #d708e2, #21bee1);
+  background: -o-linear-gradient(-135deg, #d708e2, #21bee1);
+  background: -moz-linear-gradient(-135deg, #d708e2, #21bee1);
+  background: linear-gradient(-135deg, #d708e2, #21bee1);
+}
+.container-login {
+  background-image: url("~assets/images/bg-coloris.jpg");
   width: 100%;
   min-height: 100vh;
-  background: #f2edf3;
-}
-.page-body-wrapper {
-  min-height: calc(100vh - 70px);
   display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  padding-left: 0;
-  padding-right: 0;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
-.container-fluid {
+
+.wrap-login {
+  padding: 65px 55px 55px;
+  width: 500px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.login-form-title {
+  display: block;
+  font-size: 40px;
+  font-weight: 500;
+  color: #333333;
+  line-height: 1.2;
+  text-align: center;
+  padding-bottom: 49px;
+}
+
+/* input */
+.wrap-input {
   width: 100%;
-  padding-right: 20px;
-  padding-left: 20px;
-  margin-right: auto;
-  margin-left: auto;
+  position: relative;
+  border-bottom: 2px solid #d9d9d9;
 }
-.content-wrapper {
-  background: #f2edf3;
-  padding: 2.75rem 2.25rem;
-  width: 100%;
-  -webkit-box-flex: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
+
+.label-input {
+  font-size: 14px;
+  color: #333333;
+  line-height: 1.5;
+  padding-left: 7px;
 }
-.flex-grow {
-  -webkit-box-flex: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-}
-.auth .auth-form-light {
-  background: #ffffff;
-}
-.auth .brand-logo {
-  margin-bottom: 2rem;
-  margin-bottom: 2rem;
-  font-weight: bold;
-  font-size: 2rem;
-  color: #fe8196;
-}
-font-weight-light {
-  font-weight: 300 !important;
-}
-.pt-3,
-.py-3,
-.card-revenue-table .revenue-item {
-  padding-top: 1rem !important;
-}
-.auth form .form-group {
-  margin-bottom: 1.5rem;
-}
-.auth form .form-group .form-control {
-  background: transparent;
-  border-radius: 0;
-  font-size: 0.9375rem;
-}
-.auth form .form-group {
-  margin-bottom: 0.5rem;
-}
-.mt-24 {
-  margin-top: 24px;
-}
-.form-control {
-  border: 1px solid #ebedf2;
-  font-size: 0.8125rem;
+.input {
+  outline: none;
+  border: none;
+  font-size: 16px;
+  color: #333333;
+  line-height: 1.2;
+
   display: block;
   width: 100%;
-  font-weight: 400;
-  color: #495057;
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out,
-    -webkit-box-shadow 0.15s ease-in-out;
+  height: 55px;
+  background: transparent;
+  padding: 0 7px 0 43px;
 }
-.form-control-lg {
-  height: 3.175rem;
-  padding: 0.94rem 1.94rem;
-  font-size: 1.25rem;
-  line-height: 1.5;
-  border-radius: 0.3rem;
-}
-.form-group input {
+
+/* focus */
+.focus-input {
+  position: absolute;
+  display: block;
   width: 100%;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  border: 1px #e1e1e1 solid;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
 }
+
+.focus-input::after {
+  color: #adadad;
+  content: "arrow_forward";
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "liga";
+
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  height: calc(100% - 20px);
+  bottom: 0;
+  left: 0;
+  padding-left: 13px;
+  padding-top: 3px;
+}
+
+.focus-input::before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #7f7f7f;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.input:focus + .focus-input::before {
+  width: 100%;
+}
+
+.has-val.input + .focus-input::before {
+  width: 100%;
+}
+
+.focus-input.input-email::after {
+  content: "email";
+}
+.focus-input.input-password::after {
+  content: "lock";
+}
+.input:focus + .focus-input::after {
+  color: #a64bf4;
+}
+
+.has-val.input + .focus-input::after {
+  color: #a64bf4;
+}
+
+/* button */
+button {
+  outline: none !important;
+  border: none;
+  background: transparent;
+}
+.container-login-form-btn {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.wrap-login-form-btn {
+  width: 100%;
+  display: block;
+  position: relative;
+  z-index: 1;
+  border-radius: 25px;
+  overflow: hidden;
+  margin: 0 auto;
+
+  box-shadow: 0 5px 30px 0px rgba(3, 216, 222, 0.2);
+  -moz-box-shadow: 0 5px 30px 0px rgba(3, 216, 222, 0.2);
+  -webkit-box-shadow: 0 5px 30px 0px rgba(3, 216, 222, 0.2);
+  -o-box-shadow: 0 5px 30px 0px rgba(3, 216, 222, 0.2);
+  -ms-box-shadow: 0 5px 30px 0px rgba(3, 216, 222, 0.2);
+}
+
+.login-form-bgbtn {
+  position: absolute;
+  z-index: -1;
+  width: 300%;
+  height: 100%;
+  background: #a64bf4;
+  background: -moz-linear-gradient(right, #00dbde, #fc00ff, #00dbde, #fc00ff);
+  background: -o-linear-gradient(right, #00dbde, #fc00ff, #00dbde, #fc00ff);
+  background: -webkit-linear-gradient(
+    right,
+    #00dbde,
+    #fc00ff,
+    #00dbde,
+    #fc00ff
+  );
+  top: 0;
+  left: -100%;
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.login-form-btn {
+  font-size: 16px;
+  color: #fff;
+  line-height: 1.2;
+  text-transform: uppercase;
+
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  width: 100%;
+  height: 50px;
+}
+
+.wrap-login-form-btn:hover .login-form-bgbtn {
+  left: 0;
+}
+
+.forgot-password {
+  padding: 8px 0 32px;
+}
+.forgot-password a {
+  font-size: 14px;
+  color: #666666;
+  margin: 0px;
+  transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+}
+.forgot-password a:focus {
+  outline: none !important;
+}
+.forgot-password a:hover {
+  text-decoration: none;
+  color: #a64bf4;
+}
+
+/* Alert */
+#description-email,
+#description-password {
+  display: none;
+}
+
 </style>
