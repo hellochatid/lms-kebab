@@ -18,7 +18,7 @@
     <b-card header-tag="header" footer-tag="footer" class="card-table">
       <div slot="header">
         <div class="card-actions">
-          <NuxtLink to="/admin/courses/add" class="btn btn-primary btn-action">
+          <NuxtLink to="/admin/courses/add" class="btn btn-gradient-primary btn-action btn-sm">
             <i class="material-icons icon">playlist_add</i>
             <span>Add Course</span>
           </NuxtLink>
@@ -49,7 +49,7 @@
         <template v-slot:cell(actions)="data">
           <NuxtLink
             :to="'/admin/courses/edit/' + data.item.id"
-            class="btn btn-outline-primary btn-sm"
+            class="btn btn-outline-info btn-sm"
           >
             <i class="material-icons icon">edit</i>
           </NuxtLink>
