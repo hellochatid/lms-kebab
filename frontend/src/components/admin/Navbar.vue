@@ -29,8 +29,14 @@
             </div>
             <span class="nav-profile-text">Hasan Sas</span>
           </template>
-          <b-dropdown-item href="#">Profile</b-dropdown-item>
-          <b-dropdown-item @click="logout">Sign Out</b-dropdown-item>
+          <b-dropdown-item href="#">
+            <i class="material-icons icon">person_outline</i>
+            <span>Profile</span>
+          </b-dropdown-item>
+          <b-dropdown-item @click="logout">
+            <i class="material-icons icon">exit_to_app</i>
+            <span>Signout</span>
+          </b-dropdown-item>
         </b-nav-item-dropdown>
       </b-navbar-nav>
     </b-collapse>

@@ -33,7 +33,7 @@
       <b-row>
         <b-col sm="8">
           <b-card class="card-form">
-            <b-form-group label="Title" label-for="title" description="Title">
+            <b-form-group label="Title" label-for="title">
               <b-form-input
                 v-model="input.title"
                 id="title"
@@ -57,7 +57,7 @@
                 id="description"
                 :disabled="disabledForm"
                 placeholder="Enter description"
-                rows="3"
+                rows="4"
               ></b-form-textarea>
             </b-form-group>
             <b-form-group label="Tag" label-for="tag">
@@ -86,7 +86,7 @@
         </b-col>
         <b-col sm="4">
           <b-card header-tag="header" class="card-form">
-            <div slot="header">Featured Image</div>
+            <h4 slot="header" class="card-title ">Featured Image</h4>
             <ImageUploader @changed="fileChanged" :reset="resetImage" />
           </b-card>
         </b-col>

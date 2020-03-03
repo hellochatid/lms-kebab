@@ -5,7 +5,7 @@
         <div class="img-wrap">
           <div class="upload-image">
             <div class="btn-upload default">
-              <label for="file-image" class="btn-info">
+              <label for="file-image" class="btn-primary">
                 <input type="file" id="file-image" ref="file" @change="previewImage" />
               </label>
             </div>
