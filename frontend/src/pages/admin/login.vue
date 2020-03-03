@@ -297,14 +297,29 @@ button {
   overflow: hidden;
   margin: 0 auto;
 
+
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#da8cff),
+    to(#9a55ff)
+  );
+  background: linear-gradient(to right, #da8cff, #9a55ff);
+  border: 0;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+
   box-shadow: 0 5px 30px 0px rgba(3, 216, 222, 0.2);
   -moz-box-shadow: 0 5px 30px 0px rgba(3, 216, 222, 0.2);
   -webkit-box-shadow: 0 5px 30px 0px rgba(3, 216, 222, 0.2);
   -o-box-shadow: 0 5px 30px 0px rgba(3, 216, 222, 0.2);
   -ms-box-shadow: 0 5px 30px 0px rgba(3, 216, 222, 0.2);
 }
-
-.login-form-bgbtn {
+.wrap-login-form-btn:hover {
+  opacity: 0.8;
+}
+.login-form-bgbtn-x {
   position: absolute;
   z-index: -1;
   width: 300%;
