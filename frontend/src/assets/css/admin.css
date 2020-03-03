@@ -116,7 +116,6 @@ table thead th {
 table th,
 .table td {
     vertical-align: middle;
-    font-size: 0.875rem;
     line-height: 1;
     white-space: nowrap;
 }
@@ -203,10 +202,6 @@ th {
 .navbar .mdi-menu i {
     margin-top: 8px;
     cursor: pointer;
-}
-.default-layout-navbar {
-    padding: 0;
-    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
 }
 .dropdown-menu {
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
@@ -369,59 +364,6 @@ th {
 .page-header .page-title small {
     color: #757575;
     font-weight: 300;
-}
-
-/* table */
-.table-responsive {
-    display: block;
-    width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-}
-.table-responsive {
-    display: block;
-    width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-}
-.table {
-    margin-bottom: 0;
-    width: 100%;
-    color: #212529;
-    border-collapse: collapse;
-}
-.table thead th {
-    border-top: 0;
-    border-bottom-width: 1px;
-    font-weight: initial;
-    font-weight: 500;
-    color: #fe8196;
-}
-table thead th {
-    vertical-align: bottom;
-    border-bottom: 2px solid #ebedf2;
-}
-table th,
-.table td {
-    vertical-align: middle;
-    font-size: 0.875rem;
-    line-height: 1;
-    white-space: nowrap;
-}
-.table th,
-.table td {
-    padding: 0.9375rem;
-    vertical-align: top;
-    border-top: 1px solid #ebedf2;
-}
-th {
-    text-align: inherit;
-}
-.table th img,
-.table td img {
-    width: 36px;
-    height: 36px;
-    border-radius: 100%;
 }
 
 /* card table */
