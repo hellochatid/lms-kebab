@@ -34,7 +34,8 @@ module.exports = {
   plugins: [
     { src: '~plugins/nuxt-quill-plugin.js', ssr: false },
     { src: '~/plugins/vue-tags-input', ssr: false },
-    '~/plugins/vuedraggable'
+    '~/plugins/vuedraggable',
+    '~/plugins/vue-gallery.client.js'
   ],
   /*
   ** Nuxt.js dev-modules

@@ -86,7 +86,7 @@
         </b-col>
         <b-col sm="4">
           <b-card header-tag="header" class="card-form">
-            <div slot="header">Featured Image</div>
+            <h4 slot="header" class="card-title">Featured Image</h4>
             <ImageUploader :value="imageUrl" @changed="fileChanged" :reset="resetImage" />
           </b-card>
         </b-col>
