@@ -7,9 +7,9 @@ services:
     build:
       context: ./
       dockerfile: sourcefiles/app.dockerfile
+    working_dir: /var/www
     volumes:
       - ./src:/var/www
-      - ./src/storage:/var/www/storage
     environment:
       - "MAIL_FROM_NAME=${MAIL_FROM_NAME}"
       - "MAIL_FROM_ADDRESS=${MAIL_FROM_ADDRESS}"
@@ -20,8 +20,10 @@ services:
     build:
       context: ./
       dockerfile: sourcefiles/web.dockerfile
+    working_dir: /var/www
     volumes:
       - ./src/storage/logs/:/var/log/nginx
+      - ./src/storage/app:/var/www/storage/app
 
   # The Database
   database:
