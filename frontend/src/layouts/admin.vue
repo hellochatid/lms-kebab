@@ -1096,4 +1096,30 @@ input[type="radio"] + .lbl:hover::before {
 .ql-toolbar.ql-snow + .ql-container.ql-snow {
   border-color: #ebedf2;
 }
+
+/*------------------------------------------*/
+/*	    Pagination
+/*------------------------------------------*/
+.page-link {
+  border-color: #ebedf2 !important;
+  color: #343a40;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.page-link:hover {
+  color: #fff;
+  background-color: #c68bff;
+  border-color: #c68bff !important;
+}
+.page-item.active .page-link {
+  background: #b66dff;
+  border-color: #b66dff !important;
+}
+
+.pagination li:first-child .page-link{
+  border-radius: 25px 0 0 25px;
+}
+.pagination li:last-child .page-link{
+  border-radius: 0 25px 25px 0;
+}
 </style>

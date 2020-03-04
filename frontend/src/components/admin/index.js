@@ -1,11 +1,11 @@
 import Navbar from './Navbar.vue'
 import Sidebar from './Sidebar.vue'
-import ConfirmDelete from './ConfirmDelete.vue'
+import ModalConfirmation from './ModalConfirmation.vue'
 import ImageUploader from './ImageUploader.vue'
 
 export {
     Navbar,
     Sidebar,
-    ConfirmDelete,
+    ModalConfirmation,
     ImageUploader
 }

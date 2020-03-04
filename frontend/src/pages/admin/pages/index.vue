@@ -48,7 +48,7 @@
           <b-button
             variant="outline-danger"
             size="sm"
-            @click.stop="confirmDelete(data.item.id, data.item.first_name, 'page', data.index, $event.target, '')"
+            @click.stop="confirmDelete(data.item, data.index, $event.target)"
           >
             <i class="material-icons icon">delete</i>
           </b-button>
@@ -69,13 +69,13 @@
       </div>
     </b-card>
 
-    <ConfirmDelete :data="confirmDeleteData" :onDelete="deleteData" />
+    <ModalConfirmation :data="ModalConfirmationData" :onOK="deleteData" />
   </div>
 </template>
 
 <script>
 import { mapMutations, mapGetters } from "vuex";
-import { ConfirmDelete } from "../../../components/admin";
+import { ModalConfirmation } from "../../../components/admin";
 
 export default {
   head: {
@@ -83,7 +83,7 @@ export default {
   },
   layout: "admin",
   components: {
-    ConfirmDelete
+    ModalConfirmation
   },
   data() {
     return {
@@ -107,11 +107,10 @@ export default {
       currentPage: 1,
       perPage: 3,
       totalRows: 4,
-      confirmDeleteData: {
+      ModalConfirmationData: {
         id: "",
         title: "",
-        item_deleted: "",
-        model: ""
+        content: ""
       }
     };
   },
@@ -123,16 +122,15 @@ export default {
       this.totalRows = filteredItems.length;
       this.currentPage = 1;
     },
-    confirmDelete(id, item_deleted, model, index, button, title) {
-      this.confirmDeleteData.id = id;
-      this.confirmDeleteData.title =
-        title !== "" ? title : "You are about to dalete";
-      this.confirmDeleteData.item_deleted = item_deleted;
-      this.confirmDeleteData.model = model;
-      this.$root.$emit("bv::show::modal", "ModalconfirmDelete", button);
+    confirmDelete(item, index, button) {
+      this.ModalConfirmationData.id = item.id;
+      this.ModalConfirmationData.title = "Confirm Deletion";
+      this.ModalConfirmationData.content =
+        'You are about to dalete "' + item.first_name + '" from courses';
+      this.$root.$emit("bv::show::modal", "modalConfirmation", button);
     },
     deleteData(evt) {
-      console.log("deleted id", this.confirmDeleteData.id);
+      console.log("deleted id", this.ModalConfirmationData.id);
     }
   }
 };
