@@ -788,6 +788,10 @@ th {
     bottom: 58px;
     transition: all 0.4s ease-in-out;
 }
+.upload-image .btn-upload.preview {
+    top: 10px;
+    transition: all 0.4s ease-in-out;
+}
 .upload-image label {
     outline: 0;
     width: inherit;
@@ -830,6 +834,9 @@ th {
 }
 .upload-image .btn-upload.restore label:after {
     content: "replay";
+}
+.upload-image .btn-upload.preview label:after {
+    content: "fullscreen";
 }
 .upload-image label input,
 .upload-image label button {

@@ -14,6 +14,11 @@
                 <button type="button" id="remove" @click="toggleRemoveImage"></button>
               </label>
             </div>
+            <div id="btn-upload-preview" class="btn-upload preview d-none">
+              <label id="btn-image-preview" for="preview" class="btn-warning">
+                <button type="button" id="preview" @click="indexOfImage = 0"></button>
+              </label>
+            </div>
             <div class="upload-preview">
               <i class="material-icons icon">image</i>
               <div id="upload-preview-wrapper" class="upload-preview-wrapper"></div>
@@ -21,6 +26,13 @@
           </div>
         </div>
       </div>
+    </div>
+
+    <!-- light gallery -->
+    <div>
+      <client-only>
+        <v-gallery :images="images" :index="indexOfImage" @close="indexOfImage = null" />
+      </client-only>
     </div>
   </div>
 </template>
@@ -45,7 +57,12 @@ export default {
 
         // Hide btn remove image
         const btnRemove = document.getElementById("btn-upload-remove");
+        const btnPreview = document.getElementById("btn-upload-preview");
         btnRemove.classList.add("d-none");
+        btnPreview.classList.add("d-none");
+
+        // Light gallery preview image
+        this.images = [];
       }
     },
     value: function(imageUrl) {
@@ -95,9 +112,14 @@ export default {
 
       // Show btn remove image
       const btnRemove = document.getElementById("btn-upload-remove");
+      const btnPreview = document.getElementById("btn-upload-preview");
+      btnPreview.classList.remove("d-none");
       btnRemove.classList.remove("d-none");
       btnRemove.classList.remove("restore");
       btnRemove.classList.add("remove");
+
+      // Light gallery preview image
+      this.images = [imageUrl];
     },
     toggleRemoveImage() {
       const previewImageParent = document.getElementById(
@@ -105,10 +127,12 @@ export default {
       );
       const previewImage = document.getElementById("preview-image");
       const btnRemoveParent = document.getElementById("btn-upload-remove");
+      const btnPreview = document.getElementById("btn-upload-preview");
       if (previewImageParent.classList.contains("has-image")) {
         // remove preview
         previewImage.classList.add("d-none");
         previewImageParent.classList.remove("has-image");
+        btnPreview.classList.add("d-none");
         btnRemoveParent.classList.remove("remove");
         btnRemoveParent.classList.add("restore");
         this.$emit("changed", { file: null, remove: true });
@@ -116,6 +140,7 @@ export default {
         // restore preview
         previewImage.classList.remove("d-none");
         previewImageParent.classList.add("has-image");
+        btnPreview.classList.remove("d-none");
         btnRemoveParent.classList.add("remove");
         btnRemoveParent.classList.remove("restore");
         this.$emit("changed", {
@@ -127,6 +152,18 @@ export default {
         });
       }
     }
+  },
+  data: function() {
+    return {
+      images: [],
+      indexOfImage: null
+    };
   }
 };
 </script>
+
+<style>
+.blueimp-gallery > .close{
+  font-weight: 300;
+}
+</style>

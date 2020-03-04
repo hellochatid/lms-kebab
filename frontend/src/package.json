@@ -23,6 +23,7 @@
     "nuxt": "^2.0.0",
     "nuxt-material-design-icons": "^1.0.4",
     "vue-data-tables": "^3.4.3",
+    "vue-gallery": "^2.0.1",
     "vue-quill-editor": "^3.0.6",
     "vuedraggable": "^2.23.2"
   },
