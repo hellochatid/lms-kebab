@@ -57,7 +57,7 @@
           <b-button
             variant="outline-danger"
             size="sm"
-            @click.stop="confirmDelete(data.item.id, data.item.first_name, 'course', data.index, $event.target, '')"
+            @click.stop="confirmDelete(data.item, data.index, $event.target)"
           >
             <i class="material-icons icon">delete</i>
           </b-button>
@@ -70,21 +70,20 @@
             :total-rows="items.length"
             :per-page="perPage"
             v-model="currentPage"
-            prev-text="Prev"
-            next-text="Next"
-            hide-goto-end-buttons
+            first-text="First"
+            last-text="Last"
           />
         </div>
       </div>
     </b-card>
 
-    <ConfirmDelete :data="confirmDeleteData" :onDelete="deleteData" />
+    <ModalConfirmation :data="ModalConfirmationData" :onOK="deleteData" />
   </div>
 </template>
 
 <script>
 import { mapMutations, mapGetters } from "vuex";
-import { ConfirmDelete } from "~/components/admin";
+import { ModalConfirmation } from "~/components/admin";
 import courses from "~/services/courses";
 
 export default {
@@ -93,7 +92,7 @@ export default {
   },
   layout: "admin",
   components: {
-    ConfirmDelete
+    ModalConfirmation
   },
   computed: mapGetters({
     userAdmin: "users/userAdmin"
@@ -107,16 +106,15 @@ export default {
       this.$root.$emit("bv::show::modal", "modalInfo", button);
       console.log("infoooooo");
     },
-    confirmDelete(id, item_deleted, model, index, button, title) {
-      this.confirmDeleteData.id = id;
-      this.confirmDeleteData.title =
-        title !== "" ? title : "You are about to dalete";
-      this.confirmDeleteData.item_deleted = item_deleted;
-      this.confirmDeleteData.model = model;
-      this.$root.$emit("bv::show::modal", "ModalconfirmDelete", button);
+    confirmDelete(item, index, button) {
+      this.ModalConfirmationData.id = item.id;
+      this.ModalConfirmationData.title = "Confirm Deletion";
+      this.ModalConfirmationData.content =
+        'You are about to dalete "' + item.title + '" from courses';
+      this.$root.$emit("bv::show::modal", "modalConfirmation", button);
     },
     deleteData(evt) {
-      console.log("deleted id", this.confirmDeleteData.id);
+      console.log("deleted id", this.ModalConfirmationData.id);
     }
   },
   data() {
@@ -131,11 +129,10 @@ export default {
       currentPage: 1,
       perPage: 10,
       totalRows: 4,
-      confirmDeleteData: {
+      ModalConfirmationData: {
         id: "",
         title: "",
-        item_deleted: "",
-        model: ""
+        content: ""
       }
     };
   },

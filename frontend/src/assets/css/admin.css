@@ -63,6 +63,9 @@ small, .small {
     background-clip: border-box;
     border-radius: 0.3125rem;
 }
+.card .card-header{
+    border-bottom: 1px solid #ebedf2;
+}
 .card .card-header,
 .card .card-footer{
     padding: 24px 38px;
@@ -137,6 +140,30 @@ th {
     border-radius: 100%;
 }
 
+/* modal */
+.modal .modal-dialog .modal-content .modal-header {
+    padding: 25px 26px;
+    border: 0;
+}
+.modal .modal-dialog .modal-content .modal-header.bg-light {
+    background: #fff !important;
+}
+.modal .modal-dialog .modal-content .modal-header .modal-title {
+    font-size: 16px;
+}
+.modal .modal-dialog .modal-content .modal-header .close {
+    font-weight: 300;
+}
+.modal .modal-dialog .modal-content .modal-body {
+    padding: 35px 26px;
+}
+.modal .modal-dialog .modal-content .modal-body b{
+    font-weight: 500;
+}
+.modal .modal-dialog .modal-content .modal-footer {
+    padding: 15px 26px;
+    border-color: #ebedf2;
+}
 
 /*------------------------------------------*/
 /*	   	navbar
