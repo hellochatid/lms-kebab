@@ -17,6 +17,9 @@
 # Migration & seeder
 - run `docker-compose exec app php artisan migrate:fresh --seed`
 
+# Migration & seeder 
+- run `docker-compose exec app php artisan storage:link`
+
 # Documentation
 - run `docker-compose exec app php artisan l5-swagger:generate`
 documentation can be accessed at `/api/documentation` endpoint.
