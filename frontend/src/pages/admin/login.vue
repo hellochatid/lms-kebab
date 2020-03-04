@@ -244,7 +244,7 @@ body {
   left: 0;
   width: 0;
   height: 2px;
-  background: #7f7f7f;
+  background: #a64bf4;
   -webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
   -moz-transition: all 0.4s;
