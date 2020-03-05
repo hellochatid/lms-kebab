@@ -1,6 +1,6 @@
 export default () => ({
 	alert: {
-		text: "ccc cccccccccccc cccccccccccccccccccccc",
+		text: "",
 		dismissCountDown: 0,
 		variant: "default"
 	},

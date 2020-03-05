@@ -5,13 +5,38 @@ const courses = {
 		const authAdmin = auth.admin();
 		return authAdmin.token
 	},
-	get: async function (axios) {
-		const self = this
+	get: async function (nuxt) {
+		const self = this;
+		const axios = nuxt.$axios;
+
 		return new Promise(function (resolve, reject) {
+			var courses = nuxt.$store.getters["courses/list"];
+			if (courses.length > 0) return resolve(courses);
+
 			axios.defaults.headers.common['Authorization'] = 'Bearer ' + self.accessToken()
 			axios.get('/admin/courses', axios.defaults.headers.common)
-				.then(function (response) {
-					resolve(response.data);
+				.then(async function (response) {
+					courses = response.data.data;
+
+					await courses.forEach(async (data) => {
+						var course = {
+							id: data.id,
+							title: data.title,
+							subtitle: data.subtitle,
+							category: {
+								id: data.category.id,
+								name: data.category.name
+							},
+							description: data.description,
+							image: {
+								name: data.image.name,
+								url: data.image.url
+							},
+							tag: data.tag
+						};
+						nuxt.$store.commit("courses/add", course);
+					});
+					resolve(response.data.data);
 				})
 				.catch(function (error) {
 					reject(error);
@@ -19,10 +44,16 @@ const courses = {
 		})
 
 	},
-	getById: async function (axios, id) {
-		const self = this
+	getById: async function (nuxt, id) {
+		const self = this;
+		const axios = nuxt.$axios;
+		const courses = nuxt.$store.getters["courses/list"];
+		const course = courses.find(c => c.id === parseInt(id));
+
 		return new Promise(function (resolve, reject) {
-			axios.defaults.headers.common['Authorization'] = 'Bearer ' + self.accessToken()
+			if (typeof course !== "undefined") return resolve(course);
+
+			axios.defaults.headers.common['Authorization'] = 'Bearer ' + self.accessToken();
 			axios.get('/admin/courses?id=' + id, axios.defaults.headers.common)
 				.then(function (response) {
 					var course = response.data.data.length > 0 ? response.data.data[0] : null;
@@ -32,10 +63,11 @@ const courses = {
 					reject(error);
 				})
 		})
-
 	},
 	add: function (axios, input) {
-		const self = this
+		const self = this;
+		// const axios = nuxt.$axios;
+
 		return new Promise(function (resolve, reject) {
 			axios.defaults.headers.common['Authorization'] = 'Bearer ' + self.accessToken()
 			axios.post('/admin/courses', input, axios.defaults.headers.common)
@@ -47,12 +79,25 @@ const courses = {
 				})
 		})
 	},
-	edit: function (axios, input, id) {
-		const self = this
+	edit: function (nuxt, id) {
+		const self = this;
+		const axios = nuxt.$axios;
+
 		return new Promise(function (resolve, reject) {
 			axios.defaults.headers.common['Authorization'] = 'Bearer ' + self.accessToken()
-			axios.patch('/admin/courses/' + id, input, axios.defaults.headers.common)
+			axios.patch('/admin/courses/' + id, nuxt.input, axios.defaults.headers.common)
 				.then(function (response) {
+					// update store
+					const data = response.data.data;
+					const course = {
+						id: id,
+						title: data.title,
+						subtitle: data.subtitle,
+						description: data.description,
+						image: { name: data.image.name, url: data.image.url },
+						tag: data.tag
+					}
+					nuxt.$store.commit("courses/edit", course);
 					resolve(response.data);
 				})
 				.catch(function (error) {

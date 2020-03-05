@@ -152,7 +152,8 @@ export default {
       const spinner = this.$refs.spinner;
       var alertText = "";
       courses
-        .edit(this.$axios, this.input, this.$route.params.id)
+        // .edit(this.$axios, this.input, this.$route.params.id)
+        .edit(this, this.$route.params.id)
         .then(response => {
           alertText = "Course successfully added";
           spinner.classList.add("d-none");
@@ -160,7 +161,7 @@ export default {
           form.alert(this.$store, alertText, 5, "success");
         })
         .catch(error => {
-          console.log("error");
+          console.log("error", error);
           alertText = "Oops something went wrong";
           spinner.classList.add("d-none");
           self.disabledForm = false;
@@ -203,8 +204,7 @@ export default {
     self.resetAlert();
     self.disabledForm = true;
 
-    courses.getById(this.$axios, this.$route.params.id).then(data => {
-      console.log(data);
+    courses.getById(this, this.$route.params.id).then(data => {
       this.input.title = data.title;
       this.input.subtitle = data.subtitle;
       this.input.description = data.description;
