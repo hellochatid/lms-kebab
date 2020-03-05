@@ -47,10 +47,7 @@
           </NuxtLink>
         </template>
         <template v-slot:cell(actions)="data">
-          <NuxtLink
-            :to="'/admin/courses/edit/' + data.item.id"
-            class="btn btn-outline-info btn-sm"
-          >
+          <NuxtLink :to="'/admin/courses/edit/' + data.item.id" class="btn btn-outline-info btn-sm">
             <i class="material-icons icon">edit</i>
           </NuxtLink>
 
@@ -102,10 +99,6 @@ export default {
       this.totalRows = filteredItems.length;
       this.currentPage = 1;
     },
-    info(item, index, button) {
-      this.$root.$emit("bv::show::modal", "modalInfo", button);
-      console.log("infoooooo");
-    },
     confirmDelete(item, index, button) {
       this.ModalConfirmationData.id = item.id;
       this.ModalConfirmationData.title = "Confirm Deletion";
@@ -114,7 +107,17 @@ export default {
       this.$root.$emit("bv::show::modal", "modalConfirmation", button);
     },
     deleteData(evt) {
-      console.log("deleted id", this.ModalConfirmationData.id);
+      courses
+        .delete(this.$axios, this.ModalConfirmationData.id)
+        .then(() => {
+          const index = this.items.findIndex(
+            p => p.id === this.ModalConfirmationData.id
+          );
+          this.items.splice(index, 1);
+        })
+        .catch(error => {
+          reject(error);
+        });
     }
   },
   data() {
@@ -140,7 +143,7 @@ export default {
     courses
       .get(this.$axios)
       .then(response => {
-        this.items = response.data
+        this.items = response.data;
       })
       .catch(error => {
         console.log(error);

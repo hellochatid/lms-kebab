@@ -60,6 +60,19 @@ const courses = {
 				})
 		})
 	},
+	delete: function (axios, id) {
+		const self = this
+		return new Promise(function (resolve, reject) {
+			axios.defaults.headers.common['Authorization'] = 'Bearer ' + self.accessToken()
+			axios.delete('/admin/courses/' + id, axios.defaults.headers.common)
+				.then(function (response) {
+					resolve(response.data);
+				})
+				.catch(function (error) {
+					reject(error);
+				})
+		})
+	},
 	uploadFile: function (axios, file) {
 		const self = this
 		return new Promise(function (resolve, reject) {
