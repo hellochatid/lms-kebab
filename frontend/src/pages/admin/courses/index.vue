@@ -92,7 +92,7 @@ export default {
     ModalConfirmation
   },
   computed: mapGetters({
-    userAdmin: "users/userAdmin"
+    items: "courses/list"
   }),
   methods: {
     onFiltered(filteredItems) {
@@ -111,7 +111,7 @@ export default {
         .delete(this.$axios, this.ModalConfirmationData.id)
         .then(() => {
           const index = this.items.findIndex(
-            p => p.id === this.ModalConfirmationData.id
+            course => course.id === this.ModalConfirmationData.id
           );
           this.items.splice(index, 1);
         })
@@ -122,7 +122,6 @@ export default {
   },
   data() {
     return {
-      items: [],
       fields: [
         { key: "index", label: "#", class: "width-30" },
         { key: "title", label: "Course" },
@@ -141,9 +140,9 @@ export default {
   },
   mounted() {
     courses
-      .get(this.$axios)
+      .get(this)
       .then(response => {
-        this.items = response.data;
+        console.log(Object.assign({}, response));
       })
       .catch(error => {
         console.log(error);

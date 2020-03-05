@@ -643,7 +643,7 @@ th {
 .form-icon .icon {
     position: absolute;
     right: 10px;
-    top: 10px;
+    top: 16px;
     color: #aaa;
     font-size: 20px;
 }
@@ -668,7 +668,7 @@ th {
 }
 .item {
     margin-bottom: 10px;
-    padding: 8px 15px;
+    padding: 10px 15px;
 }
 .item:after {
     content: "";
@@ -680,7 +680,7 @@ th {
     height: 0;
 }
 .item.bordered {
-    border: 1px solid #ccc;
+    border: 1px solid #eee;
     background: #fafafa;
 }
 .item .btn-delete,

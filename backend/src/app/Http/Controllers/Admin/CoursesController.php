@@ -144,17 +144,17 @@ class CoursesController extends Controller
         $request->user()->authorizeRoles(['admin']);
 
         $query = DB::table('courses')
-        ->select(
-            DB::raw('(select title from categories where id=category_id and deleted_at is null) as category_title'),
-            'id',
-            'category_id',
-            'title',
-            'subtitle',
-            'description',
-            'tag',
-            'image'
-        )
-        ->whereNull('deleted_at');
+            ->select(
+                DB::raw('(select title from categories where id=category_id and deleted_at is null) as category_title'),
+                'id',
+                'category_id',
+                'title',
+                'subtitle',
+                'description',
+                'tag',
+                'image'
+            )
+            ->whereNull('deleted_at');
 
         // if query ID exist
         if ($request->query->get('id') !== null) {
@@ -250,20 +250,24 @@ class CoursesController extends Controller
         $request->user()->authorizeRoles(['admin']);
 
         $updatedValue = [];
-        if ($request->title) $updatedValue['title'] = $request->title;
-        if ($request->subtitle) $updatedValue['subtitle'] = $request->subtitle;
-        if ($request->description) $updatedValue['description'] = $request->description;
-        if ($request->tag) $updatedValue['tag'] = $request->tag;
-        if ($request->image) $updatedValue['image'] = $request->image;
-        if ($request->order) $updatedValue['order'] = $request->order;
+        $updatedValue['title'] = $request->title;
+        $updatedValue['subtitle'] = $request->subtitle;
+        $updatedValue['description'] = $request->description;
+        $updatedValue['tag'] = $request->tag;
+        $updatedValue['image'] = $request->image;
 
         DB::table('courses')
             ->where('id', $id)
             ->update($updatedValue);
 
+        $updatedValue['tag'] = array_filter(explode(',', $request->tag));
+        $updatedValue['image'] = [
+            'name' => $request->image !== '' && $request->image !== null ? $request->image : '',
+            'url' => $request->image !== '' && $request->image !== null ? url('') . Storage::url($request->image) : ''
+        ];
         return response()->json([
             'success' => true,
-            'message' => 'courses successfully updated'
+            'data' => $updatedValue
         ]);
     }
 
