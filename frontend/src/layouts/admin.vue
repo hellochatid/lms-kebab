@@ -42,7 +42,7 @@ export default {
 .btn {
   font-size: 0.875rem;
   font-weight: 600;
-  padding: 12px 38px;
+  padding: 11px 36px;
 }
 .btn:after {
   content: " ";
@@ -864,8 +864,8 @@ select::-moz-focus-inner,
 /*	    Form
 /*------------------------------------------*/
 .form-control {
-  height: calc(1.5em + 0.75rem + 12px);
-  padding: 12px 16px;
+  height: calc(1.5em + 0.75rem + 13px);
+  padding: 13px 16px;
   font-size: inherit;
   border-color: #ebedf2;
   -webkit-border-radius: 0;
@@ -1077,7 +1077,7 @@ input[type="radio"] + .lbl:hover::before {
   font-size: 14px;
 }
 .ti-input {
-  padding: 12px 16px !important;
+  padding: 13px 16px !important;
   border-color: #ebedf2 !important;
 }
 .ti-tag {
