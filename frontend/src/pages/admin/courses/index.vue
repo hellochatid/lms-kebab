@@ -135,14 +135,15 @@ export default {
         id: "",
         title: "",
         content: ""
-      }
+      },
+      dataLoaded: false
     };
   },
   mounted() {
     courses
       .get(this)
       .then(response => {
-        console.log(Object.assign({}, response));
+        this.dataLoaded = true;
       })
       .catch(error => {
         console.log(error);

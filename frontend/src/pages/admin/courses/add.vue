@@ -134,8 +134,8 @@ export default {
       if (file !== null) {
         const formData = new FormData();
         formData.append("file", file);
-        courses
-          .uploadFile(this.$axios, formData)
+        form
+          .upload(this, formData)
           .then(response => {
             self.input.image = response.data.file_name;
             this.postCourse();
@@ -152,7 +152,7 @@ export default {
       const spinner = this.$refs.spinner;
       var alertText = "";
       courses
-        .add(this.$axios, this.input)
+        .add(this, this.input)
         .then(response => {
           alertText = "Course successfully added";
           spinner.classList.add("d-none");
@@ -161,7 +161,7 @@ export default {
           form.alert(this.$store, alertText, 5, "success");
         })
         .catch(error => {
-          console.log("error");
+          console.log(error)
           alertText = "Oops something went wrong";
           spinner.classList.add("d-none");
           self.disabledForm = false;

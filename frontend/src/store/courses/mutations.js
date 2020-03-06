@@ -13,19 +13,20 @@ export default {
 	},
 	edit(state, { id, title, subtitle, description, image, tag }) {
 		if (state.list.length > 0) {
-			const index = state.list.findIndex(c => c.id === parseInt(id));
+			const index = state.list.findIndex(c => parseInt(c.id) === parseInt(id));
 			const course = state.list[index];
-
-			course.title = title;
-			course.subtitle = subtitle;
-			course.description = description;
-			course.image.name = image.name;
-			course.image.url = image.url;
-			course.tag = tag;
+			if (index !== -1) {
+				course.title = title;
+				course.subtitle = subtitle;
+				course.description = description;
+				course.image.name = image.name;
+				course.image.url = image.url;
+				course.tag = tag;
+			}
 		}
 	},
 	remove(state, { id }) {
-		const index = state.list.findIndex(c => c.id === parseInt(id));
-		state.list.splice(index, 1);
+		const index = state.list.findIndex(c => parseInt(c.id) === parseInt(id));
+		if (index !== -1) state.list.splice(index, 1);
 	}
 }

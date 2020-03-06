@@ -1,4 +1,10 @@
+import auth from '~/services/auth';
+
 const form = {
+	accessToken: function () {
+		const authAdmin = auth.admin();
+		return authAdmin.token
+	},
 	validation: function (formRrules) {
 		var validateForm = true;
 		Object.entries(formRrules).forEach(([formInput, value]) => {
@@ -45,6 +51,20 @@ const form = {
 			variant: variant
 		};
 		store.commit("form/setAlert", alert);
+	},
+	upload: function (nuxt, file) {
+		const self = this;
+		const axios = nuxt.$axios;
+		return new Promise(function (resolve, reject) {
+			axios.defaults.headers.common['Authorization'] = 'Bearer ' + self.accessToken()
+			axios.post('/upload', file, axios.defaults.headers.common)
+				.then(function (response) {
+					resolve(response.data);
+				})
+				.catch(function (error) {
+					reject(error);
+				})
+		})
 	}
 }
 

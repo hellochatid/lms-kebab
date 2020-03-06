@@ -36,7 +36,7 @@ const courses = {
 						};
 						nuxt.$store.commit("courses/add", course);
 					});
-					resolve(response.data.data);
+					resolve(courses);
 				})
 				.catch(function (error) {
 					reject(error);
@@ -64,17 +64,35 @@ const courses = {
 				})
 		})
 	},
-	add: function (axios, input) {
+	add: function (nuxt, input) {
 		const self = this;
-		// const axios = nuxt.$axios;
-
+		const axios = nuxt.$axios;
 		return new Promise(function (resolve, reject) {
 			axios.defaults.headers.common['Authorization'] = 'Bearer ' + self.accessToken()
 			axios.post('/admin/courses', input, axios.defaults.headers.common)
 				.then(function (response) {
-					resolve(response.data);
+					const data = response.data.data;
+					const course = {
+						id: data.id,
+						title: data.title,
+						subtitle: data.subtitle,
+						category: {
+							id: data.category.id,
+							name: data.category.name
+						},
+						description: data.description,
+						image: {
+							name: data.image.name,
+							url: data.image.url
+						},
+						tag: data.tag
+					};
+					var courses = nuxt.$store.getters["courses/list"];
+					if (courses.length > 0) nuxt.$store.commit("courses/add", course);
+					resolve(course);
 				})
 				.catch(function (error) {
+					console.log('error', error)
 					reject(error);
 				})
 		})
@@ -112,20 +130,7 @@ const courses = {
 			axios.defaults.headers.common['Authorization'] = 'Bearer ' + self.accessToken()
 			axios.delete('/admin/courses/' + id, axios.defaults.headers.common)
 				.then(function (response) {
-					nuxt.$store.commit("courses/remove", id);
-					resolve(response.data);
-				})
-				.catch(function (error) {
-					reject(error);
-				})
-		})
-	},
-	uploadFile: function (axios, file) {
-		const self = this
-		return new Promise(function (resolve, reject) {
-			axios.defaults.headers.common['Authorization'] = 'Bearer ' + self.accessToken()
-			axios.post('/upload', file, axios.defaults.headers.common)
-				.then(function (response) {
+					nuxt.$store.commit("courses/remove", { id });
 					resolve(response.data);
 				})
 				.catch(function (error) {
