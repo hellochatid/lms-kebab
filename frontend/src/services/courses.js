@@ -105,12 +105,14 @@ const courses = {
 				})
 		})
 	},
-	delete: function (axios, id) {
-		const self = this
+	delete: function (nuxt, id) {
+		const self = this;
+		const axios = nuxt.$axios;
 		return new Promise(function (resolve, reject) {
 			axios.defaults.headers.common['Authorization'] = 'Bearer ' + self.accessToken()
 			axios.delete('/admin/courses/' + id, axios.defaults.headers.common)
 				.then(function (response) {
+					nuxt.$store.commit("courses/remove", id);
 					resolve(response.data);
 				})
 				.catch(function (error) {
