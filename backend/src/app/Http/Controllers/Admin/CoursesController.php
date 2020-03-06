@@ -108,11 +108,29 @@ class CoursesController extends Controller
             'created_by' => JWTAuth::user()->id,
         ]);
 
+        // Response
+        $response = [];
+        $response['id'] = $insertId;
+        $response['title'] = $title;
+        $response['subtitle'] = $subtitle;
+        $response['description'] = $description;
+        $response['image'] = [
+            'name' => $image !== '' && $image !== null ? $image : '',
+            'url' => $image !== '' && $image !== null ? url('') . Storage::url($image) : ''
+        ];
+        $response['tag'] = array_filter(explode(',', $tag));
+
+        // Get category
+        $categoryId = 1;
+        $category = DB::table('categories')->where('id', '=', $categoryId)->first();
+        $response['category'] = [
+            'id' => $category!==null ? $category->id : '',
+            'name' => $category!==null ? $category->title : ''
+        ];
+
         return response()->json([
             'success' => true,
-            'data' => [
-                'id' => $insertId
-            ]
+            'data' => $response
         ]);
     }
 
@@ -255,19 +273,20 @@ class CoursesController extends Controller
         $updatedValue['description'] = $request->description;
         $updatedValue['tag'] = $request->tag;
         $updatedValue['image'] = $request->image;
+        $response = $updatedValue;
 
         DB::table('courses')
             ->where('id', $id)
             ->update($updatedValue);
 
-        $updatedValue['tag'] = array_filter(explode(',', $request->tag));
-        $updatedValue['image'] = [
+        $response['tag'] = array_filter(explode(',', $request->tag));
+        $response['image'] = [
             'name' => $request->image !== '' && $request->image !== null ? $request->image : '',
             'url' => $request->image !== '' && $request->image !== null ? url('') . Storage::url($request->image) : ''
         ];
         return response()->json([
             'success' => true,
-            'data' => $updatedValue
+            'data' => $response
         ]);
     }
 

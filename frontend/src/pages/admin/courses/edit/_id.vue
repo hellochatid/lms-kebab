@@ -134,8 +134,8 @@ export default {
       if (file !== null) {
         const formData = new FormData();
         formData.append("file", file);
-        courses
-          .uploadFile(this.$axios, formData)
+        form
+          .upload(this, formData)
           .then(response => {
             self.input.image = response.data.file_name;
             this.postCourse();

@@ -108,12 +108,12 @@ export default {
     },
     deleteData(evt) {
       courses
-        .delete(this.$axios, this.ModalConfirmationData.id)
+        .delete(this, this.ModalConfirmationData.id)
         .then(() => {
           const index = this.items.findIndex(
             course => course.id === this.ModalConfirmationData.id
           );
-          this.items.splice(index, 1);
+          // this.items.splice(index, 1);
         })
         .catch(error => {
           reject(error);
@@ -135,14 +135,15 @@ export default {
         id: "",
         title: "",
         content: ""
-      }
+      },
+      dataLoaded: false
     };
   },
   mounted() {
     courses
       .get(this)
       .then(response => {
-        console.log(Object.assign({}, response));
+        this.dataLoaded = true;
       })
       .catch(error => {
         console.log(error);
