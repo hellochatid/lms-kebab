@@ -110,12 +110,10 @@ export default {
       courses
         .delete(this, this.ModalConfirmationData.id)
         .then(() => {
-          const index = this.items.findIndex(
-            course => course.id === this.ModalConfirmationData.id
-          );
+          // delete success
         })
         .catch(error => {
-          reject(error);
+          // console.log(error);
         });
     }
   },

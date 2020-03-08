@@ -41,7 +41,10 @@
             <b-card header-tag="header" class="card-list dragable">
               <div slot="header">
                 <h6 class="handle list-title">{{ lesson.name }}</h6>
-                <b-button class="btn-icon btn-delete">
+                <b-button
+                  class="btn-icon btn-delete"
+                  @click.stop="confirmDelete(lesson, $event.target)"
+                >
                   <i class="material-icons icon">delete</i>
                 </b-button>
                 <b-button class="btn-icon btn-edit">
@@ -154,12 +157,14 @@
         </draggable>
       </div>
     </b-card>
+
+    <ModalConfirmation :data="ModalConfirmationData" :onOK="deleteData" />
   </div>
 </template>
 
 <script>
 import { mapMutations, mapGetters } from "vuex";
-import { ConfirmDelete, ImageUploader } from "~/components/admin";
+import { ModalConfirmation } from "~/components/admin";
 import courses from "~/services/courses";
 import lessons from "~/services/lessons";
 
@@ -168,22 +173,7 @@ export default {
     title: "Admin - Pages"
   },
   layout: "admin",
-  components: { ImageUploader },
-  methods: {
-    fileChanged(image) {
-      console.log("ssss");
-      // this.resetImage = false;
-      // this.fileImage = image.file;
-      // this.input.image = !image.remove ? this.fileName : "";
-    },
-    dragEnd(items) {
-      let option_ranks = [];
-      items.forEach(el => {
-        option_ranks.push(el.id);
-      });
-      console.log(option_ranks);
-    }
-  },
+  components: { ModalConfirmation },
   computed: {
     ...mapGetters({
       lesson: "lessons/list"
@@ -208,13 +198,44 @@ export default {
       };
     }
   },
+  methods: {
+    dragEnd(items) {
+      let option_ranks = [];
+      items.forEach(el => {
+        option_ranks.push(el.id);
+      });
+      console.log(option_ranks);
+    },
+    confirmDelete(item, button) {
+      this.ModalConfirmationData.id = item.id;
+      this.ModalConfirmationData.title = "Confirm Deletion";
+      this.ModalConfirmationData.content =
+        'You are about to dalete "' + item.name + '"';
+      this.$root.$emit("bv::show::modal", "modalConfirmation", button);
+    },
+    deleteData(evt) {
+      lessons
+        .delete(this, this.ModalConfirmationData.id)
+        .then(() => {
+          // delete success
+        })
+        .catch(error => {
+          // console.log(error);
+        });
+    }
+  },
   data() {
     return {
       course: {
         id: "",
         title: ""
       },
-      lessons: []
+      lessons: [],
+      ModalConfirmationData: {
+        id: "",
+        title: "",
+        content: ""
+      }
     };
   },
   mounted() {
