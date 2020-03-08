@@ -13,7 +13,7 @@ export default {
 	},
 	edit(state, { id, title, subtitle, description, image, tag }) {
 		if (state.list.length > 0) {
-			const index = state.list.findIndex(c => parseInt(c.id) === parseInt(id));
+			const index = state.list.findIndex(data => parseInt(data.id) === parseInt(id));
 			const course = state.list[index];
 			if (index !== -1) {
 				course.title = title;
@@ -26,7 +26,7 @@ export default {
 		}
 	},
 	remove(state, { id }) {
-		const index = state.list.findIndex(c => parseInt(c.id) === parseInt(id));
+		const index = state.list.findIndex(data => parseInt(data.id) === parseInt(id));
 		if (index !== -1) state.list.splice(index, 1);
 	}
 }

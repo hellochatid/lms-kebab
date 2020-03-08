@@ -113,7 +113,6 @@ export default {
           const index = this.items.findIndex(
             course => course.id === this.ModalConfirmationData.id
           );
-          // this.items.splice(index, 1);
         })
         .catch(error => {
           reject(error);

@@ -5,7 +5,8 @@
         <span class="page-title-icon bg-gradient-primary text-white mr-2">
           <i class="material-icons icon">playlist_add</i>
         </span>
-        Add Course
+        Add Lesson
+        <small>#{{ course.title }}</small>
       </h3>
       <b-breadcrumb>
         <li class="breadcrumb-item">
@@ -14,10 +15,13 @@
         <li class="breadcrumb-item">
           <NuxtLink to="/admin/courses">Courses</NuxtLink>
         </li>
-        <b-breadcrumb-item active>Add Course</b-breadcrumb-item>
+        <li class="breadcrumb-item">
+          <NuxtLink :to="'/admin/courses/' + course.id + '/lessons'">Lessons</NuxtLink>
+        </li>
+        <b-breadcrumb-item active>Add Lesson</b-breadcrumb-item>
       </b-breadcrumb>
     </div>
-    <b-form @submit.stop.prevent="addCourse" ref="form">
+		<b-form @submit.stop.prevent="addLesson" ref="form">
       <b-alert
         :show="alert.dismissCountDown"
         dismissible
@@ -77,7 +81,7 @@
             <b-spinner ref="spinner" small class="float-right d-none" label="Floated Right"></b-spinner>
           </b-button>
           <NuxtLink
-            to="/admin/courses"
+            :to="'/admin/courses/' + course.id + '/lessons'"
             :class="disabledForm ? 'btn btn-danger btn-back disabled' : 'btn btn-danger btn-back'"
           >
             <i class="material-icons icon float-left">keyboard_backspace</i>
@@ -96,19 +100,20 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
-import courses from "~/services/courses";
+import { mapMutations, mapGetters } from "vuex";
+import { ConfirmDelete, ImageUploader } from "~/components/admin";
 import form from "~/libs/form";
-import { ImageUploader } from "~/components/admin/";
+import courses from "~/services/courses";
+import lessons from "~/services/lessons";
 
 export default {
   head: {
-    title: "Admin - Add Course"
+    title: "Admin - Add Lesson"
   },
   layout: "admin",
   components: { ImageUploader },
   methods: {
-    addCourse() {
+    addLesson() {
       const self = this;
       const spinner = this.$refs.spinner;
 
@@ -138,23 +143,23 @@ export default {
           .upload(this, formData)
           .then(response => {
             self.input.image = response.data.file_name;
-            this.postCourse();
+            this.postLesson();
           })
           .catch(error => {
             console.log("error", error);
           });
       } else {
-        this.postCourse();
+        this.postLesson();
       }
     },
-    postCourse() {
+    postLesson() {
       const self = this;
       const spinner = this.$refs.spinner;
       var alertText = "";
-      courses
+      lessons
         .add(this, this.input)
         .then(response => {
-          alertText = "Course successfully added";
+          alertText = "Lesson successfully added";
           spinner.classList.add("d-none");
           self.disabledForm = false;
           self.resetForm();
@@ -193,12 +198,18 @@ export default {
   }),
   data() {
     return {
+      course: {
+        id: "",
+        title: ""
+      },
       input: {
+				course_id: this.$route.params.courseId,
         title: "",
         subtitle: "",
         description: "",
         image: "",
-        tag: []
+        tag: [],
+        order: 0
       },
       tag: "",
       vueTags: [],
@@ -210,6 +221,11 @@ export default {
   },
   mounted() {
     this.resetAlert();
+    const courseId = this.$route.params.courseId;
+    courses.getById(this, courseId).then(data => {
+      this.course.id = data.id;
+      this.course.title = data.title;
+    });
   }
 };
 </script>

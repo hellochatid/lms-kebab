@@ -509,27 +509,37 @@ th {
 }
 
 /* Lessons */
-.card-collapse {
-    margin-bottom: 10px;
+.data-view{
+    padding: 2.5rem 0;
+    border-top: 1px solid #ebedf2;
 }
-.card-collapse .card-header {
+.card-list {
+    margin-bottom: 10px;
+    border: 1px solid #ebedf2;
+}
+.card-list .card-header {
     background: #fff;
     border: 0;
     position: relative;
+    padding: 1rem;
+}
+.card-list.dragable .card-header{
     padding: 0;
 }
-.card-collapse .card-header span {
-    display: block;
-    padding: 12px 20px;
+.card-list .card-header .list-title {
+    margin: 0;
     cursor: pointer;
 }
-.card-collapse .card-body {
+.card-list.dragable .card-header .list-title{
+    padding: 1rem;
+}
+.card-list .card-body {
     padding: 0;
 }
 .card-header .btn-delete,
 .card-header .btn-edit {
     position: absolute;
-    top: 15px;
+    top: 1rem;
     z-index: 10;
 }
 .card-header .btn-delete {
@@ -541,12 +551,12 @@ th {
 .card-header .btn-collapse {
     position: absolute;
     right: 10px;
-    top: 9px;
+    top: 0.5rem;
     z-index: 10;
 }
 .btn-collapse {
     width: 32px;
-    height: 32px;
+    height: 36px;
     padding: 0;
     line-height: 42px;
     position: relative;
@@ -555,7 +565,7 @@ th {
     content: "";
     height: 100%;
     width: 1px;
-    background: #ccc;
+    background: #ebedf2;
     position: absolute;
     left: -10px;
     top: 0;
@@ -585,6 +595,7 @@ th {
     position: relative;
     height: 38px;
     width: 38px;
+    padding: 0;
 }
 .btn-visibility:after {
     position: absolute;
@@ -612,10 +623,13 @@ th {
 }
 .card-body-wrapper {
     padding: 20px;
-    border-top: 1px solid#ccc;
+    border-top: 1px solid#ebedf2;
 }
 .subhead {
-    padding: 4px 0;
+    padding: 4px 0 4px 32px;
+    font-size: 1.125rem;
+    font-weight: 400;
+    position: relative;
 }
 .subhead:after {
     content: "";
@@ -627,8 +641,10 @@ th {
     height: 0;
 }
 .subhead .icon {
-    float: left;
-    margin-right: 10px;
+    position: absolute;
+    left: 0;
+    top: 6px;
+    font-size: 20px;
 }
 .subhead small {
     margin-left: 6px;
@@ -668,7 +684,7 @@ th {
 }
 .item {
     margin-bottom: 10px;
-    padding: 10px 15px;
+    padding: 0.75rem 1rem;
 }
 .item:after {
     content: "";
@@ -770,6 +786,9 @@ th {
 .form-error {
     border: 1px solid #ef9a9a !important;
     background: #ffebee;
+}
+.btn.btn-sm{
+    padding: 6px 18px;
 }
 .btn .spinner-border-sm {
     width: 22px;
