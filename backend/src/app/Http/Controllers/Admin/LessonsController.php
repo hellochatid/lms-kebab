@@ -106,8 +106,9 @@ class LessonsController extends Controller
         $description =  $request->description ? $request->description : '';
         $tag =  $request->tag ? $request->tag : '';
         $image =  $request->image ? $request->image : '';
+        $order =  $request->order ? $request->order : 0;
 
-        DB::table('lessons')->insert([
+        $insertId = DB::table('lessons')->insertGetId([
             'course_id' => $course_id,
             'title' => $title,
             'subtitle' => $subtitle,
@@ -118,9 +119,23 @@ class LessonsController extends Controller
             'created_by' => JWTAuth::user()->id,
         ]);
 
+        // Response
+        $response = [];
+        $response['id'] = $insertId;
+        $response['course_id'] = $course_id;
+        $response['title'] = $title;
+        $response['subtitle'] = $subtitle;
+        $response['description'] = $description;
+        $response['image'] = [
+            'name' => $image !== '' && $image !== null ? $image : '',
+            'url' => $image !== '' && $image !== null ? url('') . Storage::url($image) : ''
+        ];
+        $response['tag'] = array_filter(explode(',', $tag));
+        $response['order'] = $order;
+
         return response()->json([
             'success' => true,
-            'message' => 'lessons successfully added',
+            'data' => $response
         ]);
     }
 
