@@ -60,6 +60,23 @@ const lessons = {
 				})
 		})
 	},
+	getListItems: function (nuxt, id) {
+		const self = this;
+
+		return new Promise(function (resolve) {
+			var lessons = nuxt.$store.getters["lessons/list"];
+			if (lessons.length > 0) {
+				const listItems = nuxt.$store.getters["lessons/listItems"](id);
+				return resolve(listItems);
+			}
+
+			self.get(nuxt)
+				.then(function () {
+					const listItems = nuxt.$store.getters["lessons/listItems"](id);
+					resolve(listItems)
+				})
+		});
+	},
 	add: function (nuxt, input) {
 		const self = this;
 		const axios = nuxt.$axios;
