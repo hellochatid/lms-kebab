@@ -86,7 +86,6 @@ const lessons = {
 					resolve(lesson);
 				})
 				.catch(function (error) {
-					console.log('error', error)
 					reject(error);
 				})
 		})
@@ -118,36 +117,21 @@ const lessons = {
 					resolve(lesson);
 				})
 				.catch(function (error) {
-					console.log('error', error)
 					reject(error);
 				})
 		})
 	},
-	setOrder: function (nuxt, input) {
+	setOrders: function (nuxt, input) {
 		const self = this;
 		const axios = nuxt.$axios;
 		return new Promise(function (resolve, reject) {
 			axios.defaults.headers.common['Authorization'] = 'Bearer ' + self.accessToken()
-			axios.post('/admin/lessons/orders', input, axios.defaults.headers.common)
+			axios.post('/admin/lessons/orders', { order: input }, axios.defaults.headers.common)
 				.then(function (response) {
 					const data = response.data.data;
-					const lesson = {
-						id: data.id,
-						course_id: data.course_id,
-						title: data.title,
-						subtitle: data.subtitle,
-						description: data.description,
-						image: {
-							name: data.image.name,
-							url: data.image.url
-						},
-						tag: data.tag,
-						order: data.order
-					};
-					resolve(lesson);
+					resolve(data);
 				})
 				.catch(function (error) {
-					console.log('error', error)
 					reject(error);
 				})
 		})

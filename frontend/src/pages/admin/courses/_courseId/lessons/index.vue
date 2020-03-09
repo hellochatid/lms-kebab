@@ -203,11 +203,19 @@ export default {
   },
   methods: {
     dragEnd(items) {
-      let option_ranks = [];
+      let lessonOrder = [];
       items.forEach(el => {
-        option_ranks.push(el.id);
+        lessonOrder.push(el.id);
       });
-      console.log(option_ranks);
+      
+      lessons
+        .setOrders(this, lessonOrder.toString())
+        .then(() => {
+          // update lesson orders success
+        })
+        .catch(error => {
+          // console.log(error);
+        });
     },
     confirmDelete(item, button) {
       this.ModalConfirmationData.id = item.id;
