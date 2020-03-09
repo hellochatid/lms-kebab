@@ -56,6 +56,7 @@ Route::group([
         Route::post('lessons', 'Admin\LessonsController@addLessons');
         Route::get('lessons', 'Admin\LessonsController@getLessons');
         Route::patch('lessons/{id}', 'Admin\LessonsController@editLessons');
+        Route::post('lessons/orders', 'Admin\LessonsController@setLessonOrders');
         Route::delete('lessons/{id}', 'Admin\LessonsController@deleteLessons');
 
         // Materials

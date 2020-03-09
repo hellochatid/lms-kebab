@@ -152,7 +152,6 @@ export default {
       const spinner = this.$refs.spinner;
       var alertText = "";
       courses
-        // .edit(this.$axios, this.input, this.$route.params.id)
         .edit(this, this.$route.params.id)
         .then(response => {
           alertText = "Course successfully added";

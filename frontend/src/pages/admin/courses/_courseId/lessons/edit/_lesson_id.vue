@@ -5,7 +5,8 @@
         <span class="page-title-icon bg-gradient-primary text-white mr-2">
           <i class="material-icons icon">playlist_add</i>
         </span>
-        Add Course
+        Edit Lesson
+        <small>#{{ course.title }}</small>
       </h3>
       <b-breadcrumb>
         <li class="breadcrumb-item">
@@ -14,10 +15,13 @@
         <li class="breadcrumb-item">
           <NuxtLink to="/admin/courses">Courses</NuxtLink>
         </li>
-        <b-breadcrumb-item active>Add Course</b-breadcrumb-item>
+        <li class="breadcrumb-item">
+          <NuxtLink :to="'/admin/courses/' + course.id + '/lessons'">Lessons</NuxtLink>
+        </li>
+        <b-breadcrumb-item active>Edit Lesson</b-breadcrumb-item>
       </b-breadcrumb>
     </div>
-    <b-form @submit.stop.prevent="addCourse" ref="form">
+    <b-form @submit.stop.prevent="editLesson" ref="form">
       <b-alert
         :show="alert.dismissCountDown"
         dismissible
@@ -77,7 +81,7 @@
             <b-spinner ref="spinner" small class="float-right d-none" label="Floated Right"></b-spinner>
           </b-button>
           <NuxtLink
-            to="/admin/courses"
+            :to="'/admin/courses/' + course.id + '/lessons'"
             :class="disabledForm ? 'btn btn-danger btn-back disabled' : 'btn btn-danger btn-back'"
           >
             <i class="material-icons icon float-left">keyboard_backspace</i>
@@ -86,8 +90,8 @@
         </b-col>
         <b-col sm="4">
           <b-card header-tag="header" class="card-form">
-            <h4 slot="header" class="card-title ">Featured Image</h4>
-            <ImageUploader @changed="fileChanged" :reset="resetImage" />
+            <h4 slot="header" class="card-title">Featured Image</h4>
+            <ImageUploader :value="imageUrl" @changed="fileChanged" :reset="resetImage" />
           </b-card>
         </b-col>
       </b-row>
@@ -96,19 +100,20 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
-import courses from "~/services/courses";
+import { mapMutations, mapGetters } from "vuex";
+import { ConfirmDelete, ImageUploader } from "~/components/admin";
 import form from "~/libs/form";
-import { ImageUploader } from "~/components/admin/";
+import courses from "~/services/courses";
+import lessons from "~/services/lessons";
 
 export default {
   head: {
-    title: "Admin - Add Course"
+    title: "Admin - Add Lesson"
   },
   layout: "admin",
   components: { ImageUploader },
   methods: {
-    addCourse() {
+    editLesson() {
       const self = this;
       const spinner = this.$refs.spinner;
 
@@ -138,26 +143,25 @@ export default {
           .upload(this, formData)
           .then(response => {
             self.input.image = response.data.file_name;
-            this.postCourse();
+            this.postLesson();
           })
           .catch(error => {
             console.log("error", error);
           });
       } else {
-        this.postCourse();
+        this.postLesson();
       }
     },
-    postCourse() {
+    postLesson() {
       const self = this;
       const spinner = this.$refs.spinner;
       var alertText = "";
-      courses
-        .add(this, this.input)
+      lessons
+        .edit(this, this.$route.params.lesson_id)
         .then(response => {
-          alertText = "Course successfully added";
+          alertText = "Lesson successfully updated";
           spinner.classList.add("d-none");
           self.disabledForm = false;
-          self.resetForm();
           form.alert(this.$store, alertText, 5, "success");
         })
         .catch(error => {
@@ -173,18 +177,6 @@ export default {
     },
     resetAlert() {
       form.alert(this.$store, "", 0, "default");
-    },
-    resetForm() {
-      this.input.title = "";
-      this.input.subtitle = "";
-      this.input.description = "";
-      this.input.image = "";
-      this.input.tag = [];
-      this.tag = "";
-      this.tags = [];
-      this.vueTags = [];
-      this.resetImage = true;
-      this.$refs.form.reset();
     }
   },
   computed: mapGetters({
@@ -193,12 +185,18 @@ export default {
   }),
   data() {
     return {
+      course: {
+        id: "",
+        title: ""
+      },
       input: {
+				course_id: this.$route.params.courseId,
         title: "",
         subtitle: "",
         description: "",
         image: "",
-        tag: []
+        tag: [],
+        order: 0
       },
       tag: "",
       vueTags: [],
@@ -209,7 +207,31 @@ export default {
     };
   },
   mounted() {
-    this.resetAlert();
+    const self = this;
+    const courseId = this.$route.params.courseId;
+    const lessonId = this.$route.params.lesson_id;
+    self.resetAlert();
+    self.disabledForm = true;
+
+    courses.getById(this, courseId).then(data => {
+      this.course.id = data.id;  
+      this.course.title = data.title;
+
+      lessons.getById(this, lessonId).then(lesson => {
+        this.input.title = lesson.title;
+        this.input.subtitle = lesson.subtitle;
+        this.input.description = lesson.description;
+        this.input.image = lesson.image.name;
+        this.input.order = lesson.order;
+        this.fileName = lesson.image.name;
+        this.imageUrl = lesson.image.url;
+        this.vueTags = lesson.tag.map(item => ({
+          text: item,
+          tiClasses: ["ti-valid"]
+        }));
+        self.disabledForm = false;
+      });
+    });
   }
 };
 </script>

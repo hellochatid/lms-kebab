@@ -106,8 +106,9 @@ class LessonsController extends Controller
         $description =  $request->description ? $request->description : '';
         $tag =  $request->tag ? $request->tag : '';
         $image =  $request->image ? $request->image : '';
+        $order =  $request->order ? $request->order : 0;
 
-        DB::table('lessons')->insert([
+        $insertId = DB::table('lessons')->insertGetId([
             'course_id' => $course_id,
             'title' => $title,
             'subtitle' => $subtitle,
@@ -118,9 +119,23 @@ class LessonsController extends Controller
             'created_by' => JWTAuth::user()->id,
         ]);
 
+        // Response
+        $response = [];
+        $response['id'] = $insertId;
+        $response['course_id'] = $course_id;
+        $response['title'] = $title;
+        $response['subtitle'] = $subtitle;
+        $response['description'] = $description;
+        $response['image'] = [
+            'name' => $image !== '' && $image !== null ? $image : '',
+            'url' => $image !== '' && $image !== null ? url('') . Storage::url($image) : ''
+        ];
+        $response['tag'] = array_filter(explode(',', $tag));
+        $response['order'] = $order;
+
         return response()->json([
             'success' => true,
-            'message' => 'lessons successfully added',
+            'data' => $response
         ]);
     }
 
@@ -152,19 +167,19 @@ class LessonsController extends Controller
         $request->user()->authorizeRoles(['admin']);
 
         $query = DB::table('lessons')
-        ->select(
-            DB::raw('(select title from courses where id=course_id and deleted_at is null) as course_title'),
-            'id',
-            'course_id',
-            'title',
-            'subtitle',
-            'description',
-            'tag',
-            'image',
-            'order'
-        )
-        ->whereNull('deleted_at')
-        ->orderBy('order');
+            ->select(
+                DB::raw('(select title from courses where id=course_id and deleted_at is null) as course_title'),
+                'id',
+                'course_id',
+                'title',
+                'subtitle',
+                'description',
+                'tag',
+                'image',
+                'order'
+            )
+            ->whereNull('deleted_at')
+            ->orderBy('order');
 
         // if query ID exist
         if ($request->query->get('id') !== null) {
@@ -190,7 +205,7 @@ class LessonsController extends Controller
                 'title' => $lessons->title,
                 'subtitle' => $lessons->subtitle,
                 'description' => $lessons->description,
-                'tag' => $lessons->tag,
+                'tag' => array_filter(explode(',', $lessons->tag)),
                 'image' => [
                     'name' => $lessons->image !== '' && $lessons->image !== null ? $lessons->image : '',
                     'url' => $lessons->image !== '' && $lessons->image !== null ? url('') . Storage::url($lessons->image) : ''
@@ -268,21 +283,96 @@ class LessonsController extends Controller
         $request->user()->authorizeRoles(['admin']);
 
         $updatedValue = [];
-        if ($request->course_id) $updatedValue['course_id'] = $request->course_id;
-        if ($request->title) $updatedValue['title'] = $request->title;
-        if ($request->subtitle) $updatedValue['subtitle'] = $request->subtitle;
-        if ($request->description) $updatedValue['description'] = $request->description;
-        if ($request->tag) $updatedValue['tag'] = $request->tag;
-        if ($request->image) $updatedValue['image'] = $request->image;
-        if ($request->order) $updatedValue['order'] = $request->order;
+        $updatedValue['course_id'] = $request->course_id;
+        $updatedValue['title'] = $request->title;
+        $updatedValue['subtitle'] = $request->subtitle;
+        $updatedValue['description'] = $request->description;
+        $updatedValue['tag'] = $request->tag;
+        $updatedValue['image'] = $request->image;
+        $updatedValue['order'] = $request->order;
+        $response = $updatedValue;
 
         DB::table('lessons')
             ->where('id', $id)
             ->update($updatedValue);
 
+        $response['tag'] = array_filter(explode(',', $request->tag));
+        $response['image'] = [
+            'name' => $request->image !== '' && $request->image !== null ? $request->image : '',
+            'url' => $request->image !== '' && $request->image !== null ? url('') . Storage::url($request->image) : ''
+        ];
+
         return response()->json([
             'success' => true,
-            'message' => 'lessons successfully updated'
+            'data' => $response
+        ]);
+    }
+
+    /**
+     * Set lessons orders.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+
+    /**
+     * @SWG\Patch(
+     *   path="/admin/lessons/order/{id}",
+     *   tags={"Admin"},
+     *   summary="Set lesson orders",
+     *   operationId="lessons_edit",
+     *   @SWG\Parameter(
+     *     type="string",                                                                                                                                                                              
+     *     name="Authorization",
+     *     in="header",
+     *     description="Bearer",
+     *     required=true
+     *   ),
+     *   @SWG\Parameter(
+     *     name="course_id",
+     *     in="query",
+     *     description="Course ID",
+     *     required=true,
+     *     type="string"
+     *   ),
+     *   @SWG\Parameter(
+     *     name="order",
+     *     in="query",
+     *     description="Order",
+     *     required=true,
+     *     type="string"
+     *   ),
+     *   @SWG\Response(response=200, description="successful operation"),
+     *   @SWG\Response(response=500, description="internal server error")
+     * )
+     *
+     */
+    public function setLessonOrders(Request $request)
+    {
+        $request->user()->authorizeRoles(['admin']);
+
+        $requestOrder = isset($request->order) ? $request->order : '';
+        $dataOrder = array_filter(explode(',', $requestOrder));
+        $lessonOrder = [];
+
+        for ($i = 0; $i < count($dataOrder); $i++) {
+            $lessonId = $dataOrder[$i];
+            DB::table('lessons')
+                ->where('id', $lessonId)
+                ->update([
+                    'order' => $i
+                ]);
+
+            $lessonOrder[] = [
+                'id' => $lessonId,
+                'order' => $i
+            ];
+        }
+
+        return response()->json([
+            'success' => true,
+            'data' => $lessonOrder
         ]);
     }
 

@@ -1,4 +1,4 @@
-import auth from '~/services/auth'
+import auth from '~/services/auth';
 
 const courses = {
 	accessToken: function () {
@@ -42,7 +42,6 @@ const courses = {
 					reject(error);
 				})
 		})
-
 	},
 	getById: async function (nuxt, id) {
 		const self = this;
@@ -116,7 +115,7 @@ const courses = {
 						tag: data.tag
 					}
 					nuxt.$store.commit("courses/edit", course);
-					resolve(response.data);
+					resolve(course);
 				})
 				.catch(function (error) {
 					reject(error);
