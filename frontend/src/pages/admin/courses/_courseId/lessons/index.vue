@@ -33,11 +33,11 @@
       <div class="data-view">
         <draggable
           v-bind="dragLessonsOptions"
-          :list="listItems"
+          :list="lessons"
           handle=".handle"
-          @end="dragEnd(listItems)"
+          @end="dragEnd(lessons)"
         >
-          <div v-for="lesson in listItems" :key="'lesson'+lesson.id">
+          <div v-for="lesson in lessons" :key="'lesson'+lesson.id">
             <b-card header-tag="header" class="card-list dragable">
               <div slot="header">
                 <h6 class="handle list-title">{{ lesson.name }}</h6>
@@ -62,7 +62,7 @@
                       <h5 class="subhead">
                         <i class="material-icons icon">book</i>
                         Materials
-                        <small>({{ listItems.length }})</small>
+                        <small>50</small>
                       </h5>
                     </b-col>
                     <b-col sm="8" class="text-right">
@@ -256,7 +256,7 @@ export default {
       this.course.title = data.title;
     });
 
-    lessons.get(this).then(data => {
+    lessons.getListItems(this, courseId).then(data => {
       this.lessons = data;
     });
   }
