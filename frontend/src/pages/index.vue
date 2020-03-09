@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="landing">
 
   <section class="home-five bg-img5">
     <div class="container">
