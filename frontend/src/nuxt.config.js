@@ -60,6 +60,9 @@ module.exports = {
     */
     extend(config, ctx) {
     },
+    splitChunks: {
+      layouts: true
+    },
     vendor: ['@johmun/vue-tags-input']
   },
   /*
