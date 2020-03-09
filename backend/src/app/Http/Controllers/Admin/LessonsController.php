@@ -309,6 +309,74 @@ class LessonsController extends Controller
     }
 
     /**
+     * Set lessons orders.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+
+    /**
+     * @SWG\Patch(
+     *   path="/admin/lessons/order/{id}",
+     *   tags={"Admin"},
+     *   summary="Set lesson orders",
+     *   operationId="lessons_edit",
+     *   @SWG\Parameter(
+     *     type="string",                                                                                                                                                                              
+     *     name="Authorization",
+     *     in="header",
+     *     description="Bearer",
+     *     required=true
+     *   ),
+     *   @SWG\Parameter(
+     *     name="course_id",
+     *     in="query",
+     *     description="Course ID",
+     *     required=true,
+     *     type="string"
+     *   ),
+     *   @SWG\Parameter(
+     *     name="order",
+     *     in="query",
+     *     description="Order",
+     *     required=true,
+     *     type="string"
+     *   ),
+     *   @SWG\Response(response=200, description="successful operation"),
+     *   @SWG\Response(response=500, description="internal server error")
+     * )
+     *
+     */
+    public function setLessonOrders(Request $request)
+    {
+        $request->user()->authorizeRoles(['admin']);
+
+        $requestOrder = isset($request->order) ? $request->order : '';
+        $dataOrder = array_filter(explode(',', $requestOrder));
+        $lessonOrder = [];
+
+        for ($i = 0; $i < count($dataOrder); $i++) {
+            $lessonId = $dataOrder[$i];
+            DB::table('lessons')
+                ->where('id', $lessonId)
+                ->update([
+                    'order' => $i
+                ]);
+
+            $lessonOrder[] = [
+                'id' => $lessonId,
+                'order' => $i
+            ];
+        }
+
+        return response()->json([
+            'success' => true,
+            'data' => $lessonOrder
+        ]);
+    }
+
+    /**
      * Delete lessons
      *
      * @param  \Illuminate\Http\Request  $request
