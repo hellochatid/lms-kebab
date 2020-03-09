@@ -119,11 +119,8 @@
               <div class="col-md-6 col-lg-4 col-xl-3 business design">
                 <div class="top_courses">
                   <div class="thumb">
-                    <img class="img-whp" src="images/courses/t1.jpg" alt="t1.jpg">
+                    <img class="img-whp" src="https://i.imgur.com/dZ8egNl.png" alt="t1.jpg">
                     <div class="overlay">
-                      <div class="tag">Top course</div>
-                      <div class="icon"><span class="flaticon-like"></span></div>
-                      <a class="tc_preview_course" href="#">Preview Course</a>
                     </div>
                   </div>
                   <div class="details">
@@ -147,11 +144,8 @@
               <div class="col-md-6 col-lg-4 col-xl-3 business design">
                 <div class="top_courses">
                   <div class="thumb">
-                    <img class="img-whp" src="images/courses/t1.jpg" alt="t1.jpg">
+                    <img class="img-whp" src="https://i.imgur.com/E3hxjdE.png" alt="t1.jpg">
                     <div class="overlay">
-                      <div class="tag">Top course</div>
-                      <div class="icon"><span class="flaticon-like"></span></div>
-                      <a class="tc_preview_course" href="#">Preview Course</a>
                     </div>
                   </div>
                   <div class="details">
@@ -175,11 +169,8 @@
               <div class="col-md-6 col-lg-4 col-xl-3 business design">
                 <div class="top_courses">
                   <div class="thumb">
-                    <img class="img-whp" src="images/courses/t1.jpg" alt="t1.jpg">
+                    <img class="img-whp" src="https://i.imgur.com/dZ8egNl.png" alt="t1.jpg">
                     <div class="overlay">
-                      <div class="tag">Top course</div>
-                      <div class="icon"><span class="flaticon-like"></span></div>
-                      <a class="tc_preview_course" href="#">Preview Course</a>
                     </div>
                   </div>
                   <div class="details">
@@ -203,11 +194,8 @@
               <div class="col-md-6 col-lg-4 col-xl-3 business design">
                 <div class="top_courses">
                   <div class="thumb">
-                    <img class="img-whp" src="images/courses/t1.jpg" alt="t1.jpg">
+                    <img class="img-whp" src="https://i.imgur.com/E3hxjdE.png" alt="t1.jpg">
                     <div class="overlay">
-                      <div class="tag">Top course</div>
-                      <div class="icon"><span class="flaticon-like"></span></div>
-                      <a class="tc_preview_course" href="#">Preview Course</a>
                     </div>
                   </div>
                   <div class="details">
