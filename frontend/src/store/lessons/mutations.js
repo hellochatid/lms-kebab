@@ -12,11 +12,12 @@ export default {
 		}
 		state.list.push(lesson);
 	},
-	edit(state, { id, title, subtitle, description, image, tag, order }) {
+	edit(state, { id, course_id, title, subtitle, description, image, tag, order }) {
 		if (state.list.length > 0) {
 			const index = state.list.findIndex(data => parseInt(data.id) === parseInt(id));
 			const lesson = state.list[index];
 			if (index !== -1) {
+				lesson.course_id = course_id;
 				lesson.title = title;
 				lesson.subtitle = subtitle;
 				lesson.description = description;

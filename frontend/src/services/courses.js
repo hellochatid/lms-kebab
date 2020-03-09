@@ -115,7 +115,7 @@ const courses = {
 						tag: data.tag
 					}
 					nuxt.$store.commit("courses/edit", course);
-					resolve(response.data);
+					resolve(course);
 				})
 				.catch(function (error) {
 					reject(error);

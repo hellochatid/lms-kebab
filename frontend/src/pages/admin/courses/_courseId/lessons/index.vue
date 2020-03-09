@@ -47,9 +47,12 @@
                 >
                   <i class="material-icons icon">delete</i>
                 </b-button>
-                <b-button class="btn-icon btn-edit">
+                <NuxtLink
+                  :to="'/admin/courses/' + course.id + '/lessons/edit/' + lesson.id"
+                  class="btn btn-icon btn-edit"
+                >
                   <i class="material-icons icon">edit</i>
-                </b-button>
+                </NuxtLink>
                 <b-button v-b-toggle="'lesson-' + lesson.id" class="btn-collapse btn-icon"></b-button>
               </div>
               <b-collapse :id="'lesson-' + lesson.id">
