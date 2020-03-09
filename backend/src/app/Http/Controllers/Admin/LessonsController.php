@@ -167,19 +167,19 @@ class LessonsController extends Controller
         $request->user()->authorizeRoles(['admin']);
 
         $query = DB::table('lessons')
-        ->select(
-            DB::raw('(select title from courses where id=course_id and deleted_at is null) as course_title'),
-            'id',
-            'course_id',
-            'title',
-            'subtitle',
-            'description',
-            'tag',
-            'image',
-            'order'
-        )
-        ->whereNull('deleted_at')
-        ->orderBy('order');
+            ->select(
+                DB::raw('(select title from courses where id=course_id and deleted_at is null) as course_title'),
+                'id',
+                'course_id',
+                'title',
+                'subtitle',
+                'description',
+                'tag',
+                'image',
+                'order'
+            )
+            ->whereNull('deleted_at')
+            ->orderBy('order');
 
         // if query ID exist
         if ($request->query->get('id') !== null) {
@@ -205,7 +205,7 @@ class LessonsController extends Controller
                 'title' => $lessons->title,
                 'subtitle' => $lessons->subtitle,
                 'description' => $lessons->description,
-                'tag' => $lessons->tag,
+                'tag' => array_filter(explode(',', $lessons->tag)),
                 'image' => [
                     'name' => $lessons->image !== '' && $lessons->image !== null ? $lessons->image : '',
                     'url' => $lessons->image !== '' && $lessons->image !== null ? url('') . Storage::url($lessons->image) : ''
@@ -283,21 +283,28 @@ class LessonsController extends Controller
         $request->user()->authorizeRoles(['admin']);
 
         $updatedValue = [];
-        if ($request->course_id) $updatedValue['course_id'] = $request->course_id;
-        if ($request->title) $updatedValue['title'] = $request->title;
-        if ($request->subtitle) $updatedValue['subtitle'] = $request->subtitle;
-        if ($request->description) $updatedValue['description'] = $request->description;
-        if ($request->tag) $updatedValue['tag'] = $request->tag;
-        if ($request->image) $updatedValue['image'] = $request->image;
-        if ($request->order) $updatedValue['order'] = $request->order;
+        $updatedValue['course_id'] = $request->course_id;
+        $updatedValue['title'] = $request->title;
+        $updatedValue['subtitle'] = $request->subtitle;
+        $updatedValue['description'] = $request->description;
+        $updatedValue['tag'] = $request->tag;
+        $updatedValue['image'] = $request->image;
+        $updatedValue['order'] = $request->order;
+        $response = $updatedValue;
 
         DB::table('lessons')
             ->where('id', $id)
             ->update($updatedValue);
 
+        $response['tag'] = array_filter(explode(',', $request->tag));
+        $response['image'] = [
+            'name' => $request->image !== '' && $request->image !== null ? $request->image : '',
+            'url' => $request->image !== '' && $request->image !== null ? url('') . Storage::url($request->image) : ''
+        ];
+
         return response()->json([
             'success' => true,
-            'message' => 'lessons successfully updated'
+            'data' => $response
         ]);
     }
 
