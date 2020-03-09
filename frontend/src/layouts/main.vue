@@ -24,6 +24,9 @@
             <li class="nav-item">
               <NuxtLink to="/course" class="nav-link">course</NuxtLink>
             </li>
+            <li class="nav-item">
+              <NuxtLink to="/login" class="btn btn-primary btn-sw">Login</NuxtLink>
+            </li>
           </b-nav>
         </b-navbar-nav>
       </div>
@@ -35,103 +38,53 @@
       <section class="footer_one">
         <div class="container">
           <div class="row">
+            <div class="col-sm-6 col-md-6 col-md-3 col-lg-3">
+              <div class="footer_contact_widget">
+                <h4>
+                  <i class="material-icons icon">layers</i>
+                  <span>Kebab</span>
+                </h4>
+                <p>
+                  Kebab adalah lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua 
+                </p>
+              </div>
+            </div>
             <div class="col-sm-6 col-md-4 col-md-3 col-lg-3">
               <div class="footer_contact_widget">
-                <h4>CONTACT</h4>
-                <p>329 Queensberry Street, North Melbourne </p>
-                <p>VIC 3051, Australia.</p>
-                <p>123 456 7890</p>
-                <p>support@edumy.com</p>
+                <h4>Contact</h4>
+                <p>Jl Persatuan UH III/549, Jl. Celeban, Tahunan</p>
+                <p>Kec. Umbulharjo, Kota Yogyakarta</p>
+                <p>Daerah Istimewa Yogyakarta 55167</p>
+                <p>info@kebab.id</p>
               </div>
             </div>
             <div class="col-sm-6 col-md-4 col-md-3 col-lg-2">
               <div class="footer_company_widget">
-                <h4>COMPANY</h4>
+                <h4>About Us</h4>
                 <ul class="list-unstyled">
-                  <li><a href="#">About Us</a></li>
-                  <li><a href="#">Blog</a></li>
-                  <li><a href="page-contact.html">Contact</a></li>
+                  <li><a href="#">Courses</a></li>
+                  <li><a href="#">Team</a></li>
+                  <li><a href="#">Careers</a></li>
+                  <li><a href="page-contact.html">Contact Us</a></li>
                   <li><a href="#">Become a Teacher</a></li>
                 </ul>
               </div>
             </div>
             <div class="col-sm-6 col-md-4 col-md-3 col-lg-2">
               <div class="footer_program_widget">
-                <h4>PROGRAMS</h4>
+                <h4>Help & Support</h4>
                 <ul class="list-unstyled">
-                  <li><a href="#">Nanodegree Plus</a></li>
-                  <li><a href="#">Veterans</a></li>
-                  <li><a href="#">Georgia</a></li>
-                  <li><a href="#">Self-Driving Car</a></li>
+                  <li><a href="#">Documentation</a></li>
+                  <li><a href="#">Forums</a></li>
                 </ul>
               </div>
             </div>
             <div class="col-sm-6 col-md-4 col-md-3 col-lg-2">
               <div class="footer_support_widget">
-                <h4>SUPPORT</h4>
+                <h4>Privacy & Terms</h4>
                 <ul class="list-unstyled">
-                  <li><a href="#">Documentation</a></li>
-                  <li><a href="#">Forums</a></li>
-                  <li><a href="#">Language Packs</a></li>
-                  <li><a href="#">Release Status</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-sm-6 col-md-6 col-md-3 col-lg-3">
-              <div class="footer_apps_widget">
-                <h4>MOBILE</h4>
-                <div class="app_grid">
-                  <button class="apple_btn btn-dark">
-                    <span class="icon">
-                      <span class="flaticon-apple"></span>
-                    </span>
-                    <span class="title">App Store</span>
-                    <span class="subtitle">Available now on the</span>
-                  </button>
-                  <button class="play_store_btn btn-dark">
-                    <span class="icon">
-                      <span class="flaticon-google-play"></span>
-                    </span>
-                    <span class="title">Google Play</span>
-                    <span class="subtitle">Get in on</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Our Footer Middle Area -->
-      <section class="footer_middle_area p0">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-4 col-md-3 col-lg-3 col-xl-2 pb15 pt15">
-              <div class="logo-widget home1">
-                <img class="img-fluid" src="images/header-logo.png" alt="header-logo.png">
-                <span>EDUMY</span>
-              </div>
-            </div>
-            <div class="col-sm-8 col-md-5 col-lg-6 col-xl-6 pb25 pt25 brdr_left_right">
-              <div class="footer_menu_widget">
-                <ul>
-                  <li class="list-inline-item"><a href="#">Home</a></li>
-                  <li class="list-inline-item"><a href="#">Privacy</a></li>
-                  <li class="list-inline-item"><a href="#">Terms</a></li>
-                  <li class="list-inline-item"><a href="#">Sitemap</a></li>
-                  <li class="list-inline-item"><a href="#">Purchase</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-sm-12 col-md-4 col-lg-3 col-xl-4 pb15 pt15">
-              <div class="footer_social_widget mt15">
-                <ul>
-                  <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                  <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                  <li class="list-inline-item"><a href="#"><i class="fa fa-instagram"></i></a></li>
-                  <li class="list-inline-item"><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                  <li class="list-inline-item"><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                  <li class="list-inline-item"><a href="#"><i class="fa fa-google"></i></a></li>
+                  <li><a href="#">Privacy Policy</a></li>
+                  <li><a href="#">Terms and Conditions</a></li>
                 </ul>
               </div>
             </div>
@@ -145,7 +98,7 @@
           <div class="row">
             <div class="col-lg-6 offset-lg-3">
               <div class="copyright-widget text-center">
-                <p>Copyright Edumy © 2019. All Rights Reserved.</p>
+                <p>Copyright Kebab © 2020. All Rights Reserved.</p>
               </div>
             </div>
           </div>
@@ -238,7 +191,7 @@ iframe {
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   line-height: 1.42857;
   color: #0a0a0a; }
   h1 small,
@@ -302,13 +255,13 @@ address {
 
 .form-control{
   font-size: 14px;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   padding: 0 20px;
 }
 
 
 .ff-ubuntu {
-  font-family: 'Nunito', sans-serif; }
+  font-family: 'Ubuntu', sans-serif; }
 
 .sign_up_modal:before {
   background-color: rgba(0, 0, 0, .9);
@@ -362,7 +315,7 @@ address {
 .sign_up_tab li.nav-item .nav-link{
   border: none;
   color: #0a0a0a;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   font-size: 18px;
   font-weight: bold;
 }
@@ -450,7 +403,7 @@ address {
 }
 .dropdown_content .list_content a p{
   color: #0a0a0a;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   margin: 0;
 }
 .dropdown_content .list_content a small{
@@ -715,7 +668,7 @@ address {
 .home4_header_top_contact li a,
 ul.sign_up_btn.home4 li a,
 ul.sign_up_btn.home6 a{
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   font-size: 14px;
   line-height: initial;
   border-radius: 0px;
@@ -746,7 +699,7 @@ ul.sign_up_btn.home6 a{
 }
 .header_top.home7 .header_top_lang_widget_home6 button.btn.dropdown-toggle{
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   color: rgba(255, 255, 255, 0.502);
   height: auto;
   line-height: 1.2;
@@ -756,7 +709,7 @@ ul.sign_up_btn.home6 a{
 }
 ul.sign_up_btn.home7 a{
   font-size: 14px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   border-radius: 0px;
 }
 .light_white,
@@ -767,7 +720,7 @@ ul.sign_up_btn.home7 a{
 .header_search_widget .mailchimp_form .form-control{
   background-color: #ffffff;
   border-radius: 25px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   font-size: 14px;
   height: 48px;
   padding-left: 30px;
@@ -828,7 +781,7 @@ ul.sign_up_btn.home7 a{
 }
 .ht_right_widget ul li a,
 .home3_header_top_contact li a{
-  font-family: "Nunito";
+  font-family: "Ubuntu";
 }
 header.header-nav.menu_style_home_three.navbar-scrolltofixed .ht_left_widget.home3 .header_top_lang_widget{
   margin-top: 5px;
@@ -838,6 +791,13 @@ header.header-nav.menu_style_home_three.navbar-scrolltofixed .ht_left_widget.hom
 .ht_left_widget.home3 .no-touch .cd-dropdown-trigger:hover{
   background-color: #ffffff !important;
   color: #0a0a0a;
+}
+.navbar-expand-lg .navbar-nav .nav-link {
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+.navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus {
+  color: rgb(182, 109, 255);
 }
 .ht_left_widget.home3 .cd-dropdown-trigger{
   text-transform: capitalize;
@@ -938,7 +898,7 @@ header.header-nav.menu_style_home_three.navbar-scrolltofixed .ht_left_widget.hom
   width: auto;
 }
 .cd-dropdown-content .cd-secondary-dropdown a{
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
 }
 li.has-children a{
   line-height: 51px;
@@ -1086,7 +1046,7 @@ header.header-nav.menu_style_home_one.dashbord_pages.stricky-fixed .user_setting
 
 header.header-nav.menu_style_home_one .ace-responsive-menu li a{
   color: #ffffff;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
 }
 header.header-nav.menu_style_home_one .ace-responsive-menu li ul.sub-menu,
 header.header-nav.menu_style_home_three .ace-responsive-menu li ul.sub-menu,
@@ -1334,7 +1294,7 @@ header.header-nav.menu_style_home_five .ace-responsive-menu > li > a,
 header.header-nav.menu_style_home_six .ace-responsive-menu > li > a,
 header.header-nav.menu_style_home_seven .ace-responsive-menu > li > a,
 header.header-nav.menu_style_home_eight .ace-responsive-menu > li > a{
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   padding: 30px 35px 30px 10px;
   text-transform: uppercase;
 }
@@ -1374,7 +1334,7 @@ header.header-nav.home2.style_one ul.sign_up_btn li:first-child:before{
 }
 header.header-nav.home2.style_one ul.sign_up_btn li a{
   color: #a4a4a4;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   font-size: 14px;
   line-height: 1.2;
 }
@@ -1410,7 +1370,7 @@ header.header-nav.home2.style_one .ace-responsive-menu li ul.sub-menu li ul.sub-
 header.header-nav.home2.style_one .ace-responsive-menu li ul.sub-menu li a{
   border-bottom: 1px solid #555;
   color: #a4a4a4;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   font-size: 16px;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
@@ -1462,7 +1422,7 @@ header.header-nav.menu_style_home_three .ace-responsive-menu li ul.sub-menu:nth-
 header.header-nav.menu_style_home_three .ace-responsive-menu li a,
 header.header-nav.menu_style_home_three .ace-responsive-menu li ul.sub-menu li a{
   color: #ffffff;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
@@ -1491,7 +1451,7 @@ header.header-nav.menu_style_home_three a.navbar_brand:before{
 }
 .sign_up_btn .btn{
   box-shadow: none;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   border-radius: 4px;
   color: #ffffff;
   height: auto;
@@ -1501,7 +1461,7 @@ header.header-nav.menu_style_home_three a.navbar_brand:before{
   transition: all 0.3s ease 0s;
 }
 .sign_up_btn.home3 .btn{
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   font-size: 14px;
   line-height: 1.2;
 }
@@ -1666,7 +1626,7 @@ header.header-nav.menu_style_home_four .ace-responsive-menu > li{
 }
 header.header-nav.menu_style_home_four  .ace-responsive-menu li a{
   color: #ffffff;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
 }
 header.header-nav.menu_style_home_four .sign_up_btn .btn{
   background-color: transparent;
@@ -1765,7 +1725,7 @@ header.header-nav.menu_style_home_five .ace-responsive-menu li a{
 }
 header.header-nav.menu_style_home_five .ace-responsive-menu li a{
   padding-top: 27px;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   text-transform: capitalize;
 }
 header.header-nav.menu_style_home_five .ace-responsive-menu li ul.sub-menu li a{
@@ -1886,7 +1846,7 @@ header.header-nav.menu_style_home_six .ace-responsive-menu > li{
 }
 header.header-nav.menu_style_home_six  .ace-responsive-menu li a{
   color: #ffffff;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
 }
 header.header-nav.menu_style_home_six .sign_up_btn .btn{
   background-color: transparent;
@@ -1984,7 +1944,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li{
 }
 header.header-nav.menu_style_home_seven  .ace-responsive-menu li a{
   color: #ffffff;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   padding: 18px 20px 18px 15px;
 }
 header.header-nav.menu_style_home_seven .ace-responsive-menu li ul.sub-menu li a:hover{
@@ -2008,7 +1968,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
 }
 /*== Mobile Menu Css ==*/
 .stylehome1 .mm-navbar{
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   color: #fff;
   font-weight: 600;
   font-size: 16px;
@@ -2020,7 +1980,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
 }
 .stylehome1 a.mm-listitem__text,
 .stylehome1 a.mm-btn.mm-btn_next.mm-listitem__btn.mm-listitem__text{
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   color: #fff;
   font-weight: 400;
   font-size: 14px;
@@ -2296,7 +2256,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
   display: -webkit-inline-box;
   position: relative;
   vertical-align: middle;
-      font-family: 'Nunito', sans-serif;
+      font-family: 'Ubuntu', sans-serif;
 }
 .banner-style-one .slide,
 .banner-style-two .slide{
@@ -2360,7 +2320,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
   animation-fill-mode: both;
   -webkit-backface-visibility: visible !important;
   backface-visibility: visible !important;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
 }
 .banner-style-two p{
   margin: 0 auto;
@@ -2406,7 +2366,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
   border:2px solid #ffffff;
   border-radius:27px;
   color:#ffffff;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   font-size:16px;
   padding:12px 50px;
   -webkit-transition: all 0.3s ease 0s;
@@ -2526,7 +2486,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
 .home-three .home-text a.btn {
   border: 2px solid #ffffff;
   border-radius: 27px;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   color: #ffffff;
   font-size: 14px;
   margin-top: 15px;
@@ -2583,7 +2543,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
   font-size: 45px;
 }
 .home-five .home-text p{
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   font-size: 18px;
   line-height: 30px;
   max-width: 495px;
@@ -2705,7 +2665,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
 }
 .home_icon_box p{
   color: #ffffff;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   font-size: 16px;
   margin-bottom: 0;
 }
@@ -2848,13 +2808,13 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
 .play_store_btn .title{
   display: block;
   font-size: 16px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   margin-top: 3px;
 }
 .app_grid .apple_btn .subtitle,
 .play_store_btn .subtitle{
   font-size: 13px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
 }
 .phone_img{
   position: absolute;
@@ -3161,7 +3121,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
   margin-bottom: 22px;
 }
 .cs_row_two .cs_overview h4{
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   font-size: 18px;
   color: rgb(59, 59, 59);
   line-height: 1.333;
@@ -3234,7 +3194,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
 }
 .cs_row_three .course_content .details .cc_tab h4.panel-title{
   font-size: 18px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   color: rgb(59, 59, 59);
   line-height: 1.7;
   border-radius: 5px;
@@ -3312,7 +3272,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
 }
 .cs_row_four .about_ins_container .details h4{
   font-size: 20px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   color: #0a0a0a;
   margin-bottom: 0;
   line-height: 1.5;
@@ -3432,7 +3392,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
 }
 .cs_row_five .student_feedback_container .aii_average_review .av_content h2{
   font-size: 50px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   color: #0a0a0a;
   line-height: 0.6;
 }
@@ -3618,7 +3578,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
 }
 .top_courses.home2 .details .tc_content h5{
   color: #0a0a0a;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   line-height: 1.333;
 }
 .top_courses .details .tc_content .tc_review{
@@ -3701,7 +3661,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
 .my_course_content_list h5.title{
   font-size: 18px;
     font-weight: 600;
-        font-family: 'Nunito', sans-serif;
+        font-family: 'Ubuntu', sans-serif;
 }
 
 .my_course_content_list .mc_content_list{
@@ -3791,7 +3751,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
 }
 .my_course_content_list .mc_content_list .details .mc_footer ul.mc_review li.tc_price{
   font-size: 18px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   color: rgb(199, 85, 51);
   font-weight: bold;
   line-height: 1.2;
@@ -3822,7 +3782,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
 }
 .my_course_content_list .mc_content_list .details .mc_content .subtitle .title{
   font-size: 18px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   color: rgb(10, 10, 10);
   line-height: 1.333;
 }
@@ -3975,7 +3935,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
 }
 .original_price{
   font-size: 13px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   color: rgb(126, 126, 126);
   line-height: 1.2;
 }
@@ -4082,7 +4042,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
 }
 .hvr_img_box_container .overlay .details h5 {
   color: #0a0a0a;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   font-weight: 600;
   font-size: 18px;
   margin-bottom: 20px;
@@ -4135,7 +4095,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
 .funfact_one .details .timer,
 .funfact_one .details ul li{
   color: #ffffff;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   font-size: 30px;
   font-weight: bold;
   margin-right: -2px;
@@ -4154,7 +4114,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
 .funfact_two .details .timer{
   color: #0a0a0a;
   font-size: 22px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   font-weight: 600;
   line-height: 1.2;
 }
@@ -4167,7 +4127,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
 .about_whoweare h4{
   color: #0a0a0a;
   font-size: 20px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   font-weight: 600;
   line-height: 1.2;
 }
@@ -4431,7 +4391,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
 }
 .logo-widget span{
   color: #ffffff;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   font-size: 22px;
   font-weight: bold;
   padding-left: 15px;
@@ -4615,7 +4575,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
 }
 /*== Inner Pages Breadcrumb ==*/
 .inner_page_breadcrumb {
-  background-image: url(https://i.imgur.com/xji1Yup.jpg);
+  background-image: url(https://i.imgur.com/4oDH2hw.jpg);
   background-repeat: no-repeat;
   height: 400px;
   margin-top: -1px;
@@ -4958,7 +4918,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
 }
 .smp_icon_box .details h4{
   font-size: 18px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   font-weight: bold;
   line-height: 1.2;
   margin-bottom: 10px;
@@ -5132,12 +5092,12 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
 }
 .testimonial_item.home2 .thumb .title{
   color: #060606;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   font-size: 18px;
 }
 .testimonial_item.home2 .thumb .subtitle{
   color: #b66dff;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   font-size: 14px;
   margin-bottom: 40px;
 }
@@ -5323,7 +5283,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
 .blog_post_home2 .bph2_header .bph2_date_meta span,
 .blog_post.one .thumb .post_date span{
   color: #0a0a0a;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   font-size: 18px;
   font-weight: bold;
   display: table-caption;
@@ -5672,11 +5632,14 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
   background-color: #ffffff;
   padding: 30px 0;
 }
+.membership_header span {
+  font-size: 20px;
+}
 .membership_container ul.mc_parent_list ul.mc_child_list .membership_header{
   border-radius: 5px;
   background-color: rgb(249, 250, 252);
   height: 210px;
-  width: 250px;
+  width: 100%;
 }
 ul.mc_parent_list li{
   margin-right: -3px !important;
@@ -5692,7 +5655,8 @@ ul.mc_parent_list ul.mc_child_list.four li{
   color: rgb(79, 79, 79);
   font-size: 15px;
   font-family: "Open Sans";
-  line-height: 3.333;
+  line-height: 2rem;
+  margin-bottom: 32px;
 }
 ul.mc_parent_list ul.mc_child_list.two li,
 ul.mc_parent_list ul.mc_child_list.three li,
@@ -5715,16 +5679,16 @@ ul.mc_parent_list ul.mc_child_list .membership_header{
   padding: 60px 50px;
 }
 ul.mc_parent_list ul.mc_child_list .membership_header .price{
-  font-size: 30px;
-  font-family: "Nunito";
-  color: rgb(199, 85, 51);
+  font-size: 28px;
+  font-family: "Ubuntu";
+  color: rgb(182, 109, 255);
   font-weight: bold;
   line-height: 1.2;
   margin-bottom: 12px;
 }
 ul.mc_parent_list ul.mc_child_list .membership_header h4{
   font-size: 18px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   color: #0a0a0a;
   line-height: 1.333;
   margin: 0;
@@ -5830,7 +5794,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .erro_code h1{
   color: #ffffff;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   font-weight: 600;
   font-size: 10.450vw;
   line-height: 1.2;
@@ -5844,7 +5808,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .error_page.footer_apps_widget h4 {
   font-size: 35px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   font-weight: 600;
   text-transform: uppercase;
   line-height: 1.2;
@@ -5855,7 +5819,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
   line-height: 30px;
   margin: 0 auto 50px;
   max-width: 885px;
-  font-family: Nunito;
+  font-family: Ubuntu;
   font-size: 16px;
 }
 .error_page.footer_apps_widget .form-inline {
@@ -5914,7 +5878,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
   margin-bottom: 40px;
 }
 .login_form .heading h3 {
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   font-size: 25px;
   font-weight: bold;
 }
@@ -5959,7 +5923,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
   margin-bottom: 40px;
 }
 .login_form .btn-log {
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   font-size: 19px;
   font-weight: bold;
   height: 55px;
@@ -6028,7 +5992,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
   margin-bottom: 40px;
 }
 .sign_up_form .btn-log {
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   font-size: 19px;
   font-weight: bold;
   height: 55px;
@@ -6075,7 +6039,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .faq_question_widget .title {
   font-size: 20px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   font-weight: 600;
   color: #0a0a0a;
   line-height: 1.2;
@@ -6108,7 +6072,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .faq_according .panel .panel-body h4{
   font-size: 18px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   color: rgb(59, 59, 59);
   line-height: 1.333;
 }
@@ -6118,7 +6082,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .faq_according .panel-heading .panel-title{
   font-size: 18px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   color: rgb(59, 59, 59);
   line-height: 1.333;
 }
@@ -6250,7 +6214,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 .ui_kit_select_search .dropdown-item {
   color: #7f7f7f;
   font-size: 14px;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
 }
 .ui_kit_select_search .dropdown-item:hover {
   background-color: transparent;
@@ -6287,7 +6251,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 .ui_kit_radiobox label, legend {
   display: block;
   font-size: 16px;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   margin-bottom: 8px;
 }
 .ui_kit_radiobox .radio input[type=radio]:checked+label .radio-label {
@@ -6515,13 +6479,13 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .mbp_thumb_post .thumb .post_date h2{
   font-size: 50px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   color: rgb(255, 255, 255);
   margin-bottom: 0;
 }
 .mbp_thumb_post .thumb .post_date span{
   font-size: 18px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   color: rgb(255, 255, 255);
 }
 .main_blog_post_content .mbp_thumb_post .details {
@@ -6679,7 +6643,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 .event_counter_plugin_content ul li span {
   display: block;
   font-size: 26px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   color: rgb(255, 255, 255);
   line-height: 1.2;
 }
@@ -6726,18 +6690,18 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .blog_grid_post .thumb .post_date h2{
   font-size: 50px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   color: rgb(255, 255, 255);
   margin-bottom: 0;
 }
 .blog_grid_post .thumb .post_date span{
   font-size: 18px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   color: rgb(255, 255, 255);
 }
 .blog_grid_post .details h3{
   font-size: 20px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   font-weight: 600;
   color: #0a0a0a;
   line-height: 1.2;
@@ -6810,7 +6774,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .blog_grid_post.style2.event_lists .details h3{
   font-size: 22px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   color: #0a0a0a;
   line-height: 1.091;
 }
@@ -6841,7 +6805,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .event_participator_tile{
   font-size: 20px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   font-weight: 600;
   color: #0a0a0a;
   line-height: 1.2;
@@ -6853,7 +6817,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .participator_team .details h4{
   font-size: 18px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   color: #0a0a0a;
   line-height: 1.333;
   margin-bottom: 0;
@@ -6919,7 +6883,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 .blog_recent_post_widget .title,
 .blog_category_widget .title{
   font-size: 20px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   font-weight: 600;
   color: #0a0a0a;
   line-height: 1.2;
@@ -6958,7 +6922,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .event_details_widget .title{
   font-size: 20px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   font-weight: 600;
   color: #0a0a0a;
   line-height: 1.2;
@@ -7059,7 +7023,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 
 .instructor_pricing_widget .price{
   font-size: 30px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   color: #0a0a0a;
   font-weight: bold;
   line-height: 1.2;
@@ -7165,7 +7129,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .blog_recent_post_widget .media-body .post_title{
   font-size: 16px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   color: #212121;
   line-height: 1.5;
   margin-bottom: 0;
@@ -7262,7 +7226,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .blog_post_share li p{
   font-size: 18px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   color: rgb(59, 59, 59);
   line-height: 1.333;
 }
@@ -7303,7 +7267,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 .mbp_pagination_tab .pag_prev p,
 .mbp_pagination_tab .pag_next p{
   font-size: 16px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   color: #0a0a0a;
   line-height: 1.75;
   margin-bottom: 0;
@@ -7392,7 +7356,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .breadcrumb_widgets .title{
   font-size: 22px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   font-weight: 600;
   color: rgb(10, 10, 10);
   line-height: 1.2;
@@ -7435,7 +7399,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .user_profile .media .media-body h4{
   font-size: 18px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   color: #0a0a0a;
   line-height: 1.2;
   padding-left: 30px;
@@ -7462,7 +7426,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
   transition: all 0.3s ease 0s;
 }
 .dashbord_nav_list li a{
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   color: #7f7f7f;
   font-size: 16px;
 }
@@ -7621,7 +7585,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
   border-bottom: 1px solid #dedede;
   color: #0a0a0a;
   font-size: 18px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   line-height: 1.333;
   margin-bottom: 0;
   padding-bottom: 20px;
@@ -7726,7 +7690,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .header_user_notif li.user_setting .dropdown-menu .user_set_header p{
   font-size: 16px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   color: #0a0a0a;
   line-height: 1.2;
 }
@@ -7743,7 +7707,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
   border-bottom: 1px solid #dedede;
   color: #0a0a0a;
   font-size: 16px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   line-height: 3.125;
   padding-left: 0;
   -webkit-transition: all 0.3s ease 0s;
@@ -7780,7 +7744,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
   padding-right: 0;
   width: 258px;
   font-size: 14px;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
 }
 .candidate_revew_search_box button{
   background-color: #ffffff;
@@ -8122,7 +8086,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .message_container .user_heading .wrap h5.name {
   font-size: 16px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   color: rgb(10, 10, 10);
   line-height: 1.2;
   margin-bottom: 0;
@@ -8304,7 +8268,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .ff_one .detais .timer{
   font-size: 26px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   font-weight: 600;
   color: #0a0a0a;
   line-height: .5;
@@ -8336,7 +8300,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .application_statics h4{
   font-size: 20px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   font-weight: 600;
   margin-bottom: 50px;
 }
@@ -8350,7 +8314,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .recent_job_activity h4 {
   font-size: 20px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   font-weight: 600;
   color: #0a0a0a;
   line-height: 1.2;
@@ -8368,7 +8332,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .recent_job_activity .grid ul li .title{
   font-size: 16px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   color: #0a0a0a;
 }
 .recent_job_activity .grid ul li p{
@@ -8397,7 +8361,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 
 .siderbar_contact_widget p {
   font-size: 15px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   color: rgb(126, 126, 126);
   margin-bottom: 0;
   line-height: 2.667;
@@ -8703,7 +8667,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .blog_post_home2 .details h4{
   color: #fafafa;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   font-size: 18px;
   font-weight: 600;
   line-height: 1.5;
@@ -8916,7 +8880,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .contact_localtion h4{
   font-size: 22px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   font-weight: 600;
   color: #0a0a0a;
   line-height: 1.2;
@@ -8933,7 +8897,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .form_grid h4{
   font-size: 22px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   font-weight: 600;
   color: #0a0a0a;
   line-height: 1.2;
@@ -8980,19 +8944,21 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 .maxtext h1{
   color: #ffffff;
   font-size: 50px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   line-height: 1.2;
   text-transform: uppercase;
 }
 .maxtext p{
   color: #ffffff;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   font-size: 18px;
   line-height: 1.2;
 }
 /*== Color Area ==*/
 .img-whp {
   width: 100% !important;
+  height:240px;
+  object-fit:cover;
 }
 .text-thm {
   color: #b66dff !important;
@@ -10418,7 +10384,7 @@ section {
 }
 .main-title h3 {
   display: inline-block;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   font-size: 26px;
   margin-bottom: 10px;
   margin-top: 0;
@@ -10804,7 +10770,7 @@ section {
 }
 .divider-one p{
   margin-bottom: 15px;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   font-size: 16px;
 }
 .divider2{
@@ -10861,7 +10827,7 @@ section {
   height: 50px;
   line-height: 32px;
   width: 190px;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   font-size: 16px;
 }
 #mc_embed_signup .mailchimp_btn:hover{
@@ -10945,7 +10911,7 @@ canvas {
 }
 .selected_filter_widget.style2 .accordion .link{
   font-size: 20px;
-  font-family: "Nunito SemiBold";
+  font-family: "Ubuntu SemiBold";
   color: #0a0a0a;
   line-height: 1.2;
 }
@@ -11163,14 +11129,14 @@ body.translated{
 }
 .shop_grid .details .price{
   font-size: 18px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   color: rgb(199, 85, 51);
   font-weight: bold;
   line-height: 1.2;
 }
 .shop_grid .details .item-tile{
   font-size: 18px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   color: #0a0a0a;
   line-height: 1.333;
 }
@@ -11200,7 +11166,7 @@ body.translated{
 }
 .shop_order_box .main_title{
   font-size: 20px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   font-weight: 600;
   color: #0a0a0a;
   line-height: 1.2;
@@ -11224,7 +11190,7 @@ body.translated{
 }
 .shop_order_box .order_list_raw ul li h4{
   font-size: 18px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   color: #0a0a0a;
   line-height: 1.333;
   margin-bottom: 4px;
@@ -11237,7 +11203,7 @@ body.translated{
 }
 .shop_order_box .order_details .title{
   font-size: 20px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   font-weight: 600;
   color: #0a0a0a;
   line-height: 1.2;
@@ -11245,7 +11211,7 @@ body.translated{
 }
 .shop_order_box .order_details .title2 {
   font-size: 20px;
-  ont-family: "Nunito";
+  ont-family: "Ubuntu";
   font-weight: 600;
   color: #0a0a0a;
   line-height: 1.2;
@@ -11263,7 +11229,7 @@ body.translated{
 }
 .shop_order_box .order_details .od_content .tamount{
   font-size: 18px;
-  font-family: "Nunito SemiBold";
+  font-family: "Ubuntu SemiBold";
   color: rgb(255, 16, 83);
   line-height: 1.333;
 }
@@ -11350,7 +11316,7 @@ body.translated{
 }
 .checkout_form .checkout_coupon .form2 .ai_title{
   font-size: 20px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   font-weight: 600;
   color: #0a0a0a;
   margin-bottom: 20px;
@@ -11368,7 +11334,7 @@ body.translated{
 }
 .order_sidebar_widget .title{
   font-size: 20px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   font-weight: 600;
   color: #0a0a0a;
   line-height: 1.2;
@@ -11376,14 +11342,14 @@ body.translated{
 }
 .order_sidebar_widget .subtitle p{
   font-size: 18px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   color: #0a0a0a;
   line-height: 2.222;
   margin-bottom: 6px;
 }
 .order_sidebar_widget .subtitle .totals{
   font-size: 22px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   color: rgb(199, 85, 51);
   font-weight: bold;
   line-height: 1.2;
@@ -11484,7 +11450,7 @@ body.translated{
 }
 .cart_page_form tbody.table_body th .cart_list .cart_title{
   font-size: 18px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   font-weight: 600;
   color: #0a0a0a;
   line-height: 1.333;
@@ -11511,7 +11477,7 @@ body.translated{
 }
 .order_key_status li{
   font-size: 18px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   color: rgb(10, 10, 10);
   line-height: 2.222;
 }
@@ -11558,7 +11524,7 @@ body.translated{
 }
 .shop_single_product_details h3{
   font-size: 26px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   color: #0a0a0a;
   line-height: 0.923;
 }
@@ -11587,7 +11553,7 @@ body.translated{
 }
 .shop_single_product_details .sspd_price{
   font-size: 26px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   color: rgb(199, 85, 51);
   font-weight: bold;
   line-height: 1.2;
@@ -11599,7 +11565,7 @@ body.translated{
   border-radius: 27px;
   background-color: rgb(255, 16, 83);
   font-size: 18px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   color: rgb(255, 255, 255);
   height: 55px;
   border: 2px solid #ff1053;
@@ -11618,7 +11584,7 @@ body.translated{
 }
 .shop_single_product_details .sspd_social_icon li:first-child{
   font-size: 18px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   color: rgb(59, 59, 59);
   line-height: 1.333;
   padding-right: 10px;
@@ -11652,7 +11618,7 @@ body.translated{
 }
 .product_single_content .mbp_pagination_comments .mbp_first.media h4.sub_title{
   font-size: 20px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   color: #0a0a0a;
   line-height: 1.5;
   margin-bottom: 0;
@@ -11707,7 +11673,7 @@ body.translated{
 .cs_rwo_tabs.csv2 .nav-tabs .nav-link{
   border: 1px solid transparent;
   font-size: 18px;
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   color: #0a0a0a;
   height: 64px;
   line-height: 2.5;
@@ -11848,7 +11814,7 @@ body.translated{
 }
 .become_instructor_container .titles{
   color: #0a0a0a;
-  font-family: nunito;
+  font-family: Ubuntu;
   font-size: 24px;
   font-weight: 600;
   line-height: 1.3;
@@ -11862,7 +11828,7 @@ body.translated{
 
 
 .filter-option-inner-inner {
-  font-family: "Nunito";
+  font-family: "Ubuntu";
   font-size: 14px;
 }
 
@@ -11883,7 +11849,7 @@ body.translated{
 
 
 .btn{
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 
@@ -11902,7 +11868,7 @@ body.translated{
 
 .bootstrap-select.show-tick .dropdown-menu li a span.text {
     font-size: 14px;
-    font-family: "Nunito";
+    font-family: "Ubuntu";
 }
 
 .filter-option-inner-inner {
@@ -11981,7 +11947,7 @@ body.translated{
 }
 .dropdown-item{
   font-size: 14px;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
 }
 textarea.form-control{
   padding: 20px;
