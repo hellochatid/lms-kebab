@@ -69,9 +69,25 @@ class uploadController extends Controller
             return $this->jsonResponse(400, 'Bad request');
         }
 
+        $fileStorage = 'public';
         $extension  = pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
         $fileName   = date("Ymdhis") . '.' . $extension;
-        Storage::disk('public')->put($fileName, file_get_contents($_FILES['file']['tmp_name']));
+
+        if (isset($request->type)) {
+            switch ($request->type) {
+                case "image":
+                    $fileStorage = 'image';
+                    break;
+                case "document":
+                    $fileStorage = 'document';
+                    break;
+                case "audio":
+                    $fileStorage = 'audio';
+                    break;
+            }
+        }
+
+        Storage::disk($fileStorage)->put($fileName, file_get_contents($_FILES['file']['tmp_name']));
 
         return response()->json([
             'success' => true,
