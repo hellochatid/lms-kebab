@@ -23,7 +23,7 @@
         <div class="row">
           <div class="col-sm-12 col-lg-6 offset-lg-3">
             <div class="login_form inner_page">
-              <form action="#">
+              <form action="../course">
                 <div class="heading">
                   <h3 class="text-center">Login to your account</h3>
                   <p class="text-center">Don't have an account? <a class="text-thm" href="/pricing">Sign Up!</a></p>
