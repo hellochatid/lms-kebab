@@ -55,6 +55,27 @@ return [
             'visibility' => 'public',
         ],
 
+        'image' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/images'),
+            'url' => env('APP_URL').'/storage/images',
+            'visibility' => 'public',
+        ],
+
+        'document' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/documents'),
+            'url' => env('APP_URL').'/storage/documents',
+            'visibility' => 'public',
+        ],
+
+        'audio' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/audios'),
+            'url' => env('APP_URL').'/storage/audios',
+            'visibility' => 'public',
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),

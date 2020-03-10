@@ -116,7 +116,7 @@ class CoursesController extends Controller
         $response['description'] = $description;
         $response['image'] = [
             'name' => $image !== '' && $image !== null ? $image : '',
-            'url' => $image !== '' && $image !== null ? url('') . Storage::url($image) : ''
+            'url' => $image !== '' && $image !== null ? url('') . Storage::url('images/'.$image) : ''
         ];
         $response['tag'] = array_filter(explode(',', $tag));
 
@@ -201,7 +201,7 @@ class CoursesController extends Controller
                 'tag' => array_filter(explode(',', $courses->tag)),
                 'image' => [
                     'name' => $courses->image !== '' && $courses->image !== null ? $courses->image : '',
-                    'url' => $courses->image !== '' && $courses->image !== null ? url('') . Storage::url($courses->image) : ''
+                    'url' => $courses->image !== '' && $courses->image !== null ? url('') . Storage::url('images/'.$courses->image) : ''
                 ]
             ];
         }
@@ -282,7 +282,7 @@ class CoursesController extends Controller
         $response['tag'] = array_filter(explode(',', $request->tag));
         $response['image'] = [
             'name' => $request->image !== '' && $request->image !== null ? $request->image : '',
-            'url' => $request->image !== '' && $request->image !== null ? url('') . Storage::url($request->image) : ''
+            'url' => $request->image !== '' && $request->image !== null ? url('') . Storage::url('images/'.$request->image) : ''
         ];
         return response()->json([
             'success' => true,

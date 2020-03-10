@@ -130,10 +130,11 @@ export default {
       this.input.tag = tags.toString();
 
       // Post course
-      const file = this.fileImage;
-      if (file !== null) {
+      const fileImage = this.fileImage;
+      if (fileImage !== null) {
         const formData = new FormData();
-        formData.append("file", file);
+        formData.append("file", fileImage);
+        formData.append("type", 'image');
         form
           .upload(this, formData)
           .then(response => {
