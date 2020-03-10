@@ -7,10 +7,10 @@
         <div class="row">
           <div class="col-xl-6 offset-xl-3 text-center">
             <div class="breadcrumb_content">
-              <h4 class="breadcrumb_title">Membershıp</h4>
+              <h4 class="breadcrumb_title">Pricing Plan</h4>
               <ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="#">Home</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Membershıp</li>
+                  <li class="breadcrumb-item active" aria-current="page">Pricing Plan</li>
               </ol>
             </div>
           </div>
@@ -25,16 +25,16 @@
         <div class="stepwizard">
           <div class="stepwizard-row setup-panel">
             <div class="col-md-4 stepwizard-step">
-              <a href="#step-1" type="button" class="btn btn-primary btn-circle">1</a>
-              <p>Step 1</p>
+              <a href="/pricing" type="button" class="btn btn-primary btn-circle">1</a>
+              <p>Choose plan</p>
             </div>
             <div class="col-md-4 stepwizard-step">
-              <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
-              <p>Step 2</p>
+              <a href="/register" type="button" class="btn btn-disabled btn-circle" disabled="disabled">2</a>
+              <p>Fill information</p>
             </div>
             <div class="col-md-4 stepwizard-step">
-              <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
-              <p>Step 3</p>
+              <a href="/payment" type="button" class="btn btn-disabled btn-circle" disabled="disabled">3</a>
+              <p>Payment</p>
             </div>
           </div>
         </div>
