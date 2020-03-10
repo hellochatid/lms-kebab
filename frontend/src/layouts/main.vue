@@ -16,16 +16,25 @@
               <NuxtLink to="/" class="nav-link">Home</NuxtLink>
             </li>
             <li class="nav-item">
-              <NuxtLink to="/about" class="nav-link">About</NuxtLink>
+              <NuxtLink to="/#about" class="nav-link">About</NuxtLink>
             </li>
             <li class="nav-item">
-              <NuxtLink to="/affiliate" class="nav-link">Affiliate</NuxtLink>
+              <NuxtLink to="/#features" class="nav-link">Features</NuxtLink>
             </li>
             <li class="nav-item">
-              <NuxtLink to="/course" class="nav-link">course</NuxtLink>
+              <NuxtLink to="/#top-courses" class="nav-link">Course</NuxtLink>
             </li>
             <li class="nav-item">
-              <NuxtLink to="/login" class="btn btn-primary btn-sw">Login</NuxtLink>
+              <NuxtLink to="/#pricing" class="nav-link">Pricing Plan</NuxtLink>
+            </li>
+            <li class="nav-item">
+              <NuxtLink to="/#our-testimonials" class="nav-link">Testimony</NuxtLink>
+            </li>
+            <li class="nav-item">
+              <NuxtLink to="/affiliate" class="nav-link text-success">Become Affiliate</NuxtLink>
+            </li>
+            <li class="nav-item">
+              <NuxtLink to="/login" class="btn btn-primary btn-sw">Student login</NuxtLink>
             </li>
           </b-nav>
         </b-navbar-nav>
@@ -4789,7 +4798,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
 }
 .about2_home3 p{
   font-size: 16px;
-  margin-bottom: 0;
+  margin-bottom: 16px;
 }
 .about2_home3 a.about_btn_home3{
   background-color: #ffffff;
@@ -6142,7 +6151,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .ui_kit_button .btn {
   border-radius: 4px;
-  height: 55px;
+  height: 48px;
   width: 170px;
 }
 /*== Form Input Widget UI Page ==*/
@@ -8461,7 +8470,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
   width: 100%;
   overflow: hidden;
   cursor: pointer;
-  background-image: url(https://i.imgur.com/kdaE7WQ.jpg);
+  background-image: url(https://i.imgur.com/wpDOLIq.png);
   border-radius: 5px;
   -webkit-transition: -webkit-transform 0.4s;
   transition: -webkit-transform 0.4s;
@@ -12035,6 +12044,34 @@ textarea.form-control{
   line-height: 1.428571429;
   border-radius: 15px;
 }
-
+.btn-disabled {
+  background: #ccc;
+  color: #e8e8e8;
+}
+.btn-disabled:hover {
+  color: #e8e8e8;
+}
+#features {
+  padding-top: 120px;
+}
+#pricing {
+  padding-top: 120px;
+}
+#top-courses {
+  padding-top: 120px;
+}
+#our-testimonials {
+  padding-top: 120px;
+}
+#about {
+  background: #f9fafc;
+  padding-top: 120px;
+  padding-bottom: 160px;
+}
+.form-inline {
+  display: inline;
+  flex-flow: row wrap;
+  align-items: center;
+}
 </style>
 
