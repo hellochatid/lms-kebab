@@ -26,7 +26,7 @@
               <form action="../course">
                 <div class="heading">
                   <h3 class="text-center">Login to your account</h3>
-                  <p class="text-center">Don't have an account? <a class="text-thm" href="/pricing">Sign Up!</a></p>
+                  <p class="text-center">Don't have an account? <a class="text-thm" href="/register">Sign Up!</a></p>
                 </div>
                  <div class="form-group">
                     <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email Address">

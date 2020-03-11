@@ -3144,7 +3144,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
 }
 .cs_row_three .course_content .details .cc_tab .panel-body .cs_list li{
   border-bottom: 1px solid #eeeeee;
-  padding: 20px 25px;  
+  padding: 16px;  
 }
 .cs_row_three .course_content .details .cc_tab .panel-body .cs_list li:last-child{
   border-bottom: none;
@@ -8351,8 +8351,8 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .cl_skill_checkbox .content.ui_kit_checkbox{
   border-radius: 6px;
-  height: 250px;
-  overflow: hidden scroll;
+  height: unset;
+  overflow: unset;
   text-align: left;
 }
 .cl_skill_checkbox .content.ui_kit_checkbox::-webkit-scrollbar {
@@ -10907,7 +10907,7 @@ canvas {
   margin-top: 0px;
 }
 #accordion a {
-  font-size: 16px;
+  font-size: 15px;
   display: block;
   text-decoration: none;
 }
@@ -12015,6 +12015,25 @@ textarea.form-control{
   width: 42px;
   border-radius: 50%;
   margin-right: 12px;
+}
+.btn-primary{
+  color: #fff;
+  background-color: #b66dff;
+  border-color: #b66dff;
+}
+.btn-primary:hover {
+  color: #fff;
+  background-color: #984de4;
+  border-color: #984de4;
+}
+.price_quere_list .material-icons {
+  color: #949494 !important;
+  font-size: 24px !important;
+  position: relative;
+  top: 6px;margin-right: 12px;
+}
+.instructor_pricing_widget h4{
+  font-weight: bold;
 }
 </style>
 
