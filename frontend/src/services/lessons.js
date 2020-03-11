@@ -1,20 +1,25 @@
 import auth from '~/services/auth';
+import materials from '~/services/materials';
 
 const lessons = {
 	accessToken: function () {
 		const authAdmin = auth.admin();
 		return authAdmin.token
 	},
-	get: function (nuxt) {
+	get: function (nuxt, courseId) {
 		const self = this;
 		const axios = nuxt.$axios;
+		const apiUrl = typeof (courseId) !== 'undefined' ? '/admin/lessons?course=' + courseId : '/admin/lessons';
 
-		return new Promise(function (resolve, reject) {
-			var lessons = nuxt.$store.getters["lessons/list"];
+		return new Promise(async function (resolve, reject) {
+			// get materials
+			await materials.get(nuxt)
+
+			var lessons = typeof (courseId) !== 'undefined' ? nuxt.$store.getters["lessons/listByCourse"](courseId) : nuxt.$store.getters["lessons/list"];
 			if (lessons.length > 0) return resolve(lessons);
 
 			axios.defaults.headers.common['Authorization'] = 'Bearer ' + self.accessToken()
-			axios.get('/admin/lessons', axios.defaults.headers.common)
+			axios.get(apiUrl, axios.defaults.headers.common)
 				.then(async function (response) {
 					lessons = response.data.data;
 					await lessons.forEach(async (data) => {
@@ -60,20 +65,19 @@ const lessons = {
 				})
 		})
 	},
-	getListItems: function (nuxt, id) {
+	getByCourse: function (nuxt, courseId) {
 		const self = this;
 
 		return new Promise(function (resolve) {
-			var lessons = nuxt.$store.getters["lessons/list"];
-			if (lessons.length > 0) {
-				const listItems = nuxt.$store.getters["lessons/listItems"](id);
-				return resolve(listItems);
+			var lessonsByCourse = nuxt.$store.getters["lessons/listByCourse"](courseId);
+			if (lessonsByCourse.length > 0) {
+				return resolve(lessonsByCourse);
 			}
 
-			self.get(nuxt)
+			self.get(nuxt, courseId)
 				.then(function () {
-					const listItems = nuxt.$store.getters["lessons/listItems"](id);
-					resolve(listItems)
+					lessonsByCourse = nuxt.$store.getters["lessons/listByCourse"](courseId);
+					resolve(lessonsByCourse)
 				})
 		});
 	},

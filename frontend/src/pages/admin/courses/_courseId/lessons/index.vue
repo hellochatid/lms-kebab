@@ -62,7 +62,7 @@
                       <h5 class="subhead">
                         <i class="material-icons icon">book</i>
                         Materials
-                        <small>50</small>
+                        <small>({{ lesson.materials.length }})</small>
                       </h5>
                     </b-col>
                     <b-col sm="8" class="text-right">
@@ -185,7 +185,7 @@ export default {
       lesson: "lessons/list"
     }),
     listItems() {
-      const lessons = this.$store.getters["lessons/listItems"](this.course.id);
+      const lessons = this.$store.getters["lessons/listByCourse"](this.course.id);
       return lessons;
     },
     dragLessonsOptions() {
@@ -259,7 +259,7 @@ export default {
       this.course.title = data.title;
     });
 
-    lessons.getListItems(this, courseId).then(data => {
+    lessons.getByCourse(this, courseId).then(data => {
       this.lessons = data;
     });
   }

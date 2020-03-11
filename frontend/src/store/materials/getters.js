@@ -5,28 +5,16 @@ export default {
     listById: (state) => (id) => {
         return state.list.filter(data => data.id === id)
     },
-    listItems: (state) => (courseId) => {
-        const listItems = [];
-        const items = state.list.filter(data => parseInt(data.course_id) === parseInt(courseId))
+    listByLesson: (state) => (lessonId) => {
+        const listByLesson = [];
+        const items = state.list.filter(data => parseInt(data.lesson_id) === parseInt(lessonId))
         items.forEach(data => {
             var item = {
                 id: data.id,
-                name: data.title,
-                materials: [
-                    {
-                        id: 1,
-                        title: "aaaaaaa"
-                    },
-                ],
-                quiz: [
-                    {
-                        id: 1,
-                        title: "aaaaaaa"
-                    },
-                ]
+                title: data.title
             }
-            listItems.push(item);
+            listByLesson.push(item);
         });
-        return listItems;
+        return listByLesson;
     },
 }

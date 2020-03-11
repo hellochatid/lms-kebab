@@ -17,10 +17,11 @@ const materials = {
 			axios.get('/admin/materials', axios.defaults.headers.common)
 				.then(async function (response) {
 					materials = response.data.data;
+						console.log('materials', Object.assign({}, materials))
 					await materials.forEach(async (data) => {
 						var material = {
 							id: data.id,
-							lesson_id: data.course_id,
+							lesson_id: data.lesson_id,
 							title: data.title,
 							subtitle: data.subtitle,
 							description: data.description,
@@ -62,7 +63,7 @@ const materials = {
 					const data = response.data.data;
 					const material = {
 						id: data.id,
-						lesson_id: data.course_id,
+						lesson_id: data.lesson_id,
 						title: data.title,
 						subtitle: data.subtitle,
 						description: data.description,

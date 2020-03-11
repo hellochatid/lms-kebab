@@ -1,16 +1,31 @@
 export default {
-	add(state, { id, course_id, title, subtitle, description, image, tag, order }) {
-		var lesson = {
-            id: id,
-            course_id: course_id,
-            title: title,
-            subtitle: subtitle,
-            description: description,
-            tag: tag,
-			image: { name: image.name, url: image.url },
-            order: order
-		}
-		state.list.push(lesson);
+	add(state, { id, lesson_id, title, subtitle, description, content, image, pdf, audio, video, order }) {
+		var material = {
+			id: id,
+			lesson_id: lesson_id,
+			title: title,
+			subtitle: subtitle,
+			description: description,
+			content: content,
+			image: {
+				name: image.name,
+				url: image.url
+			},
+			pdf: {
+				name: pdf.name,
+				url: pdf.url
+			},
+			audio: {
+				name: audio.name,
+				url: audio.url
+			},
+			video: {
+				name: video.name,
+				url: video.url
+			},
+			order: order
+		};
+		state.list.push(material);
 	},
 	edit(state, { id, course_id, title, subtitle, description, image, tag, order }) {
 		if (state.list.length > 0) {
