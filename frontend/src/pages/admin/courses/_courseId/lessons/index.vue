@@ -72,7 +72,7 @@
                           class="btn btn-primary btn-action btn-sm"
                         >
                           <i class="material-icons icon">playlist_add</i>
-                          <span>Add Lesson</span>
+                          <span>Add Material</span>
                         </NuxtLink>
                         <b-button
                           v-b-toggle="'material-' + lesson.id"
@@ -118,10 +118,13 @@
                     </b-col>
                     <b-col sm="6" class="text-right">
                       <b-form-group id="input-group-1" label-for="title">
-                        <b-button variant="primary" class="btn-action btn-sm">
+                        <NuxtLink
+                          :to="'/admin/courses/' + course.id + '/lessons/' + lesson.id + '/add-quiz'"
+                          class="btn btn-primary btn-action btn-sm"
+                        >
                           <i class="material-icons icon">settings</i>
                           <span>Add Quiz</span>
-                        </b-button>
+                        </NuxtLink>
                         <b-button
                           v-b-toggle="'quiz-' + lesson.id"
                           variant="primary"
