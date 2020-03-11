@@ -136,7 +136,7 @@ class MaterialsController extends Controller
         $audio =  $request->audio ? $request->audio : '';
         $video =  $request->video ? $request->video : '';
 
-        DB::table('materials')->insert([
+        $insertId = DB::table('materials')->insertGetId([
             'lesson_id' => $lesson_id,
             'title' => $title,
             'subtitle' => $subtitle,
@@ -151,10 +151,35 @@ class MaterialsController extends Controller
             'created_by' => JWTAuth::user()->id,
         ]);
 
-        return response()->json([
-            'success' => true,
-            'message' => 'materials successfully added',
-        ]);
+         // Response
+         $response = [];
+         $response['id'] = $insertId;
+         $response['lesson_id'] = $lesson_id;
+         $response['title'] = $title;
+         $response['subtitle'] = $subtitle;
+         $response['description'] = $description;
+         $response['content'] = $content;
+         $response['image'] = [
+             'name' => $image !== '' && $image !== null ? $image : '',
+             'url' => $image !== '' && $image !== null ? url('') . Storage::url('images/'.$image) : ''
+         ];
+         $response['pdf'] = [
+             'name' => $pdf !== '' && $pdf !== null ? $pdf : '',
+             'url' => $pdf !== '' && $pdf !== null ? url('') . Storage::url('documents/'.$pdf) : ''
+         ];
+         $response['audio'] = [
+             'name' => $audio !== '' && $audio !== null ? $audio : '',
+             'url' => $audio !== '' && $audio !== null ? url('') . Storage::url('audios/'.$audio) : ''
+         ];
+         $response['video'] = [
+             'name' => $video !== '' && $video !== null ? $video : '',
+             'url' => $video !== '' && $video !== null ? url('') . Storage::url('videos/'.$video) : ''
+         ];
+ 
+         return response()->json([
+             'success' => true,
+             'data' => $response
+         ]);
     }
 
     /**
@@ -224,19 +249,19 @@ class MaterialsController extends Controller
                 'tag' => $materials->tag,
                 'image' => [
                     'name' => $materials->image !== '' && $materials->image !== null ? $materials->image : '',
-                    'url' => $materials->image !== '' && $materials->image !== null ? url('') . Storage::url($materials->image) : ''
+                    'url' => $materials->image !== '' && $materials->image !== null ? url('') . Storage::url('images/'.$materials->image) : ''
                 ],
                 'pdf' => [
                     'name' => $materials->pdf !== '' && $materials->pdf !== null ? $materials->pdf : '',
-                    'url' => $materials->pdf !== '' && $materials->pdf !== null ? url('') . Storage::url($materials->pdf) : ''
+                    'url' => $materials->pdf !== '' && $materials->pdf !== null ? url('') . Storage::url('documents/'.$materials->pdf) : ''
                 ],
                 'audio' => [
                     'name' => $materials->audio !== '' && $materials->audio !== null ? $materials->audio : '',
-                    'url' => $materials->audio !== '' && $materials->audio !== null ? url('') . Storage::url($materials->audio) : ''
+                    'url' => $materials->audio !== '' && $materials->audio !== null ? url('') . Storage::url('audios/'.$materials->audio) : ''
                 ],
                 'video' => [
                     'name' => $materials->video !== '' && $materials->video !== null ? $materials->video : '',
-                    'url' => $materials->video !== '' && $materials->video !== null ? url('') . Storage::url($materials->video) : ''
+                    'url' => $materials->video !== '' && $materials->video !== null ? url('') . Storage::url('videos/'.$materials->video) : ''
                 ]
             ];
         }
