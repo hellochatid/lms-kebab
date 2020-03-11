@@ -12073,5 +12073,15 @@ textarea.form-control{
   flex-flow: row wrap;
   align-items: center;
 }
+.btn-primary{
+  color: #fff;
+  background-color: #b66dff;
+  border-color: #b66dff;
+}
+.btn-primary:hover {
+  color: #fff;
+  background-color: #984de4;
+  border-color: #984de4;
+}
 </style>
 

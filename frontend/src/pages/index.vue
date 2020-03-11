@@ -151,18 +151,10 @@
                   </div>
                   <div class="details">
                     <div class="tc_content">
-                      <p>Chef Chenko</p>
                       <h5>Kebab Master : Starting Business</h5>
-                      <ul class="tc_review">
-                        <li class="list-inline-item"><a href="#"><i class="material-icons icon">star</i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="material-icons icon">star</i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="material-icons icon">star</i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="material-icons icon">star</i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="material-icons icon">star</i></a></li>
-                      </ul>
                     </div>
                     <div class="tc_footer text-center">
-                      <a href="" class="btn btn-primary btn-sm">Start course</a>
+                      <a href="" class="btn btn-primary btn-md">See course</a>
                     </div>
                   </div>
                 </div>
@@ -176,18 +168,10 @@
                   </div>
                   <div class="details">
                     <div class="tc_content">
-                      <p>Chef Chenko</p>
                       <h5>Kebab Master : Starting Business</h5>
-                      <ul class="tc_review">
-                        <li class="list-inline-item"><a href="#"><i class="material-icons icon">star</i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="material-icons icon">star</i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="material-icons icon">star</i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="material-icons icon">star</i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="material-icons icon">star</i></a></li>
-                      </ul>
                     </div>
                     <div class="tc_footer text-center">
-                      <a href="" class="btn btn-primary btn-sm">Start course</a>
+                      <a href="" class="btn btn-primary btn-md">See course</a>
                     </div>
                   </div>
                 </div>
@@ -201,18 +185,10 @@
                   </div>
                   <div class="details">
                     <div class="tc_content">
-                      <p>Chef Chenko</p>
                       <h5>Kebab Master : Starting Business</h5>
-                      <ul class="tc_review">
-                        <li class="list-inline-item"><a href="#"><i class="material-icons icon">star</i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="material-icons icon">star</i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="material-icons icon">star</i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="material-icons icon">star</i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="material-icons icon">star</i></a></li>
-                      </ul>
                     </div>
                     <div class="tc_footer text-center">
-                      <a href="" class="btn btn-primary btn-sm">Start course</a>
+                      <a href="" class="btn btn-primary btn-md">See course</a>
                     </div>
                   </div>
                 </div>
@@ -226,18 +202,10 @@
                   </div>
                   <div class="details">
                     <div class="tc_content">
-                      <p>Chef Chenko</p>
                       <h5>Kebab Master : Starting Business</h5>
-                      <ul class="tc_review">
-                        <li class="list-inline-item"><a href="#"><i class="material-icons icon">star</i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="material-icons icon">star</i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="material-icons icon">star</i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="material-icons icon">star</i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="material-icons icon">star</i></a></li>
-                      </ul>
                     </div>
                     <div class="tc_footer text-center">
-                      <a href="" class="btn btn-primary btn-sm">Start course</a>
+                      <a href="" class="btn btn-primary btn-md">See course</a>
                     </div>
                   </div>
                 </div>
