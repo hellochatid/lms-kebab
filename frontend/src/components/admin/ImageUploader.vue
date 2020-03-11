@@ -166,6 +166,134 @@ export default {
 </script>
 
 <style>
+/*------------------------------------------*/
+/*	    Upload image
+/*------------------------------------------*/
+.upload-image {
+  background: #eeeeee;
+  border-radius: 4px;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.upload-image:hover .btn-upload {
+  right: 10px;
+}
+.upload-image .btn-upload {
+  position: absolute;
+  z-index: 100;
+  right: -50px;
+  width: 40px;
+  height: 40px;
+}
+.upload-image .btn-upload.default {
+  bottom: 10px;
+  transition: all 0.2s ease-in-out;
+}
+.upload-image .btn-upload.remove {
+  bottom: 58px;
+  transition: all 0.4s ease-in-out;
+}
+.upload-image .btn-upload.restore {
+  bottom: 58px;
+  transition: all 0.4s ease-in-out;
+}
+.upload-image .btn-upload.preview {
+  top: 10px;
+  transition: all 0.4s ease-in-out;
+}
+.upload-image label {
+  outline: 0;
+  width: inherit;
+  height: inherit;
+  margin-bottom: 0;
+  border-radius: 20px;
+  cursor: pointer;
+  overflow: hidden;
+}
+.upload-image label:after {
+  position: absolute;
+  height: inherit;
+  width: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  content: "";
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "liga";
+}
+.upload-image .btn-upload.default label:after {
+  content: "add_a_photo";
+}
+.upload-image .btn-upload.remove label:after {
+  content: "delete";
+}
+.upload-image .btn-upload.restore label:after {
+  content: "replay";
+}
+.upload-image .btn-upload.preview label:after {
+  content: "fullscreen";
+}
+.upload-image label input,
+.upload-image label button {
+  display: none;
+  z-index: -99999;
+  opacity: 0;
+  position: absolute;
+}
+.upload-image .upload-preview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.upload-image .upload-preview .icon {
+  font-size: 72px;
+  color: #bdbdbd;
+}
+.upload-image .upload-preview .upload-preview-wrapper {
+  width: 100%;
+  height: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  transition: all 0.3s ease-in-out;
+}
+.upload-image:hover .upload-preview .upload-preview-wrapper {
+  background: rgba(255, 255, 255, 0.5);
+}
+.upload-image .upload-preview .upload-preview-wrapper.has-image {
+  background: #fff;
+}
+.upload-image .upload-preview .upload-preview-wrapper img {
+  transition: all 0.3s ease-in-out;
+}
+.upload-image:hover .upload-preview .upload-preview-wrapper img {
+  opacity: 0.5;
+}
+.btn-warning,
+.btn-warning:focus,
+.btn-warning:active,
+.btn-warning:hover {
+  color: #fff !important;
+}
+
+/* lght gallery */
 .blueimp-gallery > .close {
   font-weight: 300;
 }

@@ -73,6 +73,12 @@ export default {
   max-height: 300px;
   overflow-y: auto;
 }
+.ql-toolbar.ql-snow {
+  border-color: #ebedf2;
+}
+.ql-toolbar.ql-snow + .ql-container.ql-snow {
+  border-color: #ebedf2;
+}
 .ql-snow .ql-tooltip {
   left: 1rem !important;
   top: 1rem !important;

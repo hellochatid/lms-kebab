@@ -72,3 +72,77 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+/*------------------------------------------*/
+/*	   	Sidebar
+/*------------------------------------------*/
+.sidebar-icon-only .sidebar {
+  width: 70px;
+}
+.sidebar {
+  min-height: calc(100vh - 70px);
+  background: #ffffff;
+  padding: 0;
+  width: 260px;
+  z-index: 11;
+  transition: width 0.25s ease, background 0.25s ease;
+  -webkit-transition: width 0.25s ease, background 0.25s ease;
+  -moz-transition: width 0.25s ease, background 0.25s ease;
+  -ms-transition: width 0.25s ease, background 0.25s ease;
+}
+.sidebar .nav-link {
+  display: block;
+  padding: 1rem 2rem;
+  font-size: 15px;
+}
+.sidebar .nav-link:hover {
+  background: #fcfcfc;
+}
+.sidebar .nav-link:after {
+  content: "";
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+.sidebar .nav-link .icon {
+  float: left;
+  margin-right: 10px;
+  font-size: 18px;
+  margin-top: 2px;
+  color: #bba8bff5;
+}
+.sidebar .nav-link {
+  display: block;
+  padding: 1rem 2rem;
+  font-size: 15px;
+}
+.sidebar .nav-link:hover {
+  background: #fcfcfc;
+}
+.nav .nav-item a {
+  color: #3e4b5b;
+  outline: 0;
+}
+.nav .nav-item a:hover,
+.nav .nav-item .nav-dashboard.nuxt-link-active:hover {
+  color: #29323d;
+}
+.nav .nav-item .nav-dashboard.nuxt-link-active {
+  color: #3e4b5b;
+}
+.nav .nav-item .nuxt-link-active,
+.nav .nav-item .nuxt-link-exact-active,
+.nav .nav-item .nuxt-link-exact-active .icon,
+.nav .nav-item .nav-dashboard.nuxt-link-exact-active {
+  color: #b66dff;
+}
+.nav .nav-item .nuxt-link-active:hover,
+.nav .nav-item .nuxt-link-exact-active:hover,
+.nav .nav-item .nav-dashboard.nuxt-link-exact-active:hover {
+  color: #a347ff;
+}
+</style>

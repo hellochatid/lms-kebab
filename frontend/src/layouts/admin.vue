@@ -37,6 +37,312 @@ export default {
 
 <style>
 /*------------------------------------------*/
+/*	   	General
+/*------------------------------------------*/
+body {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 0.875rem;
+  color: #343a40;
+}
+a {
+  color: #007bff;
+  text-decoration: none;
+  background-color: transparent;
+  transition: width 0.25s ease, background 0.25s ease;
+  -webkit-transition: width 0.25s ease, background 0.25s ease;
+  -moz-transition: width 0.25s ease, background 0.25s ease;
+  -ms-transition: width 0.25s ease, background 0.25s ease;
+}
+a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+small,
+.small {
+  font-size: 90%;
+}
+
+/*------------------------------------------*/
+/*	   	Nuxt
+/*------------------------------------------*/
+.nuxt-progress {
+  background: #b66dff;
+}
+
+/*------------------------------------------*/
+/*	   	Rewrite Bootstrap
+/*------------------------------------------*/
+
+/* breadcrumb */
+.breadcrumb {
+  float: right;
+  background: rgba(255, 255, 255, 0);
+  margin: 0;
+  padding: 6px 0;
+  font-size: 0.875rem;
+}
+
+/* modal */
+.modal .modal-dialog .modal-content .modal-header {
+  padding: 25px 26px;
+  border: 0;
+}
+.modal .modal-dialog .modal-content .modal-header.bg-light {
+  background: #fff !important;
+}
+.modal .modal-dialog .modal-content .modal-header .modal-title {
+  font-size: 16px;
+}
+.modal .modal-dialog .modal-content .modal-header .close {
+  font-weight: 300;
+}
+.modal .modal-dialog .modal-content .modal-body {
+  padding: 35px 26px;
+}
+.modal .modal-dialog .modal-content .modal-body b {
+  font-weight: 500;
+}
+.modal .modal-dialog .modal-content .modal-footer {
+  padding: 15px 26px;
+  border-color: #ebedf2;
+}
+
+/* table */
+.table-responsive {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.table-responsive {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.table {
+  margin-bottom: 0;
+  width: 100%;
+  color: #212529;
+  border-collapse: collapse;
+}
+.table thead th {
+  border-top: 0;
+  border-bottom-width: 1px;
+  font-weight: initial;
+  font-weight: 500;
+}
+table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #ebedf2;
+}
+table th,
+.table td {
+  vertical-align: middle;
+  font-size: 0.875rem;
+  line-height: 1;
+  white-space: nowrap;
+}
+.table th,
+.table td {
+  padding: 0.9375rem;
+  vertical-align: top;
+  border-top: 1px solid #ebedf2;
+}
+th {
+  text-align: inherit;
+}
+.table th img,
+.table td img {
+  width: 36px;
+  height: 36px;
+  border-radius: 100%;
+}
+
+/* cards */
+.card {
+  border: 0;
+  background: #fff;
+}
+.card {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border-radius: 0.3125rem;
+}
+.card .card-header {
+  border-bottom: 1px solid #ebedf2;
+}
+.card .card-header,
+.card .card-footer {
+  padding: 24px 38px;
+  background: #fff;
+}
+.card .card-body {
+  padding: 2.5rem 2.5rem;
+}
+.card.card-img-holder .card-img-absolute {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+}
+.card .card-title {
+  color: #343a40;
+  margin-bottom: 0;
+  text-transform: capitalize;
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+/*------------------------------------------*/
+/*	   	Main page
+/*------------------------------------------*/
+/* body wrapper */
+.page-body-wrapper {
+  padding-top: 70px;
+  min-height: calc(100vh - 70px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* main panel */
+.sidebar-icon-only .main-panel {
+  width: calc(100% - 70px);
+}
+.main-panel {
+  -webkit-transition: width 0.25s ease, margin 0.25s ease;
+  transition: width 0.25s ease, margin 0.25s ease;
+  width: calc(100% - 260px);
+  min-height: calc(100vh - 70px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.content-wrapper {
+  background: #f2edf3;
+  padding: 2.75rem 2.25rem;
+  width: 100%;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+/* header page */
+.page-header {
+  margin: 0 0 1.5rem 0;
+}
+.page-header:after {
+  content: "";
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+.page-header .page-title {
+  float: left;
+  color: #343a40;
+  font-size: 1.125rem;
+  margin-bottom: 0;
+}
+.page-header .page-title .page-title-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 4px;
+  text-align: center;
+  line-height: 36px;
+  -webkit-box-shadow: 0px 3px 8.3px 0.7px rgba(163, 93, 255, 0.35);
+  box-shadow: 0px 3px 8.3px 0.7px rgba(163, 93, 255, 0.35);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+.page-header .page-title .page-title-icon .icon {
+  font-size: 16px;
+}
+.page-header .page-title small {
+  color: #757575;
+  font-weight: 300;
+}
+
+/* card table */
+.card-table .card-header,
+.card-table .card-footer {
+  background: #fff;
+  border: 0;
+}
+.card-table .card-header:after,
+.card-table .card-footer:after {
+  content: "";
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+.card-table .card-actions {
+  float: right;
+}
+.card-table .card-body {
+  padding: 0 38px;
+}
+.card-table .table {
+  border-width: 1px 0 1px 0;
+  border-color: #dee2e6;
+  border-style: solid;
+  color: #3e4b5b;
+}
+.card-table .table .btn-actions {
+  width: 100px;
+}
+.card-table .table .btn-actions .btn {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  line-height: 38px;
+}
+.card-table .table .btn-actions .btn .icon {
+  font-size: 18px;
+}
+.card-table .table .btn-default .btn {
+  padding: 0 8px !important;
+  height: 32px;
+  line-height: 30px;
+  font-weight: 400;
+}
+.card-table .table .btn-default .btn .icon {
+  font-size: 16px;
+  float: left;
+  margin: 6px 6px 0 0;
+}
+.card-form {
+  margin-bottom: 20px;
+}
+
+/*------------------------------------------*/
 /*	    Buttons
 /*------------------------------------------*/
 .btn {
@@ -951,102 +1257,6 @@ input[type="color"]:focus {
   color: #696969 !important;
   box-shadow: 0 0 0 rgba(0, 0, 0, 0);
 }
-.checkbox label,
-.radio label {
-  padding-left: 0;
-  padding-right: 20px;
-}
-.checkbox-inline,
-.radio-inline {
-  padding-left: 0;
-}
-.checkbox input[type="checkbox"],
-.radio input[type="radio"],
-.checkbox-inline input[type="checkbox"],
-.radio-inline input[type="radio"] {
-  opacity: 0;
-}
-input[type="checkbox"] + .lbl,
-input[type="radio"] + .lbl {
-  cursor: pointer;
-  font-weight: normal;
-  padding-left: 25px;
-  padding-top: 5px;
-  position: relative;
-}
-input[type="checkbox"]:disabled + .lbl,
-input[type="radio"]:disabled + .lbl {
-  color: #bbb;
-  cursor: not-allowed;
-}
-input[type="checkbox"] + .lbl::before,
-input[type="radio"] + .lbl::before,
-input[type="radio"] + .lbl::after {
-  position: absolute;
-  display: block;
-  left: 0;
-  top: 3px;
-}
-input[type="checkbox"] + .lbl::before,
-input[type="radio"] + .lbl::before {
-  font-family: fontAwesome;
-  content: "\a0";
-  border: 1px solid #ccc;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-  font-size: 12px;
-  height: 16px;
-  line-height: 14px;
-  width: 16px;
-  text-align: center;
-}
-input[type="checkbox"]:checked + .lbl::before,
-input[type="radio"]:checked + .lbl::before {
-  content: "\f00c";
-  background-color: #fff;
-  border-color: #adb8c0;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
-    inset 0 -15px 10px -12px rgba(0, 0, 0, 0.05),
-    inset 15px 10px -12px rgba(255, 255, 255, 0.1);
-}
-input[type="radio"] + .lbl::before,
-input[type="radio"]:checked + .lbl::before {
-  content: "";
-  border-radius: 8px;
-}
-input[type="radio"]:checked + .lbl::after {
-  background: #00b6e3;
-  border-radius: 8px;
-  content: "";
-  height: 10px;
-  left: 3px;
-  top: 6px;
-  width: 10px;
-}
-input[type="checkbox"]:disabled + .lbl::before,
-input[type="radio"]:disabled + .lbl::before,
-input[type="checkbox"][disabled] + .lbl::before,
-input[type="radio"][disabled] + .lbl::before,
-input[type="checkbox"].disabled + .lbl::before,
-input[type="radio"].disabled + .lbl::before {
-  background-color: #ddd !important;
-  border-color: #ccc !important;
-  box-shadow: none !important;
-  color: #bbb;
-}
-input[type="checkbox"] + .lbl::before,
-input[type="radio"] + .lbl::before {
-  color: #00b6e3;
-}
-input[type="checkbox"]:hover + .lbl::before,
-input[type="radio"]:hover + .lbl::before,
-input[type="checkbox"] + .lbl:hover::before,
-input[type="radio"] + .lbl:hover::before {
-  border-color: #ffc107;
-}
-.checkbox,
-.radio {
-  margin-bottom: 15px;
-}
 
 /* input tag */
 .vue-tags-input {
@@ -1088,18 +1298,17 @@ input[type="radio"] + .lbl:hover::before {
 .ti-icon-close {
   margin-left: 6px;
 }
-
-/* text editor */
-.ql-toolbar.ql-snow {
-  border-color: #ebedf2;
-}
-.ql-toolbar.ql-snow + .ql-container.ql-snow {
-  border-color: #ebedf2;
+.ti-disabled .ti-tag {
+  background: #bdbdbd;
 }
 
 /*------------------------------------------*/
 /*	    Pagination
 /*------------------------------------------*/
+.pagination {
+  margin: 0;
+  float: right;
+}
 .page-link {
   border-color: #ebedf2 !important;
   color: #343a40;
@@ -1116,10 +1325,144 @@ input[type="radio"] + .lbl:hover::before {
   border-color: #b66dff !important;
 }
 
-.pagination li:first-child .page-link{
+.pagination li:first-child .page-link {
   border-radius: 25px 0 0 25px;
 }
-.pagination li:last-child .page-link{
+.pagination li:last-child .page-link {
   border-radius: 0 25px 25px 0;
+}
+
+/*------------------------------------------*/
+/*	   	Image ratio
+/*------------------------------------------*/
+.square {
+  position: relative;
+}
+.square:before {
+  content: "";
+  display: block;
+  padding-top: 100%; /* initial ratio of 1:1*/
+}
+.square .square-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.img-wrap {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.img-wrap img {
+  min-width: 100%;
+  min-height: 100%;
+  position: absolute;
+  top: -10000px;
+  bottom: -10000px;
+  left: -10000px;
+  right: -10000px;
+  margin: auto;
+  z-index: 2;
+}
+
+/* Other ratios - just apply the desired class to the "box" element */
+.ratio2_1:before {
+  padding-top: 50%;
+}
+.ratio1_2:before {
+  padding-top: 200%;
+}
+.ratio4_3:before {
+  padding-top: 75%;
+}
+.ratio16_9:before {
+  padding-top: 56.25%;
+}
+.ratio2_1 .landscape,
+.ratio16_9 .landscape {
+  max-width: 100% !important;
+  max-height: inherit !important;
+}
+.ratio2_1 .potrait,
+.ratio16_9 .potrait {
+  max-width: inherit !important;
+}
+
+/* image proportion */
+.squared {
+  max-width: 100%;
+  max-height: 100%;
+}
+.landscape {
+  max-height: 100%;
+  max-width: inherit;
+}
+.potrait {
+  max-width: 100%;
+  max-height: inherit;
+}
+
+/*------------------------------------------*/
+/*	   	Misc
+/*------------------------------------------*/
+
+/* width */
+.width-30 {
+  width: 30px;
+}
+.width-100 {
+  width: 100px;
+}
+.width-200 {
+  width: 200px;
+}
+
+/* colors */
+.bg-gradient-primary {
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#da8cff),
+    to(#9a55ff)
+  ) !important;
+  background: linear-gradient(to right, #da8cff, #9a55ff) !important;
+  border: none;
+}
+.bg-gradient-danger {
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#ffbf96),
+    to(#fe7096)
+  ) !important;
+  background: linear-gradient(to right, #ffbf96, #fe7096) !important;
+  border: none;
+}
+.bg-gradient-info {
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#90caf9),
+    color-stop(99%, #047edf)
+  ) !important;
+  background: linear-gradient(to right, #90caf9, #047edf 99%) !important;
+  border: none;
+}
+.bg-gradient-success {
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#84d9d2),
+    to(#07cdae)
+  ) !important;
+  background: linear-gradient(to right, #84d9d2, #07cdae) !important;
+  border: none;
 }
 </style>
