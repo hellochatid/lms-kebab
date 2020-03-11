@@ -31,7 +31,7 @@
               <NuxtLink to="/#our-testimonials" class="nav-link">Testimony</NuxtLink>
             </li>
             <li class="nav-item">
-              <NuxtLink to="/affiliate" class="nav-link text-success">Become Affiliate</NuxtLink>
+              <NuxtLink to="/register-affiliate" class="nav-link text-success">Become Affiliate</NuxtLink>
             </li>
             <li class="nav-item">
               <NuxtLink to="/login" class="btn btn-primary btn-sw">Student login</NuxtLink>
