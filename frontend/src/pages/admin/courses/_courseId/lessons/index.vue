@@ -23,7 +23,7 @@
         <div class="card-actions">
           <NuxtLink
             :to="'/admin/courses/' + course.id + '/lessons/add'"
-            class="btn btn-gradient-primary btn-action btn-sm"
+            class="btn btn-gradient-primary btn-action"
           >
             <i class="material-icons icon">playlist_add</i>
             <span>Add Lesson</span>
@@ -67,10 +67,13 @@
                     </b-col>
                     <b-col sm="8" class="text-right">
                       <b-form-group id="input-group-1" label-for="title">
-                        <b-button variant="primary" class="btn-action btn-sm">
+                        <NuxtLink
+                          :to="'/admin/courses/' + course.id + '/lessons/' + lesson.id + '/add-material'"
+                          class="btn btn-primary btn-action btn-sm"
+                        >
                           <i class="material-icons icon">playlist_add</i>
-                          <span>Add Material</span>
-                        </b-button>
+                          <span>Add Lesson</span>
+                        </NuxtLink>
                         <b-button
                           v-b-toggle="'material-' + lesson.id"
                           variant="primary"
@@ -207,7 +210,7 @@ export default {
       items.forEach(el => {
         lessonOrder.push(el.id);
       });
-      
+
       lessons
         .setOrders(this, lessonOrder.toString())
         .then(() => {

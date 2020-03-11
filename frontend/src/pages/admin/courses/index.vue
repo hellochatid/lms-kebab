@@ -18,7 +18,7 @@
     <b-card header-tag="header" footer-tag="footer" class="card-table">
       <div slot="header">
         <div class="card-actions">
-          <NuxtLink to="/admin/courses/add" class="btn btn-gradient-primary btn-action btn-sm">
+          <NuxtLink to="/admin/courses/add" class="btn btn-gradient-primary btn-action">
             <i class="material-icons icon">playlist_add</i>
             <span>Add Course</span>
           </NuxtLink>
