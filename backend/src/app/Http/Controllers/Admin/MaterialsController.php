@@ -242,6 +242,7 @@ class MaterialsController extends Controller
         foreach ($data as $materials) {
             $response[] = [
                 'id' => $materials->id,
+                'lesson_id' => $materials->lesson_id,
                 'title' => $materials->title,
                 'subtitle' => $materials->subtitle,
                 'description' => $materials->description,
