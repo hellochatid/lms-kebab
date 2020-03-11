@@ -2,7 +2,7 @@
   <div>
     <div class="file-uploader">
       <span class="file-icon">
-        <i class="material-icons icon">queue_music</i>
+        <i class="material-icons icon">{{ fileIcon }}</i>
       </span>
       <span :id="name + '-file-name'" class="file-name no-file">No file selected</span>
       <div class="btn-upload">
@@ -19,10 +19,22 @@ export default {
   name: "fileUploader",
   props: {
     name: String,
+    type: String,
+    allowed: String,
+    maxSize: Number,
     value: String,
     reset: Boolean
   },
-  watch: {},
+  watch: {
+    reset: function(isReset) {
+      if (isReset) {
+        const elFileName = document.getElementById(this.name + "-file-name");
+        elFileName.classList.add("no-file");
+        elFileName.innerHTML = "No file selected";
+        this.$emit("changed", { file: null });
+      }
+    }
+  },
   methods: {
     selectFile() {
       const elFileName = document.getElementById(this.name + "-file-name");
@@ -37,9 +49,19 @@ export default {
   },
   data: function() {
     return {
-      images: [],
+      fileIcon: "attach_file",
       indexOfImage: null
     };
+  },
+  mounted: function() {
+    switch (this.type) {
+      case "document":
+        this.fileIcon = "insert_drive_file";
+        break;
+      case "audio":
+        this.fileIcon = "queue_music";
+        break;
+    }
   }
 };
 </script>
