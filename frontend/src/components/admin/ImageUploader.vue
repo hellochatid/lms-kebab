@@ -63,6 +63,9 @@ export default {
 
         // Light gallery preview image
         this.images = [];
+
+        // Reset uploader
+        this.$emit("changed", { file: null, remove: true });
       }
     },
     value: function(imageUrl) {
@@ -163,7 +166,7 @@ export default {
 </script>
 
 <style>
-.blueimp-gallery > .close{
+.blueimp-gallery > .close {
   font-weight: 300;
 }
 </style>
