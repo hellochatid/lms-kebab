@@ -21,7 +21,7 @@
               <NuxtLink to="../course/courses" class="nav-link fixed-position">Course</NuxtLink>
             </li>
             <li class="nav-item">
-              <NuxtLink to="/login" class="nav-link bold"><img src="https://i.imgur.com/6XESUuX.jpg" class="img-thumb"> Hasan Saskeh</NuxtLink>
+              <NuxtLink to="../affiliate/profile" class="nav-link bold"><img src="https://i.imgur.com/6XESUuX.jpg" class="img-thumb"> Hasan Saskeh</NuxtLink>
             </li>
           </b-nav>
         </b-navbar-nav>
@@ -12060,6 +12060,11 @@ textarea.form-control{
 }
 .btn-warning{
   color: #fff !important;
+}
+.img-profile{
+  width: 100%;
+  border-radius: 50%;
+  padding: 10px;
 }
 </style>
 
