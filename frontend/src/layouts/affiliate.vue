@@ -12037,5 +12037,29 @@ textarea.form-control{
 .instructor_pricing_widget h4{
   font-weight: bold;
 }
+.inline{
+  position: relative;
+  top: 6px;
+}
+.alert-card {
+  background: #fff;
+  border: 1px #f2f2f2 solid;
+  box-shadow: 0px 1px 3px rgba(0,0,0,0.1);
+}
+.pull-right{
+  float: right;
+}
+.pull-left{
+  float: left;
+}
+.btn-success{
+  color: #fff !important;
+}
+.btn-danger{
+  color: #fff !important;
+}
+.btn-warning{
+  color: #fff !important;
+}
 </style>
 
