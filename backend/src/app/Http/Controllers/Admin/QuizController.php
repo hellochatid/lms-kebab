@@ -73,14 +73,50 @@ class QuizController extends Controller
             return $this->jsonResponse(400, $validator->messages());
         }
 
-        // Add quiz
+        // get request
         $lessonId =  $request->lesson_id ? $request->lesson_id : '';
         $title =  $request->title ? $request->title : '';
 
+        // Check is quiz exists
         try {
-            DB::table('quiz')->insert([
-                'lesson_id' => $lessonId,
-                'title' => $title,
+            $query = DB::table('quiz');
+            $query->whereNull('deleted_at');
+            $query->where('lesson_id', '=', $lessonId);
+            $quiz = $query->first();
+        } catch (\Illuminate\Database\QueryException $error) {
+            return $this->jsonResponse(500, $error);
+        }
+
+        if ($quiz === null) {
+            // Add quiz
+            try {
+                $quizId = DB::table('quiz')->insertGetId([
+                    'lesson_id' => $lessonId,
+                    'title' => $title,
+                    'created_at' => now(),
+                    'created_by' => JWTAuth::user()->id,
+                ]);
+            } catch (\Illuminate\Database\QueryException $error) {
+                return $this->jsonResponse(500, $error);
+            }
+        } else {
+            $quizId = $quiz->id;
+        }
+
+
+        // Add questions
+        $question =  $request->question ? $request->question : '';
+        $type =  $request->type ? $request->type : 'text';
+        $attachment =  $request->attachment ? $request->attachment : '';
+        $order =  $request->order ? $request->order : 0;
+
+        try {
+            $insertQuestionId = DB::table('questions')->insertGetId([
+                'quiz_id' => $quizId,
+                'question' => $question,
+                'type' => $type,
+                'attachment' => $attachment,
+                'order' => $order,
                 'created_at' => now(),
                 'created_by' => JWTAuth::user()->id,
             ]);
@@ -88,9 +124,41 @@ class QuizController extends Controller
             return $this->jsonResponse(500, $error);
         }
 
+        // Add answers
+        $answers = [];
+        foreach ($request->answers as $answer) {
+            try {
+                DB::table('answers')->insert([
+                    'question_id' => $insertQuestionId,
+                    'answer' => $answer['value'],
+                    'correct_answer' => $answer['correct'],
+                    'created_at' => now(),
+                    'created_by' => JWTAuth::user()->id,
+                ]);
+            } catch (\Illuminate\Database\QueryException $error) {
+                return $this->jsonResponse(500, $error);
+            }
+            array_push($answers, [
+                'question_id' => $insertQuestionId,
+                'answer' => $answer['value'],
+                'correct_answer' => $answer['correct'],
+            ]);
+        }
+
+        // Response
+        $response = [
+            'quiz_id' => $quizId,
+            'lesson_id' => $lessonId,
+            'question' => [
+                'id' => $insertQuestionId,
+                'value' => $question,
+                'order' => 0
+            ],
+            'answers' => $answers,
+        ];
         return response()->json([
             'success' => true,
-            'message' => 'quiz successfully added',
+            'data' => $response
         ]);
     }
 
@@ -121,39 +189,55 @@ class QuizController extends Controller
     {
         $request->user()->authorizeRoles(['admin']);
 
-        $query = DB::table('quiz');
-        $query->whereNull('deleted_at');
-
-        // if query ID exist
-        if ($request->query->get('id') !== null) {
-            $query->where('id', '=', $request->query->get('id'));
-        }
-
-        // if query lesson ID exist
-        if ($request->query->get('lesson') !== null) {
-            $query->where('lesson_id', '=', $request->query->get('lesson'));
-        }
+        $query = DB::table('questions')
+            ->join('quiz', 'quiz.id', '=', 'questions.quiz_id')
+            ->join('lessons', 'lessons.id', '=', 'quiz.lesson_id')
+            ->select(
+                'lessons.id as lesson_id',
+                'quiz.id as quiz_id',
+                'quiz.title as quiz_title',
+                'questions.id as question_id',
+                'questions.question',
+                'questions.order'
+            )
+            ->whereNull('questions.deleted_at')
+            ->whereNull('quiz.deleted_at')
+            ->whereNull('lessons.deleted_at')
+            ->orderBy('questions.order');
 
         // Get response data
         $data = $query->get();
-        // $response = [];
+        $response = [];
 
-        // foreach ($data as $quiz) {
-        //     $response[] = [
-        //         'id' => $quiz->id,
-        //         'title' => $quiz->title,
-        //         'subtitle' => $quiz->subtitle,
-        //         'description' => $quiz->description,
-        //         'image' => [
-        //             'name' => $quiz->image !== '' && $quiz->image !== null ? $quiz->image : '',
-        //             'url' => $quiz->image !== '' && $quiz->image !== null ? url('') . Storage::url($quiz->image) : ''
-        //         ]
-        //     ];
-        // }
+        foreach ($data as $quiz) {
+            $query = DB::table('answers')
+                ->select(
+                    'id',
+                    'answer',
+                    'correct_answer'
+                )
+                ->whereNull('deleted_at')
+                ->where('question_id', '=', $quiz->question_id)
+                ->orderBy('order');
+
+            // Get response data
+            $answers = $query->get();
+
+            $response[] = [
+                'quiz_id' => $quiz->quiz_id,
+                'lesson_id' => $quiz->lesson_id,
+                'question' => [
+                    'id' => $quiz->question_id,
+                    'value' => $quiz->question,
+                    'order' => $quiz->order
+                ],
+                'answers' => $answers,
+            ];
+        }
 
         return response()->json([
             'success' => true,
-            'data' => $data,
+            'data' => $response,
         ]);
     }
 
