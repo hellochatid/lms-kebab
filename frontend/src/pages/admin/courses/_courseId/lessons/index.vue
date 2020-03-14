@@ -40,7 +40,20 @@
           <div v-for="lesson in lessons" :key="'lesson'+lesson.id">
             <b-card header-tag="header" class="card-list dragable">
               <div slot="header">
-                <h6 class="handle list-title">{{ lesson.name }}</h6>
+                <b-media class="handle">
+                  <template v-slot:aside>
+                    <div class="mt-2 ml-2 mb-2 crop-square">
+                      <b-img :src="lesson.image.url" :class="lesson.image.dimension"></b-img>
+                    </div>
+                  </template>
+                  <h6 class="mt-3 list-title">{{ lesson.name }}</h6>
+                  <p class="mb-0 mt-2 text-muted">
+                    <span class="mr-3 text-danger">Materials ({{ lesson.materials.length }})</span>
+                    <span class="mr-3 text-info">Quiz ({{ lesson.quiz.length }} questions)</span>
+                    <!-- <small class="mr-3 mt-2 float-right">Duration 130m</small> -->
+                    </p>
+                </b-media>
+
                 <b-button
                   class="btn-icon btn-delete"
                   @click.stop="confirmDelete(lesson, $event.target)"
@@ -69,14 +82,14 @@
                       <b-form-group id="input-group-1" label-for="title">
                         <NuxtLink
                           :to="'/admin/courses/' + course.id + '/lessons/' + lesson.id + '/add-material'"
-                          class="btn btn-primary btn-action btn-sm"
+                          class="btn btn-outline-info btn-action btn-sm"
                         >
                           <i class="material-icons icon">playlist_add</i>
                           <span>Add Material</span>
                         </NuxtLink>
                         <b-button
                           v-b-toggle="'material-' + lesson.id"
-                          variant="primary"
+                          variant="outline-danger"
                           class="btn btn-action btn-visibility"
                         ></b-button>
                       </b-form-group>
@@ -113,21 +126,21 @@
                       <h5 class="subhead">
                         <i class="material-icons icon">extension</i>
                         Quiz
-                        <small>({{ lessons.length }})</small>
+                        <small>({{ lesson.quiz.length }} questions)</small>
                       </h5>
                     </b-col>
                     <b-col sm="6" class="text-right">
                       <b-form-group id="input-group-1" label-for="title">
                         <NuxtLink
                           :to="'/admin/courses/' + course.id + '/lessons/' + lesson.id + '/add-quiz'"
-                          class="btn btn-primary btn-action btn-sm"
+                          class="btn btn-outline-info btn-action btn-sm"
                         >
                           <i class="material-icons icon">settings</i>
-                          <span>Add Quiz</span>
+                          <span>Add Question</span>
                         </NuxtLink>
                         <b-button
                           v-b-toggle="'quiz-' + lesson.id"
-                          variant="primary"
+                          variant="outline-danger"
                           class="btn btn-action btn-visibility"
                         ></b-button>
                       </b-form-group>
@@ -140,14 +153,15 @@
                     </b-form-group>
                     <div class="material-items">
                       <draggable
-                        v-bind="dragMaterialsOptions"
-                        :list="lesson.materials"
+                        v-bind="dragQuizOptions"
+                        :list="lesson.quiz"
                         handle=".handle"
-                        @end="dragEnd(lesson.materials)"
+                        @end="dragEnd(lesson.quiz)"
                       >
-                        <div v-for="material in lesson.materials" :key="'material'+material.id">
+                        <div v-for="quiz in lesson.quiz" :key="'quiz-'+quiz.id">
                           <b-card class="item bordered handle">
-                            <span>{{ material.title }}</span>
+                            <span>{{ quiz.id }}</span>
+                            <span>{{ quiz.question }}</span>
                             <b-button class="btn-icon btn-delete float-right">
                               <i class="material-icons icon">delete</i>
                             </b-button>
@@ -188,7 +202,9 @@ export default {
       lesson: "lessons/list"
     }),
     listItems() {
-      const lessons = this.$store.getters["lessons/listByCourse"](this.course.id);
+      const lessons = this.$store.getters["lessons/listByCourse"](
+        this.course.id
+      );
       return lessons;
     },
     dragLessonsOptions() {
@@ -200,6 +216,13 @@ export default {
       };
     },
     dragMaterialsOptions() {
+      return {
+        animation: 0,
+        disabled: false,
+        ghostClass: "ghost"
+      };
+    },
+    dragQuizOptions() {
       return {
         animation: 0,
         disabled: false,

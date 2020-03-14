@@ -1,3 +1,5 @@
+import img from "~/libs/image";
+
 export default {
 	add(state, { id, course_id, title, subtitle, description, image, tag, order }) {
 		var lesson = {
@@ -7,7 +9,11 @@ export default {
             subtitle: subtitle,
             description: description,
             tag: tag,
-			image: { name: image.name, url: image.url },
+			image: { 
+				name: image.name,
+				url: image.url,
+				dimension: img.getDimension(image.url)
+			 },
             order: order
 		}
 		state.list.push(lesson);
@@ -23,6 +29,7 @@ export default {
 				lesson.description = description;
 				lesson.image.name = image.name;
 				lesson.image.url = image.url;
+				lesson.image.dimension = img.getDimension(image.url);
 				lesson.tag = tag;
 				lesson.order = order;
 			}

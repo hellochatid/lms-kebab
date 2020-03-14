@@ -17,7 +17,6 @@ const materials = {
 			axios.get('/admin/materials', axios.defaults.headers.common)
 				.then(async function (response) {
 					materials = response.data.data;
-						console.log('materials', Object.assign({}, materials))
 					await materials.forEach(async (data) => {
 						var material = {
 							id: data.id,
