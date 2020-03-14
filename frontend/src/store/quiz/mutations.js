@@ -1,22 +1,13 @@
-import img from "~/libs/image";
-
 export default {
-	add(state, { id, course_id, title, subtitle, description, image, tag, order }) {
-		var lesson = {
-            id: id,
-            course_id: course_id,
-            title: title,
-            subtitle: subtitle,
-            description: description,
-            tag: tag,
-			image: { 
-				name: image.name,
-				url: image.url,
-				dimension: img.getDimension(image.url)
-			 },
-            order: order
+	add(state, item) {
+		const quiz = {
+			id: item.id,
+			lesson_id: item.lesson_id,
+			question: item.question,
+			order: item.order,
+			answers: item.answers
 		}
-		state.list.push(lesson);
+		state.list.push(quiz);
 	},
 	edit(state, { id, course_id, title, subtitle, description, image, tag, order }) {
 		if (state.list.length > 0) {
@@ -29,7 +20,6 @@ export default {
 				lesson.description = description;
 				lesson.image.name = image.name;
 				lesson.image.url = image.url;
-				lesson.image.dimension = img.getDimension(image.url);
 				lesson.tag = tag;
 				lesson.order = order;
 			}

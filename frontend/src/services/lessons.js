@@ -1,5 +1,6 @@
 import auth from '~/services/auth';
 import materials from '~/services/materials';
+import quiz from '~/services/quiz';
 
 const lessons = {
 	accessToken: function () {
@@ -15,6 +16,10 @@ const lessons = {
 			// get materials
 			await materials.get(nuxt)
 
+			// get quiz
+			await quiz.get(nuxt)
+
+			// get lessons
 			var lessons = typeof (courseId) !== 'undefined' ? nuxt.$store.getters["lessons/listByCourse"](courseId) : nuxt.$store.getters["lessons/list"];
 			if (lessons.length > 0) return resolve(lessons);
 

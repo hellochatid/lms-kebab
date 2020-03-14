@@ -24,9 +24,6 @@
     margin: 0;
     cursor: pointer;
 }
-.card-list.dragable .card-header .list-title{
-    padding: 1rem;
-}
 .card-list .card-body {
     padding: 0;
 }

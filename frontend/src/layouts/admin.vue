@@ -1406,6 +1406,32 @@ input[type="color"]:focus {
 }
 
 /*------------------------------------------*/
+/*	   	Crop iamge
+/*------------------------------------------*/
+.crop-square {
+  width: 64px;
+  height: 64px;
+  overflow: hidden;
+  margin: 1rem;
+  position: relative;
+  background: #ccc;
+}
+.crop-square img {
+  position: absolute;
+  left: -100%;
+  right: -100%;
+  top: -100%;
+  bottom: -100%;
+  margin: auto;
+  width: auto;
+  height: inherit;
+}
+.crop-square img.potrait {
+  width: inherit;
+  height: auto;
+}
+
+/*------------------------------------------*/
 /*	   	Misc
 /*------------------------------------------*/
 
@@ -1464,5 +1490,10 @@ input[type="color"]:focus {
   ) !important;
   background: linear-gradient(to right, #84d9d2, #07cdae) !important;
   border: none;
+}
+
+/* text */
+.text-muted {
+  color: #9c9fa6 !important;
 }
 </style>
