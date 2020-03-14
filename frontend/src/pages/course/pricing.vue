@@ -1,25 +1,7 @@
 <template>
   <div>
 
-    <!-- Inner Page Breadcrumb -->
-    <section class="inner_page_breadcrumb">
-      <div class="container">
-        <div class="row">
-          <div class="col-xl-6 offset-xl-3 text-center">
-            <div class="breadcrumb_content">
-              <h4 class="breadcrumb_title">Pricing Plan</h4>
-              <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="#">Home</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Pricing Plan</li>
-              </ol>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Our Pricing Table -->
-    <section class="our-pricing bgc-fa">
+    <section class="our-pricing pt140">
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
@@ -44,7 +26,7 @@
                     <li>Access to over 1.000 high quality courses. For individuals.</li>
                   </ul>
                   <div class="get-started">
-                    <a href="/register" class="btn btn-success">Get started</a>
+                    <a href="../course/payment" class="btn btn-success">Get started</a>
                   </div>
                 </li>
                 <li class="col-lg-4 list-inline-item">
@@ -58,7 +40,7 @@
                     <li>Starts with 3 accounts with more seats available.</li>
                   </ul>
                   <div class="get-started">
-                    <a href="/register" class="btn btn-success">Get started</a>
+                    <a href="../course/payment" class="btn btn-success">Get started</a>
                   </div>
                 </li>
                 <li class="col-lg-4 list-inline-item">
@@ -72,7 +54,7 @@
                     <li>Build customized learning paths with content that aligns to your learning goals.</li>
                   </ul>
                   <div class="get-started">
-                    <a href="/register" class="btn btn-success">Get started</a>
+                    <a href="../course/payment" class="btn btn-success">Get started</a>
                   </div>
                 </li>
               </ul>
@@ -83,20 +65,16 @@
     </section>
 
   </div>
+
 </template>
 
 <script>
+import { mapMutations, mapGetters } from "vuex";
+
 export default {
   head: {
-    title: "Pricing",
-    meta: [
-      {
-        hid: "description",
-        name: "description",
-        content: "about page description"
-      }
-    ]
+    title: "Pricing Plan | Student Course"
   },
-  layout: "main"
+  layout: "course"
 };
 </script>
