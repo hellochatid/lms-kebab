@@ -15,10 +15,10 @@
         <b-navbar-nav class="ml-auto">
           <b-nav>
             <li class="nav-item">
-              <NuxtLink to="../course" class="nav-link fixed-position">Dashboard</NuxtLink>
+              <NuxtLink to="../affiliate" class="nav-link fixed-position">Dashboard</NuxtLink>
             </li>
             <li class="nav-item">
-              <NuxtLink to="../course/courses" class="nav-link fixed-position">Course</NuxtLink>
+              <NuxtLink to="../affiliate" class="nav-link fixed-position">Course</NuxtLink>
             </li>
             <li class="nav-item">
               <NuxtLink to="../affiliate/profile" class="nav-link bold"><img src="https://i.imgur.com/6XESUuX.jpg" class="img-thumb"> Hasan Saskeh</NuxtLink>
