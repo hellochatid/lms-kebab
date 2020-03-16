@@ -36,6 +36,9 @@ export default {
         this.content = "";
         this.$emit("changed", { content: "" });
       }
+    },
+    value: function(value) {
+      this.content = value;
     }
   },
   methods: {
