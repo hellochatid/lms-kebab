@@ -33,6 +33,11 @@ export default {
         elFileName.innerHTML = "No file selected";
         this.$emit("changed", { file: null });
       }
+    },
+    value: function(value) {
+      const elFileName = document.getElementById(this.name + "-file-name");
+      elFileName.classList.remove("no-file");
+      elFileName.innerHTML = value;
     }
   },
   methods: {

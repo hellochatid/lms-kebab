@@ -120,7 +120,7 @@
                               <i class="material-icons icon">delete</i>
                             </b-button>
                             <NuxtLink
-                              :to="'/admin/courses/' + course.id + '/lessons/edit/' + lesson.id"
+                              :to="'/admin/courses/' + course.id + '/lessons/' + lesson.id + '/edit-material/' + material.id"
                               class="btn-icon btn-edit float-right"
                             >
                               <i class="material-icons icon">edit</i>
@@ -177,7 +177,7 @@
                               <i class="material-icons icon">delete</i>
                             </b-button>
                             <NuxtLink
-                              :to="'/admin/courses/' + course.id + '/lessons/edit/' + lesson.id"
+                              :to="'/admin/courses/' + course.id + '/lessons/' + lesson.id + '/edit-quiz/' + quiz.id"
                               class="btn-icon btn-edit float-right"
                             >
                               <i class="material-icons icon">edit</i>
