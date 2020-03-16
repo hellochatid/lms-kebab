@@ -37,7 +37,7 @@
           handle=".handle"
           @end="dragEnd(lessons)"
         >
-          <div v-for="lesson in lessons" :key="'lesson'+lesson.id">
+          <div v-for="(lesson, index) in lessons" :key="'lesson'+lesson.id">
             <b-card header-tag="header" class="card-list dragable">
               <div slot="header">
                 <b-media class="handle">
@@ -51,12 +51,12 @@
                     <span class="mr-3 text-danger">Materials ({{ lesson.materials.length }})</span>
                     <span class="mr-3 text-info">Quiz ({{ lesson.quiz.length }} questions)</span>
                     <!-- <small class="mr-3 mt-2 float-right">Duration 130m</small> -->
-                    </p>
+                  </p>
                 </b-media>
 
                 <b-button
                   class="btn-icon btn-delete"
-                  @click.stop="confirmDelete(lesson, $event.target)"
+                  @click.stop="confirmDelete(lesson, 'lesson', index)"
                 >
                   <i class="material-icons icon">delete</i>
                 </b-button>
@@ -107,15 +107,24 @@
                         handle=".handle"
                         @end="dragEnd(lesson.materials)"
                       >
-                        <div v-for="material in lesson.materials" :key="'material'+material.id">
+                        <div
+                          v-for="(material, indexMaterial) in lesson.materials"
+                          :key="'material'+material.id"
+                        >
                           <b-card class="item card-list bordered handle">
                             <span>{{ material.title }}</span>
-                            <b-button class="btn-icon btn-delete float-right">
+                            <b-button
+                              class="btn-icon btn-delete float-right"
+                              @click.stop="confirmDelete(material, 'material', index, indexMaterial)"
+                            >
                               <i class="material-icons icon">delete</i>
                             </b-button>
-                            <b-button class="btn-icon btn-edit float-right">
+                            <NuxtLink
+                              :to="'/admin/courses/' + course.id + '/lessons/edit/' + lesson.id"
+                              class="btn-icon btn-edit float-right"
+                            >
                               <i class="material-icons icon">edit</i>
-                            </b-button>
+                            </NuxtLink>
                           </b-card>
                         </div>
                       </draggable>
@@ -158,16 +167,21 @@
                         handle=".handle"
                         @end="dragEnd(lesson.quiz)"
                       >
-                        <div v-for="quiz in lesson.quiz" :key="'quiz-'+quiz.id">
+                        <div v-for="(quiz, indexQuiz) in lesson.quiz" :key="'quiz-'+quiz.id">
                           <b-card class="item bordered handle">
-                            <span>{{ quiz.id }}</span>
                             <span>{{ quiz.question }}</span>
-                            <b-button class="btn-icon btn-delete float-right">
+                            <b-button
+                              class="btn-icon btn-delete float-right"
+                              @click.stop="confirmDelete(quiz, 'quiz', index, indexQuiz)"
+                            >
                               <i class="material-icons icon">delete</i>
                             </b-button>
-                            <b-button class="btn-icon btn-edit float-right">
+                            <NuxtLink
+                              :to="'/admin/courses/' + course.id + '/lessons/edit/' + lesson.id"
+                              class="btn-icon btn-edit float-right"
+                            >
                               <i class="material-icons icon">edit</i>
-                            </b-button>
+                            </NuxtLink>
                           </b-card>
                         </div>
                       </draggable>
@@ -190,6 +204,8 @@ import { mapMutations, mapGetters } from "vuex";
 import { ModalConfirmation } from "~/components/admin";
 import courses from "~/services/courses";
 import lessons from "~/services/lessons";
+import materials from "~/services/materials";
+import quiz from "~/services/quiz";
 
 export default {
   head: {
@@ -246,22 +262,72 @@ export default {
           // console.log(error);
         });
     },
-    confirmDelete(item, button) {
+    confirmDelete(item, model, index, indexChild = null) {
+      var content = "";
+      switch (model) {
+        case "material":
+          content = item.title + '"';
+          break;
+
+        case "quiz":
+          content = item.question + '"';
+          break;
+
+        default:
+          content = item.name + '"';
+          break;
+      }
+
+      this.ModalConfirmationData.model = model;
+      this.ModalConfirmationData.index = index;
+      this.ModalConfirmationData.indexChild = indexChild;
       this.ModalConfirmationData.id = item.id;
       this.ModalConfirmationData.title = "Confirm Deletion";
       this.ModalConfirmationData.content =
-        'You are about to dalete "' + item.name + '"';
-      this.$root.$emit("bv::show::modal", "modalConfirmation", button);
+        'You are about to dalete "' + content;
+      this.$root.$emit("bv::show::modal", "modalConfirmation");
     },
     deleteData(evt) {
-      lessons
-        .delete(this, this.ModalConfirmationData.id)
-        .then(() => {
-          // delete success
-        })
-        .catch(error => {
-          // console.log(error);
-        });
+      const self = this;
+      const index = self.ModalConfirmationData.index;
+      const indexChild = self.ModalConfirmationData.indexChild;
+
+      switch (this.ModalConfirmationData.model) {
+        case "material":
+          materials
+            .delete(this, this.ModalConfirmationData.id)
+            .then(removedId => {
+              const lsMaterial = this.lessons[index].materials;
+              lsMaterial.splice(indexChild, 1);
+            })
+            .catch(error => {
+              // console.log(error);
+            });
+          break;
+
+        case "quiz":
+          quiz
+            .delete(this, this.ModalConfirmationData.id)
+            .then(removedId => {
+              const lsMaterial = this.lessons[index].quiz;
+              lsMaterial.splice(indexChild, 1);
+            })
+            .catch(error => {
+              // console.log(error);
+            });
+          break;
+
+        default:
+          lessons
+            .delete(this, this.ModalConfirmationData.id)
+            .then(removedId => {
+              self.lessons.splice(index, 1);
+            })
+            .catch(error => {
+              // console.log(error);
+            });
+          break;
+      }
     }
   },
   data() {
@@ -274,7 +340,10 @@ export default {
       ModalConfirmationData: {
         id: "",
         title: "",
-        content: ""
+        content: "",
+        model: "",
+        index: null,
+        indexChild: null
       }
     };
   },

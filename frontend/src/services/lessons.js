@@ -168,9 +168,9 @@ const lessons = {
 		return new Promise(function (resolve, reject) {
 			axios.defaults.headers.common['Authorization'] = 'Bearer ' + self.accessToken()
 			axios.delete('/admin/lessons/' + id, axios.defaults.headers.common)
-				.then(function (response) {
+				.then(function () {
 					nuxt.$store.commit("lessons/remove", { id });
-					resolve(response.data);
+					resolve(id);
 				})
 				.catch(function (error) {
 					reject(error);

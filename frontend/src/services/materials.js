@@ -95,6 +95,21 @@ const materials = {
 				})
 		})
 	},
+	delete: function (nuxt, id) {
+		const self = this;
+		const axios = nuxt.$axios;
+		return new Promise(function (resolve, reject) {
+			axios.defaults.headers.common['Authorization'] = 'Bearer ' + self.accessToken()
+			axios.delete('/admin/materials/' + id, axios.defaults.headers.common)
+				.then(function () {
+					nuxt.$store.commit("materials/remove", { id });
+					resolve(id);
+				})
+				.catch(function (error) {
+					reject(error);
+				})
+		})
+	}
 }
 
 export default materials;
