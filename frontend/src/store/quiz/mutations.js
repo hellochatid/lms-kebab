@@ -9,19 +9,16 @@ export default {
 		}
 		state.list.push(quiz);
 	},
-	edit(state, { id, course_id, title, subtitle, description, image, tag, order }) {
+	edit(state, item) {
 		if (state.list.length > 0) {
-			const index = state.list.findIndex(data => parseInt(data.id) === parseInt(id));
-			const lesson = state.list[index];
+			const index = state.list.findIndex(data => parseInt(data.id) === parseInt(item.id));
+			const quiz = state.list[index];
 			if (index !== -1) {
-				lesson.course_id = course_id;
-				lesson.title = title;
-				lesson.subtitle = subtitle;
-				lesson.description = description;
-				lesson.image.name = image.name;
-				lesson.image.url = image.url;
-				lesson.tag = tag;
-				lesson.order = order;
+				quiz.id = item.id;
+				quiz.lesson_id = item.lesson_id;
+				quiz.question = item.question;
+				quiz.order = item.order;
+				quiz.answers = item.answers;
 			}
 		}
 	},

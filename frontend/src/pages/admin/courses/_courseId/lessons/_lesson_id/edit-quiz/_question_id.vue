@@ -3,9 +3,9 @@
     <div class="page-header">
       <h3 class="page-title">
         <span class="page-title-icon bg-gradient-primary text-white mr-2">
-          <i class="material-icons icon">playlist_add</i>
+          <i class="material-icons icon">edit</i>
         </span>
-        Add Quiz
+        Edit Quiz
         <small>#{{ course.title }}</small>
       </h3>
       <b-breadcrumb>
@@ -18,10 +18,10 @@
         <li class="breadcrumb-item">
           <NuxtLink :to="'/admin/courses/' + course.id + '/lessons'">Lessons</NuxtLink>
         </li>
-        <b-breadcrumb-item active>Add Lesson</b-breadcrumb-item>
+        <b-breadcrumb-item active>Edit Lesson</b-breadcrumb-item>
       </b-breadcrumb>
     </div>
-    <b-form @submit.stop.prevent="addQuiz" ref="form">
+    <b-form @submit.stop.prevent="editQuiz" ref="form">
       <b-alert
         :show="alert.dismissCountDown"
         dismissible
@@ -118,13 +118,13 @@ export default {
       this.input.answers[evt.target.dataset.index].correct = evt.target.checked;
     },
     addAnswer() {
-      this.input.answers.push({ value: "", correct: false });
+      this.input.answers.push({ id: null, value: "", correct: false });
     },
     removeAnswer(evt) {
       const index = evt.target.dataset.index;
       this.input.answers.splice(index, 1);
     },
-    addQuiz() {
+    editQuiz() {
       const self = this;
       const spinner = this.$refs.spinner;
 
@@ -135,8 +135,8 @@ export default {
       if (!form.validation({ question: "required" })) return;
 
       // disable form & show spinner
-      spinner.classList.remove("d-none");
-      this.disabledForm = true;
+        spinner.classList.remove("d-none");
+        this.disabledForm = true;
 
       // Post quiz
       this.postQuiz();
@@ -146,12 +146,11 @@ export default {
       const spinner = this.$refs.spinner;
       var alertText = "";
       quiz
-        .add(this, this.input)
+        .edit(this, this.$route.params.question_id)
         .then(response => {
-          alertText = "Lesson successfully added";
+          alertText = "Question successfully updated";
           spinner.classList.add("d-none");
           self.disabledForm = false;
-          self.resetForm();
           form.alert(this.$store, alertText, 5, "success");
         })
         .catch(error => {
@@ -164,11 +163,6 @@ export default {
     },
     resetAlert() {
       form.alert(this.$store, "", 0, "default");
-    },
-    resetForm() {
-      this.input.question = "";
-      this.input.answers = [{ value: "", correct: true }];
-      this.$refs.form.reset();
     }
   },
   computed: mapGetters({
@@ -185,18 +179,23 @@ export default {
         title: ""
       },
       input: {
+        id: this.$route.params.question_id,
         lesson_id: this.$route.params.lesson_id,
         title: "",
         question: "",
-        answers: [{ value: "", correct: true }]
+        order: 0,
+        answers: []
       },
       disabledForm: false
     };
   },
   mounted() {
     this.resetAlert();
+    this.disabledForm = true;
+
     const courseId = this.$route.params.courseId;
     const lessonId = this.$route.params.lesson_id;
+    const questionId = this.$route.params.question_id;
 
     this.input.title = "quiz " + courseId + "-" + lessonId;
     courses.getById(this, courseId).then(data => {
@@ -207,6 +206,22 @@ export default {
     lessons.getById(this, lessonId).then(data => {
       this.lesson.id = data.id;
       this.lesson.title = data.title;
+    });
+
+    quiz.getById(this, questionId).then(data => {
+      var answers = data.answers;
+
+      answers.forEach(element => {
+        var item = {
+          id: element.id,
+          value: element.answer,
+          correct: element.correct_answer
+        };
+        this.input.answers.push(item);
+      });
+
+      this.input.question = data.question;
+      this.disabledForm = false;
     });
   }
 };
