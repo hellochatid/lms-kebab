@@ -205,6 +205,11 @@ class QuizController extends Controller
             ->whereNull('lessons.deleted_at')
             ->orderBy('questions.order');
 
+        // if query ID exist
+        if ($request->query->get('id') !== null) {
+            $query->where('questions.id', '=', $request->query->get('id'));
+        }
+
         // Get response data
         $data = $query->get();
         $response = [];
@@ -277,16 +282,87 @@ class QuizController extends Controller
     {
         $request->user()->authorizeRoles(['admin']);
 
-        $updatedValue = [];
-        if ($request->title) $updatedValue['title'] = $request->title;
+        // update question
+        try {
+            DB::table('questions')
+                ->where('id', $id)
+                ->update(['question' => $request->question]);
+        } catch (\Illuminate\Database\QueryException $error) {
+            return $this->jsonResponse(500, $error);
+        }
 
-        DB::table('quiz')
-            ->where('id', $id)
-            ->update($updatedValue);
+        // update answers
+        try {
+            $answers = [];
+            $newAnswers = [];
+            $currentAnswers = DB::table('answers')->select('id')->where('question_id', '=', $id)->get();
+            
+            foreach ($request->answers as $v) {
+
+                $answerId = $v['id'];
+
+                if ($answerId === null) {
+                    $insertAnswerId = DB::table('answers')->insertGetId([
+                        'question_id' => $id,
+                        'answer' => $v['value'],
+                        'correct_answer' => $v['correct'],
+                        'order' => 0,
+                        'created_at' => now(),
+                        'created_by' => JWTAuth::user()->id,
+                    ]);
+                    $item = [
+                        'id' => $insertAnswerId,
+                        'answer' => $v['value'],
+                        'correct_answer' => $v['correct']
+                    ];
+                } else {
+                    DB::table('answers')
+                        ->where('id', $answerId)
+                        ->update([
+                            'answer' => $v['value'],
+                            'correct_answer' => $v['correct']
+                        ]);
+
+                    array_push($newAnswers, $answerId);
+                }
+
+                $item = [
+                    'id' => $answerId === null ? $insertAnswerId : $answerId,
+                    'answer' => $v['value'],
+                    'correct_answer' => $v['correct']
+                ];
+                array_push($answers, $item);
+            }
+
+            // remove deleted answer
+            foreach ($currentAnswers as $v) {
+                if (!in_array($v->id, $newAnswers)) {
+                    DB::table('answers')
+                        ->where('id', $v->id)
+                        ->update([
+                            'deleted_at' => now(),
+                            'deleted_by' => JWTAuth::user()->id
+                        ]);
+                }
+            }
+        } catch (\Illuminate\Database\QueryException $error) {
+            return $this->jsonResponse(500, $error);
+        }
+
+        // response
+        $response = [
+            'lesson_id' => $request->lesson_id,
+            'question' => [
+                'id' => $id,
+                'value' => $request->question,
+                'order' => $request->order
+            ],
+            'answers' => $answers,
+        ];
 
         return response()->json([
             'success' => true,
-            'message' => 'quiz successfully updated'
+            'data' => $response
         ]);
     }
 
