@@ -151,35 +151,35 @@ class MaterialsController extends Controller
             'created_by' => JWTAuth::user()->id,
         ]);
 
-         // Response
-         $response = [];
-         $response['id'] = $insertId;
-         $response['lesson_id'] = $lesson_id;
-         $response['title'] = $title;
-         $response['subtitle'] = $subtitle;
-         $response['description'] = $description;
-         $response['content'] = $content;
-         $response['image'] = [
-             'name' => $image !== '' && $image !== null ? $image : '',
-             'url' => $image !== '' && $image !== null ? url('') . Storage::url('images/'.$image) : ''
-         ];
-         $response['pdf'] = [
-             'name' => $pdf !== '' && $pdf !== null ? $pdf : '',
-             'url' => $pdf !== '' && $pdf !== null ? url('') . Storage::url('documents/'.$pdf) : ''
-         ];
-         $response['audio'] = [
-             'name' => $audio !== '' && $audio !== null ? $audio : '',
-             'url' => $audio !== '' && $audio !== null ? url('') . Storage::url('audios/'.$audio) : ''
-         ];
-         $response['video'] = [
-             'name' => $video !== '' && $video !== null ? $video : '',
-             'url' => $video !== '' && $video !== null ? url('') . Storage::url('videos/'.$video) : ''
-         ];
- 
-         return response()->json([
-             'success' => true,
-             'data' => $response
-         ]);
+        // Response
+        $response = [];
+        $response['id'] = $insertId;
+        $response['lesson_id'] = $lesson_id;
+        $response['title'] = $title;
+        $response['subtitle'] = $subtitle;
+        $response['description'] = $description;
+        $response['content'] = $content;
+        $response['image'] = [
+            'name' => $image !== '' && $image !== null ? $image : '',
+            'url' => $image !== '' && $image !== null ? url('') . Storage::url('images/' . $image) : ''
+        ];
+        $response['pdf'] = [
+            'name' => $pdf !== '' && $pdf !== null ? $pdf : '',
+            'url' => $pdf !== '' && $pdf !== null ? url('') . Storage::url('documents/' . $pdf) : ''
+        ];
+        $response['audio'] = [
+            'name' => $audio !== '' && $audio !== null ? $audio : '',
+            'url' => $audio !== '' && $audio !== null ? url('') . Storage::url('audios/' . $audio) : ''
+        ];
+        $response['video'] = [
+            'name' => $video !== '' && $video !== null ? $video : '',
+            'url' => $video !== '' && $video !== null ? url('') . Storage::url('videos/' . $video) : ''
+        ];
+
+        return response()->json([
+            'success' => true,
+            'data' => $response
+        ]);
     }
 
     /**
@@ -250,19 +250,19 @@ class MaterialsController extends Controller
                 'tag' => $materials->tag,
                 'image' => [
                     'name' => $materials->image !== '' && $materials->image !== null ? $materials->image : '',
-                    'url' => $materials->image !== '' && $materials->image !== null ? url('') . Storage::url('images/'.$materials->image) : ''
+                    'url' => $materials->image !== '' && $materials->image !== null ? url('') . Storage::url('images/' . $materials->image) : ''
                 ],
                 'pdf' => [
                     'name' => $materials->pdf !== '' && $materials->pdf !== null ? $materials->pdf : '',
-                    'url' => $materials->pdf !== '' && $materials->pdf !== null ? url('') . Storage::url('documents/'.$materials->pdf) : ''
+                    'url' => $materials->pdf !== '' && $materials->pdf !== null ? url('') . Storage::url('documents/' . $materials->pdf) : ''
                 ],
                 'audio' => [
                     'name' => $materials->audio !== '' && $materials->audio !== null ? $materials->audio : '',
-                    'url' => $materials->audio !== '' && $materials->audio !== null ? url('') . Storage::url('audios/'.$materials->audio) : ''
+                    'url' => $materials->audio !== '' && $materials->audio !== null ? url('') . Storage::url('audios/' . $materials->audio) : ''
                 ],
                 'video' => [
                     'name' => $materials->video !== '' && $materials->video !== null ? $materials->video : '',
-                    'url' => $materials->video !== '' && $materials->video !== null ? url('') . Storage::url('videos/'.$materials->video) : ''
+                    'url' => $materials->video !== '' && $materials->video !== null ? url('') . Storage::url('videos/' . $materials->video) : ''
                 ]
             ];
         }
@@ -360,25 +360,46 @@ class MaterialsController extends Controller
         $request->user()->authorizeRoles(['admin']);
 
         $updatedValue = [];
-        if ($request->lesson_id) $updatedValue['lesson_id'] = $request->lesson_id;
-        if ($request->title) $updatedValue['title'] = $request->title;
-        if ($request->subtitle) $updatedValue['subtitle'] = $request->subtitle;
-        if ($request->description) $updatedValue['description'] = $request->description;
-        if ($request->content) $updatedValue['content'] = $request->content;
-        if ($request->tag) $updatedValue['tag'] = $request->tag;
-        if ($request->image) $updatedValue['image'] = $request->image;
-        if ($request->pdf) $updatedValue['pdf'] = $request->pdf;
-        if ($request->audio) $updatedValue['audio'] = $request->audio;
-        if ($request->video) $updatedValue['video'] = $request->video;
-        if ($request->order) $updatedValue['order'] = $request->order;
+        $updatedValue['lesson_id'] = $request->lesson_id;
+        $updatedValue['title'] = $request->title;
+        $updatedValue['subtitle'] = $request->subtitle;
+        $updatedValue['description'] = $request->description;
+        $updatedValue['content'] = $request->content;
+        $updatedValue['tag'] = $request->tag;
+        $updatedValue['image'] = $request->image;
+        $updatedValue['pdf'] = $request->pdf;
+        $updatedValue['audio'] = $request->audio;
+        $updatedValue['video'] = $request->video;
+        $updatedValue['order'] = $request->order;
 
         DB::table('materials')
             ->where('id', $id)
             ->update($updatedValue);
 
+        // Response
+        $response = $updatedValue;
+        $response['id'] = $id;
+        $response['tag'] = array_filter(explode(',', $request->tag));
+        $response['image'] = [
+            'name' => $request->image !== '' && $request->image !== null ? $request->image : '',
+            'url' => $request->image !== '' && $request->image !== null ? url('') . Storage::url('images/' . $request->image) : ''
+        ];
+        $response['pdf'] = [
+            'name' => $request->pdf !== '' && $request->pdf !== null ? $request->pdf : '',
+            'url' => $request->pdf !== '' && $request->pdf !== null ? url('') . Storage::url('documents/' . $request->pdf) : ''
+        ];
+        $response['audio'] = [
+            'name' => $request->audio !== '' && $request->audio !== null ? $request->audio : '',
+            'url' => $request->audio !== '' && $request->audio !== null ? url('') . Storage::url('audios/' . $request->audio) : ''
+        ];
+        $response['video'] = [
+            'name' => $request->video !== '' && $request->video !== null ? $request->video : '',
+            'url' => $request->video !== '' && $request->video !== null ? url('') . Storage::url('videos/' . $request->video) : ''
+        ];
+
         return response()->json([
             'success' => true,
-            'message' => 'materials successfully updated'
+            'data' => $response
         ]);
     }
 
