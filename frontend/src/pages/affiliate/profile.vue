@@ -87,14 +87,14 @@
 									<div class="row my_setting_content_details">
 									    <div class="col-xl-6">
 									    	<div class="my_profile_setting_input form-group">
-												<label for="formGroupExampleInput1">Country</label>
-												<p>Indonesia</p>
+												<label for="formGroupExampleInput1">Bank name</label>
+												<p>Bank Mandiri</p>
 											</div>
 									    </div>
 									    <div class="col-xl-6">
 											<div class="my_profile_setting_input form-group">
-												<label for="formGroupExampleInput1">Country</label>
-												<p>Indonesia</p>
+												<label for="formGroupExampleInput1">No. rekening</label>
+												<p>456700656</p>
 											</div>
 									    </div>
 									</div>
