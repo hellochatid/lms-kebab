@@ -27,19 +27,22 @@ export default {
 		};
 		state.list.push(material);
 	},
-	edit(state, { id, course_id, title, subtitle, description, image, tag, order }) {
+	edit(state, item) {
 		if (state.list.length > 0) {
-			const index = state.list.findIndex(data => parseInt(data.id) === parseInt(id));
-			const lesson = state.list[index];
+			const index = state.list.findIndex(data => parseInt(data.id) === parseInt(item.id));
 			if (index !== -1) {
-				lesson.course_id = course_id;
-				lesson.title = title;
-				lesson.subtitle = subtitle;
-				lesson.description = description;
-				lesson.image.name = image.name;
-				lesson.image.url = image.url;
-				lesson.tag = tag;
-				lesson.order = order;
+				const material = state.list[index];
+				material.id = item.id;
+				material.lesson_id = item.lesson_id;
+				material.title = item.title;
+				material.subtitle = item.subtitle;
+				material.description = item.description;
+				material.content = item.content;
+				material.image = item.image;
+				material.pdf = item.pdf;
+				material.audio = item.audio
+				material.video = item.vide;
+				material.order = item.order
 			}
 		}
 	},
