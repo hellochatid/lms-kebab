@@ -95,7 +95,7 @@
                       </b-form-group>
                     </b-col>
                   </b-row>
-                  <b-collapse :id="'material-' + lesson.id" visible>
+                  <b-collapse :id="'material-' + lesson.id">
                     <b-form-group class="form-icon search">
                       <i class="material-icons icon">search</i>
                       <b-form-input id="search" type="text" placeholder="Search"></b-form-input>
@@ -144,7 +144,7 @@
                           :to="'/admin/courses/' + course.id + '/lessons/' + lesson.id + '/add-quiz'"
                           class="btn btn-outline-info btn-action btn-sm"
                         >
-                          <i class="material-icons icon">settings</i>
+                          <i class="material-icons icon">playlist_add</i>
                           <span>Add Question</span>
                         </NuxtLink>
                         <b-button

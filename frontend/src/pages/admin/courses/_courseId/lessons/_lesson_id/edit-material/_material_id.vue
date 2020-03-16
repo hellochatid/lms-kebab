@@ -3,7 +3,7 @@
     <div class="page-header">
       <h3 class="page-title">
         <span class="page-title-icon bg-gradient-primary text-white mr-2">
-          <i class="material-icons icon">playlist_add</i>
+          <i class="material-icons icon">edit</i>
         </span>
         Edit Material
         <small>#{{ lesson.title }}</small>
@@ -214,7 +214,7 @@ export default {
       materials
         .edit(this, this.$route.params.material_id)
         .then(response => {
-          alertText = "Material successfully added";
+          alertText = "Material successfully updated";
           spinner.classList.add("d-none");
           self.disabledForm = false;
           form.alert(this.$store, alertText, 5, "success");
