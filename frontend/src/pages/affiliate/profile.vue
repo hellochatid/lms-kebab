@@ -54,75 +54,54 @@
 									</div>
 									<div class="my_setting_content_header style2">
 										<div class="my_sch_title">
-											<h4 class="m0">Change password</h4>
+											<h4 class="m0">Location</h4>
 										</div>
 									</div>
 									<div class="row my_setting_content_details pb0">
-										<div class="col-xl-6">
-											<div class="password_change_form">
-												<form>
-													<div class="form-group">
-												    	<label for="exampleInputPassword1">Old Password</label>
-												    	<input type="password" class="form-control" id="exampleInputPassword1" placeholder="*******">
+										<div class="col-xl-12">
+											<div class="row">
+												<div class="col-xl-4">
+													<div class="my_profile_setting_input form-group">
+												    	<label for="formGroupExampleInput1">Country</label>
+												    	<p>Indonesia</p>
 													</div>
-													<div class="form-group">
-												    	<label for="exampleInputPassword2">New Password</label>
-												    	<input type="password" class="form-control" id="exampleInputPassword2">
+													<div class="my_profile_setting_input form-group">
+												    	<label for="formGroupExampleInput2">City</label>
+												    	<p>Yogyakarta</p>
 													</div>
-													<div class="form-group">
-												    	<label for="exampleInputPassword3">Confirm Password</label>
-												    	<input type="password" class="form-control mb0" id="exampleInputPassword3">
+												</div>
+												<div class="col-xl-8">
+													<div class="my_profile_setting_input form-group">
+												    	<label for="formGroupExampleInput2">Address</label>
+												    	<p>Jl. Kusumanegera No.250, Gedongkuning, Kotagede, Yogyakarta, DIY</p>
 													</div>
-												</form>
+												</div>
 											</div>
 										</div>
 									</div>
 									<div class="my_setting_content_header style3">
 										<div class="my_sch_title">
-											<h4 class="m0">Social Links</h4>
+											<h4 class="m0">Bank account</h4>
 										</div>
 									</div>
 									<div class="row my_setting_content_details">
 									    <div class="col-xl-6">
-									    	<div class="my_profile_setting_input2">
-										      	<label for="validationServerUsername">Facebook</label>
-										      	<div class="input-group">
-										        	<input type="text" class="form-control" id="validationServerUsername" aria-describedby="inputGroupPrepend3" required>
-										      	</div>
-									    	</div>
+									    	<div class="my_profile_setting_input form-group">
+												<label for="formGroupExampleInput1">Country</label>
+												<p>Indonesia</p>
+											</div>
 									    </div>
 									    <div class="col-xl-6">
-									    	<div class="my_profile_setting_input2">
-										      	<label for="validationServerUsername2">Twitter</label>
-										      	<div class="input-group">
-										        	<input type="text" class="form-control" id="validationServerUsername2" aria-describedby="inputGroupPrepend4" required>
-										      	</div>
-									    	</div>
-									    </div>
-									    <div class="col-xl-6">
-									    	<div class="my_profile_setting_input2">
-										      	<label for="validationServerUsername3">Linkedin</label>
-										      	<div class="input-group">
-										        	<input type="text" class="form-control" id="validationServerUsername3" aria-describedby="inputGroupPrepend4" required>
-										      	</div>
-									    	</div>
-									    </div>
-									    <div class="col-xl-6">
-									    	<div class="my_profile_setting_input2">
-										      	<label for="validationServerUsername4">Google Plus</label>
-										      	<div class="input-group">
-										        	<input type="text" class="form-control" id="validationServerUsername4" aria-describedby="inputGroupPrepend4" required>
-										      	</div>
-									    	</div>
-									    </div>
-									    <div class="col-lg-12">
-											<button type="submit" class="my_setting_savechange_btn btn btn-thm">Save <span class="flaticon-right-arrow-1 ml15"></span></button>
+											<div class="my_profile_setting_input form-group">
+												<label for="formGroupExampleInput1">Country</label>
+												<p>Indonesia</p>
+											</div>
 									    </div>
 									</div>
 								</div>
 							</div>
 						</div>
-						</div>  
+					</div>  
 
 </template>
 
