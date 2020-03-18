@@ -64,7 +64,7 @@ export default {
         authenticated: false
       };
       Cookie.remove("authAdmin");
-      this.$store.commit("users/setUserAdmin", authAdmin);
+      this.$store.commit("users/setAdminUser", authAdmin);
       this.$router.push({
         path: "/admin/login"
       });

@@ -2,7 +2,7 @@ import auth from '~/services/auth';
 
 const materials = {
 	accessToken: function () {
-		const authAdmin = auth.admin();
+		const authAdmin = auth.user('admin');
 		return authAdmin.token
 	},
 	get: function (nuxt) {

@@ -61,6 +61,36 @@ export default {
       }
     ]
   },
-  layout: "main"
+  layout: "main",
+  methods: {
+    postLogin(e) {
+      if (!form.validation({ email: "required", password: "required" })) return;
+
+      this.$axios
+        .post("/iam/login", {
+          password: this.input.password,
+          email: this.input.email
+        })
+        .then(res => {
+          if (res.status === 200) {
+            if (typeof res.data.success !== "undefined" && !res.data.success) {
+            } else if (res.data.access_token) {
+              var authUser = {
+                name: "John Doe x",
+                displayPicture:
+                  "http://keenthemes.com/preview/metronic/theme/assets/layouts/layout5/img/avatar1.jpg",
+                token: res.data.access_token,
+                authenticated: true
+              };
+              this.$store.commit("users/authUser", authUser);
+              Cookie.set("authUser", authUser);
+              this.$router.push({
+                path: "/course"
+              });
+            }
+          }
+        });
+    }
+  }
 };
 </script>
