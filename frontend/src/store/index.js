@@ -9,15 +9,20 @@ export const actions = {
         if (req.headers.cookie) {
             const parsed = cookieparser.parse(req.headers.cookie)
             try {
+                // set auth admin
                 authAdmin = JSON.parse(parsed.authAdmin);
+                commit("users/setAdminUser", authAdmin);
+
+                // set auth member
                 authMember = JSON.parse(parsed.authMember);
+                commit("users/setMemberUser", authMember);
+
+                // set auth affiliate
                 authAffiliate = JSON.parse(parsed.authAffiliate);
+                commit("users/setAffiliateUser", authAffiliate);
             } catch (err) {
                 // No valid cookie found
             }
         }
-        commit("users/setAdminUser", authAdmin);
-        commit("users/setMemberUser", authMember);
-        commit("users/setAffiliateUser", authAffiliate);
     }
 }

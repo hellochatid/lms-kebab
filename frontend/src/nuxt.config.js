@@ -1,3 +1,4 @@
+require('dotenv').config();
 
 module.exports = {
   mode: 'universal',
@@ -5,11 +6,11 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: process.env.npm_package_name || '',
+    title: process.env.APP_NAME || '',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+      { hid: 'description', name: 'description', content: process.env.APP_DESCRIPTION || '' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -50,6 +51,7 @@ module.exports = {
     'bootstrap-vue/nuxt',
     '@nuxtjs/axios',
     'nuxt-material-design-icons',
+    '@nuxtjs/dotenv',
   ],
   /*
   ** Build configuration
@@ -77,7 +79,7 @@ module.exports = {
   axios: {
     /* set API_URL environment variable to configure access to the API
     */
-    baseURL: process.env.API_URL || 'http://localhost:8081/api/v1',
+    baseURL: process.env.API_URL,
     redirectError: {
       401: '/login',
       404: '/notfound'
