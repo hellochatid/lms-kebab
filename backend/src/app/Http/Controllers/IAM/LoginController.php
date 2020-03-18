@@ -7,6 +7,9 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use App\Traits\RestExceptionHandlerTrait;
 
+use JWTAuth;
+use Tymon\JWTAuth\Exceptions\JWTException;
+
 class LoginController extends Controller
 {
     use RestExceptionHandlerTrait;
@@ -51,13 +54,33 @@ class LoginController extends Controller
         }
 
         $credentials = $request->only('email', 'password');
-        if (!$token = Auth::guard()->attempt($credentials)) {
+        if (!Auth::guard()->attempt($credentials)) {
             return response()->json(['success' => false, 'message' => 'incorect email and password combination']);
         }
 
+        $authUser = Auth::user();
+
+        // get user roles
+        $authUser->roles;
+        $userRoles = [];
+        foreach ($authUser->roles as $v) {
+            array_push($userRoles, $v->name);
+        }
+
+        if(!in_array($request->role, $userRoles)){
+            return $this->jsonResponse(401, 'unauthorized');
+        }
+
+        try {
+            if (!$token = JWTAuth::fromUser($authUser)) {
+                return $this->jsonResponse(401, 'invalid credentials');
+            }
+        } catch (JWTException $e) {
+            return $this->jsonResponse(500, 'could not create token');
+        }
+
         return response()->json([
-            'access_token' => $token,
-            'token_type' => 'bearer'
+            'access_token' => $token
         ]);
     }
 }
