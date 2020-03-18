@@ -223,7 +223,7 @@ export default {
   },
   layout: "admin",
   computed: mapGetters({
-    userAdmin: "users/userAdmin"
+    adminUser: "users/adminUser"
   })
 };
 </script>

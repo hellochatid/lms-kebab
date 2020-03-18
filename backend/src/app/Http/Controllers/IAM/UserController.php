@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Validator, DB, Hash;
+use Storage;
 
 class UserController extends Controller
 {
@@ -180,7 +181,18 @@ class UserController extends Controller
 
     public function me(Request $request)
     {
-        $request->user()->authorizeRoles(['admin']);
-        return response()->json(Auth::guard()->user());
+        $request->user()->authorizeRoles(['admin', 'member', 'affiliate']);
+        $authUser = Auth::user();
+
+        $response['id'] = $authUser->id;
+        $response['name'] = $authUser->name;
+        $response['email'] = $authUser->email;
+        $response['display_image'] = $authUser->display_image !== '' && $authUser->display_image !== null ? url('') . Storage::url('images/' . $authUser->display_image) : null;
+
+        return response()->json([
+            'success' => true,
+            'data' => $response
+        ]);
+
     }
 }

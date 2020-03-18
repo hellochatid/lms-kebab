@@ -2,7 +2,7 @@ import auth from '~/services/auth';
 
 const courses = {
 	accessToken: function () {
-		const authAdmin = auth.admin();
+		const authAdmin = auth.user('admin');
 		return authAdmin.token
 	},
 	get: async function (nuxt) {

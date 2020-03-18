@@ -1,5 +1,14 @@
 export default {
-    userAdmin(state) {
-        return state.userAdmin
+    list(state) {
+        return state.list
+    },
+    adminUser(state) {
+        return state.adminUser
+    },
+    memberUser(state) {
+        return state.memberUser
+    },
+    affiliateUser(state) {
+        return state.affiliateUser
     }
 }

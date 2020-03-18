@@ -4,7 +4,7 @@ import quiz from '~/services/quiz';
 
 const lessons = {
 	accessToken: function () {
-		const authAdmin = auth.admin();
+		const authAdmin = auth.user('admin');
 		return authAdmin.token
 	},
 	get: function (nuxt, courseId) {

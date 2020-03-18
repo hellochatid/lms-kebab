@@ -181,7 +181,7 @@ export default {
     }
   },
   computed: mapGetters({
-    userAdmin: "users/userAdmin",
+    adminUser: "users/adminUser",
     alert: "form/alert"
   }),
   data() {

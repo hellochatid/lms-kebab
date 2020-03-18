@@ -16,7 +16,7 @@
 import { Navbar, Sidebar } from "~/components/admin/";
 
 export default {
-  // middleware: "admin",
+  middleware: "admin",
   components: {
     Navbar,
     Sidebar

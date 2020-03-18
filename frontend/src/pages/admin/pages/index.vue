@@ -115,7 +115,7 @@ export default {
     };
   },
   computed: mapGetters({
-    userAdmin: "users/userAdmin"
+    adminUser: "users/adminUser"
   }),
   methods: {
     onFiltered(filteredItems) {

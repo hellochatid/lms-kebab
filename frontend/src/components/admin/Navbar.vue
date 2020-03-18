@@ -21,13 +21,9 @@
         <b-nav-item-dropdown right>
           <template v-slot:button-content>
             <div class="nav-profile-img">
-              <img
-                src="http://keenthemes.com/preview/metronic/theme/assets/layouts/layout5/img/avatar1.jpg"
-                alt="image"
-              />
-              <span class="availability-status online"></span>
+              <img v-if="authUser.display_image!==null" :src="authUser.display_image" alt="" />
             </div>
-            <span class="nav-profile-text">Hasan Sas</span>
+            <span class="nav-profile-text">{{ authUser.name }}</span>
           </template>
           <b-dropdown-item href="#">
             <i class="material-icons icon">person_outline</i>
@@ -44,7 +40,7 @@
 </template>
 
 <script>
-const Cookie = process.client ? require("js-cookie") : undefined;
+import auth from "~/services/auth";
 
 export default {
   name: "navbar",
@@ -59,16 +55,38 @@ export default {
       }
     },
     logout() {
-      const authAdmin = {
-        name: "",
-        authenticated: false
-      };
-      Cookie.remove("authAdmin");
-      this.$store.commit("users/setUserAdmin", authAdmin);
-      this.$router.push({
-        path: "/admin/login"
-      });
+      const self = this;
+      auth
+        .logout(this, "admin")
+        .then(res => {
+          self.$router.push({
+            path: "/admin/login"
+          });
+        })
+        .catch(err => {
+          console.log(err);
+        });
     }
+  },
+  data() {
+    return {
+      authUser: {
+        id: "",
+        email: "",
+        name: "",
+        display_image: ""
+      }
+    };
+  },
+  mounted() {
+    auth
+      .me(this, "admin")
+      .then(res => {
+        this.authUser = res;
+      })
+      .catch(err => {
+        console.log(err);
+      });
   }
 };
 </script>
@@ -173,13 +191,12 @@ export default {
 }
 .nav-link.dropdown-toggle .nav-profile-img {
   position: relative;
-  display: inline;
-}
-.nav-link.dropdown-toggle .nav-profile-img img {
+  display: inline-block;
   width: 32px;
   height: 32px;
   border-radius: 100%;
   margin-right: 6px;
+  background: #ccc;
 }
 .nav-profile-text {
   margin-right: 6px;
