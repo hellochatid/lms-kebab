@@ -47,6 +47,7 @@
 
 <script>
 import { mapMutations, mapGetters } from "vuex";
+import auth from "~/services/auth";
 import form from "~/libs/form";
 
 const Cookie = process.client ? require("js-cookie") : undefined;
@@ -73,31 +74,11 @@ export default {
     postLogin(e) {
       if (!form.validation({ email: "required", password: "required" })) return;
 
-      this.$axios
-        .post("/iam/login", {
-          password: this.input.password,
-          email: this.input.email
-        })
-        .then(res => {
-          if (res.status === 200) {
-            if (typeof res.data.success !== "undefined" && !res.data.success) {
-              console.log(res.data.message);
-            } else if (res.data.access_token) {
-              var authAdmin = {
-                name: "John Doe x",
-                displayPicture:
-                  "http://keenthemes.com/preview/metronic/theme/assets/layouts/layout5/img/avatar1.jpg",
-                token: res.data.access_token,
-                authenticated: true
-              };
-              this.$store.commit("users/setUserAdmin", authAdmin);
-              Cookie.set("authAdmin", authAdmin);
-              this.$router.push({
-                path: "/admin"
-              });
-            }
-          }
+      auth.login(this, "admin").then(res => {
+        this.$router.push({
+          path: "/admin"
         });
+      });
     }
   }
 };
@@ -297,7 +278,6 @@ button {
   overflow: hidden;
   margin: 0 auto;
 
-
   background: -webkit-gradient(
     linear,
     left top,
@@ -390,5 +370,4 @@ button {
 #description-password {
   display: none;
 }
-
 </style>
