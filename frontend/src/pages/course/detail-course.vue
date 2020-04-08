@@ -46,7 +46,7 @@
                     </ul>
                   </div>
                 </div>
-                <div class="cs_row_three">
+                <div id="course-content" class="cs_row_three">
                   <div class="course_content">
                     <div class="cc_headers">
                       <h4 class="title">Course Content</h4>
@@ -67,11 +67,11 @@
                             <div id="panelBodyCourseStart" class="panel-collapse collapse show">
                                 <div class="panel-body">
                                   <ul class="cs_list mb0">
-                                    <li><a href="../course/pricing"><span class="material-icons">play_circle_filled</span> Lecture1.1 Introduction to the User Experience Course <span class="cs_time"><i class="material-icons">lock</i></span> <span class="cs_preiew">02:45</span></a></li>
-                                    <li><a href="../course/pricing"><span class="material-icons">play_circle_filled</span> Lecture1.2 Exercise: Your first design challenge <span class="cs_time"><i class="material-icons">lock</i></span> <span class="cs_preiew">02:45</span></a></li>
-                                    <li><a href="../course/pricing"><span class="material-icons">play_circle_filled</span> Lecture1.3 How to solve the previous exercise <span class="cs_time"><i class="material-icons">lock</i></span> <span class="cs_preiew">02:45</span></a></li>
-                                    <li><a href="../course/lesson"><span class="material-icons">play_circle_filled</span> Lecture1.4 Find out why smart objects are amazing <span class="cs_time"><i class="material-icons text-success">lock_open</i></span> <span class="cs_preiew">02:45</span></a></li>
-                                    <li><a href="../course/pricing"><span class="material-icons">play_circle_filled</span> Lecture1.5 How to use text layers effectively <span class="cs_time"><i class="material-icons">lock</i></span> <span class="cs_preiew">02:45</span></a></li>
+                                    <li><a href="../course/pricing"><span class="material-icons">play_circle_filled</span> Lesson.1 Introduction to the User Experience Course <span class="cs_time"><i class="material-icons">lock</i></span> <span class="cs_preiew">02:45</span></a></li>
+                                    <li><a href="../course/pricing"><span class="material-icons">play_circle_filled</span> Lesson.2 Exercise: Your first design challenge <span class="cs_time"><i class="material-icons">lock</i></span> <span class="cs_preiew">02:45</span></a></li>
+                                    <li><a href="../course/pricing"><span class="material-icons">play_circle_filled</span> Lesson.3 How to solve the previous exercise <span class="cs_time"><i class="material-icons">lock</i></span> <span class="cs_preiew">02:45</span></a></li>
+                                    <li><a href="../course/lesson"><span class="material-icons">play_circle_filled</span> Lesson.4 Find out why smart objects are amazing <span class="cs_time"><i class="material-icons text-success">lock_open</i></span> <span class="cs_preiew">02:45</span></a></li>
+                                    <li><a href="../course/pricing"><span class="material-icons">play_circle_filled</span> Lesson.5 How to use text layers effectively <span class="cs_time"><i class="material-icons">lock</i></span> <span class="cs_preiew">02:45</span></a></li>
                                   </ul>
                                 </div>
                             </div>
@@ -153,7 +153,7 @@
         <div class="col-lg-4 col-xl-4">
           <div class="instructor_pricing_widget" style="margin-top: 76px;">
             <center>
-              <a href="#" class="cart_btnss">Start course</a>
+              <a href="#course-content" class="cart_btnss">Start course</a>
             </center>
             <h4 class="title text-left">Course Overview</h4>
             <ul class="price_quere_list text-left">

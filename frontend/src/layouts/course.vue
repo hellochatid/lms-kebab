@@ -53,7 +53,7 @@
 import "~/assets/css/style.css";
 
 export default {
-  middleware: "member",
+  //middleware: "member",
   head() {
     return {
       link: [
