@@ -13288,6 +13288,17 @@ body.translated {
 .alert-dismissible .close {
   top: 10px;
 }
+.alert-card {
+  background: #fff;
+  border: 1px #f2f2f2 solid;
+  box-shadow: 0px 1px 3px rgba(0,0,0,0.1);
+}
+.pull-right{
+  float:right;
+}
+.dashboard h5{
+  font-size: 16px !important;
+}
 .dropdown-item.active,
 .dropdown-item:active {
   background-color: #b66dff;
