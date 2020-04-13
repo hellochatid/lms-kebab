@@ -13299,6 +13299,9 @@ body.translated {
 .dashboard h5{
   font-size: 16px !important;
 }
+.dashboard .img-whp{
+  height: 200px !important;
+}
 .dropdown-item.active,
 .dropdown-item:active {
   background-color: #b66dff;

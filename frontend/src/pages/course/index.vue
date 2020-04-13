@@ -56,59 +56,131 @@
 
   <h4 class="title">Finished course</h4>
   <div class="dashboard row">
-    <div class="col-lg-3 col-xl-3">
-      <div class="top_courses">
-        <div class="thumb">
-          <img class="img-whp" src="https://i.imgur.com/dZ8egNl.png" alt="t1.jpg">
-            <div class="overlay">
+    <div class="col-lg-8 col-xl-8">
+      <div class="row">
+        <div class="col-lg-4 col-xl-4">
+          <div class="top_courses">
+            <div class="thumb">
+              <img class="img-whp" src="https://i.imgur.com/dZ8egNl.png" alt="t1.jpg">
+                <div class="overlay">
+                </div>
             </div>
+            <div class="details">
+              <div class="tc_content">
+                <h5>Kebab Master : Starting Business</h5>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="details">
-          <div class="tc_content">
-            <h5>Kebab Master : Starting Business</h5>
+        <div class="col-lg-4 col-xl-4">
+          <div class="top_courses">
+            <div class="thumb">
+              <img class="img-whp" src="https://i.imgur.com/dZ8egNl.png" alt="t1.jpg">
+                <div class="overlay">
+                </div>
+            </div>
+            <div class="details">
+              <div class="tc_content">
+                <h5>Kebab Master : Starting Business</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-xl-4">
+          <div class="top_courses">
+            <div class="thumb">
+              <img class="img-whp" src="https://i.imgur.com/dZ8egNl.png" alt="t1.jpg">
+                <div class="overlay">
+                </div>
+            </div>
+            <div class="details">
+              <div class="tc_content">
+                <h5>Kebab Master : Starting Business</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-xl-4">
+          <div class="top_courses">
+            <div class="thumb">
+              <img class="img-whp" src="https://i.imgur.com/dZ8egNl.png" alt="t1.jpg">
+                <div class="overlay">
+                </div>
+            </div>
+            <div class="details">
+              <div class="tc_content">
+                <h5>Kebab Master : Starting Business</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-xl-4">
+          <div class="top_courses">
+            <div class="thumb">
+              <img class="img-whp" src="https://i.imgur.com/dZ8egNl.png" alt="t1.jpg">
+                <div class="overlay">
+                </div>
+            </div>
+            <div class="details">
+              <div class="tc_content">
+                <h5>Kebab Master : Starting Business</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-xl-4">
+          <div class="top_courses">
+            <div class="thumb">
+              <img class="img-whp" src="https://i.imgur.com/dZ8egNl.png" alt="t1.jpg">
+                <div class="overlay">
+                </div>
+            </div>
+            <div class="details">
+              <div class="tc_content">
+                <h5>Kebab Master : Starting Business</h5>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="col-lg-3 col-xl-3">
-      <div class="top_courses">
-        <div class="thumb">
-          <img class="img-whp" src="https://i.imgur.com/dZ8egNl.png" alt="t1.jpg">
-            <div class="overlay">
-            </div>
+    <div class="col-lg-4 col-xl-4 mb30">
+      <div class="recent_job_activity">
+        <h4 class="title">News & announcement</h4>
+        <div class="grid">
+          <ul>
+            <li><div class="title">News Update</div></li>
+            <h6 class="text-primary">12 Jan 2020 : 12:32</h6>
+            <li><p>This is an automated server response message. All systems are online.</p></li>
+          </ul>
         </div>
-        <div class="details">
-          <div class="tc_content">
-            <h5>Kebab Master : Starting Business</h5>
+        <div class="grid">
+          <ul>
+            <li><div class="title">News Update</div></li>
+            <h6 class="text-primary">12 Jan 2020 : 12:32</h6>
+            <li><p>This is an automated server response message. All systems are online.</p></li>
+          </ul>
+        </div>
+        <div class="grid">
+          <ul>
+            <li><div class="title">News Update</div></li>
+            <h6 class="text-primary">12 Jan 2020 : 12:32</h6>
+            <li><p>This is an automated server response message. All systems are online.</p></li>
+          </ul>
+        </div>
+        <div class="grid">
+          <ul>
+            <li><div class="title">News Update</div></li>
+            <h6 class="text-primary">12 Jan 2020 : 12:32</h6>
+            <li><p>This is an automated server response message. All systems are online.</p></li>
+          </ul>
           </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3 col-xl-3">
-      <div class="top_courses">
-        <div class="thumb">
-          <img class="img-whp" src="https://i.imgur.com/dZ8egNl.png" alt="t1.jpg">
-            <div class="overlay">
-            </div>
-        </div>
-        <div class="details">
-          <div class="tc_content">
-            <h5>Kebab Master : Starting Business</h5>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3 col-xl-3">
-      <div class="top_courses">
-        <div class="thumb">
-          <img class="img-whp" src="https://i.imgur.com/dZ8egNl.png" alt="t1.jpg">
-            <div class="overlay">
-            </div>
-        </div>
-        <div class="details">
-          <div class="tc_content">
-            <h5>Kebab Master : Starting Business</h5>
-          </div>
+          <div class="grid mb0">
+          <ul class="pb0 mb0 bb_none">
+            <li><div class="title">News Update</div></li>
+            <h6 class="text-primary">12 Jan 2020 : 12:32</h6>
+            <li><p>This is an automated server response message. All systems are online.</p></li>
+          </ul>
         </div>
       </div>
     </div>
