@@ -9223,7 +9223,7 @@ legend span {
 .ff_one {
   background-color: #ffffff;
   border-radius: 5px;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(36, 65, 231);
   height: 150px;
   margin-bottom: 30px;
   position: relative;
@@ -9257,15 +9257,21 @@ legend span {
   font-size: 26px;
   font-family: "Ubuntu";
   font-weight: 600;
-  color: #0a0a0a;
+  color: #fff;
   line-height: 0.5;
 }
 .ff_one .detais p {
-  color: rgb(126, 126, 126);
+  color: rgb(255, 255, 255);
   font-size: 15px;
   font-family: "Open Sans";
   line-height: 2.667;
   margin-bottom: 0;
+}
+.ff_one.style2 {
+  background: #ff1053;
+}
+.ff_one.style3 {
+  background: #00a78e;
 }
 .ff_one.style2 .icon {
   background-color: rgb(255, 16, 83);
