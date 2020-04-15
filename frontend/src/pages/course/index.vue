@@ -59,6 +59,9 @@
     <div class="col-lg-8 col-xl-8">
       <div class="row">
         <div class="col-lg-4 col-xl-4">
+          <div class="banner-finished">
+            Finished
+          </div>
           <div class="top_courses">
             <div class="thumb">
               <img class="img-whp" src="https://i.imgur.com/dZ8egNl.png" alt="t1.jpg">
@@ -73,6 +76,9 @@
           </div>
         </div>
         <div class="col-lg-4 col-xl-4">
+          <div class="banner-finished">
+            Finished
+          </div>
           <div class="top_courses">
             <div class="thumb">
               <img class="img-whp" src="https://i.imgur.com/dZ8egNl.png" alt="t1.jpg">
@@ -87,6 +93,9 @@
           </div>
         </div>
         <div class="col-lg-4 col-xl-4">
+          <div class="banner-finished">
+            Finished
+          </div>
           <div class="top_courses">
             <div class="thumb">
               <img class="img-whp" src="https://i.imgur.com/dZ8egNl.png" alt="t1.jpg">
@@ -101,6 +110,9 @@
           </div>
         </div>
         <div class="col-lg-4 col-xl-4">
+          <div class="banner-finished">
+            Finished
+          </div>
           <div class="top_courses">
             <div class="thumb">
               <img class="img-whp" src="https://i.imgur.com/dZ8egNl.png" alt="t1.jpg">
@@ -115,6 +127,9 @@
           </div>
         </div>
         <div class="col-lg-4 col-xl-4">
+          <div class="banner-finished">
+            Finished
+          </div>
           <div class="top_courses">
             <div class="thumb">
               <img class="img-whp" src="https://i.imgur.com/dZ8egNl.png" alt="t1.jpg">
@@ -129,6 +144,9 @@
           </div>
         </div>
         <div class="col-lg-4 col-xl-4">
+          <div class="banner-finished">
+            Finished
+          </div>
           <div class="top_courses">
             <div class="thumb">
               <img class="img-whp" src="https://i.imgur.com/dZ8egNl.png" alt="t1.jpg">

@@ -1,4 +1,4 @@
-<template>
+ <template>
   <div>
     <b-navbar toggleable="lg" type="light" variant="faded" fixed="top">
       <div class="container">
@@ -13457,6 +13457,15 @@ textarea.form-control {
 }
 .instructor_pricing_widget h4 {
   font-weight: bold;
+}
+.banner-finished {
+  position: absolute;
+  color: #fff;
+  z-index: 1;
+  padding: 6px 12px;
+  background: #00a78e;
+  margin: 12px;
+  border-radius: 6px;
 }
 </style>
 
