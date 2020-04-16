@@ -31,7 +31,7 @@
           <div class="col-sm-12 col-lg-6 offset-lg-3">
             <div class="sign_up_form inner_page">
               <div class="details">
-                <form action="../course">
+                <form action="../verify-email">
                   <div class="col-lg-3 offset-lg-2 mb-3">
                     <div class="wrap-custom-file">
                       <input type="file" name="image1" id="image1" accept=".gif, .jpg, .png"/>
