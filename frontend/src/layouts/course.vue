@@ -19,6 +19,9 @@
               <NuxtLink to="../course/courses" class="nav-link fixed-position">Course</NuxtLink>
             </li>
             <li class="nav-item">
+              <NuxtLink to="../course/invoice" class="nav-link fixed-position">Invoice</NuxtLink>
+            </li>
+            <li class="nav-item">
               <NuxtLink to="../course/profile" class="nav-link bold">
                 <img src="https://i.imgur.com/6XESUuX.jpg" class="img-thumb" /> Hasan Saskeh
               </NuxtLink>

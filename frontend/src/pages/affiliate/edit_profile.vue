@@ -13,7 +13,7 @@
 							<div class="my_course_content_container">
 								<div class="my_setting_content mb30">
 									<div class="my_setting_content_header">
-										<a href="../affiliate/edit_profile" class="btn btn-primary pull-right">Edit profile</a>
+										<a href="../course/profile" class="btn btn-success pull-right">Save</a>
 										<div class="my_sch_title">
 											<h4 class="m0">Personal Details</h4>
 										</div>
@@ -27,27 +27,27 @@
 												<div class="col-xl-4">
 													<div class="my_profile_setting_input form-group">
 												    	<label for="formGroupExampleInput1">First Name</label>
-												    	<p>Hasan</p>
+												    	<input type="text" class="form-control" id="formGroupExampleInput1">
 													</div>
 													<div class="my_profile_setting_input form-group">
 												    	<label for="formGroupExampleInput2">Occupation</label>
-												    	<p>Student</p>
+												    	<input type="text" class="form-control" id="formGroupExampleInput1">
 													</div>
 												</div>
 												<div class="col-xl-4">
 													<div class="my_profile_setting_input form-group">
 												    	<label for="formGroupExampleInput2">Last Name</label>
-												    	<p>Saskeh</p>
+												    	<input type="text" class="form-control" id="formGroupExampleInput1">
 													</div>
 													<div class="my_profile_setting_input form-group">
 												    	<label for="exampleInputPhone">Birthday</label>
-												    	<p>21 January 1990</p>
+												    	<input type="text" class="form-control" id="formGroupExampleInput1">
 													</div>
 												</div>
 												<div class="col-xl-4">
 													<div class="my_profile_setting_input form-group">
 												    	<label for="formGroupExampleInput2">Email</label>
-												    	<p>hasansas@gmail.com</p>
+												    	<input type="text" class="form-control" id="formGroupExampleInput1">
 													</div>
 												</div>
 											</div>
@@ -64,17 +64,35 @@
 												<div class="col-xl-4">
 													<div class="my_profile_setting_input form-group">
 												    	<label for="formGroupExampleInput1">Country</label>
-												    	<p>Indonesia</p>
+												    		<div class="dropdown bootstrap-select">
+												    			<select class="selectpicker form-control" tabindex="-98">
+																	<option>Indonesia</option>
+																	<option>India</option>
+																	<option>Jerman</option>
+																	<option>Korea</option>
+																	<option>Lithuania</option>
+																	<option>None</option>
+																</select>
+															</div>
 													</div>
 													<div class="my_profile_setting_input form-group">
 												    	<label for="formGroupExampleInput2">City</label>
-												    	<p>Yogyakarta</p>
+												    		<div class="dropdown bootstrap-select">
+												    			<select class="selectpicker form-control" tabindex="-98">
+																	<option>Yogyakarta</option>
+																	<option>Jakarta</option>
+																	<option>Surabaya</option>
+																	<option>Semarang</option>
+																	<option>Padang</option>
+																	<option>Denpasar</option>
+																</select>
+															</div>
 													</div>
 												</div>
 												<div class="col-xl-8">
 													<div class="my_profile_setting_input form-group">
 												    	<label for="formGroupExampleInput2">Address</label>
-												    	<p>Jl. Kusumanegera No.250, Gedongkuning, Kotagede, Yogyakarta, DIY</p>
+												    	<textarea class="form-control" id="exampleFormControlTextarea1" rows="7"></textarea>
 													</div>
 												</div>
 											</div>
@@ -89,13 +107,22 @@
 									    <div class="col-xl-6">
 									    	<div class="my_profile_setting_input form-group">
 												<label for="formGroupExampleInput1">Bank name</label>
-												<p>Bank Mandiri</p>
+												<div class="dropdown bootstrap-select">
+												    			<select class="selectpicker form-control" tabindex="-98">
+																	<option>Bank Mandiri</option>
+																	<option>Bank BRI</option>
+																	<option>Bank BNI</option>
+																	<option>Bank BCA</option>
+																	<option>Bank Muamalat</option>
+																	<option>Bank Bukopin</option>
+																</select>
+															</div>
 											</div>
 									    </div>
 									    <div class="col-xl-6">
 											<div class="my_profile_setting_input form-group">
 												<label for="formGroupExampleInput1">No. rekening</label>
-												<p>456700656</p>
+												<input type="text" class="form-control" id="formGroupExampleInput1">
 											</div>
 									    </div>
 									</div>
