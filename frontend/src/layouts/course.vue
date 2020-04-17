@@ -1,4 +1,4 @@
-<template>
+ <template>
   <div>
     <b-navbar toggleable="lg" type="light" variant="faded" fixed="top">
       <div class="container">
@@ -19,7 +19,7 @@
               <NuxtLink to="../course/courses" class="nav-link fixed-position">Course</NuxtLink>
             </li>
             <li class="nav-item">
-              <NuxtLink to="/login" class="nav-link bold">
+              <NuxtLink to="../course/profile" class="nav-link bold">
                 <img src="https://i.imgur.com/6XESUuX.jpg" class="img-thumb" /> Hasan Saskeh
               </NuxtLink>
             </li>
@@ -53,7 +53,7 @@
 import "~/assets/css/style.css";
 
 export default {
-  middleware: "member",
+  //middleware: "member",
   head() {
     return {
       link: [
@@ -9223,7 +9223,7 @@ legend span {
 .ff_one {
   background-color: #ffffff;
   border-radius: 5px;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(36, 65, 231);
   height: 150px;
   margin-bottom: 30px;
   position: relative;
@@ -9257,15 +9257,21 @@ legend span {
   font-size: 26px;
   font-family: "Ubuntu";
   font-weight: 600;
-  color: #0a0a0a;
+  color: #fff;
   line-height: 0.5;
 }
 .ff_one .detais p {
-  color: rgb(126, 126, 126);
+  color: rgb(255, 255, 255);
   font-size: 15px;
   font-family: "Open Sans";
   line-height: 2.667;
   margin-bottom: 0;
+}
+.ff_one.style2 {
+  background: #ff1053;
+}
+.ff_one.style3 {
+  background: #00a78e;
 }
 .ff_one.style2 .icon {
   background-color: rgb(255, 16, 83);
@@ -13288,6 +13294,20 @@ body.translated {
 .alert-dismissible .close {
   top: 10px;
 }
+.alert-card {
+  background: #fff;
+  border: 1px #f2f2f2 solid;
+  box-shadow: 0px 1px 3px rgba(0,0,0,0.1);
+}
+.pull-right{
+  float:right;
+}
+.dashboard h5{
+  font-size: 16px !important;
+}
+.dashboard .img-whp{
+  height: 200px !important;
+}
 .dropdown-item.active,
 .dropdown-item:active {
   background-color: #b66dff;
@@ -13443,6 +13463,15 @@ textarea.form-control {
 }
 .instructor_pricing_widget h4 {
   font-weight: bold;
+}
+.banner-finished {
+  position: absolute;
+  color: #fff;
+  z-index: 1;
+  padding: 6px 12px;
+  background: #00a78e;
+  margin: 12px;
+  border-radius: 6px;
 }
 </style>
 
