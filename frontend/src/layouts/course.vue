@@ -19,7 +19,7 @@
               <NuxtLink to="../course/courses" class="nav-link fixed-position">Course</NuxtLink>
             </li>
             <li class="nav-item">
-              <NuxtLink to="../course/invoice" class="nav-link fixed-position">Invoice</NuxtLink>
+              <NuxtLink to="../course/invoice" class="nav-link fixed-position">Invoice <span class="notification-buble">1</span></NuxtLink>
             </li>
             <li class="nav-item">
               <NuxtLink to="../course/profile" class="nav-link bold">
@@ -8470,6 +8470,16 @@ legend span {
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
+}
+.notification-buble {
+  font-size: 10px;
+  font-weight: bold;
+  position: absolute;
+  padding: 3px 8px;
+  background: #ff1053;
+  color: #fff;
+  border-radius: 50%;
+  margin-top: -8px;
 }
 .header_user_notif li {
   display: inline-block;

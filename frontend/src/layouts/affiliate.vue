@@ -8188,22 +8188,22 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 .ff_one {
   background-color: #ffffff;
   border-radius: 5px;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(36, 65, 231);
   height: 150px;
   margin-bottom: 30px;
   position: relative;
   padding: 20px 20px 20px 25px;
   max-width: 350px;
-  -webkit-box-shadow:0px 1px 4px 0px rgba(0, 0, 0, 0.09);
-  -moz-box-shadow:0px 1px 4px 0px rgba(0, 0, 0, 0.09);
-  box-shadow:0px 1px 4px 0px rgba(0, 0, 0, 0.09);
+  -webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.09);
+  -moz-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.09);
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.09);
 }
-.ff_one .icon{
+.ff_one .icon {
   border-radius: 5px;
   background-color: rgb(36, 65, 231);
-  -webkit-box-shadow:0px 1px 4px 0px rgba(0, 0, 0, 0.09);
-  -moz-box-shadow:0px 1px 4px 0px rgba(0, 0, 0, 0.09);
-  box-shadow:0px 1px 4px 0px rgba(0, 0, 0, 0.09);
+  -webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.09);
+  -moz-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.09);
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.09);
   float: right;
   height: 110px;
   line-height: 60px;
@@ -8222,11 +8222,11 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
   font-size: 26px;
   font-family: "Ubuntu";
   font-weight: 600;
-  color: #0a0a0a;
+  color: #fff;
   line-height: .5;
 }
 .ff_one .detais p{
-  color: rgb(126, 126, 126);
+  color: rgb(255, 255, 255);
   font-size: 15px;
   font-family: "Open Sans";
   line-height: 2.667;
@@ -8234,6 +8234,12 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .ff_one.style2 .icon{
   background-color: rgb(255, 16, 83);
+}
+.ff_one.style2{
+  background: #ff1053;
+}
+.ff_one.style3 {
+  background: #00a78e;
 }
 .ff_one.style3 .icon{
   background-color: rgb(0, 167, 142);
