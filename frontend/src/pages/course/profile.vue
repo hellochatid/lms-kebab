@@ -101,14 +101,11 @@
 
 <script>
 import { mapMutations, mapGetters } from "vuex";
-import { ConfirmDelete } from "~/components/admin";
-import courses from "~/services/courses";
 
 export default {
   head: {
-    title: "Affiliate"
+    title: "Courses | Student Course"
   },
-  layout: "affiliate"
+  layout: "course"
 };
-
 </script>

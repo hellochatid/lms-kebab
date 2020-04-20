@@ -6550,6 +6550,35 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
   background-color: #b66dff;
   color: #ffffff;
 }
+.bs-example .pagination {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.pagination {
+  display: inline-block;
+  padding-left: 0;
+  margin: 20px 0;
+  border-radius: 4px;
+}
+.pagination > li {
+  display: inline;
+}
+.pagination > li:first-child > a, .pagination > li:first-child > span {
+  margin-left: 0;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.pagination > li > a, .pagination > li > span {
+  position: relative;
+  float: left;
+  padding: 6px 12px;
+  margin-left: -1px;
+  line-height: 1.42857143;
+  color: #333;
+  text-decoration: none;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
 .event_counter_plugin_container{
   border-radius: 5px;
   background-image: -moz-linear-gradient( 0deg, rgb(52,82,255) 0%, rgb(255,16,83) 100%);
