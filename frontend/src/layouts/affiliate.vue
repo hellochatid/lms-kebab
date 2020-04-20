@@ -18,7 +18,7 @@
               <NuxtLink to="../affiliate" class="nav-link fixed-position">Dashboard</NuxtLink>
             </li>
             <li class="nav-item">
-              <NuxtLink to="../affiliate" class="nav-link fixed-position">Course</NuxtLink>
+              <NuxtLink to="../affiliate/invoice" class="nav-link fixed-position">Invoice <span class="notification-buble">1</span></NuxtLink>
             </li>
             <li class="nav-item">
               <NuxtLink to="../affiliate/profile" class="nav-link bold"><img src="https://i.imgur.com/6XESUuX.jpg" class="img-thumb"> Hasan Saskeh</NuxtLink>
@@ -7451,6 +7451,16 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
+}
+.notification-buble {
+  font-size: 10px;
+  font-weight: bold;
+  position: absolute;
+  padding: 3px 8px;
+  background: #ff1053;
+  color: #fff;
+  border-radius: 50%;
+  margin-top: -8px;
 }
 .header_user_notif li{
   display: inline-block;
