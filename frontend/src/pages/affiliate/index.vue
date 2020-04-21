@@ -183,7 +183,7 @@
 	        <h4 class="title">News & announcement</h4>
 	        <div class="grid">
 	          <ul>
-	            <li><div class="title">News Update</div></li>
+	            <li><div class="title">April payment issued</div><span class="list-notification></span></li>
 	            <h6 class="text-primary">12 Jan 2020 : 12:32</h6>
 	            <li><p>This is an automated server response message. All systems are online.</p></li>
 	          </ul>

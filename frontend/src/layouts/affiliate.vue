@@ -7491,6 +7491,17 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
   border-radius: 50%;
   margin-top: -8px;
 }
+.list-notification{
+  background: #ff1053;
+  width: 8px;
+  display: block;
+  padding: 3px;
+  border-radius: 50%;
+  position: relative;
+  height: 8px;
+  float: right;
+  top: -16px;
+}
 .header_user_notif li{
   display: inline-block;
   vertical-align: middle;
