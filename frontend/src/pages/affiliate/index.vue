@@ -182,39 +182,49 @@
 	      <div class="recent_job_activity">
 	        <h4 class="title">News & announcement</h4>
 	        <div class="grid">
-	          <ul>
-	            <li><div class="title">April payment issued</div><span class="list-notification></span></li>
-	            <h6 class="text-primary">12 Jan 2020 : 12:32</h6>
-	            <li><p>This is an automated server response message. All systems are online.</p></li>
-	          </ul>
+	          <a href="#">
+		          <ul>
+		            <li><div class="title">April payment issued</div><span class="list-notification"></span></li>
+		            <h6 class="text-primary">12 Jan 2020 : 12:32</h6>
+		            <li><p>Payment from April issued</p></li>
+		          </ul>
+	          </a>
 	        </div>
 	        <div class="grid">
-	          <ul>
-	            <li><div class="title">News Update</div></li>
-	            <h6 class="text-primary">12 Jan 2020 : 12:32</h6>
-	            <li><p>This is an automated server response message. All systems are online.</p></li>
-	          </ul>
+	          <a href="#">
+		          <ul>
+		            <li><div class="title">You got 1 new affiliate student</div><span class="list-notification"></span></li>
+		            <h6 class="text-primary">12 Jan 2020 : 12:32</h6>
+		            <li><p>New student <b>Hendy Abraham</b> joined with your affiliate link</p></li>
+		          </ul>
+	          </a>
 	        </div>
 	        <div class="grid">
-	          <ul>
-	            <li><div class="title">News Update</div></li>
-	            <h6 class="text-primary">12 Jan 2020 : 12:32</h6>
-	            <li><p>This is an automated server response message. All systems are online.</p></li>
-	          </ul>
+	          <a href="#">
+		          <ul>
+		            <li><div class="title">Comission setting has changed, check here</div><span class="list-notification"></span></li>
+		            <h6 class="text-primary">12 Jan 2020 : 12:32</h6>
+		            <li><p>Your comission setting changed, check here to learn more about comission setting</p></li>
+		          </ul>
+	          </a>
 	        </div>
 	        <div class="grid">
-	          <ul>
-	            <li><div class="title">News Update</div></li>
-	            <h6 class="text-primary">12 Jan 2020 : 12:32</h6>
-	            <li><p>This is an automated server response message. All systems are online.</p></li>
-	          </ul>
+	          <a href="#">
+		          <ul>
+		            <li><div class="title">News Update</div></li>
+		            <h6 class="text-primary">12 Jan 2020 : 12:32</h6>
+		            <li><p>This is an automated server response message. All systems are online.</p></li>
+		          </ul>
+	          </a>
 	          </div>
 	          <div class="grid mb0">
-	          <ul class="pb0 mb0 bb_none">
-	            <li><div class="title">News Update</div></li>
-	            <h6 class="text-primary">12 Jan 2020 : 12:32</h6>
-	            <li><p>This is an automated server response message. All systems are online.</p></li>
-	          </ul>
+	            <a href="#">
+		          <ul class="pb0 mb0 bb_none">
+		            <li><div class="title">News Update</div></li>
+		            <h6 class="text-primary">12 Jan 2020 : 12:32</h6>
+		            <li><p>This is an automated server response message. All systems are online.</p></li>
+		          </ul>
+		        </a>
 	        </div>
 	      </div>
 	    </div>
