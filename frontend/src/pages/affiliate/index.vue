@@ -180,6 +180,7 @@
 		</div>
 		<div class="col-lg-4 col-xl-4 mb30">
 	      <div class="recent_job_activity">
+	      	<div class="pull-right text-danger">(3)</div>
 	        <h4 class="title">News & announcement</h4>
 	        <div class="grid">
 	          <a href="#">
