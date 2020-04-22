@@ -1,47 +1,46 @@
 <template>
 	<div>
-
 	<div class="col-sm-12 col-lg-12 col-xl-12" style="padding-top: 120px;">
 		<nav class="breadcrumb_widgets" aria-label="breadcrumb mb30">
-		<h4 class="title float-left">Invoice</h4>
+		<h4 class="title float-left">Voucher</h4>
 			<ol class="breadcrumb float-right">
 				<li class="breadcrumb-item"><a href="../affiliate">Dashboard</a></li>
-				<li class="breadcrumb-item active" aria-current="page">Invoice</li>
+				<li class="breadcrumb-item active" aria-current="page">Voucher</li>
 			</ol>
 		</nav>
 		<div class="row">
 			<div class="col-sm-6 col-md-6 col-lg-6 col-xl-4">
 				<div class="ff_one">
 					<div class="icon">
-						<span class="material-icons">receipt</span>
+						<span class="material-icons">confirmation_number</span>
 					</div>
 					<div class="detais">
-						<p>All invoice</p>
-						<div class="timer">26</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-6 col-md-6 col-lg-6 col-xl-4">
-				<div class="ff_one style2">
-					<div class="icon">
-						<span class="material-icons">report</span>
-					</div>
-					<div class="detais">
-						<p>Unpaid</p>
-						<div class="timer">
-							2
-						</div>
+						<p>Voucher</p>
+						<div class="timer">6</div>
 					</div>
 				</div>
 			</div>
 			<div class="col-sm-6 col-md-6 col-lg-6 col-xl-4">
 				<div class="ff_one style3">
 					<div class="icon">
-						<span class="material-icons">account_balance_wallet</span>
+						<span class="material-icons">check_circle</span>
 					</div>
 					<div class="detais">
-						<p>Paid</p>
-						<div class="timer">24</div>
+						<p>Active</p>
+						<div class="timer">
+							4
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-6 col-lg-6 col-xl-4">
+				<div class="ff_one style2">
+					<div class="icon">
+						<span class="material-icons">cancel</span>
+					</div>
+					<div class="detais">
+						<p>Inactive</p>
+						<div class="timer">2</div>
 					</div>
 				</div>
 			</div>
@@ -56,66 +55,60 @@
 								</select>
 							</div>
 						</span>
-						<h4>Invoice</h4>
+						<h4>Voucher</h4>
 						<div class="grid">
 							<div class="ui_kit_table">
 								<table class="table">
 									<thead class="thead-light">
 								    	<tr>
 								    		<th scope="col">No</th>
-								    		<th scope="col">Invoice Number</th>
-								    		<th scope="col">Invoice date</th>
-								    		<th scope="col">Due date</th>
+								    		<th scope="col">Name</th>
+								    		<th scope="col">Value</th>
+								    		<th scope="col">Expired date</th>
 								    		<th scope="col">Status</th>
-								    		<th scope="col">Total</th>
 								    		<th scope="col">Action</th>
 								    	</tr>
 									</thead>
 									<tbody>
 								    	<tr>
 								    		<td>1</td>
-								    		<td>#415130</td>
-								    		<td>21 Feb 2020</td>
+								    		<td>Discount New Student 20%</td>
+								    		<td>20%</td>
 								    		<td>28 Feb 2020</td>
-								    		<td class="text-danger">Unpaid</td>
-								    		<td>Rp 100.000</td>
-								    		<td><a href="detail-invoice" class="btn btn-success btn-sm">Detail</a></td>
+								    		<td class="text-success">Active</td>
+								    		<td><a href="detail-voucher" class="btn btn-primary btn-sm">View</a></td>
 								    	</tr>
 								    	<tr>
 								    		<td>2</td>
-								    		<td>#415131</td>
-								    		<td>23 Jan 2020</td>
+								    		<td>New Year , New Knowledge!</td>
+								    		<td>50%</td>
 								    		<td>30 Jan 2020</td>
-								    		<td class="text-success">Paid</td>
-								    		<td>Rp 100.000</td>
-								    		<td><a href="detail-invoice" class="btn btn-success btn-sm">Detail</a></td>
+								    		<td class="text-success">Active</td>
+								    		<td><a href="detail-voucher" class="btn btn-primary btn-sm">View</a></td>
 								    	</tr>
 								    	<tr>
 								    		<td>3</td>
-								    		<td>#415132</td>
-								    		<td>20 Des 2019</td>
-								    		<td>27 Des 2019</td>
-								    		<td class="text-success">Paid</td>
-								    		<td>Rp 100.000</td>
-								    		<td><a href="detail-invoice" class="btn btn-success btn-sm">Detail</a></td>
+								    		<td>Voucher Discount to New Student</td>
+								    		<td>Rp 20.000</td>
+								    		<td>30 Jan 2020</td>
+								    		<td class="text-success">Active</td>
+								    		<td><a href="detail-voucher" class="btn btn-primary btn-sm">View</a></td>
 								    	</tr>
 								    	<tr>
 								    		<td>4</td>
-								    		<td>#415133</td>
-								    		<td>17 Nov 2019</td>
-								    		<td>24 Nov 2019</td>
-								    		<td class="text-success">Paid</td>
-								    		<td>Rp 100.000</td>
-								    		<td><a href="detail-invoice" class="btn btn-success btn-sm">Detail</a></td>
+								    		<td>Voucher Affiliate Specials</td>
+								    		<td>50%</td>
+								    		<td>30 Jan 2020</td>
+								    		<td class="text-success">Active</td>
+								    		<td><a href="detail-voucher" class="btn btn-primary btn-sm">View</a></td>
 								    	</tr>
 								    	<tr>
 								    		<td>5</td>
-								    		<td>#415134</td>
-								    		<td>27 Oct 2019</td>
-								    		<td>4 Nov 2019</td>
-								    		<td class="text-success">Paid</td>
-								    		<td>Rp 100.000</td>
-								    		<td><a href="detail-invoice" class="btn btn-success btn-sm">Detail</a></td>
+								    		<td>Discount New Student 20%</td>
+								    		<td>20%</td>
+								    		<td>30 Des 2020</td>
+								    		<td class="text-danger">Inactive</td>
+								    		<td><a href="detail-voucher" class="btn btn-primary btn-sm">View</a></td>
 								    	</tr>
 									</tbody>
 								</table>
@@ -144,7 +137,6 @@
 				</div>
 			</div>
 		</div>
-
 	</div> 
 </template>
 
@@ -155,7 +147,7 @@ import courses from "~/services/courses";
 
 export default {
   head: {
-    title: "Affiliate"
+    title: "Voucher Affiliate"
   },
   layout: "affiliate"
 };

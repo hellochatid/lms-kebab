@@ -46,15 +46,17 @@
 			</div>
 		</div>
 		<div class="col-sm-6 col-md-6 col-lg-6 col-xl-4">
-			<div class="ff_one style3">
-				<div class="icon">
-					<span class="material-icons">account_balance_wallet</span>
+			<a href="../affiliate/voucher">
+				<div class="ff_one style3">
+					<div class="icon">
+						<span class="material-icons">account_balance_wallet</span>
+					</div>
+					<div class="detais">
+						<p>Voucher</p>
+						<div class="timer">4</div>
+					</div>
 				</div>
-				<div class="detais">
-					<p>Voucher quota</p>
-					<div class="timer">20</div>
-				</div>
-			</div>
+			</a>
 		</div>
 		<div class="col-xl-8 mb30">
 			<div class="row">
@@ -180,6 +182,7 @@
 		</div>
 		<div class="col-lg-4 col-xl-4 mb30">
 	      <div class="recent_job_activity">
+	      	<div class="pull-right text-danger">(3)</div>
 	        <h4 class="title">News & announcement</h4>
 	        <div class="grid">
 	          <a href="#">
