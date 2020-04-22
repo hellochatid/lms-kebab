@@ -76,7 +76,7 @@
 								    		<td>20%</td>
 								    		<td>28 Feb 2020</td>
 								    		<td class="text-success">Active</td>
-								    		<td><a href="detail-invoice" class="btn btn-danger btn-sm">Deactive</a></td>
+								    		<td><a href="detail-voucher" class="btn btn-primary btn-sm">View</a></td>
 								    	</tr>
 								    	<tr>
 								    		<td>2</td>
@@ -84,7 +84,7 @@
 								    		<td>50%</td>
 								    		<td>30 Jan 2020</td>
 								    		<td class="text-success">Active</td>
-								    		<td><a href="detail-invoice" class="btn btn-danger btn-sm">Deactive</a></td>
+								    		<td><a href="detail-voucher" class="btn btn-primary btn-sm">View</a></td>
 								    	</tr>
 								    	<tr>
 								    		<td>3</td>
@@ -92,7 +92,7 @@
 								    		<td>Rp 20.000</td>
 								    		<td>30 Jan 2020</td>
 								    		<td class="text-success">Active</td>
-								    		<td><a href="detail-invoice" class="btn btn-danger btn-sm">Deactive</a></td>
+								    		<td><a href="detail-voucher" class="btn btn-primary btn-sm">View</a></td>
 								    	</tr>
 								    	<tr>
 								    		<td>4</td>
@@ -100,7 +100,7 @@
 								    		<td>50%</td>
 								    		<td>30 Jan 2020</td>
 								    		<td class="text-success">Active</td>
-								    		<td><a href="detail-invoice" class="btn btn-danger btn-sm">Deactive</a></td>
+								    		<td><a href="detail-voucher" class="btn btn-primary btn-sm">View</a></td>
 								    	</tr>
 								    	<tr>
 								    		<td>5</td>
@@ -108,7 +108,7 @@
 								    		<td>20%</td>
 								    		<td>30 Des 2020</td>
 								    		<td class="text-danger">Inactive</td>
-								    		<td><a href="detail-invoice" class="btn btn-success btn-sm">Activate</a></td>
+								    		<td><a href="detail-voucher" class="btn btn-primary btn-sm">View</a></td>
 								    	</tr>
 									</tbody>
 								</table>
