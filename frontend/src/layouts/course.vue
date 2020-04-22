@@ -19,6 +19,9 @@
               <NuxtLink to="../course/courses" class="nav-link fixed-position">Course</NuxtLink>
             </li>
             <li class="nav-item">
+              <NuxtLink to="../course/invoice" class="nav-link fixed-position">Invoice <span class="notification-buble">1</span></NuxtLink>
+            </li>
+            <li class="nav-item">
               <NuxtLink to="../course/profile" class="nav-link bold">
                 <img src="https://i.imgur.com/6XESUuX.jpg" class="img-thumb" /> Hasan Saskeh
               </NuxtLink>
@@ -7557,6 +7560,35 @@ legend span {
   background-color: #b66dff;
   color: #ffffff;
 }
+.bs-example .pagination {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.pagination {
+  display: inline-block;
+  padding-left: 0;
+  margin: 20px 0;
+  border-radius: 4px;
+}
+.pagination > li {
+  display: inline;
+}
+.pagination > li:first-child > a, .pagination > li:first-child > span {
+  margin-left: 0;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.pagination > li > a, .pagination > li > span {
+  position: relative;
+  float: left;
+  padding: 6px 12px;
+  margin-left: -1px;
+  line-height: 1.42857143;
+  color: #333;
+  text-decoration: none;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
 .event_counter_plugin_container {
   border-radius: 5px;
   background-image: -moz-linear-gradient(
@@ -8467,6 +8499,16 @@ legend span {
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
+}
+.notification-buble {
+  font-size: 10px;
+  font-weight: bold;
+  position: absolute;
+  padding: 3px 8px;
+  background: #ff1053;
+  color: #fff;
+  border-radius: 50%;
+  margin-top: -8px;
 }
 .header_user_notif li {
   display: inline-block;

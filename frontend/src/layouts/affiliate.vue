@@ -18,7 +18,7 @@
               <NuxtLink to="../affiliate" class="nav-link fixed-position">Dashboard</NuxtLink>
             </li>
             <li class="nav-item">
-              <NuxtLink to="../affiliate" class="nav-link fixed-position">Course</NuxtLink>
+              <NuxtLink to="../affiliate/invoice" class="nav-link fixed-position">Invoice <span class="notification-buble">1</span></NuxtLink>
             </li>
             <li class="nav-item">
               <NuxtLink to="../affiliate/profile" class="nav-link bold"><img src="https://i.imgur.com/6XESUuX.jpg" class="img-thumb"> Hasan Saskeh</NuxtLink>
@@ -6550,6 +6550,35 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
   background-color: #b66dff;
   color: #ffffff;
 }
+.bs-example .pagination {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.pagination {
+  display: inline-block;
+  padding-left: 0;
+  margin: 20px 0;
+  border-radius: 4px;
+}
+.pagination > li {
+  display: inline;
+}
+.pagination > li:first-child > a, .pagination > li:first-child > span {
+  margin-left: 0;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.pagination > li > a, .pagination > li > span {
+  position: relative;
+  float: left;
+  padding: 6px 12px;
+  margin-left: -1px;
+  line-height: 1.42857143;
+  color: #333;
+  text-decoration: none;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
 .event_counter_plugin_container{
   border-radius: 5px;
   background-image: -moz-linear-gradient( 0deg, rgb(52,82,255) 0%, rgb(255,16,83) 100%);
@@ -7452,6 +7481,27 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
 }
+.notification-buble {
+  font-size: 10px;
+  font-weight: bold;
+  position: absolute;
+  padding: 3px 8px;
+  background: #ff1053;
+  color: #fff;
+  border-radius: 50%;
+  margin-top: -8px;
+}
+.list-notification{
+  background: #ff1053;
+  width: 8px;
+  display: block;
+  padding: 3px;
+  border-radius: 50%;
+  position: relative;
+  height: 8px;
+  float: right;
+  top: -16px;
+}
 .header_user_notif li{
   display: inline-block;
   vertical-align: middle;
@@ -8178,22 +8228,22 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 .ff_one {
   background-color: #ffffff;
   border-radius: 5px;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(36, 65, 231);
   height: 150px;
   margin-bottom: 30px;
   position: relative;
   padding: 20px 20px 20px 25px;
   max-width: 350px;
-  -webkit-box-shadow:0px 1px 4px 0px rgba(0, 0, 0, 0.09);
-  -moz-box-shadow:0px 1px 4px 0px rgba(0, 0, 0, 0.09);
-  box-shadow:0px 1px 4px 0px rgba(0, 0, 0, 0.09);
+  -webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.09);
+  -moz-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.09);
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.09);
 }
-.ff_one .icon{
+.ff_one .icon {
   border-radius: 5px;
   background-color: rgb(36, 65, 231);
-  -webkit-box-shadow:0px 1px 4px 0px rgba(0, 0, 0, 0.09);
-  -moz-box-shadow:0px 1px 4px 0px rgba(0, 0, 0, 0.09);
-  box-shadow:0px 1px 4px 0px rgba(0, 0, 0, 0.09);
+  -webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.09);
+  -moz-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.09);
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.09);
   float: right;
   height: 110px;
   line-height: 60px;
@@ -8212,11 +8262,11 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
   font-size: 26px;
   font-family: "Ubuntu";
   font-weight: 600;
-  color: #0a0a0a;
+  color: #fff;
   line-height: .5;
 }
 .ff_one .detais p{
-  color: rgb(126, 126, 126);
+  color: rgb(255, 255, 255);
   font-size: 15px;
   font-family: "Open Sans";
   line-height: 2.667;
@@ -8224,6 +8274,12 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .ff_one.style2 .icon{
   background-color: rgb(255, 16, 83);
+}
+.ff_one.style2{
+  background: #ff1053;
+}
+.ff_one.style3 {
+  background: #00a78e;
 }
 .ff_one.style3 .icon{
   background-color: rgb(0, 167, 142);

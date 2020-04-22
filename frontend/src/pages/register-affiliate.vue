@@ -32,7 +32,7 @@
           <div class="col-sm-12 col-lg-6 offset-lg-3">
             <div class="sign_up_form inner_page">
               <div class="details">
-                <form action="../affiliate">
+                <form action="verify-email-affiliate">
                   <div class="form-group">
                       <input type="email" class="form-control" id="exampleInputEmail4" placeholder="Email Address">
                   </div>

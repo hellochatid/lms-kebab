@@ -13,6 +13,7 @@
 							<div class="my_course_content_container">
 								<div class="my_setting_content mb30">
 									<div class="my_setting_content_header">
+										<a href="../course/edit_profile" class="btn btn-primary pull-right">Edit profile</a>
 										<div class="my_sch_title">
 											<h4 class="m0">Personal Details</h4>
 										</div>
@@ -87,7 +88,7 @@
 									<div class="row my_setting_content_details">
 									    <div class="col-xl-12">
 									    	<div class="my_profile_setting_input form-group">
-									    		<a href="/change-password" class="btn btn-success"> Change password </a>
+									    		<a href="/change-password" class="btn btn-primary"> Change password </a>
 											</div>
 									    </div>
 									</div>
@@ -100,14 +101,11 @@
 
 <script>
 import { mapMutations, mapGetters } from "vuex";
-import { ConfirmDelete } from "~/components/admin";
-import courses from "~/services/courses";
 
 export default {
   head: {
-    title: "Affiliate"
+    title: "Courses | Student Course"
   },
-  layout: "affiliate"
+  layout: "course"
 };
-
 </script>

@@ -56,124 +56,178 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-xl-12">
-			<div class="application_statics">
-					<span class="pull-right">
-						<div class="form-group">
-					    	<select class="form-control selectpicker mb-3">
-								<option value="one">All time</option>
-								<option value="Two">Daily</option>
-								<option value="Three">Monthly</option>
-								<option value="Four">Yearly</option>
-							</select>
+		<div class="col-xl-8 mb30">
+			<div class="row">
+				<div class="col-xl-12 mb30">
+					<div class="application_statics">
+						<span class="pull-right">
+							<div class="form-group">
+						    	<select class="form-control selectpicker mb-3">
+									<option value="one">All time</option>
+									<option value="Two">Daily</option>
+									<option value="Three">Monthly</option>
+									<option value="Four">Yearly</option>
+								</select>
+							</div>
+						</span>
+						<h4>Your commision</h4>
+						<div class="grid">
+							<div class="ui_kit_table">
+								<table class="table">
+									<thead class="thead-light">
+								    	<tr>
+								    		<th scope="col">No</th>
+								    		<th scope="col">Time</th>
+								    		<th scope="col">Value</th>
+								    		<th scope="col">Form</th>
+								    	</tr>
+									</thead>
+									<tbody>
+								    	<tr>
+								    		<td>1</td>
+								    		<td>Today</td>
+								    		<td>Rp 100.000</td>
+								    		<td><i class="material-icons text-danger">arrow_downward</i></td>
+								    	</tr>
+								    	<tr>
+								    		<td>2</td>
+								    		<td>Yesyerday</td>
+								    		<td>Rp 110.000</td>
+								    		<td><i class="material-icons text-danger">arrow_downward</i></td>
+								    	</tr>
+								    	<tr>
+								    		<td>3</td>
+								    		<td>21 Feb 2020</td>
+								    		<td>Rp 120.000</td>
+								    		<td><i class="material-icons text-success">arrow_upward</i></td>
+								    	</tr>
+								    	<tr>
+								    		<td>4</td>
+								    		<td>22 Feb 2020</td>
+								    		<td>Rp 80.000</td>
+								    		<td><i class="material-icons text-light">drag_handle</i></td>
+								    	</tr>
+								    	<tr>
+								    		<td>5</td>
+								    		<td>23 Feb 2020</td>
+								    		<td>Rp 80.000</td>
+								    		<td><i class="material-icons text-danger">arrow_downward</i></td>
+								    	</tr>
+									</tbody>
+								</table>
+							</div>
 						</div>
-					</span>
-					<h4>Your commision</h4>
-					<div class="grid">
-						<div class="ui_kit_table">
-							<table class="table">
-								<thead class="thead-light">
-							    	<tr>
-							    		<th scope="col">No</th>
-							    		<th scope="col">Time</th>
-							    		<th scope="col">Value</th>
-							    		<th scope="col">Form</th>
-							    	</tr>
-								</thead>
-								<tbody>
-							    	<tr>
-							    		<td>1</td>
-							    		<td>Today</td>
-							    		<td>Rp 100.000</td>
-							    		<td><i class="material-icons text-danger">arrow_downward</i></td>
-							    	</tr>
-							    	<tr>
-							    		<td>2</td>
-							    		<td>Yesyerday</td>
-							    		<td>Rp 110.000</td>
-							    		<td><i class="material-icons text-danger">arrow_downward</i></td>
-							    	</tr>
-							    	<tr>
-							    		<td>3</td>
-							    		<td>21 February 2020</td>
-							    		<td>Rp 120.000</td>
-							    		<td><i class="material-icons text-success">arrow_upward</i></td>
-							    	</tr>
-							    	<tr>
-							    		<td>4</td>
-							    		<td>22 February 2020</td>
-							    		<td>Rp 80.000</td>
-							    		<td><i class="material-icons text-light">drag_handle</i></td>
-							    	</tr>
-							    	<tr>
-							    		<td>5</td>
-							    		<td>23 February 2020</td>
-							    		<td>Rp 80.000</td>
-							    		<td><i class="material-icons text-danger">arrow_downward</i></td>
-							    	</tr>
-								</tbody>
-							</table>
+					</div>
+				</div>
+				<div class="col-xl-12">
+					<div class="application_statics">
+						<h4>My students</h4>
+							<div class="grid">
+								<div class="ui_kit_table">
+									<table class="table">
+										<thead class="thead-light">
+									    	<tr>
+									    		<th scope="col">No</th>
+									    		<th scope="col">ID</th>
+									    		<th scope="col">Name</th>
+									    		<th scope="col">Join date</th>
+									    		<th scope="col">Commision rate</th>
+									    	</tr>
+										</thead>
+										<tbody>
+									    	<tr>
+									    		<td>1</td>
+									    		<td>32457</td>
+									    		<td>Seno Harsinggih</td>
+									    		<td>21 Jun 2019</td>
+									    		<td>Rp 100.000</td>
+									    	</tr>
+									    	<tr>
+									    		<td>2</td>
+									    		<td>32458</td>
+									    		<td>Hendro Putro</td>
+									    		<td>21 Jun 2019</td>
+									    		<td>Rp 90.000</td>
+									    	</tr>
+									    	<tr>
+									    		<td>3</td>
+									    		<td>32459</td>
+									    		<td>Jhony Shodiqin</td>
+									    		<td>21 Jun 2019</td>
+									    		<td>Rp 80.000</td>
+									    	</tr>
+									    	<tr>
+									    		<td>4</td>
+									    		<td>32459</td>
+									    		<td>Jhony Shodiqin</td>
+									    		<td>21 Jun 2019</td>
+									    		<td>Rp 80.000</td>
+									    	</tr>
+									    	<tr>
+									    		<td>5</td>
+									    		<td>32459</td>
+									    		<td>Jhony Shodiqin</td>
+									    		<td>21 Jun 2019</td>
+									    		<td>Rp 80.000</td>
+									    	</tr>
+										</tbody>
+									</table>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="col-xl-12 mt30 mb30">
-			<div class="application_statics">
-				<h4>My students</h4>
-					<div class="grid">
-						<div class="ui_kit_table">
-							<table class="table">
-								<thead class="thead-light">
-							    	<tr>
-							    		<th scope="col">No</th>
-							    		<th scope="col">ID</th>
-							    		<th scope="col">Name</th>
-							    		<th scope="col">Join date</th>
-							    		<th scope="col">Commision rate</th>
-							    	</tr>
-								</thead>
-								<tbody>
-							    	<tr>
-							    		<td>1</td>
-							    		<td>32457</td>
-							    		<td>Seno Harsinggih</td>
-							    		<td>21 Jun 2019</td>
-							    		<td>Rp 100.000</td>
-							    	</tr>
-							    	<tr>
-							    		<td>2</td>
-							    		<td>32458</td>
-							    		<td>Hendro Putro</td>
-							    		<td>21 Jun 2019</td>
-							    		<td>Rp 90.000</td>
-							    	</tr>
-							    	<tr>
-							    		<td>3</td>
-							    		<td>32459</td>
-							    		<td>Jhony Shodiqin</td>
-							    		<td>21 Jun 2019</td>
-							    		<td>Rp 80.000</td>
-							    	</tr>
-							    	<tr>
-							    		<td>4</td>
-							    		<td>32459</td>
-							    		<td>Jhony Shodiqin</td>
-							    		<td>21 Jun 2019</td>
-							    		<td>Rp 80.000</td>
-							    	</tr>
-							    	<tr>
-							    		<td>5</td>
-							    		<td>32459</td>
-							    		<td>Jhony Shodiqin</td>
-							    		<td>21 Jun 2019</td>
-							    		<td>Rp 80.000</td>
-							    	</tr>
-								</tbody>
-							</table>
-					</div>
-				</div>
-			</div>
-		</div>
+		<div class="col-lg-4 col-xl-4 mb30">
+	      <div class="recent_job_activity">
+	        <h4 class="title">News & announcement</h4>
+	        <div class="grid">
+	          <a href="#">
+		          <ul>
+		            <li><div class="title">April payment issued</div><span class="list-notification"></span></li>
+		            <h6 class="text-primary">12 Jan 2020 : 12:32</h6>
+		            <li><p>Payment from April issued</p></li>
+		          </ul>
+	          </a>
+	        </div>
+	        <div class="grid">
+	          <a href="#">
+		          <ul>
+		            <li><div class="title">You got 1 new affiliate student</div><span class="list-notification"></span></li>
+		            <h6 class="text-primary">12 Jan 2020 : 12:32</h6>
+		            <li><p>New student <b>Hendy Abraham</b> joined with your affiliate link</p></li>
+		          </ul>
+	          </a>
+	        </div>
+	        <div class="grid">
+	          <a href="#">
+		          <ul>
+		            <li><div class="title">Comission setting has changed, check here</div><span class="list-notification"></span></li>
+		            <h6 class="text-primary">12 Jan 2020 : 12:32</h6>
+		            <li><p>Your comission setting changed, check here to learn more about comission setting</p></li>
+		          </ul>
+	          </a>
+	        </div>
+	        <div class="grid">
+	          <a href="#">
+		          <ul>
+		            <li><div class="title">News Update</div></li>
+		            <h6 class="text-primary">12 Jan 2020 : 12:32</h6>
+		            <li><p>This is an automated server response message. All systems are online.</p></li>
+		          </ul>
+	          </a>
+	          </div>
+	          <div class="grid mb0">
+	            <a href="#">
+		          <ul class="pb0 mb0 bb_none">
+		            <li><div class="title">News Update</div></li>
+		            <h6 class="text-primary">12 Jan 2020 : 12:32</h6>
+		            <li><p>This is an automated server response message. All systems are online.</p></li>
+		          </ul>
+		        </a>
+	        </div>
+	      </div>
+	    </div>
 
 	</div>
 
