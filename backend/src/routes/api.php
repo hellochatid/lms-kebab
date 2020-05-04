@@ -15,15 +15,23 @@ Route::group([
     'prefix' => 'v1'
 
 ], function () {
-    Route::post('iam/login/{role}', 'IAM\LoginController@login');
-    Route::post('iam/register', 'IAM\UserController@register');
-    Route::get('iam/verify/{token}', 'IAM\UserController@verifyUser');
+    Route::group([
+        'prefix' => 'iam'
+    ], function () {
+        Route::post('login/{role}', 'IAM\LoginController@login');
+        Route::post('register_existing_user', 'IAM\UserController@registerExistingUser');
+        Route::post('register', 'IAM\UserController@register');
+        Route::post('verify_user', 'IAM\UserController@verifyUser');
+        Route::get('is_user_exists', 'IAM\UserController@isUserExists');
+    });
+
     Route::group([
         'middleware' => 'api',
         'prefix' => 'iam'
     ], function () {
         Route::get('me', 'IAM\UserController@me');
     });
+
     Route::group([
         'middleware' => 'api',
         'prefix' => 'admin'

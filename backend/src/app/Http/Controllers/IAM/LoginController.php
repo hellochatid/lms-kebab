@@ -55,7 +55,7 @@ class LoginController extends Controller
 
         $credentials = $request->only('email', 'password');
         if (!Auth::guard()->attempt($credentials)) {
-            return response()->json(['success' => false, 'message' => 'incorect email and password combination']);
+            return $this->jsonResponse(401, 'invalid credentials');
         }
 
         $authUser = Auth::user();
@@ -68,7 +68,7 @@ class LoginController extends Controller
         }
 
         if(!in_array($request->role, $userRoles)){
-            return $this->jsonResponse(401, 'unauthorized');
+            return $this->jsonResponse(401, 'invalid role');
         }
 
         try {
