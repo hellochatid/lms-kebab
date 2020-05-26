@@ -34,7 +34,7 @@
         <div class="col-sm-6 col-lg-4">
           <div class="img_hvr_box" style="background-image: url(https://i.imgur.com/PsYAyVS.png);">
           <div class="material-icons icon">
-            book
+            schedule
           </div>
             <div class="overlay">
               <div class="details">
@@ -47,7 +47,7 @@
         <div class="col-sm-6 col-lg-4">
           <div class="img_hvr_box" style="background-image: url(https://i.imgur.com/H6bxxhQ.png);">
           <div class="material-icons icon">
-            timer
+            note
           </div>
             <div class="overlay">
               <div class="details">
@@ -60,7 +60,7 @@
         <div class="col-sm-6 col-lg-4">
           <div class="img_hvr_box" style="background-image: url(https://i.imgur.com/2buhu6Y.png);">
           <div class="material-icons icon">
-            video_library
+            lock_open
           </div>
             <div class="overlay">
               <div class="details">
@@ -73,7 +73,7 @@
         <div class="col-sm-6 col-lg-4">
           <div class="img_hvr_box" style="background-image: url(https://i.imgur.com/nuiNzNf.png);">
           <div class="material-icons icon">
-            account_balance_wallet
+            card_giftcard
           </div>
             <div class="overlay">
               <div class="details">
@@ -86,7 +86,7 @@
         <div class="col-sm-6 col-lg-4">
           <div class="img_hvr_box" style="background-image: url(https://i.imgur.com/2buhu6Y.png);">
           <div class="material-icons icon">
-            video_library
+            people
           </div>
             <div class="overlay">
               <div class="details">
@@ -99,7 +99,7 @@
         <div class="col-sm-6 col-lg-4">
           <div class="img_hvr_box" style="background-image: url(https://i.imgur.com/PsYAyVS.png);">
           <div class="material-icons icon">
-            book
+            video_library
           </div>
             <div class="overlay">
               <div class="details">
