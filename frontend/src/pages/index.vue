@@ -226,7 +226,7 @@
                     <li>Access to over 1.000 high quality courses. For individuals.</li>
                   </ul>
                   <div class="get-started">
-                    <a href="/register" class="btn btn-success">Get started</a>
+                    <a href="/register" class="btn btn-success">Pilih paket</a>
                   </div>
                 </li>
                 <li class="col-lg-6 list-inline-item">
@@ -240,7 +240,7 @@
                     <li>Starts with 3 accounts with more seats available.</li>
                   </ul>
                   <div class="get-started">
-                    <a href="/register" class="btn btn-success">Get started</a>
+                    <a href="/register" class="btn btn-success">Pilih paket</a>
                   </div>
                 </li>
 
