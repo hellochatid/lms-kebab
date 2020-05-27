@@ -8,9 +8,9 @@
           <div class="home5_slider">
             <div class="item">
               <div class="home-text">
-                <h2>Learn with <span class="text-thm">Digibo</span></h2>
+                <h2>Belajar dengan <span class="text-thm">Digibo</span></h2>
                 <p>Digibo adalah platform Online Learning yang dirancang untuk UMKM. Kembangkan pengetahuan untuk meningkatkan UMKM anda dengan Digibo</p>
-                <a class="btn home_btn" href="/pricing">Try it now!</a>
+                <a class="btn home_btn" href="/register">Coba sekarang</a>
               </div>
             </div>
           </div>
@@ -119,9 +119,9 @@
       <div class="row">
         <div class="col-lg-8 offset-lg-2 text-center">
           <div class="divider-one">
-            <p class="color-white">STARTING ONLINE LEARNING</p>
-            <h1 class="color-white text-uppercase">Enhance your skIlls wIth best OnlIne courses</h1>
-            <a class="btn btn-transparent divider-btn" href="/pricing">See plans</a>           
+            <p class="color-white">MULAI ONLINE LEARNING</p>
+            <h1 class="color-white text-uppercase">Upgrade skill dan pengetahuanmu dengan Paket Online Learning Digibo</h1>
+            <a class="btn btn-transparent divider-btn" href="/pricing">Lihat paket</a>           
           </div>
         </div>
       </div>
@@ -133,8 +133,8 @@
       <div class="row">
         <div class="col-lg-6 offset-lg-3">
           <div class="main-title text-center">
-            <h3 class="mt0">Browse Our Top Courses</h3>
-            <p>Best course from our trusted mentors and masters. Tons of learning material for your rapid learning process.</p>
+            <h3 class="mt0">Kursus unggulan Digibo</h3>
+            <p>Kursus terbaik dari mentor dan master tepercaya kami. Banyak materi pembelajaran untuk proses belajar cepat Anda.</p>
           </div>
         </div>
       </div>
@@ -142,70 +142,53 @@
         <div class="col-lg-12">
           <div class="emply-text-sec">
             <div class="row" id="masonry_abc">
-              <div class="col-md-6 col-lg-4 col-xl-3 business design">
+              <div class="col-md-6 col-lg-4 col-xl-4 business design">
                 <div class="top_courses">
                   <div class="thumb">
-                    <img class="img-whp" src="https://i.imgur.com/dZ8egNl.png" alt="t1.jpg">
+                    <img class="img-whp" src="https://images.pexels.com/photos/1092671/pexels-photo-1092671.jpeg">
                     <div class="overlay">
                     </div>
                   </div>
                   <div class="details">
                     <div class="tc_content">
-                      <h5>Kebab Master : Starting Business</h5>
+                      <h5>Brand Activation Melalui Social Media</h5>
                     </div>
                     <div class="tc_footer text-center">
-                      <a href="" class="btn btn-primary btn-md">See course</a>
+                      <a href="" class="btn btn-primary btn-md">Ikut kursus</a>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="col-md-6 col-lg-4 col-xl-3 business design">
+              <div class="col-md-6 col-lg-4 col-xl-4 business design">
                 <div class="top_courses">
                   <div class="thumb">
-                    <img class="img-whp" src="https://i.imgur.com/E3hxjdE.png" alt="t1.jpg">
+                    <img class="img-whp" src="https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg">
                     <div class="overlay">
                     </div>
                   </div>
                   <div class="details">
                     <div class="tc_content">
-                      <h5>Kebab Master : Starting Business</h5>
+                      <h5>Optimalkan Penjualan Online Melalui Social Media</h5>
                     </div>
                     <div class="tc_footer text-center">
-                      <a href="" class="btn btn-primary btn-md">See course</a>
+                      <a href="" class="btn btn-primary btn-md">Ikut kursus</a>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="col-md-6 col-lg-4 col-xl-3 business design">
+              <div class="col-md-6 col-lg-4 col-xl-4 business design">
                 <div class="top_courses">
                   <div class="thumb">
-                    <img class="img-whp" src="https://i.imgur.com/dZ8egNl.png" alt="t1.jpg">
+                    <img class="img-whp" src="https://images.pexels.com/photos/868110/pexels-photo-868110.jpeg">
                     <div class="overlay">
                     </div>
                   </div>
                   <div class="details">
                     <div class="tc_content">
-                      <h5>Kebab Master : Starting Business</h5>
+                      <h5>Belajar Strategi Growth Hack untuk UMKM</h5>
                     </div>
                     <div class="tc_footer text-center">
-                      <a href="" class="btn btn-primary btn-md">See course</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4 col-xl-3 business design">
-                <div class="top_courses">
-                  <div class="thumb">
-                    <img class="img-whp" src="https://i.imgur.com/E3hxjdE.png" alt="t1.jpg">
-                    <div class="overlay">
-                    </div>
-                  </div>
-                  <div class="details">
-                    <div class="tc_content">
-                      <h5>Kebab Master : Starting Business</h5>
-                    </div>
-                    <div class="tc_footer text-center">
-                      <a href="" class="btn btn-primary btn-md">See course</a>
+                      <a href="" class="btn btn-primary btn-md">Ikut Kursus</a>
                     </div>
                   </div>
                 </div>
@@ -223,8 +206,8 @@
         <div class="row">
           <div class="col-lg-12 text-center">
             <div class="main-title mb50">
-              <h3 class="mt0">Let's start to learn</h3>
-              <p>Change your future today with over 1.000 professional courses from the top industry<br/>leading teachers and professionals.</p>
+              <h3 class="mt0">Pilih Paket Anda</h3>
+              <p>Ayo ubah masa depan Anda hari ini dengan mengikuti lebih dari 1.000 kursus profesional dari guru dan profesional terkemuka. Pilih paket dari Digibo yang ingin anda pelajari</p>
             </div>
           </div>
         </div>
@@ -232,12 +215,12 @@
           <div class="col-lg-12">
             <div class="membership_container text-center">
               <ul class="row mc_parent_list">
-                <li class="col-lg-4 list-inline-item">
+                <li class="col-lg-6 list-inline-item">
                   <ul class="mc_child_list two text-center">
                     <li>
                       <div class="membership_header">
                         <div class="price">Rp 50.000 <span>/ month</span></div>
-                        <h4>Silver</h4>
+                        <h4>Digital Marketing Fundamental</h4>
                       </div>
                     </li>
                     <li>Access to over 1.000 high quality courses. For individuals.</li>
@@ -246,12 +229,12 @@
                     <a href="/register" class="btn btn-success">Get started</a>
                   </div>
                 </li>
-                <li class="col-lg-4 list-inline-item">
+                <li class="col-lg-6 list-inline-item">
                   <ul class="mc_child_list three text-center">
                     <li>
                       <div class="membership_header">
                         <div class="price">Rp 100.000 <span>/ month</span></div>
-                        <h4>Gold</h4>
+                        <h4>Digital Marketing Advanced</h4>
                       </div>
                     </li>
                     <li>Starts with 3 accounts with more seats available.</li>
@@ -260,20 +243,7 @@
                     <a href="/register" class="btn btn-success">Get started</a>
                   </div>
                 </li>
-                <li class="col-lg-4 list-inline-item">
-                  <ul class="mc_child_list four text-center">
-                    <li>
-                      <div class="membership_header">
-                        <div class="price">Rp 200.000 <span>/ month</span></div>
-                        <h4>Platinum</h4>
-                      </div>
-                    </li>
-                    <li>Build customized learning paths with content that aligns to your learning goals.</li>
-                  </ul>
-                  <div class="get-started">
-                    <a href="/register" class="btn btn-success">Get started</a>
-                  </div>
-                </li>
+
               </ul>
             </div>
           </div>
@@ -281,76 +251,6 @@
     </div>
   </section>
 
-  <section id="our-testimonials" class="our-testimonials" style="background-color: #fff;">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 offset-lg-3">
-          <div class="main-title text-center">
-            <h3 class="mt0">What People Say</h3>
-            <p>Cum doctus civibus efficiantur in imperdiet deterruisset.</p>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-6 offset-lg-3">
-          <div class="testimonialsec">
-            <ul class="tes-nav">
-              <li>
-                <img class="img-fluid" src="https://i.imgur.com/4oEKgpY.jpg" alt="1.jpg"/>
-              </li>
-              <li>
-                <img class="img-fluid" src="https://i.imgur.com/obUyt03.jpg" alt="2.jpg"/>
-              </li>
-              <li>
-                <img class="img-fluid" src="https://i.imgur.com/6XESUuX.jpg" alt="3.jpg"/>
-              </li>
-              <li>
-                <img class="img-fluid" src="https://i.imgur.com/eOwDvTg.jpg" alt="4.jpg"/>
-              </li>
-            </ul>
-            <ul class="tes-for">
-              <li>
-                <div class="testimonial_item">
-                  <div class="details">
-                    <h5>Hasan Saskeh</h5>
-                    <span class="small text-thm">Student</span>
-                    <p>Customization is very easy with this theme. Clean and quality design and full support for any kind of request! Great theme!</p>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="testimonial_item">
-                  <div class="details">
-                    <h5>Sunadi Subur</h5>
-                    <span class="small text-thm">Student</span>
-                    <p>Customization is very easy with this theme. Clean and quality design and full support for any kind of request! Great theme!</p>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="testimonial_item">
-                  <div class="details">
-                    <h5>Jhony Sinsy</h5>
-                    <span class="small text-thm">Student</span>
-                    <p>Customization is very easy with this theme. Clean and quality design and full support for any kind of request! Great theme!</p>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="testimonial_item">
-                  <div class="details">
-                    <h5>Seno Harsinggih</h5>
-                    <span class="small text-thm">Student</span>
-                    <p>Customization is very easy with this theme. Clean and quality design and full support for any kind of request! Great theme!</p>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   </div>
 </template>

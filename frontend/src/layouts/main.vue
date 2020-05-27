@@ -13,28 +13,22 @@
         <b-navbar-nav class="ml-auto">
           <b-nav>
             <li class="nav-item">
-              <NuxtLink to="/" class="nav-link">Home</NuxtLink>
+              <NuxtLink to="/" class="nav-link">Beranda</NuxtLink>
             </li>
             <li class="nav-item">
-              <NuxtLink to="/#about" class="nav-link">About</NuxtLink>
+              <NuxtLink to="/#features" class="nav-link">Fitur</NuxtLink>
             </li>
             <li class="nav-item">
-              <NuxtLink to="/#features" class="nav-link">Features</NuxtLink>
+              <NuxtLink to="/#top-courses" class="nav-link">Kursus</NuxtLink>
             </li>
             <li class="nav-item">
-              <NuxtLink to="/#top-courses" class="nav-link">Course</NuxtLink>
+              <NuxtLink to="/#pricing" class="nav-link">Harga Peket</NuxtLink>
             </li>
             <li class="nav-item">
-              <NuxtLink to="/#pricing" class="nav-link">Pricing Plan</NuxtLink>
+              <NuxtLink to="/register-affiliate" class="nav-link text-success">Menjadi Afiliasi</NuxtLink>
             </li>
             <li class="nav-item">
-              <NuxtLink to="/#our-testimonials" class="nav-link">Testimony</NuxtLink>
-            </li>
-            <li class="nav-item">
-              <NuxtLink to="/register-affiliate" class="nav-link text-success">Become Affiliate</NuxtLink>
-            </li>
-            <li class="nav-item">
-              <NuxtLink to="/login" class="btn btn-primary btn-sw">Student login</NuxtLink>
+              <NuxtLink to="/login" class="btn btn-primary btn-sw">Masuk</NuxtLink>
             </li>
           </b-nav>
         </b-navbar-nav>
@@ -50,11 +44,11 @@
             <div class="col-sm-6 col-md-6 col-md-3 col-lg-3">
               <div class="footer_contact_widget">
                 <h4>
-                  <i class="material-icons icon">layers</i>
-                  <span>Kebab</span>
+                  <i class="material-icons icon">school</i>
+                  <span>Digibo</span>
                 </h4>
                 <p>
-                  Kebab adalah lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua 
+                  Digibo adalah platform Online Learning yang dirancang untuk UMKM. Kembangkan pengetahuan untuk meningkatkan UMKM anda dengan Digibo
                 </p>
               </div>
             </div>
@@ -107,7 +101,7 @@
           <div class="row">
             <div class="col-lg-6 offset-lg-3">
               <div class="copyright-widget text-center">
-                <p>Copyright Kebab © 2020. All Rights Reserved.</p>
+                <p>Copyright Digibo © 2020. All Rights Reserved.</p>
               </div>
             </div>
           </div>
@@ -12086,6 +12080,15 @@ textarea.form-control{
 }
 .divider_home1::before {
   background-color: rgba(33, 150, 243, 0.8);
+}
+.btn_rounded_section{
+  border: 2px solid #2196F3;
+  border-radius: 27px;
+  color: #2196F3;
+  font-size: 18px;
+  margin-top: 15px;
+  padding: 10px 50px;
+  transition: all .4s ease;
 }
 </style>
 
