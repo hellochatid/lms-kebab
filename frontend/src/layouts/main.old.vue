@@ -4,8 +4,8 @@
       <div class="container">
         <b-navbar class="navbar-brand-wrapper">
           <b-navbar-brand href="/">
-            <i class="material-icons icon">school</i>
-            <span>Digibo</span>
+            <i class="material-icons icon">layers</i>
+            <span>Kebab</span>
           </b-navbar-brand>
         </b-navbar>
 
@@ -13,22 +13,28 @@
         <b-navbar-nav class="ml-auto">
           <b-nav>
             <li class="nav-item">
-              <NuxtLink to="/" class="nav-link">Beranda</NuxtLink>
+              <NuxtLink to="/" class="nav-link">Home</NuxtLink>
             </li>
             <li class="nav-item">
-              <NuxtLink to="/#features" class="nav-link">Fitur</NuxtLink>
+              <NuxtLink to="/#about" class="nav-link">About</NuxtLink>
             </li>
             <li class="nav-item">
-              <NuxtLink to="/#top-courses" class="nav-link">Kursus</NuxtLink>
+              <NuxtLink to="/#features" class="nav-link">Features</NuxtLink>
             </li>
             <li class="nav-item">
-              <NuxtLink to="/#pricing" class="nav-link">Harga Peket</NuxtLink>
+              <NuxtLink to="/#top-courses" class="nav-link">Course</NuxtLink>
             </li>
             <li class="nav-item">
-              <NuxtLink to="/register-affiliate" class="nav-link text-success">Menjadi Afiliasi</NuxtLink>
+              <NuxtLink to="/#pricing" class="nav-link">Pricing Plan</NuxtLink>
             </li>
             <li class="nav-item">
-              <NuxtLink to="/login" class="btn btn-primary btn-sw">Masuk</NuxtLink>
+              <NuxtLink to="/#our-testimonials" class="nav-link">Testimony</NuxtLink>
+            </li>
+            <li class="nav-item">
+              <NuxtLink to="/register-affiliate" class="nav-link text-success">Become Affiliate</NuxtLink>
+            </li>
+            <li class="nav-item">
+              <NuxtLink to="/login" class="btn btn-primary btn-sw">Student login</NuxtLink>
             </li>
           </b-nav>
         </b-navbar-nav>
@@ -44,11 +50,11 @@
             <div class="col-sm-6 col-md-6 col-md-3 col-lg-3">
               <div class="footer_contact_widget">
                 <h4>
-                  <i class="material-icons icon">school</i>
-                  <span>Digibo</span>
+                  <i class="material-icons icon">layers</i>
+                  <span>Kebab</span>
                 </h4>
                 <p>
-                  Digibo adalah platform Online Learning yang dirancang untuk UMKM. Kembangkan pengetahuan untuk meningkatkan UMKM anda dengan Digibo
+                  Kebab adalah lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua 
                 </p>
               </div>
             </div>
@@ -101,7 +107,7 @@
           <div class="row">
             <div class="col-lg-6 offset-lg-3">
               <div class="copyright-widget text-center">
-                <p>Copyright Digibo © 2020. All Rights Reserved.</p>
+                <p>Copyright Kebab © 2020. All Rights Reserved.</p>
               </div>
             </div>
           </div>
@@ -822,7 +828,7 @@ header.header-nav.menu_style_home_three.navbar-scrolltofixed .ht_left_widget.hom
 }
 .header_top_lang_widget ul li a.dropdown-item.active,
 .header_top_lang_widget ul li a.dropdown-item:active{
-  background-color: #2196F3;
+  background-color: #b66dff;
   border-radius: 0px;
 }
 .header_top_lang_widget button.btn.dropdown-toggle{
@@ -1582,11 +1588,11 @@ header.header-nav.menu_style_home_four a.navbar_brand{
   font-size: 32px;
   position: relative;
   top: 6px;
-  color: #2196F3;
+  color: #b66dff;
 }
 .navbar-brand{
   font-weight: bold;
-  color: #2196F3 !important;
+  color: #b66dff !important;
 }
 header.header-nav.menu_style_home_four.stricky-fixed .cart_btnes.home4 a.btn.cart_btn{
   color: #0a0a0a;
@@ -1688,8 +1694,8 @@ header.header-nav.menu_style_home_five .ace-responsive-menu li ul.cart.sub-menu 
   top: 110%;
 }
 header.header-nav.menu_style_home_five .ace-responsive-menu li ul.cart.sub-menu .dropdown_content .list_content .cart_btns{
-  background-color: #2196F3;
-  border: 1px solid #2196F3;
+  background-color: #b66dff;
+  border: 1px solid #b66dff;
   float: left;
   line-height: 20px;
 }
@@ -2385,7 +2391,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
 .banner-style-one .active .banner-btn:active,
 .banner-style-one .active .banner-btn:focus{
   background-color:#ffffff;
-  color:#2196F3;
+  color:#b66dff;
 }
 .banner-style-one .owl-dots,
 .banner-style-two .owl-dots{
@@ -2552,9 +2558,9 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
   max-width: 495px;
 }
 .home-five .home-text a.btn {
-  border: 2px solid #2196F3;
+  border: 2px solid #b66dff;
   border-radius: 27px;
-  color: #2196F3;
+  color: #b66dff;
   font-size: 18px;
   margin-top: 15px;
   padding: 10px 50px;
@@ -2564,8 +2570,8 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
   transition: all .4s ease;
 }
 .home-five .home-text a.btn:hover {
-  background-color: #2196F3;
-  border: 2px solid #2196F3;
+  background-color: #b66dff;
+  border: 2px solid #b66dff;
   color: #ffffff;
 }
 .slide.slide-one.home6{
@@ -2828,7 +2834,6 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
 .img_hvr_box{
   -webkit-background-size: cover;
   background-size: cover;
-  min-height: 280px;
   border-radius: 5px;
   overflow: hidden;
   margin-bottom: 30px;
@@ -3227,7 +3232,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
   margin-right: 50px;
 }
 .cs_row_three .course_content .details .cc_tab .panel-body .cs_list li:hover a{
-  color: #2196F3;
+  color: #b66dff;
 }
 .cs_row_three .course_content .details .cc_tab .panel-body .cs_list li a span.cs_time{
   float: right;
@@ -3876,7 +3881,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
   background-color: #8e9298;
 }
 .view_edit_delete_list li:nth-child(2) {
-  background-color: #2196F3;
+  background-color: #b66dff;
 }
 .view_edit_delete_list li:last-child {
   background-color: #ff1053;
@@ -3935,7 +3940,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
   line-height: 1.714;
 }
 .courses_list_content .top_courses.list:hover .details .tc_content h5{
-  color: #2196F3;
+  color: #b66dff;
 }
 .original_price{
   font-size: 13px;
@@ -4084,7 +4089,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
   color: #262626;
 }
 .pjc_all_btn.home5 a.btn:hover{
-  border: 1px solid #2196F3; 
+  border: 1px solid #b66dff; 
   color: #ffffff;
 }
 /*== Funfact Counter ==*/
@@ -4486,7 +4491,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
   width: 80%;
 }
 .footer_apps_widget .mailchimp_form button{
-  background-color: #2196F3;
+  background-color: #b66dff;
   border: transparent;
   height: 52px;
   width: 52px;
@@ -5100,7 +5105,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
   font-size: 18px;
 }
 .testimonial_item.home2 .thumb .subtitle{
-  color: #2196F3;
+  color: #b66dff;
   font-family: 'Ubuntu', sans-serif;
   font-size: 14px;
   margin-bottom: 40px;
@@ -5114,7 +5119,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
   opacity: 1;
 }
 .testimonial_slider_home2 .owl-item.active.center .testimonial_item.home2 .details{
-  background-color: #2196F3;
+  background-color: #b66dff;
 }
 .testimonial_slider_home2 .owl-item.active.center .testimonial_item.home2 .details .icon{
   color: #4e66f0;
@@ -5434,7 +5439,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
   background-color: transparent;
 }
 .blog_post_home4.home8 .bph4_thumb .bph4_date_meta .year{
-  background-color: #2196F3;
+  background-color: #b66dff;
   color: #ffffff;
 }
 .blog_post_home4.home8 .bph4_thumb .bph4_date_meta .date{
@@ -5599,7 +5604,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
 .single_product_slider.owl-carousel.owl-theme.owl-loaded .owl-prev,
 .single_product_slider.owl-carousel.owl-theme.owl-loaded .owl-next {
   background-color: #ffffff !important;
-  color: #2196F3;
+  color: #b66dff;
   height: 50px;
   line-height: 45px;
   position: absolute;
@@ -5621,7 +5626,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
 .feature_post_slider.owl-carousel.owl-theme.owl-loaded .owl-next:hover,
 .single_product_slider.owl-carousel.owl-theme.owl-loaded .owl-prev:hover,
 .single_product_slider.owl-carousel.owl-theme.owl-loaded .owl-next:hover{
-  background-color: #2196F3 !important;
+  background-color: #b66dff !important;
   color: #ffffff;
 }
 .shop_product_slider .shop_grid .thumb img,
@@ -5685,7 +5690,7 @@ ul.mc_parent_list ul.mc_child_list .membership_header{
 ul.mc_parent_list ul.mc_child_list .membership_header .price{
   font-size: 28px;
   font-family: "Ubuntu";
-  color: rgb(33, 150, 243);
+  color: rgb(182, 109, 255);
   font-weight: bold;
   line-height: 1.2;
   margin-bottom: 12px;
@@ -5707,12 +5712,12 @@ ul.mc_parent_list ul.mc_child_list.one:hover .membership_header,
 ul.mc_parent_list ul.mc_child_list.two:hover .membership_header,
 ul.mc_parent_list ul.mc_child_list.three:hover .membership_header,
 ul.mc_parent_list ul.mc_child_list.four:hover .membership_header{
-  background-color: #2196F3;
+  background-color: #b66dff;
 }
 ul.mc_parent_list ul.mc_child_list:hover .membership_header .price,
 ul.mc_parent_list ul.mc_child_list:hover .membership_header h4,
 ul.mc_parent_list ul.mc_child_list:hover .membership_header p{
-  background-color: #2196F3;
+  background-color: #b66dff;
 }
 ul.mc_parent_list ul.mc_child_list:hover .membership_header .price,
 ul.mc_parent_list ul.mc_child_list:hover .membership_header h4,
@@ -5731,7 +5736,7 @@ ul.mc_parent_list ul.mc_child_list .pricing_btn{
   width: 200px;
 }
 ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
-  background-color: #2196F3;
+  background-color: #b66dff;
   color: #ffffff;
 }
 /*== Our Partners ==*/
@@ -6062,7 +6067,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
   transition: all 0.3s ease 0s;
 }
 .faq_question_widget ul li:hover a {
-  color: #2196F3;
+  color: #b66dff;
   padding-left: 15px;
 }
 .faq_according .panel .panel-body{
@@ -6095,7 +6100,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 /*== Tab Widget UI Page ==*/
 .ui_kit_tab .nav.nav-tabs {
-  background-color: #2196F3;
+  background-color: #b66dff;
   border-radius: 4px;
 }
 .ui_kit_tab .nav.nav-tabs {
@@ -6113,7 +6118,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .ui_kit_tab .nav.nav-tabs .nav-link.active {
   border-radius: 5px;
-  color: #2196F3;
+  color: #b66dff;
   border: none;
 }
 .ui_kit_tab .tab-content .tab-pane {
@@ -6129,7 +6134,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 
 
 .ui_kit_table .table th {
-  background-color: #2196F3;
+  background-color: #b66dff;
   padding: 20px;
   border-bottom: transparent;
   color: #ffffff;
@@ -6259,7 +6264,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
   margin-bottom: 8px;
 }
 .ui_kit_radiobox .radio input[type=radio]:checked+label .radio-label {
-  background-color: #2196F3;
+  background-color: #b66dff;
   box-shadow: inset 0 0 0 5px #fff;
 }
 .ui_kit_radiobox .radio input[type=radio]+label .radio-label {
@@ -6301,7 +6306,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
   display: block;
 }
 .ui_kit_radiobox .radio input[type=radio]+label .radio-label:after {
-  background-color: #2196F3;
+  background-color: #b66dff;
   box-sizing: border-box;
   border-radius: 50%;
   content: "";
@@ -6345,8 +6350,8 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
   top: .50rem;
 }
 .ui_kit_checkbox .custom-control-input:checked~.custom-control-label::before {
-  background-color: #2196F3;
-  border-color: #2196F3;
+  background-color: #b66dff;
+  border-color: #b66dff;
 }
 .ui_kit_checkbox .custom-control-label {
   color: #4f4f4f;
@@ -6373,7 +6378,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
   padding-left: 25px;
 }
 .ui_kit_whitchbox .custom-control-input:checked~.custom-control-label::before{
-  background-color: #2196F3;
+  background-color: #b66dff;
 }
 .ui_kit_whitchbox .custom-switch .custom-control-label::before {
   height: 1.25rem;
@@ -6609,7 +6614,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
   width: 45px;
 }
 .mbp_pagination ul.page_navigation li.active .page-link {
-  background-color: #2196F3;
+  background-color: #b66dff;
   color: #ffffff;
 }
 .event_counter_plugin_container{
@@ -7281,7 +7286,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 .mbp_pagination_tab .pag_next p:hover,
 .mbp_pagination_tab .pag_prev a:hover,
 .mbp_pagination_tab .pag_next a:hover{
-  color: #2196F3;
+  color: #b66dff;
 }
 /*== Commenting Blog Sinlge Page ==*/
 .mbp_pagination_comments{
@@ -7436,16 +7441,16 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .dashbord_nav_list li:hover a,
 .dashbord_nav_list li:hover a span{
-  color: #2196F3;
+  color: #b66dff;
 }
 .dashbord_nav_list li.active{
   background-color: #f9fafc;
 }
 .dashbord_nav_list li.active a{
-  color: #2196F3;
+  color: #b66dff;
 }
 .dashbord_nav_list li.active:before {
-  background-color: #2196F3;
+  background-color: #b66dff;
   bottom: 0;
   content: "";
   height: 50px;
@@ -7785,7 +7790,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 .candidate_revew_select .dropdown-item.active,
 .candidate_revew_select .dropdown-item:active{
   background-color: transparent;
-  color: #2196F3;
+  color: #b66dff;
 }
 /*== My Resume Page ==*/
 .my_resume_textarea label{
@@ -7867,7 +7872,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
   display: none;
 }
 .my_resume_eduarea .content .circle {
-  background-color: #2196F3;
+  background-color: #b66dff;
   border-radius: 50%;
   height: 10px;
   left: 5px;
@@ -7877,7 +7882,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .my_resume_eduarea .content .circle:before{
   background-color: #ffffff;
-  border: 2px solid #2196F3;
+  border: 2px solid #b66dff;
   border-radius: 50%;
   content: "";
   height: 18px;
@@ -7933,7 +7938,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
   z-index: -1;
 }
 .my_resume_eduarea .content .edu_center{
-  color: #2196F3;
+  color: #b66dff;
   margin-bottom: 0;
 }
 .my_resume_eduarea .content .edu_stats{
@@ -8145,7 +8150,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
   font-size: 14px;
 }
 .inbox_chatting_box .chatting_content li.media .media-body p{
-  background-color: #2196F3;
+  background-color: #b66dff;
   border: 1px solid #ffffff;
   border-radius: 5px;
   color: #ffffff;
@@ -8392,11 +8397,11 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
   margin-top: 25px;
 }
 .cl_pricing_slider .ui-slider-range.ui-corner-all.ui-widget-header{
-  background-color: #2196F3;
+  background-color: #b66dff;
 }
 .cl_pricing_slider span.ui-slider-handle.ui-corner-all.ui-state-default {
   background-color: #fff;
-  border: 2px solid #2196F3;
+  border: 2px solid #b66dff;
   border-radius: 50%;
   height: 18px;
   outline: none;
@@ -8545,8 +8550,8 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
   padding: 0 0 5px;
 }
 .alpha-pag ul.option-set li a.selected{
-  border-bottom: 2px solid #2196F3;
-  color: #2196F3;
+  border-bottom: 2px solid #b66dff;
+  color: #b66dff;
 }
 .alpha-pag li a{
   color: #7d7d7d;
@@ -8787,7 +8792,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .popular_course_slider.owl-carousel.owl-theme.owl-loaded .owl-prev:hover,
 .popular_course_slider.owl-carousel.owl-theme.owl-loaded .owl-next:hover{
-  background-color: #2196F3 !important;
+  background-color: #b66dff !important;
   color: #ffffff;
 }
 .media_slider_home7.owl-carousel.owl-theme.owl-loaded .owl-prev:hover,
@@ -8819,7 +8824,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .media_slider_home7.home8.owl-carousel.owl-theme.owl-loaded .owl-prev:hover,
 .media_slider_home7.home8.owl-carousel.owl-theme.owl-loaded .owl-next:hover{
-  background-color: #2196F3 !important;
+  background-color: #b66dff !important;
   color: #ffffff;
 }
 /*== Testimonials Home V3 ==*/
@@ -8965,7 +8970,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
   object-fit:cover;
 }
 .text-thm {
-  color: #2196F3 !important;
+  color: #b66dff !important;
 }
 .text-thm2 {
   color: #00d664 !important;
@@ -9064,7 +9069,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
   color: #ff4b53;
 }
 .bgc-thm {
-  background-color: #2196F3 !important;
+  background-color: #b66dff !important;
 }
 .bgc-thm2 {
   background-color: #192675 !important;
@@ -9294,15 +9299,15 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .btn.white {
   background-color: #ffffff;
-  color: #2196F3;
+  color: #b66dff;
 }
 .btn:hover, .btn:active, .btn:focus {
   box-shadow: none;
   outline: none;
 }
 .btn-thm {
-  background-color: #2196F3;
-  border: 2px solid #2196F3;
+  background-color: #b66dff;
+  border: 2px solid #b66dff;
   border-radius: 5px;
   color: #ffffff;
   -webkit-transition: all 0.3s ease;
@@ -9310,7 +9315,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
   transition: all 0.3s ease;}
 
 .btn-thm.rounded {
-  background-color: #2196F3;
+  background-color: #b66dff;
   border-radius: 5px;
   color: #ffffff;}
 
@@ -9318,14 +9323,14 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 .btn-thm:active,
 .btn-thm:focus{
   background-color: #ffffff;
-  border-color: #2196F3;
-  color: #2196F3; }
+  border-color: #b66dff;
+  color: #b66dff; }
 
 .btn-thm.white:hover,
 .btn-thm.white:active,
 .btn-thm.white:focus{
-  background-color: #2196F3;
-  border-color: #2196F3;
+  background-color: #b66dff;
+  border-color: #b66dff;
   color: #ffffff;  
 }
 .btn-thm2 {
@@ -9402,7 +9407,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
   transition: all 0.3s ease; }
 
 .btn-white:hover, .btn-white:active, .btn-white:focus {
-  color: #2196F3;
+  color: #b66dff;
 }
 .btn-gray {
   background-color: #f9fafc;
@@ -9413,7 +9418,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
   transition: all 0.3s ease;
 }
 .btn-gray:hover, .btn-gray:active, .btn-gray:focus {
-  background-color: #2196F3;
+  background-color: #b66dff;
   color: #ffffff;
 }
 .btn-green {
@@ -9438,24 +9443,24 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
   transition: all 0.3s ease;
 }
 .btn-blue:hover, .btn-blue:active, .btn-blue:focus {
-  background-color: #2196F3;
-  border-color: #2196F3;
+  background-color: #b66dff;
+  border-color: #b66dff;
   color: #ffffff; 
 }
 .btn-transparent {
   background-color: transparent;
-  border-color: #2196F3;
-  color: #2196F3;
+  border-color: #b66dff;
+  color: #b66dff;
   border-radius: 0px;
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 .btn-transparent:hover, .btn-transparent:active, .btn-transparent:focus {
-  background-color: #2196F3;
+  background-color: #b66dff;
   color: #ffffff;
   border: 2px solid;
-  border-color: #2196F3;
+  border-color: #b66dff;
 }
 .btn-transparent2 {
   background-color: transparent;
@@ -10366,7 +10371,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .bg-img5 {
   background-attachment: scroll;
-  background-image: url("https://i.imgur.com/3AfzD73.png");
+  background-image: url("https://i.imgur.com/bxeLZto.png");
   background-position: center;
   background-repeat: no-repeat;
   height: 650px;
@@ -10770,7 +10775,7 @@ section {
   font-size: 15px;
 }
 .divider-one .divider-btn:hover{
-  border: 2px solid #2196F3;
+  border: 2px solid #b66dff;
 }
 .divider-one p{
   margin-bottom: 15px;
@@ -11396,7 +11401,7 @@ body.translated{
   margin-bottom: 0;
 }
 .cart_page_form tr.carttable_row{
-  background-color: #2196F3;
+  background-color: #b66dff;
 }
 .cart_page_form tr.carttable_row th.cartm_title{
   border: none;
@@ -11729,8 +11734,8 @@ body.translated{
   border: none;
 }
 .shop_single_tab_content .nav-tabs .nav-link.active{
-  border-bottom: 2px solid #2196F3;
-  color: #2196F3;
+  border-bottom: 2px solid #b66dff;
+  color: #b66dff;
 }
 .mbp_comment_form.style2{
   padding-bottom: 50px;
@@ -11946,7 +11951,7 @@ body.translated{
   top: 10px;
 }
 .dropdown-item.active, .dropdown-item:active {
-    background-color: #2196F3;
+    background-color: #b66dff;
     border-radius: 0px;
 }
 .dropdown-item{
@@ -12070,25 +12075,13 @@ textarea.form-control{
 }
 .btn-primary{
   color: #fff;
-  background-color: #2196F3;
-  border-color: #2196F3;
+  background-color: #b66dff;
+  border-color: #b66dff;
 }
 .btn-primary:hover {
   color: #fff;
   background-color: #984de4;
   border-color: #984de4;
-}
-.divider_home1::before {
-  background-color: rgba(33, 150, 243, 0.8);
-}
-.btn_rounded_section{
-  border: 2px solid #2196F3;
-  border-radius: 27px;
-  color: #2196F3;
-  font-size: 18px;
-  margin-top: 15px;
-  padding: 10px 50px;
-  transition: all .4s ease;
 }
 </style>
 
