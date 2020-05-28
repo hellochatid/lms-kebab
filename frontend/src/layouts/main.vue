@@ -4,8 +4,7 @@
       <div class="container">
         <b-navbar class="navbar-brand-wrapper">
           <b-navbar-brand href="/">
-            <i class="material-icons icon">school</i>
-            <span>Digibo</span>
+            <img src="https://i.imgur.com/YRO0Im0.png" style="width: 72px;">
           </b-navbar-brand>
         </b-navbar>
 
@@ -13,22 +12,7 @@
         <b-navbar-nav class="ml-auto">
           <b-nav>
             <li class="nav-item">
-              <NuxtLink to="/" class="nav-link">Beranda</NuxtLink>
-            </li>
-            <li class="nav-item">
-              <NuxtLink to="/#features" class="nav-link">Fitur</NuxtLink>
-            </li>
-            <li class="nav-item">
-              <NuxtLink to="/#top-courses" class="nav-link">Kursus</NuxtLink>
-            </li>
-            <li class="nav-item">
-              <NuxtLink to="/#pricing" class="nav-link">Harga Peket</NuxtLink>
-            </li>
-            <li class="nav-item">
-              <NuxtLink to="/register-affiliate" class="nav-link text-success">Menjadi Afiliasi</NuxtLink>
-            </li>
-            <li class="nav-item">
-              <NuxtLink to="/login" class="btn btn-primary btn-sw">Masuk</NuxtLink>
+              <NuxtLink to="/login" class="btn btn-primary btn-lg">Mulai Belajar</NuxtLink>
             </li>
           </b-nav>
         </b-navbar-nav>
@@ -41,27 +25,18 @@
       <section class="footer_one">
         <div class="container">
           <div class="row">
-            <div class="col-sm-6 col-md-6 col-md-3 col-lg-3">
-              <div class="footer_contact_widget">
-                <h4>
-                  <i class="material-icons icon">school</i>
-                  <span>Digibo</span>
-                </h4>
-                <p>
-                  Digibo adalah platform Online Learning yang dirancang untuk UMKM. Kembangkan pengetahuan untuk meningkatkan UMKM anda dengan Digibo
-                </p>
-              </div>
-            </div>
-            <div class="col-sm-6 col-md-4 col-md-3 col-lg-3">
+
+            <div class="col-sm-6 col-md-3 col-md-3 col-lg-3">
               <div class="footer_contact_widget">
                 <h4>Contact</h4>
-                <p>Jl Persatuan UH III/549, Jl. Celeban, Tahunan</p>
-                <p>Kec. Umbulharjo, Kota Yogyakarta</p>
-                <p>Daerah Istimewa Yogyakarta 55167</p>
-                <p>info@kebab.id</p>
+                <p>WhatsApp : +6281513622017</p>
+                <p>Email: digi@vemobo.com</p>
+                <p>Instagram: @digibo_id</p>
+                <p>Facebook: Digibo</p>
+                <p>Youtube: Digibo</p>
               </div>
             </div>
-            <div class="col-sm-6 col-md-4 col-md-3 col-lg-2">
+            <div class="col-sm-6 col-md-3 col-md-3 col-lg-3">
               <div class="footer_company_widget">
                 <h4>About Us</h4>
                 <ul class="list-unstyled">
@@ -73,7 +48,7 @@
                 </ul>
               </div>
             </div>
-            <div class="col-sm-6 col-md-4 col-md-3 col-lg-2">
+            <div class="col-sm-6 col-md-3 col-md-3 col-lg-3">
               <div class="footer_program_widget">
                 <h4>Help & Support</h4>
                 <ul class="list-unstyled">
@@ -82,7 +57,7 @@
                 </ul>
               </div>
             </div>
-            <div class="col-sm-6 col-md-4 col-md-3 col-lg-2">
+            <div class="col-sm-6 col-md-3 col-md-3 col-lg-3">
               <div class="footer_support_widget">
                 <h4>Privacy & Terms</h4>
                 <ul class="list-unstyled">
@@ -101,7 +76,7 @@
           <div class="row">
             <div class="col-lg-6 offset-lg-3">
               <div class="copyright-widget text-center">
-                <p>Copyright Digibo © 2020. All Rights Reserved.</p>
+                <p>Copyright © by Digibo</p>
               </div>
             </div>
           </div>
@@ -121,7 +96,7 @@ export default {
         {
           rel: "stylesheet",
           href:
-            "https://fonts.googleapis.com/css?family=Ubuntu:300i,400,500,700&display=swap"
+            "https://fonts.googleapis.com/css?family=Source Sans Pro:300i,400,500,700&display=swap"
         }
       ]
     };
@@ -137,7 +112,7 @@ body {
   background-attachment: fixed;
   background-color: #ffffff;
   color: #6f7074;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 15px;
   font-weight: 400;
   line-height: 1.642;
@@ -148,7 +123,7 @@ body {
   max-width: 100%; }
 
 p {
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 400; }
 
 ul,
@@ -194,7 +169,7 @@ iframe {
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   line-height: 1.42857;
   color: #0a0a0a; }
   h1 small,
@@ -258,13 +233,13 @@ address {
 
 .form-control{
   font-size: 14px;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   padding: 0 20px;
 }
 
 
-.ff-ubuntu {
-  font-family: 'Ubuntu', sans-serif; }
+.ff-Source Sans Pro {
+  font-family: 'Source Sans Pro', sans-serif; }
 
 .sign_up_modal:before {
   background-color: rgba(0, 0, 0, .9);
@@ -318,7 +293,7 @@ address {
 .sign_up_tab li.nav-item .nav-link{
   border: none;
   color: #0a0a0a;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 18px;
   font-weight: bold;
 }
@@ -406,7 +381,7 @@ address {
 }
 .dropdown_content .list_content a p{
   color: #0a0a0a;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   margin: 0;
 }
 .dropdown_content .list_content a small{
@@ -671,7 +646,7 @@ address {
 .home4_header_top_contact li a,
 ul.sign_up_btn.home4 li a,
 ul.sign_up_btn.home6 a{
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 14px;
   line-height: initial;
   border-radius: 0px;
@@ -702,7 +677,7 @@ ul.sign_up_btn.home6 a{
 }
 .header_top.home7 .header_top_lang_widget_home6 button.btn.dropdown-toggle{
   font-size: 14px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   color: rgba(255, 255, 255, 0.502);
   height: auto;
   line-height: 1.2;
@@ -712,7 +687,7 @@ ul.sign_up_btn.home6 a{
 }
 ul.sign_up_btn.home7 a{
   font-size: 14px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   border-radius: 0px;
 }
 .light_white,
@@ -723,7 +698,7 @@ ul.sign_up_btn.home7 a{
 .header_search_widget .mailchimp_form .form-control{
   background-color: #ffffff;
   border-radius: 25px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   font-size: 14px;
   height: 48px;
   padding-left: 30px;
@@ -784,7 +759,7 @@ ul.sign_up_btn.home7 a{
 }
 .ht_right_widget ul li a,
 .home3_header_top_contact li a{
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
 }
 header.header-nav.menu_style_home_three.navbar-scrolltofixed .ht_left_widget.home3 .header_top_lang_widget{
   margin-top: 5px;
@@ -822,7 +797,7 @@ header.header-nav.menu_style_home_three.navbar-scrolltofixed .ht_left_widget.hom
 }
 .header_top_lang_widget ul li a.dropdown-item.active,
 .header_top_lang_widget ul li a.dropdown-item:active{
-  background-color: #2196F3;
+  background-color: #FD5E1F;
   border-radius: 0px;
 }
 .header_top_lang_widget button.btn.dropdown-toggle{
@@ -901,7 +876,7 @@ header.header-nav.menu_style_home_three.navbar-scrolltofixed .ht_left_widget.hom
   width: auto;
 }
 .cd-dropdown-content .cd-secondary-dropdown a{
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 li.has-children a{
   line-height: 51px;
@@ -1049,7 +1024,7 @@ header.header-nav.menu_style_home_one.dashbord_pages.stricky-fixed .user_setting
 
 header.header-nav.menu_style_home_one .ace-responsive-menu li a{
   color: #ffffff;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 header.header-nav.menu_style_home_one .ace-responsive-menu li ul.sub-menu,
 header.header-nav.menu_style_home_three .ace-responsive-menu li ul.sub-menu,
@@ -1297,7 +1272,7 @@ header.header-nav.menu_style_home_five .ace-responsive-menu > li > a,
 header.header-nav.menu_style_home_six .ace-responsive-menu > li > a,
 header.header-nav.menu_style_home_seven .ace-responsive-menu > li > a,
 header.header-nav.menu_style_home_eight .ace-responsive-menu > li > a{
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   padding: 30px 35px 30px 10px;
   text-transform: uppercase;
 }
@@ -1337,7 +1312,7 @@ header.header-nav.home2.style_one ul.sign_up_btn li:first-child:before{
 }
 header.header-nav.home2.style_one ul.sign_up_btn li a{
   color: #a4a4a4;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   font-size: 14px;
   line-height: 1.2;
 }
@@ -1373,7 +1348,7 @@ header.header-nav.home2.style_one .ace-responsive-menu li ul.sub-menu li ul.sub-
 header.header-nav.home2.style_one .ace-responsive-menu li ul.sub-menu li a{
   border-bottom: 1px solid #555;
   color: #a4a4a4;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   font-size: 16px;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
@@ -1425,7 +1400,7 @@ header.header-nav.menu_style_home_three .ace-responsive-menu li ul.sub-menu:nth-
 header.header-nav.menu_style_home_three .ace-responsive-menu li a,
 header.header-nav.menu_style_home_three .ace-responsive-menu li ul.sub-menu li a{
   color: #ffffff;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
@@ -1454,7 +1429,7 @@ header.header-nav.menu_style_home_three a.navbar_brand:before{
 }
 .sign_up_btn .btn{
   box-shadow: none;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   border-radius: 4px;
   color: #ffffff;
   height: auto;
@@ -1464,7 +1439,7 @@ header.header-nav.menu_style_home_three a.navbar_brand:before{
   transition: all 0.3s ease 0s;
 }
 .sign_up_btn.home3 .btn{
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   font-size: 14px;
   line-height: 1.2;
 }
@@ -1579,14 +1554,15 @@ header.header-nav.menu_style_home_four a.navbar_brand{
   margin-top: 10px;
 }
 .navbar-brand .material-icons{
-  font-size: 32px;
+  font-size: 52px;
   position: relative;
   top: 6px;
-  color: #2196F3;
+  color: #FD5E1F;
 }
 .navbar-brand{
+  font-size: 3rem;
   font-weight: bold;
-  color: #2196F3 !important;
+  color: #FD5E1F !important;
 }
 header.header-nav.menu_style_home_four.stricky-fixed .cart_btnes.home4 a.btn.cart_btn{
   color: #0a0a0a;
@@ -1629,7 +1605,7 @@ header.header-nav.menu_style_home_four .ace-responsive-menu > li{
 }
 header.header-nav.menu_style_home_four  .ace-responsive-menu li a{
   color: #ffffff;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 header.header-nav.menu_style_home_four .sign_up_btn .btn{
   background-color: transparent;
@@ -1688,8 +1664,8 @@ header.header-nav.menu_style_home_five .ace-responsive-menu li ul.cart.sub-menu 
   top: 110%;
 }
 header.header-nav.menu_style_home_five .ace-responsive-menu li ul.cart.sub-menu .dropdown_content .list_content .cart_btns{
-  background-color: #2196F3;
-  border: 1px solid #2196F3;
+  background-color: #FD5E1F;
+  border: 1px solid #FD5E1F;
   float: left;
   line-height: 20px;
 }
@@ -1728,7 +1704,7 @@ header.header-nav.menu_style_home_five .ace-responsive-menu li a{
 }
 header.header-nav.menu_style_home_five .ace-responsive-menu li a{
   padding-top: 27px;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   text-transform: capitalize;
 }
 header.header-nav.menu_style_home_five .ace-responsive-menu li ul.sub-menu li a{
@@ -1849,7 +1825,7 @@ header.header-nav.menu_style_home_six .ace-responsive-menu > li{
 }
 header.header-nav.menu_style_home_six  .ace-responsive-menu li a{
   color: #ffffff;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 header.header-nav.menu_style_home_six .sign_up_btn .btn{
   background-color: transparent;
@@ -1947,7 +1923,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li{
 }
 header.header-nav.menu_style_home_seven  .ace-responsive-menu li a{
   color: #ffffff;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   padding: 18px 20px 18px 15px;
 }
 header.header-nav.menu_style_home_seven .ace-responsive-menu li ul.sub-menu li a:hover{
@@ -1971,7 +1947,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
 }
 /*== Mobile Menu Css ==*/
 .stylehome1 .mm-navbar{
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   color: #fff;
   font-weight: 600;
   font-size: 16px;
@@ -1983,7 +1959,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
 }
 .stylehome1 a.mm-listitem__text,
 .stylehome1 a.mm-btn.mm-btn_next.mm-listitem__btn.mm-listitem__text{
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   color: #fff;
   font-weight: 400;
   font-size: 14px;
@@ -2259,7 +2235,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
   display: -webkit-inline-box;
   position: relative;
   vertical-align: middle;
-      font-family: 'Ubuntu', sans-serif;
+      font-family: 'Source Sans Pro', sans-serif;
 }
 .banner-style-one .slide,
 .banner-style-two .slide{
@@ -2323,7 +2299,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
   animation-fill-mode: both;
   -webkit-backface-visibility: visible !important;
   backface-visibility: visible !important;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 .banner-style-two p{
   margin: 0 auto;
@@ -2369,7 +2345,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
   border:2px solid #ffffff;
   border-radius:27px;
   color:#ffffff;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-size:16px;
   padding:12px 50px;
   -webkit-transition: all 0.3s ease 0s;
@@ -2385,7 +2361,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
 .banner-style-one .active .banner-btn:active,
 .banner-style-one .active .banner-btn:focus{
   background-color:#ffffff;
-  color:#2196F3;
+  color:#FD5E1F;
 }
 .banner-style-one .owl-dots,
 .banner-style-two .owl-dots{
@@ -2489,7 +2465,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
 .home-three .home-text a.btn {
   border: 2px solid #ffffff;
   border-radius: 27px;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   color: #ffffff;
   font-size: 14px;
   margin-top: 15px;
@@ -2539,22 +2515,23 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
   margin-top: 0;
 }
 .home-five .home-text{
-  padding: 230px 0 210px;
+  padding: 200px 0 210px;
 }
 .home-five .home-text h2{
   color: #0a0a0a;
-  font-size: 45px;
+  font-size: 52px;
 }
 .home-five .home-text p{
-  font-family: 'Ubuntu', sans-serif;
-  font-size: 18px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 20px;
   line-height: 30px;
   max-width: 495px;
 }
 .home-five .home-text a.btn {
-  border: 2px solid #2196F3;
+  border: 2px solid #FD5E1F;
   border-radius: 27px;
-  color: #2196F3;
+  color: #FFFFFF;
+  background: #FD5E1F;
   font-size: 18px;
   margin-top: 15px;
   padding: 10px 50px;
@@ -2564,8 +2541,8 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
   transition: all .4s ease;
 }
 .home-five .home-text a.btn:hover {
-  background-color: #2196F3;
-  border: 2px solid #2196F3;
+  background-color: #FD5E1F;
+  border: 2px solid #FD5E1F;
   color: #ffffff;
 }
 .slide.slide-one.home6{
@@ -2668,7 +2645,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
 }
 .home_icon_box p{
   color: #ffffff;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   font-size: 16px;
   margin-bottom: 0;
 }
@@ -2811,13 +2788,13 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
 .play_store_btn .title{
   display: block;
   font-size: 16px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   margin-top: 3px;
 }
 .app_grid .apple_btn .subtitle,
 .play_store_btn .subtitle{
   font-size: 13px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
 }
 .phone_img{
   position: absolute;
@@ -3125,7 +3102,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
   margin-bottom: 22px;
 }
 .cs_row_two .cs_overview h4{
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   font-size: 18px;
   color: rgb(59, 59, 59);
   line-height: 1.333;
@@ -3198,7 +3175,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
 }
 .cs_row_three .course_content .details .cc_tab h4.panel-title{
   font-size: 18px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   color: rgb(59, 59, 59);
   line-height: 1.7;
   border-radius: 5px;
@@ -3227,7 +3204,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
   margin-right: 50px;
 }
 .cs_row_three .course_content .details .cc_tab .panel-body .cs_list li:hover a{
-  color: #2196F3;
+  color: #FD5E1F;
 }
 .cs_row_three .course_content .details .cc_tab .panel-body .cs_list li a span.cs_time{
   float: right;
@@ -3276,7 +3253,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
 }
 .cs_row_four .about_ins_container .details h4{
   font-size: 20px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   color: #0a0a0a;
   margin-bottom: 0;
   line-height: 1.5;
@@ -3396,7 +3373,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
 }
 .cs_row_five .student_feedback_container .aii_average_review .av_content h2{
   font-size: 50px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   color: #0a0a0a;
   line-height: 0.6;
 }
@@ -3577,12 +3554,14 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
   margin-bottom: 5px;
 }
 .top_courses .details .tc_content h5{
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 600;
+  padding: 0px 0px 6px 0px;
+  color: #fd5e1f;
 }
 .top_courses.home2 .details .tc_content h5{
   color: #0a0a0a;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   line-height: 1.333;
 }
 .top_courses .details .tc_content .tc_review{
@@ -3665,7 +3644,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
 .my_course_content_list h5.title{
   font-size: 18px;
     font-weight: 600;
-        font-family: 'Ubuntu', sans-serif;
+        font-family: 'Source Sans Pro', sans-serif;
 }
 
 .my_course_content_list .mc_content_list{
@@ -3755,7 +3734,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
 }
 .my_course_content_list .mc_content_list .details .mc_footer ul.mc_review li.tc_price{
   font-size: 18px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   color: rgb(199, 85, 51);
   font-weight: bold;
   line-height: 1.2;
@@ -3786,7 +3765,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
 }
 .my_course_content_list .mc_content_list .details .mc_content .subtitle .title{
   font-size: 18px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   color: rgb(10, 10, 10);
   line-height: 1.333;
 }
@@ -3876,7 +3855,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
   background-color: #8e9298;
 }
 .view_edit_delete_list li:nth-child(2) {
-  background-color: #2196F3;
+  background-color: #FD5E1F;
 }
 .view_edit_delete_list li:last-child {
   background-color: #ff1053;
@@ -3935,11 +3914,11 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
   line-height: 1.714;
 }
 .courses_list_content .top_courses.list:hover .details .tc_content h5{
-  color: #2196F3;
+  color: #FD5E1F;
 }
 .original_price{
   font-size: 13px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   color: rgb(126, 126, 126);
   line-height: 1.2;
 }
@@ -4046,7 +4025,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
 }
 .hvr_img_box_container .overlay .details h5 {
   color: #0a0a0a;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   font-weight: 600;
   font-size: 18px;
   margin-bottom: 20px;
@@ -4084,7 +4063,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
   color: #262626;
 }
 .pjc_all_btn.home5 a.btn:hover{
-  border: 1px solid #2196F3; 
+  border: 1px solid #FD5E1F; 
   color: #ffffff;
 }
 /*== Funfact Counter ==*/
@@ -4099,7 +4078,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
 .funfact_one .details .timer,
 .funfact_one .details ul li{
   color: #ffffff;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 30px;
   font-weight: bold;
   margin-right: -2px;
@@ -4118,7 +4097,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
 .funfact_two .details .timer{
   color: #0a0a0a;
   font-size: 22px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   font-weight: 600;
   line-height: 1.2;
 }
@@ -4131,7 +4110,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
 .about_whoweare h4{
   color: #0a0a0a;
   font-size: 20px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   font-weight: 600;
   line-height: 1.2;
 }
@@ -4395,7 +4374,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
 }
 .logo-widget span{
   color: #ffffff;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 22px;
   font-weight: bold;
   padding-left: 15px;
@@ -4486,7 +4465,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
   width: 80%;
 }
 .footer_apps_widget .mailchimp_form button{
-  background-color: #2196F3;
+  background-color: #FD5E1F;
   border: transparent;
   height: 52px;
   width: 52px;
@@ -4922,7 +4901,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
 }
 .smp_icon_box .details h4{
   font-size: 18px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   font-weight: bold;
   line-height: 1.2;
   margin-bottom: 10px;
@@ -5096,12 +5075,12 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
 }
 .testimonial_item.home2 .thumb .title{
   color: #060606;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 18px;
 }
 .testimonial_item.home2 .thumb .subtitle{
-  color: #2196F3;
-  font-family: 'Ubuntu', sans-serif;
+  color: #FD5E1F;
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 14px;
   margin-bottom: 40px;
 }
@@ -5114,7 +5093,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
   opacity: 1;
 }
 .testimonial_slider_home2 .owl-item.active.center .testimonial_item.home2 .details{
-  background-color: #2196F3;
+  background-color: #FD5E1F;
 }
 .testimonial_slider_home2 .owl-item.active.center .testimonial_item.home2 .details .icon{
   color: #4e66f0;
@@ -5287,7 +5266,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
 .blog_post_home2 .bph2_header .bph2_date_meta span,
 .blog_post.one .thumb .post_date span{
   color: #0a0a0a;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 18px;
   font-weight: bold;
   display: table-caption;
@@ -5434,7 +5413,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
   background-color: transparent;
 }
 .blog_post_home4.home8 .bph4_thumb .bph4_date_meta .year{
-  background-color: #2196F3;
+  background-color: #FD5E1F;
   color: #ffffff;
 }
 .blog_post_home4.home8 .bph4_thumb .bph4_date_meta .date{
@@ -5599,7 +5578,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
 .single_product_slider.owl-carousel.owl-theme.owl-loaded .owl-prev,
 .single_product_slider.owl-carousel.owl-theme.owl-loaded .owl-next {
   background-color: #ffffff !important;
-  color: #2196F3;
+  color: #FD5E1F;
   height: 50px;
   line-height: 45px;
   position: absolute;
@@ -5621,7 +5600,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
 .feature_post_slider.owl-carousel.owl-theme.owl-loaded .owl-next:hover,
 .single_product_slider.owl-carousel.owl-theme.owl-loaded .owl-prev:hover,
 .single_product_slider.owl-carousel.owl-theme.owl-loaded .owl-next:hover{
-  background-color: #2196F3 !important;
+  background-color: #FD5E1F !important;
   color: #ffffff;
 }
 .shop_product_slider .shop_grid .thumb img,
@@ -5684,7 +5663,7 @@ ul.mc_parent_list ul.mc_child_list .membership_header{
 }
 ul.mc_parent_list ul.mc_child_list .membership_header .price{
   font-size: 28px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   color: rgb(33, 150, 243);
   font-weight: bold;
   line-height: 1.2;
@@ -5692,7 +5671,7 @@ ul.mc_parent_list ul.mc_child_list .membership_header .price{
 }
 ul.mc_parent_list ul.mc_child_list .membership_header h4{
   font-size: 18px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   color: #0a0a0a;
   line-height: 1.333;
   margin: 0;
@@ -5707,12 +5686,12 @@ ul.mc_parent_list ul.mc_child_list.one:hover .membership_header,
 ul.mc_parent_list ul.mc_child_list.two:hover .membership_header,
 ul.mc_parent_list ul.mc_child_list.three:hover .membership_header,
 ul.mc_parent_list ul.mc_child_list.four:hover .membership_header{
-  background-color: #2196F3;
+  background-color: #FD5E1F;
 }
 ul.mc_parent_list ul.mc_child_list:hover .membership_header .price,
 ul.mc_parent_list ul.mc_child_list:hover .membership_header h4,
 ul.mc_parent_list ul.mc_child_list:hover .membership_header p{
-  background-color: #2196F3;
+  background-color: #FD5E1F;
 }
 ul.mc_parent_list ul.mc_child_list:hover .membership_header .price,
 ul.mc_parent_list ul.mc_child_list:hover .membership_header h4,
@@ -5731,7 +5710,7 @@ ul.mc_parent_list ul.mc_child_list .pricing_btn{
   width: 200px;
 }
 ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
-  background-color: #2196F3;
+  background-color: #FD5E1F;
   color: #ffffff;
 }
 /*== Our Partners ==*/
@@ -5798,7 +5777,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .erro_code h1{
   color: #ffffff;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   font-weight: 600;
   font-size: 10.450vw;
   line-height: 1.2;
@@ -5812,7 +5791,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .error_page.footer_apps_widget h4 {
   font-size: 35px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   font-weight: 600;
   text-transform: uppercase;
   line-height: 1.2;
@@ -5823,7 +5802,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
   line-height: 30px;
   margin: 0 auto 50px;
   max-width: 885px;
-  font-family: Ubuntu;
+  font-family: Source Sans Pro;
   font-size: 16px;
 }
 .error_page.footer_apps_widget .form-inline {
@@ -5882,7 +5861,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
   margin-bottom: 40px;
 }
 .login_form .heading h3 {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 25px;
   font-weight: bold;
 }
@@ -5927,7 +5906,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
   margin-bottom: 40px;
 }
 .login_form .btn-log {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 19px;
   font-weight: bold;
   height: 55px;
@@ -5996,7 +5975,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
   margin-bottom: 40px;
 }
 .sign_up_form .btn-log {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 19px;
   font-weight: bold;
   height: 55px;
@@ -6043,7 +6022,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .faq_question_widget .title {
   font-size: 20px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   font-weight: 600;
   color: #0a0a0a;
   line-height: 1.2;
@@ -6062,7 +6041,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
   transition: all 0.3s ease 0s;
 }
 .faq_question_widget ul li:hover a {
-  color: #2196F3;
+  color: #FD5E1F;
   padding-left: 15px;
 }
 .faq_according .panel .panel-body{
@@ -6076,7 +6055,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .faq_according .panel .panel-body h4{
   font-size: 18px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   color: rgb(59, 59, 59);
   line-height: 1.333;
 }
@@ -6086,7 +6065,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .faq_according .panel-heading .panel-title{
   font-size: 18px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   color: rgb(59, 59, 59);
   line-height: 1.333;
 }
@@ -6095,7 +6074,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 /*== Tab Widget UI Page ==*/
 .ui_kit_tab .nav.nav-tabs {
-  background-color: #2196F3;
+  background-color: #FD5E1F;
   border-radius: 4px;
 }
 .ui_kit_tab .nav.nav-tabs {
@@ -6113,7 +6092,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .ui_kit_tab .nav.nav-tabs .nav-link.active {
   border-radius: 5px;
-  color: #2196F3;
+  color: #FD5E1F;
   border: none;
 }
 .ui_kit_tab .tab-content .tab-pane {
@@ -6129,7 +6108,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 
 
 .ui_kit_table .table th {
-  background-color: #2196F3;
+  background-color: #FD5E1F;
   padding: 20px;
   border-bottom: transparent;
   color: #ffffff;
@@ -6218,7 +6197,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 .ui_kit_select_search .dropdown-item {
   color: #7f7f7f;
   font-size: 14px;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 .ui_kit_select_search .dropdown-item:hover {
   background-color: transparent;
@@ -6255,11 +6234,11 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 .ui_kit_radiobox label, legend {
   display: block;
   font-size: 16px;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   margin-bottom: 8px;
 }
 .ui_kit_radiobox .radio input[type=radio]:checked+label .radio-label {
-  background-color: #2196F3;
+  background-color: #FD5E1F;
   box-shadow: inset 0 0 0 5px #fff;
 }
 .ui_kit_radiobox .radio input[type=radio]+label .radio-label {
@@ -6301,7 +6280,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
   display: block;
 }
 .ui_kit_radiobox .radio input[type=radio]+label .radio-label:after {
-  background-color: #2196F3;
+  background-color: #FD5E1F;
   box-sizing: border-box;
   border-radius: 50%;
   content: "";
@@ -6345,8 +6324,8 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
   top: .50rem;
 }
 .ui_kit_checkbox .custom-control-input:checked~.custom-control-label::before {
-  background-color: #2196F3;
-  border-color: #2196F3;
+  background-color: #FD5E1F;
+  border-color: #FD5E1F;
 }
 .ui_kit_checkbox .custom-control-label {
   color: #4f4f4f;
@@ -6373,7 +6352,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
   padding-left: 25px;
 }
 .ui_kit_whitchbox .custom-control-input:checked~.custom-control-label::before{
-  background-color: #2196F3;
+  background-color: #FD5E1F;
 }
 .ui_kit_whitchbox .custom-switch .custom-control-label::before {
   height: 1.25rem;
@@ -6483,13 +6462,13 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .mbp_thumb_post .thumb .post_date h2{
   font-size: 50px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   color: rgb(255, 255, 255);
   margin-bottom: 0;
 }
 .mbp_thumb_post .thumb .post_date span{
   font-size: 18px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   color: rgb(255, 255, 255);
 }
 .main_blog_post_content .mbp_thumb_post .details {
@@ -6609,7 +6588,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
   width: 45px;
 }
 .mbp_pagination ul.page_navigation li.active .page-link {
-  background-color: #2196F3;
+  background-color: #FD5E1F;
   color: #ffffff;
 }
 .event_counter_plugin_container{
@@ -6647,7 +6626,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 .event_counter_plugin_content ul li span {
   display: block;
   font-size: 26px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   color: rgb(255, 255, 255);
   line-height: 1.2;
 }
@@ -6694,18 +6673,18 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .blog_grid_post .thumb .post_date h2{
   font-size: 50px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   color: rgb(255, 255, 255);
   margin-bottom: 0;
 }
 .blog_grid_post .thumb .post_date span{
   font-size: 18px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   color: rgb(255, 255, 255);
 }
 .blog_grid_post .details h3{
   font-size: 20px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   font-weight: 600;
   color: #0a0a0a;
   line-height: 1.2;
@@ -6778,7 +6757,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .blog_grid_post.style2.event_lists .details h3{
   font-size: 22px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   color: #0a0a0a;
   line-height: 1.091;
 }
@@ -6809,7 +6788,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .event_participator_tile{
   font-size: 20px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   font-weight: 600;
   color: #0a0a0a;
   line-height: 1.2;
@@ -6821,7 +6800,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .participator_team .details h4{
   font-size: 18px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   color: #0a0a0a;
   line-height: 1.333;
   margin-bottom: 0;
@@ -6887,7 +6866,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 .blog_recent_post_widget .title,
 .blog_category_widget .title{
   font-size: 20px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   font-weight: 600;
   color: #0a0a0a;
   line-height: 1.2;
@@ -6926,7 +6905,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .event_details_widget .title{
   font-size: 20px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   font-weight: 600;
   color: #0a0a0a;
   line-height: 1.2;
@@ -7027,7 +7006,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 
 .instructor_pricing_widget .price{
   font-size: 30px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   color: #0a0a0a;
   font-weight: bold;
   line-height: 1.2;
@@ -7133,7 +7112,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .blog_recent_post_widget .media-body .post_title{
   font-size: 16px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   color: #212121;
   line-height: 1.5;
   margin-bottom: 0;
@@ -7230,7 +7209,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .blog_post_share li p{
   font-size: 18px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   color: rgb(59, 59, 59);
   line-height: 1.333;
 }
@@ -7271,7 +7250,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 .mbp_pagination_tab .pag_prev p,
 .mbp_pagination_tab .pag_next p{
   font-size: 16px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   color: #0a0a0a;
   line-height: 1.75;
   margin-bottom: 0;
@@ -7281,7 +7260,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 .mbp_pagination_tab .pag_next p:hover,
 .mbp_pagination_tab .pag_prev a:hover,
 .mbp_pagination_tab .pag_next a:hover{
-  color: #2196F3;
+  color: #FD5E1F;
 }
 /*== Commenting Blog Sinlge Page ==*/
 .mbp_pagination_comments{
@@ -7360,7 +7339,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .breadcrumb_widgets .title{
   font-size: 22px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   font-weight: 600;
   color: rgb(10, 10, 10);
   line-height: 1.2;
@@ -7403,7 +7382,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .user_profile .media .media-body h4{
   font-size: 18px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   color: #0a0a0a;
   line-height: 1.2;
   padding-left: 30px;
@@ -7430,22 +7409,22 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
   transition: all 0.3s ease 0s;
 }
 .dashbord_nav_list li a{
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   color: #7f7f7f;
   font-size: 16px;
 }
 .dashbord_nav_list li:hover a,
 .dashbord_nav_list li:hover a span{
-  color: #2196F3;
+  color: #FD5E1F;
 }
 .dashbord_nav_list li.active{
   background-color: #f9fafc;
 }
 .dashbord_nav_list li.active a{
-  color: #2196F3;
+  color: #FD5E1F;
 }
 .dashbord_nav_list li.active:before {
-  background-color: #2196F3;
+  background-color: #FD5E1F;
   bottom: 0;
   content: "";
   height: 50px;
@@ -7589,7 +7568,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
   border-bottom: 1px solid #dedede;
   color: #0a0a0a;
   font-size: 18px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   line-height: 1.333;
   margin-bottom: 0;
   padding-bottom: 20px;
@@ -7694,7 +7673,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .header_user_notif li.user_setting .dropdown-menu .user_set_header p{
   font-size: 16px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   color: #0a0a0a;
   line-height: 1.2;
 }
@@ -7711,7 +7690,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
   border-bottom: 1px solid #dedede;
   color: #0a0a0a;
   font-size: 16px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   line-height: 3.125;
   padding-left: 0;
   -webkit-transition: all 0.3s ease 0s;
@@ -7748,7 +7727,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
   padding-right: 0;
   width: 258px;
   font-size: 14px;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 .candidate_revew_search_box button{
   background-color: #ffffff;
@@ -7785,7 +7764,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 .candidate_revew_select .dropdown-item.active,
 .candidate_revew_select .dropdown-item:active{
   background-color: transparent;
-  color: #2196F3;
+  color: #FD5E1F;
 }
 /*== My Resume Page ==*/
 .my_resume_textarea label{
@@ -7867,7 +7846,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
   display: none;
 }
 .my_resume_eduarea .content .circle {
-  background-color: #2196F3;
+  background-color: #FD5E1F;
   border-radius: 50%;
   height: 10px;
   left: 5px;
@@ -7877,7 +7856,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .my_resume_eduarea .content .circle:before{
   background-color: #ffffff;
-  border: 2px solid #2196F3;
+  border: 2px solid #FD5E1F;
   border-radius: 50%;
   content: "";
   height: 18px;
@@ -7933,7 +7912,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
   z-index: -1;
 }
 .my_resume_eduarea .content .edu_center{
-  color: #2196F3;
+  color: #FD5E1F;
   margin-bottom: 0;
 }
 .my_resume_eduarea .content .edu_stats{
@@ -8090,7 +8069,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .message_container .user_heading .wrap h5.name {
   font-size: 16px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   color: rgb(10, 10, 10);
   line-height: 1.2;
   margin-bottom: 0;
@@ -8145,7 +8124,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
   font-size: 14px;
 }
 .inbox_chatting_box .chatting_content li.media .media-body p{
-  background-color: #2196F3;
+  background-color: #FD5E1F;
   border: 1px solid #ffffff;
   border-radius: 5px;
   color: #ffffff;
@@ -8272,7 +8251,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .ff_one .detais .timer{
   font-size: 26px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   font-weight: 600;
   color: #0a0a0a;
   line-height: .5;
@@ -8304,7 +8283,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .application_statics h4{
   font-size: 20px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   font-weight: 600;
   margin-bottom: 50px;
 }
@@ -8318,7 +8297,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .recent_job_activity h4 {
   font-size: 20px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   font-weight: 600;
   color: #0a0a0a;
   line-height: 1.2;
@@ -8336,7 +8315,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .recent_job_activity .grid ul li .title{
   font-size: 16px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   color: #0a0a0a;
 }
 .recent_job_activity .grid ul li p{
@@ -8365,7 +8344,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 
 .siderbar_contact_widget p {
   font-size: 15px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   color: rgb(126, 126, 126);
   margin-bottom: 0;
   line-height: 2.667;
@@ -8392,11 +8371,11 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
   margin-top: 25px;
 }
 .cl_pricing_slider .ui-slider-range.ui-corner-all.ui-widget-header{
-  background-color: #2196F3;
+  background-color: #FD5E1F;
 }
 .cl_pricing_slider span.ui-slider-handle.ui-corner-all.ui-state-default {
   background-color: #fff;
-  border: 2px solid #2196F3;
+  border: 2px solid #FD5E1F;
   border-radius: 50%;
   height: 18px;
   outline: none;
@@ -8545,8 +8524,8 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
   padding: 0 0 5px;
 }
 .alpha-pag ul.option-set li a.selected{
-  border-bottom: 2px solid #2196F3;
-  color: #2196F3;
+  border-bottom: 2px solid #FD5E1F;
+  color: #FD5E1F;
 }
 .alpha-pag li a{
   color: #7d7d7d;
@@ -8671,7 +8650,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .blog_post_home2 .details h4{
   color: #fafafa;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   font-size: 18px;
   font-weight: 600;
   line-height: 1.5;
@@ -8787,7 +8766,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .popular_course_slider.owl-carousel.owl-theme.owl-loaded .owl-prev:hover,
 .popular_course_slider.owl-carousel.owl-theme.owl-loaded .owl-next:hover{
-  background-color: #2196F3 !important;
+  background-color: #FD5E1F !important;
   color: #ffffff;
 }
 .media_slider_home7.owl-carousel.owl-theme.owl-loaded .owl-prev:hover,
@@ -8819,7 +8798,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .media_slider_home7.home8.owl-carousel.owl-theme.owl-loaded .owl-prev:hover,
 .media_slider_home7.home8.owl-carousel.owl-theme.owl-loaded .owl-next:hover{
-  background-color: #2196F3 !important;
+  background-color: #FD5E1F !important;
   color: #ffffff;
 }
 /*== Testimonials Home V3 ==*/
@@ -8884,7 +8863,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .contact_localtion h4{
   font-size: 22px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   font-weight: 600;
   color: #0a0a0a;
   line-height: 1.2;
@@ -8901,7 +8880,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .form_grid h4{
   font-size: 22px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   font-weight: 600;
   color: #0a0a0a;
   line-height: 1.2;
@@ -8948,13 +8927,13 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 .maxtext h1{
   color: #ffffff;
   font-size: 50px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   line-height: 1.2;
   text-transform: uppercase;
 }
 .maxtext p{
   color: #ffffff;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   font-size: 18px;
   line-height: 1.2;
 }
@@ -8965,7 +8944,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
   object-fit:cover;
 }
 .text-thm {
-  color: #2196F3 !important;
+  color: #FD5E1F !important;
 }
 .text-thm2 {
   color: #00d664 !important;
@@ -9064,7 +9043,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
   color: #ff4b53;
 }
 .bgc-thm {
-  background-color: #2196F3 !important;
+  background-color: #FD5E1F !important;
 }
 .bgc-thm2 {
   background-color: #192675 !important;
@@ -9294,15 +9273,15 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 .btn.white {
   background-color: #ffffff;
-  color: #2196F3;
+  color: #FD5E1F;
 }
 .btn:hover, .btn:active, .btn:focus {
   box-shadow: none;
   outline: none;
 }
 .btn-thm {
-  background-color: #2196F3;
-  border: 2px solid #2196F3;
+  background-color: #FD5E1F;
+  border: 2px solid #FD5E1F;
   border-radius: 5px;
   color: #ffffff;
   -webkit-transition: all 0.3s ease;
@@ -9310,7 +9289,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
   transition: all 0.3s ease;}
 
 .btn-thm.rounded {
-  background-color: #2196F3;
+  background-color: #FD5E1F;
   border-radius: 5px;
   color: #ffffff;}
 
@@ -9318,14 +9297,14 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 .btn-thm:active,
 .btn-thm:focus{
   background-color: #ffffff;
-  border-color: #2196F3;
-  color: #2196F3; }
+  border-color: #FD5E1F;
+  color: #FD5E1F; }
 
 .btn-thm.white:hover,
 .btn-thm.white:active,
 .btn-thm.white:focus{
-  background-color: #2196F3;
-  border-color: #2196F3;
+  background-color: #FD5E1F;
+  border-color: #FD5E1F;
   color: #ffffff;  
 }
 .btn-thm2 {
@@ -9402,7 +9381,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
   transition: all 0.3s ease; }
 
 .btn-white:hover, .btn-white:active, .btn-white:focus {
-  color: #2196F3;
+  color: #FD5E1F;
 }
 .btn-gray {
   background-color: #f9fafc;
@@ -9413,7 +9392,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
   transition: all 0.3s ease;
 }
 .btn-gray:hover, .btn-gray:active, .btn-gray:focus {
-  background-color: #2196F3;
+  background-color: #FD5E1F;
   color: #ffffff;
 }
 .btn-green {
@@ -9438,24 +9417,24 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
   transition: all 0.3s ease;
 }
 .btn-blue:hover, .btn-blue:active, .btn-blue:focus {
-  background-color: #2196F3;
-  border-color: #2196F3;
+  background-color: #FD5E1F;
+  border-color: #FD5E1F;
   color: #ffffff; 
 }
 .btn-transparent {
   background-color: transparent;
-  border-color: #2196F3;
-  color: #2196F3;
+  border-color: #FD5E1F;
+  color: #FD5E1F;
   border-radius: 0px;
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 .btn-transparent:hover, .btn-transparent:active, .btn-transparent:focus {
-  background-color: #2196F3;
+  background-color: #FD5E1F;
   color: #ffffff;
   border: 2px solid;
-  border-color: #2196F3;
+  border-color: #FD5E1F;
 }
 .btn-transparent2 {
   background-color: transparent;
@@ -10388,7 +10367,7 @@ section {
 }
 .main-title h3 {
   display: inline-block;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   font-size: 26px;
   margin-bottom: 10px;
   margin-top: 0;
@@ -10763,18 +10742,19 @@ section {
 .divider-one .divider-btn{
   border: 2px solid #ffffff;
   border-radius: 25px;
-  color: #ffffff;
+  color: #fd5e1f;
   height: 50px;
   line-height: 47px;
   padding: 0 60px;
-  font-size: 15px;
+  font-size: 18px;
+  background: #fff;
 }
 .divider-one .divider-btn:hover{
-  border: 2px solid #2196F3;
+  border: 2px solid #FD5E1F;
 }
 .divider-one p{
   margin-bottom: 15px;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 16px;
 }
 .divider2{
@@ -10831,7 +10811,7 @@ section {
   height: 50px;
   line-height: 32px;
   width: 190px;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 16px;
 }
 #mc_embed_signup .mailchimp_btn:hover{
@@ -10915,7 +10895,7 @@ canvas {
 }
 .selected_filter_widget.style2 .accordion .link{
   font-size: 20px;
-  font-family: "Ubuntu SemiBold";
+  font-family: "Source Sans Pro SemiBold";
   color: #0a0a0a;
   line-height: 1.2;
 }
@@ -11133,14 +11113,14 @@ body.translated{
 }
 .shop_grid .details .price{
   font-size: 18px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   color: rgb(199, 85, 51);
   font-weight: bold;
   line-height: 1.2;
 }
 .shop_grid .details .item-tile{
   font-size: 18px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   color: #0a0a0a;
   line-height: 1.333;
 }
@@ -11170,7 +11150,7 @@ body.translated{
 }
 .shop_order_box .main_title{
   font-size: 20px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   font-weight: 600;
   color: #0a0a0a;
   line-height: 1.2;
@@ -11194,7 +11174,7 @@ body.translated{
 }
 .shop_order_box .order_list_raw ul li h4{
   font-size: 18px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   color: #0a0a0a;
   line-height: 1.333;
   margin-bottom: 4px;
@@ -11207,7 +11187,7 @@ body.translated{
 }
 .shop_order_box .order_details .title{
   font-size: 20px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   font-weight: 600;
   color: #0a0a0a;
   line-height: 1.2;
@@ -11215,7 +11195,7 @@ body.translated{
 }
 .shop_order_box .order_details .title2 {
   font-size: 20px;
-  ont-family: "Ubuntu";
+  ont-family: "Source Sans Pro";
   font-weight: 600;
   color: #0a0a0a;
   line-height: 1.2;
@@ -11233,7 +11213,7 @@ body.translated{
 }
 .shop_order_box .order_details .od_content .tamount{
   font-size: 18px;
-  font-family: "Ubuntu SemiBold";
+  font-family: "Source Sans Pro SemiBold";
   color: rgb(255, 16, 83);
   line-height: 1.333;
 }
@@ -11320,7 +11300,7 @@ body.translated{
 }
 .checkout_form .checkout_coupon .form2 .ai_title{
   font-size: 20px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   font-weight: 600;
   color: #0a0a0a;
   margin-bottom: 20px;
@@ -11338,7 +11318,7 @@ body.translated{
 }
 .order_sidebar_widget .title{
   font-size: 20px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   font-weight: 600;
   color: #0a0a0a;
   line-height: 1.2;
@@ -11346,14 +11326,14 @@ body.translated{
 }
 .order_sidebar_widget .subtitle p{
   font-size: 18px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   color: #0a0a0a;
   line-height: 2.222;
   margin-bottom: 6px;
 }
 .order_sidebar_widget .subtitle .totals{
   font-size: 22px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   color: rgb(199, 85, 51);
   font-weight: bold;
   line-height: 1.2;
@@ -11396,7 +11376,7 @@ body.translated{
   margin-bottom: 0;
 }
 .cart_page_form tr.carttable_row{
-  background-color: #2196F3;
+  background-color: #FD5E1F;
 }
 .cart_page_form tr.carttable_row th.cartm_title{
   border: none;
@@ -11454,7 +11434,7 @@ body.translated{
 }
 .cart_page_form tbody.table_body th .cart_list .cart_title{
   font-size: 18px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   font-weight: 600;
   color: #0a0a0a;
   line-height: 1.333;
@@ -11481,7 +11461,7 @@ body.translated{
 }
 .order_key_status li{
   font-size: 18px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   color: rgb(10, 10, 10);
   line-height: 2.222;
 }
@@ -11528,7 +11508,7 @@ body.translated{
 }
 .shop_single_product_details h3{
   font-size: 26px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   color: #0a0a0a;
   line-height: 0.923;
 }
@@ -11557,7 +11537,7 @@ body.translated{
 }
 .shop_single_product_details .sspd_price{
   font-size: 26px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   color: rgb(199, 85, 51);
   font-weight: bold;
   line-height: 1.2;
@@ -11569,7 +11549,7 @@ body.translated{
   border-radius: 27px;
   background-color: rgb(255, 16, 83);
   font-size: 18px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   color: rgb(255, 255, 255);
   height: 55px;
   border: 2px solid #ff1053;
@@ -11588,7 +11568,7 @@ body.translated{
 }
 .shop_single_product_details .sspd_social_icon li:first-child{
   font-size: 18px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   color: rgb(59, 59, 59);
   line-height: 1.333;
   padding-right: 10px;
@@ -11622,7 +11602,7 @@ body.translated{
 }
 .product_single_content .mbp_pagination_comments .mbp_first.media h4.sub_title{
   font-size: 20px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   color: #0a0a0a;
   line-height: 1.5;
   margin-bottom: 0;
@@ -11677,7 +11657,7 @@ body.translated{
 .cs_rwo_tabs.csv2 .nav-tabs .nav-link{
   border: 1px solid transparent;
   font-size: 18px;
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   color: #0a0a0a;
   height: 64px;
   line-height: 2.5;
@@ -11729,8 +11709,8 @@ body.translated{
   border: none;
 }
 .shop_single_tab_content .nav-tabs .nav-link.active{
-  border-bottom: 2px solid #2196F3;
-  color: #2196F3;
+  border-bottom: 2px solid #FD5E1F;
+  color: #FD5E1F;
 }
 .mbp_comment_form.style2{
   padding-bottom: 50px;
@@ -11818,7 +11798,7 @@ body.translated{
 }
 .become_instructor_container .titles{
   color: #0a0a0a;
-  font-family: Ubuntu;
+  font-family: Source Sans Pro;
   font-size: 24px;
   font-weight: 600;
   line-height: 1.3;
@@ -11832,7 +11812,7 @@ body.translated{
 
 
 .filter-option-inner-inner {
-  font-family: "Ubuntu";
+  font-family: "Source Sans Pro";
   font-size: 14px;
 }
 
@@ -11853,7 +11833,7 @@ body.translated{
 
 
 .btn{
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 
@@ -11872,7 +11852,7 @@ body.translated{
 
 .bootstrap-select.show-tick .dropdown-menu li a span.text {
     font-size: 14px;
-    font-family: "Ubuntu";
+    font-family: "Source Sans Pro";
 }
 
 .filter-option-inner-inner {
@@ -11946,12 +11926,12 @@ body.translated{
   top: 10px;
 }
 .dropdown-item.active, .dropdown-item:active {
-    background-color: #2196F3;
+    background-color: #FD5E1F;
     border-radius: 0px;
 }
 .dropdown-item{
   font-size: 14px;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 textarea.form-control{
   padding: 20px;
@@ -12054,6 +12034,7 @@ textarea.form-control{
 }
 #top-courses {
   padding-top: 120px;
+  background: #fafafa;
 }
 #our-testimonials {
   padding-top: 120px;
@@ -12070,25 +12051,63 @@ textarea.form-control{
 }
 .btn-primary{
   color: #fff;
-  background-color: #2196F3;
-  border-color: #2196F3;
+  background-color: #FD5E1F;
+  border-color: #FD5E1F;
 }
 .btn-primary:hover {
   color: #fff;
-  background-color: #984de4;
-  border-color: #984de4;
+  background-color: #D04B16;
+  border-color: #D04B16;
 }
 .divider_home1::before {
-  background-color: rgba(33, 150, 243, 0.8);
+  background-color: rgba(253, 94, 31, 0.9);
 }
 .btn_rounded_section{
-  border: 2px solid #2196F3;
+  border: 2px solid #FD5E1F;
   border-radius: 27px;
-  color: #2196F3;
+  color: #FD5E1F;
   font-size: 18px;
   margin-top: 15px;
   padding: 10px 50px;
   transition: all .4s ease;
+}
+.main-page{
+  margin-top:0px;
+}
+.tc_content ul li {
+  list-style: disc;
+  margin: 6px 0px 0px 16px;
+  font-size: 18px;
+}
+.top_courses .thumb::before{
+  background-color: rgba(0,0,0, .0);
+}
+#pricing h1 {
+  color: #fd5e1f;
+}
+#pricing h2 {
+  font-size: 52px;
+  color: #333333;
+  padding-top: 16px;
+}
+.btn-rounded {
+  border-radius: 32px;
+  padding: 8px 32px;
+}
+.membership_header h3 {
+  font-size: 18px;
+}
+.membership_header .icon {
+  font-size: 52px;
+}
+ul.mc_parent_list ul.mc_child_list.one:hover .membership_header, ul.mc_parent_list ul.mc_child_list.two:hover .membership_header, ul.mc_parent_list ul.mc_child_list.three:hover .membership_header, ul.mc_parent_list ul.mc_child_list.four:hover .membership_header {
+  background-color: #ECECEC;
+}
+.testimonial_item {
+    padding: 32px;
+    background: #fff;
+    box-shadow: 0px 3px 6px rgba(0,0,0,0.1);
+    border-radius: 8px;
 }
 </style>
 
